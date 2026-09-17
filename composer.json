@@ -20,12 +20,12 @@
         "drupal/back_to_top": "3.0",
         "drupal/blazy": "^3.0",
         "drupal/bootstrap": "^3.40",
-        "drupal/core-composer-scaffold": "10.6.16",
-        "drupal/core-project-message": "10.6.16",
-        "drupal/core-recommended": "10.6.16",
+        "drupal/core-composer-scaffold": "10.6.17",
+        "drupal/core-project-message": "10.6.17",
+        "drupal/core-recommended": "10.6.17",
         "drupal/core-vendor-hardening": "^10.3",
         "drupal/fontawesome": "2.26",
-        "drupal/g_translate": "1.0",
+        "drupal/g_translate": "^1.0",
         "drupal/google_analytics": "^4.0",
         "drupal/high_contrast": "1.0.x@beta",
         "drupal/jcarousel": "6.x@alpha",
@@ -44,7 +44,8 @@
         "drupal/views_bootstrap": "4.5",
         "drupal/views_slideshow": "5.0",
         "drupal/webform": "^6.2",
-        "drupal/yoast_seo": "1.9"
+        "drupal/yoast_seo": "1.9",
+        "drush/drush": "^13.6"
     },
     "conflict": {
         "drupal/drupal": "*"

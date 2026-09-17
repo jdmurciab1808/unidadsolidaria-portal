@@ -4,7 +4,6 @@
  */
 (function ($, Drupal, once, drupalSettings) {
 
-  var frame;
   var scrollTo = function (to, duration) {
     var element = document.scrollingElement || document.documentElement,
       start = element.scrollTop,
@@ -34,26 +33,22 @@
         var exist = $('#backtotop').length;
         if (exist == 0) {
           $(once('backtotop', 'body'), context).each(function () {
-            $('body').append("<nav aria-label='" + Drupal.t("Back to top") + "'><button id='backtotop' aria-label='" + Drupal.t("Back to top") + "'>" + settings.back_to_top.back_to_top_button_text + "</button></nav>");
+            $('body').append("<button id='backtotop' aria-label='" + Drupal.t("Back to top") + "'>" + settings.back_to_top.back_to_top_button_text + "</button>");
           });
         }
       }
 
       backToTop();
-      $(document).on("scroll", function() {
+      $(window).scroll(function () {
         backToTop();
       });
 
       $(once('backtotop', '#backtotop'), context).each(function () {
         $(this).click(function () {
           $("html, body").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function () {
-            if (typeof frame !== 'undefined') {
-              window.cancelAnimationFrame(frame);
-            }
+            window.cancelAnimationFrame(frame);
           });
-          speed = settings.back_to_top.back_to_top_speed;
-          speed = null || 1200;
-          scrollTo(0, speed);
+          scrollTo(0, 1200);
         });
       });
 

@@ -25,7 +25,7 @@ class StyleSlideshowTest extends ViewTestBase {
    *
    * @var array
    */
-  protected static $modules = [
+  public static $modules = [
     'views',
     'views_slideshow',
     'views_slideshow_cycle',

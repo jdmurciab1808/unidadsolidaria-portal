@@ -1,13 +1,13 @@
 name: GTranslate
 type: module
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^9.5 || ^10 || ^11 || ^12
 description: Uses Google power to translate your website.
 package: Multilingual
 configure: g_translate.settings
 dependencies:
   - block
 
-# Information added by Drupal.org packaging script on 2023-11-17
-version: '1.0.0'
+# Information added by Drupal.org packaging script on 2026-07-21
+version: '1.0.1'
 project: 'g_translate'
-datestamp: 1700200413
+datestamp: 1784617747
