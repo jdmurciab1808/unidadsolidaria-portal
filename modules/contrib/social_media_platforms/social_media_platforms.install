@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Social Media Platform hook updates file.
+ */
+
+/**
+ * Hook update to add tiktok social media platform.
+ */
+function social_media_platforms_update_10101() {
+
+  $config = \Drupal::configFactory()->getEditable('social_media_platforms.settings');
+  $platforms = $config->get('platforms');
+
+  if (!isset($platforms['tiktok'])) {
+    $platforms['tiktok'] = [
+      'label' => 'TikTok',
+      'url' => NULL,
+      'weight' => 6,
+    ];
+  }
+  $config->set('platforms', $platforms);
+  $config->save();
+}
+
+/**
+ * Updates the configuration schema and migrates existing configuration.
+ */
+function social_media_platforms_update_10201() {
+  $configFactory = \Drupal::configFactory();
+  $config = $configFactory->getEditable('social_media_platforms.settings');
+
+  // Migrate show_icon to icon_source.
+  $display_options = $config->get('display_options');
+
+  // Check if the show_icon config is still present.
+  if (isset($display_options['show_icon'])) {
+
+    // Update the icon_source property based on the config value.
+    if ($display_options['show_icon']) {
+      $display_options['icon_source'] = 'image';
+    }
+    else {
+      $display_options['icon_source'] = 'none';
+    }
+
+    // Unset the old show_icon property.
+    unset($display_options['show_icon']);
+  }
+
+  $config->set('display_options', $display_options);
+
+  $platforms = $config->get('platforms');
+  foreach ($platforms as &$platform) {
+    if (!isset($platform['font_classes'])) {
+      $platform['font_classes'] = "";
+    }
+  }
+  $config->set('platforms', $platforms);
+  $config->save();
+}

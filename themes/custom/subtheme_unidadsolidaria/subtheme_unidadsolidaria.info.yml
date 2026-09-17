@@ -1,0 +1,39 @@
+type: theme
+base theme: bootstrap
+core_version_requirement: ^9 || ^10
+
+name: 'subtheme_unidadsolidaria'
+description: 'A Drupal Bootstrap 3 based sub-theme.'
+package: 'Bootstrap'
+
+regions:
+  banner: 'Banner' 
+  iconos: 'Iconos'
+  search: 'Search'
+  logo: 'Logo'
+  acceso: 'Acceso'
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  noticias: 'Noticias'
+  noticia_principal: 'Noticia Principal'
+  titulo_redes: 'Titulo Redes'
+  twitter: 'Twitter'
+  youtube: 'Youtube'
+  facebook: 'Facebook'
+  banner_edusolidaria: 'Banner Educación Solidaria'
+  destacados: 'Programas Destacados'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  prueba: 'Prueba'
+  footer_contacto: 'Contacto'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+    - subtheme_unidadsolidaria/global-styling
+    - subtheme_unidadsolidaria/global-scripts
+    

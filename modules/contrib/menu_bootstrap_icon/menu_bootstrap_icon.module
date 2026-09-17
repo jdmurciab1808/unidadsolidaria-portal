@@ -1,0 +1,338 @@
+<?php
+
+/**
+ * @file
+ * Entity Print Views module file.
+ */
+
+use Drupal\Component\Render\FormattableMarkup;
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function menu_bootstrap_icon_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the menu_bootstrap_icon module.
+    case 'help.page.menu_bootstrap_icon':
+      $output = '';
+      $output .= '<h3>' . t('Features') . '</h3>';
+      $output .= '<p>' . t('Add icon bootstrap to menu link');
+      $output .= t('All icons come from <a href="https://icons.getbootstrap.com">Bootstrap 5 icons</a>');
+      $output .= t('After installing the module, go to settings module, you can customize your other icon class with another class or other search terms.');
+      $output .= t('By default, all icons and definitions can be found in modules/icons folder, you can add your icon.md manually, after that click generate button');
+      $output .= t('it will generate your custom icon.');
+      $output .= t('Best use for <a href="https://www.drupal.org/project/bootstrap5_admin">bootstrap 5 admin theme</a>');
+      $output .= t('Similar functionality <a href="https://www.drupal.org/project/fontawesome">Font Awesome Icons</a>') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * User for form add/edit.
+ */
+function _menu_bootstrap_form(&$form, $options = []) {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('menu_bootstrap_icon.settings');
+  $form['bi_icon'] = [
+    '#type' => 'details',
+    '#title' => t('Bootstrap Icon'),
+    '#open' => TRUE,
+  ];
+  $iconDefault = !empty($options['icon']) ? $options['icon'] : '';
+  $form['bi_icon']['icon'] = [
+    '#type' => 'textfield',
+    '#default_value' => !empty($options['icon']) ? $options['icon'] : '',
+    '#prefix' => '<div class="input-group"><span class="col-sm-1 col-form-label">' . t('Icon class') . '</span>',
+    '#suffix' => '<span class="input-group-text"><i class="icon-preview ' . $iconDefault . '"></i></span></div>',
+    '#attributes' => [
+      'class' => [
+        'iconpicker',
+        'w-auto',
+      ],
+    ],
+  ];
+
+  $form['bi_icon']['icon_tag'] = [
+    '#type' => 'select',
+    '#title' => t('HTML tag'),
+    '#default_value' => !empty($options['icon_tag']) ? $options['icon_tag'] : 'i',
+    '#options' => [
+      'i' => 'i',
+      'span' => t('span'),
+    ],
+  ];
+
+  $form['bi_icon']['icon_appearance'] = [
+    '#type' => 'select',
+    '#title' => t('Appearance'),
+    '#default_value' => !empty($options['icon_appearance']) ? $options['icon_appearance'] : 'before',
+    '#options' => [
+      'before' => t('Before text'),
+      'after' => t('After text'),
+      'only' => t('Without text'),
+    ],
+  ];
+
+  if ($config->get('use_cdn')) {
+    $form['#attached']['library'][] = 'menu_bootstrap_icon/cdn';
+  }
+  $form['#attached']['library'][] = 'menu_bootstrap_icon/iconspicker';
+  if (!empty($config->get('search_list'))) {
+    $form['#attached']['drupalSettings']['menu_bootstrap_icon']['icons'] = Yaml::decode($config->get('search_list'));
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function menu_bootstrap_icon_form_menu_link_content_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $menu_link = $form_state->getFormObject()->getEntity();
+  $options = $menu_link->link->first()->options ?: [];
+  _menu_bootstrap_form($form, $options);
+  $form['actions']['submit']['#submit'][] = 'menu_bootstrap_menu_link_content_form_submit';
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function menu_bootstrap_icon_form_menu_link_edit_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $options = $form_state->getBuildInfo()['args'][0]->getOptions();
+  _menu_bootstrap_form($form, $options);
+  $form['#submit'][] = 'menu_bootstrap_form_menu_link_edit_submit';
+}
+
+/**
+ * Process the submitted form.
+ *
+ * @param array $form
+ *   Form Array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form State Interface.
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function menu_bootstrap_menu_link_content_form_submit(array $form, FormStateInterface $form_state) {
+  $icon_field = $form_state->getValue('icon');
+  $icon_tag = $form_state->getValue('icon_tag');
+  $icon_appearance = $form_state->getValue('icon_appearance');
+
+  $options = [
+    'icon' => !empty($icon_field) ? Html::escape($icon_field) : '',
+    'icon_tag' => !empty($icon_tag) ? Html::escape($icon_tag) : 'i',
+    'icon_appearance' => !empty($icon_appearance) ? Html::escape($icon_appearance) : 'before',
+  ];
+
+  /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $menu_link */
+  $menu_link = $form_state->getFormObject()->getEntity();
+  $menu_link_options = $menu_link->link->first()->options;
+
+  $merged = array_merge($menu_link_options, $options);
+
+  $menu_link->link->first()->options = $merged;
+  $menu_link->save();
+}
+
+/**
+ * Process the submitted edit form.
+ *
+ * @param array $form
+ *   Array Form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Form Interface.
+ */
+function menu_bootstrap_form_menu_link_edit_submit(array $form, FormStateInterface $form_state) {
+  $options = $form_state->getBuildInfo()['args'][0]->getOptions();
+  $menu_link_id = $form_state->getValue('menu_link_id');
+
+  $icon_field = $form_state->getValue('icon');
+  $icon_tag = $form_state->getValue('icon_tag');
+  $icon_appearance = $form_state->getValue('icon_appearance');
+
+  $options['icon'] = !empty($icon_field) ? Html::escape($icon_field) : '';
+  $options['icon_tag'] = !empty($icon_tag) ? Html::escape($icon_tag) : 'i';
+  $options['icon_appearance'] = !empty($icon_appearance) ? Html::escape($icon_appearance) : 'before';
+
+  if (!empty($menu_link_id)) {
+    $query = \Drupal::database()->update('menu_tree');
+    $query->fields([
+      'options' => serialize($options),
+    ]);
+    $query->condition('id', $menu_link_id);
+    $query->execute();
+
+    $config_factory = \Drupal::configFactory();
+    $config = $config_factory->getEditable('menu_bootstrap_icon.settings');
+
+    $icons = $config->get('menu_link_icons');
+    // Array key cannot contain dot in the config.
+    $config_key = str_replace('.', '_', $menu_link_id);
+
+    if (empty($options['icon'])) {
+      if (isset($icons[$config_key])) {
+        unset($icons[$config_key]);
+      }
+    }
+    else {
+      $icons[$config_key] = [
+        'icon' => $options['icon'],
+        'tag' => $options['icon_tag'],
+        'appearance' => $options['icon_appearance'],
+      ];
+    }
+
+    $config->set('menu_link_icons', $icons);
+    $config->save();
+  }
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function menu_bootstrap_icon_menu_links_discovered_alter(&$links) {
+  // After clearing the site's cache, the options were cleared from the
+  // menu_tree database table (I'm not sure if this is a bug or normal
+  // behaviour)... but we need to re-apply icon on each menu link item.
+  $config = \Drupal::config('menu_bootstrap_icon.settings');
+  $icons = $config->get('menu_link_icons');
+
+  foreach ($links as $link_id => &$link) {
+    if (empty($link['id'])) {
+      continue;
+    }
+
+    // Array key cannot contain dot in the config.
+    $config_key = str_replace('.', '_', $link_id);
+
+    if (!empty($icons[$config_key])) {
+      $link['options']['icon_tag'] = !empty($icons[$config_key]['tag']) ? $icons[$config_key]['tag'] : 'i';
+      $link['options']['icon_appearance'] = !empty($icons[$config_key]['appearance']) ? $icons[$config_key]['appearance'] : 'before';
+      $link['options']['icon'] = !empty($icons[$config_key]['icon']) ? $icons[$config_key]['icon'] : $icons[$config_key];
+    }
+  }
+}
+
+/**
+ * Implements hook_link_alter().
+ */
+function menu_bootstrap_icon_link_alter(&$variables) {
+  if (!empty($variables['options']['icon']) && empty($variables['options']['already_processed'])) {
+    $class = $variables['options']['icon'];
+    $tag = !empty($variables['options']['icon_tag']) ? $variables['options']['icon_tag'] : 'i';
+    $appearance = !empty($variables['options']['icon_appearance']) ? $variables['options']['icon_appearance'] : 'before';
+
+    /** @var \Drupal\Core\Url $url */
+    $url = $variables['url'];
+    $is_link = ($url->isRouted() && ($url->getRouteName() == '<nolink>')) ? FALSE : TRUE;
+
+    switch ($appearance) {
+      case "only":
+        if ($is_link) {
+          $variables['options']['attributes']['aria-label'] = $variables['text'];
+          $variables['text'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true"></' . $tag . '>', []);
+        }
+        else {
+          $variables['text'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true" title="@title"></' . $tag . '><span class="sr-only">@title</span>', [
+            '@title' => $variables['text'],
+          ]);
+        }
+
+        break;
+
+      case "after":
+        $variables['text'] = new FormattableMarkup('@title <' . $tag . ' class="' . ' ' . $class . '" aria-hidden="true"></' . $tag . '>', [
+          '@title' => $variables['text'],
+        ]);
+        break;
+
+      case "before":
+      default:
+        $variables['text'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true"></' . $tag . '> <span class="link-text">@title</span>', [
+          '@title' => $variables['text'],
+        ]);
+        break;
+    }
+
+    $variables['options']['already_processed'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function menu_bootstrap_icon_preprocess_menu(&$variables, $hook) {
+  if (!empty($variables['items'])) {
+    _menu_bootstrap_preprocess_menu($variables['items']);
+  }
+}
+
+/**
+ * {@inheritdoc}
+ *
+ * Process menu.
+ */
+function _menu_bootstrap_preprocess_menu(&$items) {
+  foreach ($items as &$item) {
+    if (empty($item['url'])) {
+      continue;
+    }
+
+    _menu_bootstrap_preprocess_menu_item($item);
+
+    if (!empty($item['below'])) {
+      _menu_bootstrap_preprocess_menu($item['below']);
+    }
+  }
+}
+
+/**
+ * {@inheritdoc}
+ *
+ * Process menu item.
+ */
+function _menu_bootstrap_preprocess_menu_item(&$item) {
+  /** @var \Drupal\Core\Url $url */
+  $url = $item['url'];
+  $options = $url->getOptions();
+
+  if (!empty($options['icon']) && empty($options['already_processed'])) {
+    $class = $options['icon'];
+    $tag = !empty($options['icon_tag']) ? $options['icon_tag'] : 'i';
+    $appearance = !empty($options['icon_appearance']) ? $options['icon_appearance'] : 'before';
+    $is_link = ($url->isRouted() && ($url->getRouteName() == '<nolink>')) ? FALSE : TRUE;
+
+    switch ($appearance) {
+      case "only":
+        if ($is_link) {
+          $item['attributes']['aria-label'] = $item['title'];
+          $item['title'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true"></' . $tag . '>', []);
+        }
+        else {
+          $item['title'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true" title="@title"></' . $tag . '><span class="sr-only">@title</span>', [
+            '@title' => $item['title'],
+          ]);
+        }
+        break;
+
+      case "after":
+        $item['title'] = new FormattableMarkup('<span class="link-text">@title</span> <' . $tag . ' class="' . $class . '" aria-hidden="true"></' . $tag . '>', [
+          '@title' => $item['title'],
+        ]);
+        break;
+
+      case "before":
+      default:
+        $item['title'] = new FormattableMarkup('<' . $tag . ' class="' . $class . '" aria-hidden="true"></' . $tag . '> <span class="link-text">@title</span>', [
+          '@title' => $item['title'],
+        ]);
+        break;
+    }
+
+    $item['url']->setOption('already_processed', TRUE);
+  }
+}

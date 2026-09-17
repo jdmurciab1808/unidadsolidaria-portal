@@ -1,0 +1,13 @@
+name: 'Menu bootstrap icon'
+type: module
+description: 'add icon bootstrap to menu'
+core_version_requirement: ^9.3 || ^10
+configure: menu_bootstrap_icon.settings
+dependencies:
+  - drupal:menu_ui
+package: Menu
+
+# Information added by Drupal.org packaging script on 2023-06-09
+version: '1.0.0'
+project: 'menu_bootstrap_icon'
+datestamp: 1686331958

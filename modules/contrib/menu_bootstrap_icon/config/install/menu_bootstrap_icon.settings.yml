@@ -1,0 +1,9752 @@
+tag: 'i'
+use_cdn: true
+search_list:
+  - title: 'bi bi-0-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-0-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-0-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-0-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-1-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-1-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-1-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-1-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-123'
+    searchTerms:
+      - numbers
+  - title: 'bi bi-2-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-2-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-2-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-2-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-3-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-3-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-3-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-3-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-4-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-4-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-4-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-4-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-5-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-5-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-5-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-5-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-6-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-6-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-6-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-6-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-7-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-7-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-7-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-7-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-8-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-8-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-8-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-8-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-9-circle-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-9-circle'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-9-square-fill'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-9-square'
+    searchTerms:
+      - number
+      - numeral
+  - title: 'bi bi-activity'
+    searchTerms:
+      - pulse
+      - heartbeat
+      - rhythm
+  - title: 'bi bi-airplane-engines-fill'
+    searchTerms:
+      - flight
+      - flying
+      - plane
+      - air
+      - airport
+      - aircraft
+  - title: 'bi bi-airplane-engines'
+    searchTerms:
+      - flight
+      - flying
+      - plane
+      - air
+      - airport
+      - aircraft
+  - title: 'bi bi-airplane-fill'
+    searchTerms:
+      - flight
+      - flying
+      - plane
+      - air
+      - airport
+      - aircraft
+  - title: 'bi bi-airplane'
+    searchTerms:
+      - flight
+      - flying
+      - plane
+      - air
+      - airport
+      - aircraft
+  - title: 'bi bi-alarm-fill'
+    searchTerms:
+      - alarm
+      - clock
+      - time
+  - title: 'bi bi-alarm'
+    searchTerms:
+      - alarm
+      - clock
+      - time
+  - title: 'bi bi-alexa'
+    searchTerms:
+      - social
+      - assistant
+  - title: 'bi bi-align-bottom'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-align-center'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-align-end'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-align-middle'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-align-start'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-align-top'
+    searchTerms:
+      - space
+      - align
+      - distribute
+  - title: 'bi bi-alipay'
+    searchTerms:
+      - payments
+  - title: 'bi bi-alt'
+    searchTerms:
+      - key
+      - alt
+      - option
+  - title: 'bi bi-amd'
+    searchTerms:
+      - radeon
+  - title: 'bi bi-android'
+    searchTerms:
+      - google
+      - droid
+  - title: 'bi bi-android2'
+    searchTerms:
+      - google
+      - droid
+  - title: 'bi bi-app-indicator'
+    searchTerms:
+      - app
+      - application
+      - ios
+      - android
+      - notification
+      - square
+  - title: 'bi bi-app'
+    searchTerms:
+      - app
+      - application
+      - ios
+      - android
+      - square
+  - title: 'bi bi-apple'
+    searchTerms:
+      - aapl
+      - mac
+      - macintosh
+  - title: 'bi bi-archive-fill'
+    searchTerms:
+      - box
+      - delete
+  - title: 'bi bi-archive'
+    searchTerms:
+      - box
+      - delete
+  - title: 'bi bi-arrow-90deg-down'
+    searchTerms:
+      - arrow
+      - right-angle
+  - title: 'bi bi-arrow-90deg-left'
+    searchTerms:
+      - arrow
+      - right-angle
+  - title: 'bi bi-arrow-90deg-right'
+    searchTerms:
+      - arrow
+      - right-angle
+  - title: 'bi bi-arrow-90deg-up'
+    searchTerms:
+      - arrow
+      - right-angle
+  - title: 'bi bi-arrow-bar-down'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-bar-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-bar-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-bar-up'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-clockwise'
+    searchTerms:
+      - arrow
+      - right
+      - spin
+      - turn
+      - around
+      - round
+      - rotate
+      - refresh
+      - reload
+      - redo
+  - title: 'bi bi-arrow-counterclockwise'
+    searchTerms:
+      - arrow
+      - left
+      - spin
+      - turn
+      - around
+      - round
+      - rotate
+      - undo
+  - title: 'bi bi-arrow-down-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-left-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-left-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-left-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-left-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-down-right-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-right-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-down-right-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-right-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-down-short'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-down-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-down-up'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-down'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-left-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-left-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-left-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-left-short'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-left-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-left-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-repeat'
+    searchTerms:
+      - arrow
+      - spin
+      - turn
+      - around
+      - round
+      - rotate
+      - sync
+  - title: 'bi bi-arrow-return-left'
+    searchTerms:
+      - arrow
+      - return
+  - title: 'bi bi-arrow-return-right'
+    searchTerms:
+      - arrow
+      - return
+  - title: 'bi bi-arrow-right-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-right-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-right-short'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-right-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-right-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-through-heart-fill'
+    searchTerms:
+      - cupid
+      - love
+      - valentine
+  - title: 'bi bi-arrow-through-heart'
+    searchTerms:
+      - cupid
+      - love
+      - valentine
+  - title: 'bi bi-arrow-up-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-left-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-left-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-left-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up-left-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-up-right-circle-fill'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-right-circle'
+    searchTerms:
+      - arrow
+      - circle
+  - title: 'bi bi-arrow-up-right-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up-right-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-up-short'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrow-up-square-fill'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up-square'
+    searchTerms:
+      - arrow
+      - square
+  - title: 'bi bi-arrow-up'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrows-angle-contract'
+    searchTerms:
+      - arrow
+      - resize
+  - title: 'bi bi-arrows-angle-expand'
+    searchTerms:
+      - arrow
+      - resize
+  - title: 'bi bi-arrows-collapse'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrows-expand'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrows-fullscreen'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-arrows-move'
+    searchTerms:
+      - arrow
+      - cursor
+      - move
+  - title: 'bi bi-aspect-ratio-fill'
+    searchTerms:
+      - size
+      - resize
+      - crop
+      - dimensions
+  - title: 'bi bi-aspect-ratio'
+    searchTerms:
+      - size
+      - resize
+      - crop
+      - dimensions
+  - title: 'bi bi-asterisk'
+    searchTerms:
+      - asterisks
+      - star
+  - title: 'bi bi-at'
+    searchTerms:
+      - mention
+      - sign
+  - title: 'bi bi-award-fill'
+    searchTerms:
+      - prize
+      - rosette
+  - title: 'bi bi-award'
+    searchTerms:
+      - prize
+      - rosette
+  - title: 'bi bi-back'
+    searchTerms:
+      - backward
+      - layer
+  - title: 'bi bi-backspace-fill'
+    searchTerms:
+      - key
+  - title: 'bi bi-backspace-reverse-fill'
+    searchTerms:
+      - key
+  - title: 'bi bi-backspace-reverse'
+    searchTerms:
+      - key
+  - title: 'bi bi-backspace'
+    searchTerms:
+      - key
+  - title: 'bi bi-badge-3d-fill'
+    searchTerms:
+      - 3d
+      - display
+      - dimension
+  - title: 'bi bi-badge-3d'
+    searchTerms:
+      - 3d
+      - display
+      - dimension
+  - title: 'bi bi-badge-4k-fill'
+    searchTerms:
+      - 4k
+      - display
+      - resolution
+      - retina
+  - title: 'bi bi-badge-4k'
+    searchTerms:
+      - 4k
+      - display
+      - resolution
+      - retina
+  - title: 'bi bi-badge-8k-fill'
+    searchTerms:
+      - 4k
+      - display
+      - resolution
+      - retina
+  - title: 'bi bi-badge-8k'
+    searchTerms:
+      - 4k
+      - display
+      - resolution
+      - retina
+  - title: 'bi bi-badge-ad-fill'
+    searchTerms:
+      - advertisement
+  - title: 'bi bi-badge-ad'
+    searchTerms:
+      - advertisement
+  - title: 'bi bi-badge-ar-fill'
+    searchTerms:
+      - augmented
+      - reality
+      - ar
+  - title: 'bi bi-badge-ar'
+    searchTerms:
+      - augmented
+      - reality
+      - ar
+  - title: 'bi bi-badge-cc-fill'
+    searchTerms:
+      - 'closed captioning'
+  - title: 'bi bi-badge-cc'
+    searchTerms:
+      - 'closed captioning'
+  - title: 'bi bi-badge-hd-fill'
+    searchTerms:
+      - display
+      - resolution
+      - 'high definition'
+  - title: 'bi bi-badge-hd'
+    searchTerms:
+      - display
+      - resolution
+      - 'high definition'
+  - title: 'bi bi-badge-sd-fill'
+    searchTerms:
+      - display
+      - resolution
+      - 'standard definition'
+  - title: 'bi bi-badge-sd'
+    searchTerms:
+      - display
+      - resolution
+      - 'standard definition'
+  - title: 'bi bi-badge-tm-fill'
+    searchTerms:
+      - trademark
+  - title: 'bi bi-badge-tm'
+    searchTerms:
+      - trademark
+  - title: 'bi bi-badge-vo-fill'
+    searchTerms:
+      - voiceover
+      - accessibility
+  - title: 'bi bi-badge-vo'
+    searchTerms:
+      - voiceover
+      - accessibility
+  - title: 'bi bi-badge-vr-fill'
+    searchTerms:
+      - virtual
+      - reality
+      - vr
+  - title: 'bi bi-badge-vr'
+    searchTerms:
+      - virtual
+      - reality
+      - vr
+  - title: 'bi bi-badge-wc-fill'
+    searchTerms:
+      - 'wash closet'
+      - wc
+  - title: 'bi bi-badge-wc'
+    searchTerms:
+      - 'wash closet'
+      - wc
+  - title: 'bi bi-bag-check-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-check'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-dash-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-dash'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-fill'
+    searchTerms:
+      - shopping
+      - cart
+      - purchase
+      - buy
+  - title: 'bi bi-bag-heart-fill'
+    searchTerms:
+      - shopping
+      - cart
+      - purchase
+      - buy
+      - valentine
+      - love
+  - title: 'bi bi-bag-heart'
+    searchTerms:
+      - shopping
+      - cart
+      - purchase
+      - buy
+      - valentine
+      - love
+  - title: 'bi bi-bag-plus-fill'
+    searchTerms:
+      - shopping
+      - add
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-plus'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-x-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag-x'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-bag'
+    searchTerms:
+      - shopping
+      - cart
+      - purchase
+      - buy
+  - title: 'bi bi-balloon-fill'
+    searchTerms:
+      - birthday
+  - title: 'bi bi-balloon-heart-fill'
+    searchTerms:
+      - birthday
+      - valentine
+      - love
+  - title: 'bi bi-balloon-heart'
+    searchTerms:
+      - birthday
+      - valentine
+      - love
+  - title: 'bi bi-balloon'
+    searchTerms:
+      - birthday
+  - title: 'bi bi-bandaid-fill'
+    searchTerms:
+      - bandage
+      - health
+  - title: 'bi bi-bandaid'
+    searchTerms:
+      - bandage
+      - health
+  - title: 'bi bi-bank'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - market
+      - temple
+  - title: 'bi bi-bank2'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - market
+      - temple
+  - title: 'bi bi-bar-chart-fill'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-bar-chart-line-fill'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-bar-chart-line'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-bar-chart-steps'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-bar-chart'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-basket-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-basket'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-basket2-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-basket2'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-basket3-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-basket3'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-battery-charging'
+    searchTerms:
+      - power
+      - charge
+  - title: 'bi bi-battery-full'
+    searchTerms:
+      - power
+      - charge
+  - title: 'bi bi-battery-half'
+    searchTerms:
+      - power
+      - charge
+  - title: 'bi bi-battery'
+    searchTerms:
+      - power
+      - charge
+  - title: 'bi bi-behance'
+    searchTerms:
+      - social
+  - title: 'bi bi-bell-fill'
+    searchTerms:
+      - notification
+      - clock
+  - title: 'bi bi-bell-slash-fill'
+    searchTerms:
+      - notification
+      - silenced
+      - clock
+  - title: 'bi bi-bell-slash'
+    searchTerms:
+      - notification
+      - silenced
+      - clock
+  - title: 'bi bi-bell'
+    searchTerms:
+      - notification
+      - clock
+  - title: 'bi bi-bezier'
+    searchTerms:
+      - graphics
+      - vector
+      - pen
+  - title: 'bi bi-bezier2'
+    searchTerms:
+      - graphics
+      - vector
+      - pen
+  - title: 'bi bi-bicycle'
+    searchTerms:
+      - bike
+      - riding
+      - bicycling
+  - title: 'bi bi-binoculars-fill'
+    searchTerms:
+      - distance
+      - view
+      - search
+  - title: 'bi bi-binoculars'
+    searchTerms:
+      - distance
+      - view
+      - search
+  - title: 'bi bi-blockquote-left'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-blockquote-right'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-bluetooth'
+    searchTerms:
+      - wireless
+  - title: 'bi bi-body-text'
+    searchTerms:
+      - content
+  - title: 'bi bi-book-fill'
+    searchTerms:
+      - novel
+      - read
+      - magazine
+  - title: 'bi bi-book-half'
+    searchTerms:
+      - novel
+      - read
+      - magazine
+  - title: 'bi bi-book'
+    searchTerms:
+      - novel
+      - read
+      - magazine
+  - title: 'bi bi-bookmark-check-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-check'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-dash-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-dash'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-heart-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-heart'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-plus-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-plus'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-star-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-star'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-x-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark-x'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmark'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmarks-fill'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookmarks'
+    searchTerms:
+      - reading
+      - book
+      - label
+      - tag
+      - category
+  - title: 'bi bi-bookshelf'
+    searchTerms:
+      - shelf
+  - title: 'bi bi-boombox-fill'
+    searchTerms:
+      - music
+  - title: 'bi bi-boombox'
+    searchTerms:
+      - music
+  - title: 'bi bi-bootstrap-fill'
+    searchTerms:
+      - bootstrap
+  - title: 'bi bi-bootstrap-reboot'
+    searchTerms:
+      - bootstrap
+  - title: 'bi bi-bootstrap'
+    searchTerms:
+      - bootstrap
+  - title: 'bi bi-border-all'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-bottom'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-center'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-inner'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-left'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-middle'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-outer'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-right'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-style'
+    searchTerms:
+      - borders
+      - wysiwyg
+  - title: 'bi bi-border-top'
+    searchTerms:
+      - borders
+  - title: 'bi bi-border-width'
+    searchTerms:
+      - borders
+      - wysiwyg
+  - title: 'bi bi-border'
+    searchTerms:
+      - borders
+  - title: 'bi bi-bounding-box-circles'
+    searchTerms:
+      - text
+      - shape
+      - resize
+      - dimensions
+  - title: 'bi bi-bounding-box'
+    searchTerms:
+      - text
+      - shape
+      - resize
+      - dimensions
+  - title: 'bi bi-box-arrow-down-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-down-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-down'
+    searchTerms:
+      - arrow
+      - download
+      - save
+  - title: 'bi bi-box-arrow-in-down-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-in-down-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-in-down'
+    searchTerms:
+      - arrow
+      - upload
+  - title: 'bi bi-box-arrow-in-left'
+    searchTerms:
+      - arrow
+      - login
+      - signin
+      - enter
+  - title: 'bi bi-box-arrow-in-right'
+    searchTerms:
+      - arrow
+      - login
+      - signin
+      - enter
+  - title: 'bi bi-box-arrow-in-up-left'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-in-up-right'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-in-up'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-arrow-left'
+    searchTerms:
+      - arrow
+      - logout
+      - signout
+      - exit
+  - title: 'bi bi-box-arrow-right'
+    searchTerms:
+      - arrow
+      - logout
+      - signout
+      - exit
+  - title: 'bi bi-box-arrow-up-left'
+    searchTerms:
+      - arrow
+      - 'external link'
+  - title: 'bi bi-box-arrow-up-right'
+    searchTerms:
+      - arrow
+      - 'external link'
+  - title: 'bi bi-box-arrow-up'
+    searchTerms:
+      - arrow
+  - title: 'bi bi-box-fill'
+    searchTerms:
+      - cardboard
+      - package
+  - title: 'bi bi-box-seam-fill'
+    searchTerms:
+      - cardboard
+      - package
+  - title: 'bi bi-box-seam'
+    searchTerms:
+      - cardboard
+      - package
+  - title: 'bi bi-box'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+  - title: 'bi bi-box2-fill'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+  - title: 'bi bi-box2-heart-fill'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+      - gift
+      - valentine
+      - love
+  - title: 'bi bi-box2-heart'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+      - gift
+      - valentine
+      - love
+  - title: 'bi bi-box2'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+  - title: 'bi bi-boxes'
+    searchTerms:
+      - cardboard
+      - package
+      - cube
+  - title: 'bi bi-braces-asterisk'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+  - title: 'bi bi-braces'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+  - title: 'bi bi-bricks'
+    searchTerms:
+      - wall
+      - firewall
+  - title: 'bi bi-briefcase-fill'
+    searchTerms:
+      - business
+      - bag
+      - baggage
+  - title: 'bi bi-briefcase'
+    searchTerms:
+      - business
+      - bag
+      - baggage
+  - title: 'bi bi-brightness-alt-high-fill'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-alt-high'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-alt-low-fill'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-alt-low'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-high-fill'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-high'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-low-fill'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-brightness-low'
+    searchTerms:
+      - brightness
+      - sun
+      - weather
+  - title: 'bi bi-broadcast-pin'
+    searchTerms:
+      - radio
+      - 'radio wave'
+      - amplify
+      - wavelength
+      - podcast
+  - title: 'bi bi-broadcast'
+    searchTerms:
+      - radio
+      - 'radio wave'
+      - amplify
+      - wavelength
+  - title: 'bi bi-browser-chrome'
+    searchTerms:
+      - google
+      - webkit
+      - blink
+  - title: 'bi bi-browser-edge'
+    searchTerms:
+      - microsoft
+      - webkit
+  - title: 'bi bi-browser-firefox'
+    searchTerms:
+      - gecko
+  - title: 'bi bi-browser-safari'
+    searchTerms:
+      - webkit
+      - apple
+  - title: 'bi bi-brush-fill'
+    searchTerms:
+      - paint
+      - art
+  - title: 'bi bi-brush'
+    searchTerms:
+      - paint
+      - art
+  - title: 'bi bi-bucket-fill'
+    searchTerms:
+      - tool
+      - pail
+  - title: 'bi bi-bucket'
+    searchTerms:
+      - tool
+      - pail
+  - title: 'bi bi-bug-fill'
+    searchTerms:
+      - insect
+      - error
+  - title: 'bi bi-bug'
+    searchTerms:
+      - insect
+      - error
+  - title: 'bi bi-building-add'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-check'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-dash'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-down'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-exclamation'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-add'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-check'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-dash'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-down'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-exclamation'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-gear'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-lock'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-slash'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-up'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill-x'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-fill'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-gear'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-lock'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-slash'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-up'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building-x'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-building'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-buildings-fill'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-buildings'
+    searchTerms:
+      - company
+      - enterprise
+      - organization
+      - office
+      - business
+  - title: 'bi bi-bullseye'
+    searchTerms:
+      - target
+  - title: 'bi bi-bus-front-fill'
+    searchTerms:
+      - 'public transit'
+      - commute
+  - title: 'bi bi-bus-front'
+    searchTerms:
+      - 'public transit'
+      - commute
+  - title: 'bi bi-c-circle-fill'
+    searchTerms:
+      - copyright
+  - title: 'bi bi-c-circle'
+    searchTerms:
+      - copyright
+  - title: 'bi bi-c-square-fill'
+    searchTerms:
+      - copyright
+  - title: 'bi bi-c-square'
+    searchTerms:
+      - copyright
+  - title: 'bi bi-calculator-fill'
+    searchTerms:
+      - calculator
+      - math
+  - title: 'bi bi-calculator'
+    searchTerms:
+      - calculator
+      - math
+  - title: 'bi bi-calendar-check-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-check'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-date-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-date'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-day-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-day'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-event-fill'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar-event'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-heart-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+      - valentine
+      - date
+  - title: 'bi bi-calendar-heart'
+    searchTerms:
+      - date
+      - time
+      - month
+      - valentine
+      - date
+  - title: 'bi bi-calendar-minus-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-minus'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-month-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-month'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-plus-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-plus'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar-range-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar-range'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar-week-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar-week'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar-x-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+      - remove
+      - delete
+  - title: 'bi bi-calendar-x'
+    searchTerms:
+      - date
+      - time
+      - month
+      - remove
+      - delete
+  - title: 'bi bi-calendar'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-check-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-check'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-date-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-date'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-day-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-day'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-event-fill'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar2-event'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar2-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-heart-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+      - valentine
+      - date
+  - title: 'bi bi-calendar2-heart'
+    searchTerms:
+      - date
+      - time
+      - month
+      - valentine
+      - date
+  - title: 'bi bi-calendar2-minus-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-minus'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-month-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-month'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-plus-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-plus'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar2-range-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar2-range'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar2-week-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar2-week'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar2-x-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+      - remove
+      - delete
+  - title: 'bi bi-calendar2-x'
+    searchTerms:
+      - date
+      - time
+      - month
+      - remove
+      - delete
+  - title: 'bi bi-calendar2'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar3-event-fill'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar3-event'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar3-fill'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar3-range-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar3-range'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar3-week-fill'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar3-week'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar3'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-calendar4-event'
+    searchTerms:
+      - date
+      - time
+      - event
+      - invite
+  - title: 'bi bi-calendar4-range'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+  - title: 'bi bi-calendar4-week'
+    searchTerms:
+      - dates
+      - timeline
+      - duration
+      - week
+  - title: 'bi bi-calendar4'
+    searchTerms:
+      - date
+      - time
+      - month
+  - title: 'bi bi-camera-fill'
+    searchTerms:
+      - photos
+      - photography
+  - title: 'bi bi-camera-reels-fill'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera-reels'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera-video-fill'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera-video-off-fill'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera-video-off'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera-video'
+    searchTerms:
+      - av
+      - video
+      - film
+  - title: 'bi bi-camera'
+    searchTerms:
+      - photos
+      - photography
+  - title: 'bi bi-camera2'
+    searchTerms:
+      - photos
+      - photography
+  - title: 'bi bi-capslock-fill'
+    searchTerms:
+      - key
+  - title: 'bi bi-capslock'
+    searchTerms:
+      - key
+  - title: 'bi bi-capsule-pill'
+    searchTerms:
+      - rx
+      - pills
+      - capsules
+      - medicine
+  - title: 'bi bi-capsule'
+    searchTerms:
+      - rx
+      - pills
+      - capsules
+      - medicine
+  - title: 'bi bi-car-front-fill'
+    searchTerms:
+      - automobile
+      - automotive
+      - auto
+      - sedan
+      - drive
+      - driving
+  - title: 'bi bi-car-front'
+    searchTerms:
+      - automobile
+      - automotive
+      - auto
+      - sedan
+      - drive
+      - driving
+  - title: 'bi bi-card-checklist'
+    searchTerms:
+      - note
+      - card
+      - notecard
+  - title: 'bi bi-card-heading'
+    searchTerms:
+      - note
+      - card
+      - notecard
+  - title: 'bi bi-card-image'
+    searchTerms:
+      - note
+      - card
+      - notecard
+  - title: 'bi bi-card-list'
+    searchTerms:
+      - note
+      - card
+      - notecard
+  - title: 'bi bi-card-text'
+    searchTerms:
+      - note
+      - card
+      - notecard
+      - letter
+  - title: 'bi bi-caret-down-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-down-square-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-down-square'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-down'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-left-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-left-square-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-left-square'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-left'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-right-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-right-square-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-right-square'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-right'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-up-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-up-square-fill'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-up-square'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-caret-up'
+    searchTerms:
+      - caret
+      - arrow
+      - triangle
+  - title: 'bi bi-cart-check-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-check'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-dash-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-dash'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-plus-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-plus'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-x-fill'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart-x'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart2'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart3'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cart4'
+    searchTerms:
+      - shopping
+      - checkout
+      - check
+      - cart
+      - basket
+      - bag
+  - title: 'bi bi-cash-coin'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - currency
+  - title: 'bi bi-cash-stack'
+    searchTerms:
+      - money
+      - bills
+      - funds
+      - wallet
+      - currency
+  - title: 'bi bi-cash'
+    searchTerms:
+      - money
+      - bills
+      - funds
+      - wallet
+      - currency
+  - title: 'bi bi-cassette-fill'
+    searchTerms:
+      - tape
+      - music
+      - audio
+  - title: 'bi bi-cassette'
+    searchTerms:
+      - tape
+      - music
+      - audio
+  - title: 'bi bi-cast'
+    searchTerms:
+      - airplay
+      - project
+      - stream
+      - display
+  - title: 'bi bi-cc-circle-fill'
+    searchTerms:
+      - 'creative commons'
+  - title: 'bi bi-cc-circle'
+    searchTerms:
+      - 'creative commons'
+  - title: 'bi bi-cc-square-fill'
+    searchTerms:
+      - 'creative commons'
+  - title: 'bi bi-cc-square'
+    searchTerms:
+      - 'creative commons'
+  - title: 'bi bi-chat-dots-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-dots'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-heart-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-heart'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-left-dots-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-left-dots'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-left-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-left-heart-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-left-heart'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-left-quote-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-left-quote'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-left-text-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-left-text'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-left'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-quote-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-quote'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-right-dots-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-right-dots'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-right-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-right-heart-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-right-heart'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-right-quote-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-right-quote'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-right-text-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-right-text'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-right'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-square-dots-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-square-dots'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - typing
+  - title: 'bi bi-chat-square-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-square-heart-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-square-heart'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - valentine
+      - romance
+  - title: 'bi bi-chat-square-quote-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-square-quote'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+      - quote
+  - title: 'bi bi-chat-square-text-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-square-text'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-square'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-text-fill'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat-text'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-chat'
+    searchTerms:
+      - 'chat bubble'
+      - text
+      - message
+  - title: 'bi bi-check-all'
+    searchTerms:
+      - checkmark
+      - todo
+      - done
+      - select
+  - title: 'bi bi-check-circle-fill'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check-circle'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check-lg'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check-square-fill'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check-square'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check'
+    searchTerms:
+      - checkmark
+      - confirm
+      - done
+  - title: 'bi bi-check2-all'
+    searchTerms:
+      - checkmark
+      - todo
+      - select
+      - done
+      - checkbox
+  - title: 'bi bi-check2-circle'
+    searchTerms:
+      - checkmark
+      - todo
+      - select
+      - done
+      - checkbox
+  - title: 'bi bi-check2-square'
+    searchTerms:
+      - checkmark
+      - todo
+      - select
+      - done
+      - checkbox
+  - title: 'bi bi-check2'
+    searchTerms:
+      - checkmark
+      - todo
+      - select
+      - done
+      - checkbox
+  - title: 'bi bi-chevron-bar-contract'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-bar-down'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-bar-expand'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-bar-left'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-bar-right'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-bar-up'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-compact-down'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-compact-left'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-compact-right'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-compact-up'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-contract'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-double-down'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-double-left'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-double-right'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-double-up'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-down'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-expand'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-left'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-right'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-chevron-up'
+    searchTerms:
+      - chevron
+  - title: 'bi bi-circle-fill'
+    searchTerms:
+      - shape
+  - title: 'bi bi-circle-half'
+    searchTerms:
+      - shape
+  - title: 'bi bi-circle-square'
+    searchTerms:
+      - graphics
+      - vector
+      - merge
+      - layers
+  - title: 'bi bi-circle'
+    searchTerms:
+      - shape
+  - title: 'bi bi-clipboard-check-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-check'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-data-fill'
+    searchTerms:
+      - copy
+      - paste
+      - data
+      - analytics
+      - graph
+      - chart
+  - title: 'bi bi-clipboard-data'
+    searchTerms:
+      - copy
+      - paste
+      - data
+      - analytics
+      - graph
+      - chart
+  - title: 'bi bi-clipboard-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-heart-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-heart'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-minus-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-minus'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-plus-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-plus'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-pulse'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-x-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard-x'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-check-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-check'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-data-fill'
+    searchTerms:
+      - copy
+      - paste
+      - data
+      - analytics
+      - graph
+      - chart
+  - title: 'bi bi-clipboard2-data'
+    searchTerms:
+      - copy
+      - paste
+      - data
+      - analytics
+      - graph
+      - chart
+  - title: 'bi bi-clipboard2-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-heart-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-heart'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-minus-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-minus'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-plus-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-plus'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-pulse-fill'
+    searchTerms:
+      - copy
+      - paste
+      - heartrate
+  - title: 'bi bi-clipboard2-pulse'
+    searchTerms:
+      - copy
+      - paste
+      - heartrate
+  - title: 'bi bi-clipboard2-x-fill'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2-x'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clipboard2'
+    searchTerms:
+      - copy
+      - paste
+  - title: 'bi bi-clock-fill'
+    searchTerms:
+      - time
+  - title: 'bi bi-clock-history'
+    searchTerms:
+      - time
+      - history
+  - title: 'bi bi-clock'
+    searchTerms:
+      - time
+  - title: 'bi bi-cloud-arrow-down-fill'
+    searchTerms:
+      - download
+  - title: 'bi bi-cloud-arrow-down'
+    searchTerms:
+      - download
+  - title: 'bi bi-cloud-arrow-up-fill'
+    searchTerms:
+      - upload
+  - title: 'bi bi-cloud-arrow-up'
+    searchTerms:
+      - upload
+  - title: 'bi bi-cloud-check-fill'
+    searchTerms:
+      - checkmark
+  - title: 'bi bi-cloud-check'
+    searchTerms:
+      - checkmark
+  - title: 'bi bi-cloud-download-fill'
+    searchTerms:
+      - arrow
+      - save
+  - title: 'bi bi-cloud-download'
+    searchTerms:
+      - arrow
+      - save
+  - title: 'bi bi-cloud-drizzle-fill'
+    searchTerms:
+      - storm
+      - rain
+  - title: 'bi bi-cloud-drizzle'
+    searchTerms:
+      - storm
+      - rain
+  - title: 'bi bi-cloud-fill'
+    searchTerms:
+      - weather
+  - title: 'bi bi-cloud-fog-fill'
+    searchTerms:
+      - foggy
+  - title: 'bi bi-cloud-fog'
+    searchTerms:
+      - foggy
+  - title: 'bi bi-cloud-fog2-fill'
+    searchTerms:
+      - foggy
+  - title: 'bi bi-cloud-fog2'
+    searchTerms:
+      - foggy
+  - title: 'bi bi-cloud-hail-fill'
+    searchTerms:
+      - storm
+  - title: 'bi bi-cloud-hail'
+    searchTerms:
+      - storm
+  - title: 'bi bi-cloud-haze-fill'
+    searchTerms:
+      - smog
+  - title: 'bi bi-cloud-haze'
+    searchTerms:
+      - smog
+  - title: 'bi bi-cloud-haze2-fill'
+    searchTerms:
+      - smog
+  - title: 'bi bi-cloud-haze2'
+    searchTerms:
+      - smog
+  - title: 'bi bi-cloud-lightning-fill'
+    searchTerms:
+      - thunder
+      - storm
+  - title: 'bi bi-cloud-lightning-rain-fill'
+    searchTerms:
+      - thunder
+      - storm
+  - title: 'bi bi-cloud-lightning-rain'
+    searchTerms:
+      - thunder
+      - storm
+  - title: 'bi bi-cloud-lightning'
+    searchTerms:
+      - thunder
+      - storm
+  - title: 'bi bi-cloud-minus-fill'
+    searchTerms:
+      - subtract
+  - title: 'bi bi-cloud-minus'
+    searchTerms:
+      - subtract
+  - title: 'bi bi-cloud-moon-fill'
+    searchTerms:
+      - cloudy
+      - overcast
+  - title: 'bi bi-cloud-moon'
+    searchTerms:
+      - cloudy
+      - overcast
+  - title: 'bi bi-cloud-plus-fill'
+    searchTerms:
+      - add
+      - new
+      - upload
+  - title: 'bi bi-cloud-plus'
+    searchTerms:
+      - add
+      - new
+      - upload
+  - title: 'bi bi-cloud-rain-fill'
+    searchTerms:
+      - cloud
+      - rainstorm
+      - storm
+  - title: 'bi bi-cloud-rain-heavy-fill'
+    searchTerms:
+      - cloud
+      - rainstorm
+      - storm
+  - title: 'bi bi-cloud-rain-heavy'
+    searchTerms:
+      - cloud
+      - rainstorm
+      - storm
+  - title: 'bi bi-cloud-rain'
+    searchTerms:
+      - cloud
+      - rainstorm
+      - storm
+  - title: 'bi bi-cloud-slash-fill'
+    searchTerms:
+      - cloud
+  - title: 'bi bi-cloud-slash'
+    searchTerms:
+      - cloud
+  - title: 'bi bi-cloud-sleet-fill'
+    searchTerms:
+      - cloud
+      - blizzard
+      - flurries
+  - title: 'bi bi-cloud-sleet'
+    searchTerms:
+      - cloud
+      - blizzard
+      - flurries
+  - title: 'bi bi-cloud-snow-fill'
+    searchTerms:
+      - cloud
+      - blizzard
+      - flurries
+  - title: 'bi bi-cloud-snow'
+    searchTerms:
+      - cloud
+      - blizzard
+      - flurries
+  - title: 'bi bi-cloud-sun-fill'
+    searchTerms:
+      - cloudy
+      - overcast
+  - title: 'bi bi-cloud-sun'
+    searchTerms:
+      - cloudy
+      - overcast
+  - title: 'bi bi-cloud-upload-fill'
+    searchTerms:
+      - cloud
+  - title: 'bi bi-cloud-upload'
+    searchTerms:
+      - cloud
+  - title: 'bi bi-cloud'
+    searchTerms:
+      - weather
+  - title: 'bi bi-clouds-fill'
+    searchTerms:
+      - clouds
+      - overcast
+  - title: 'bi bi-clouds'
+    searchTerms:
+      - clouds
+      - overcast
+  - title: 'bi bi-cloudy-fill'
+    searchTerms:
+      - clouds
+      - overcast
+  - title: 'bi bi-cloudy'
+    searchTerms:
+      - clouds
+      - overcast
+  - title: 'bi bi-code-slash'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+  - title: 'bi bi-code-square'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+      - preformatted
+  - title: 'bi bi-code'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+  - title: 'bi bi-coin'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - currency
+  - title: 'bi bi-collection-fill'
+    searchTerms:
+      - library
+      - group
+  - title: 'bi bi-collection-play-fill'
+    searchTerms:
+      - library
+      - group
+      - play
+  - title: 'bi bi-collection-play'
+    searchTerms:
+      - library
+      - group
+      - play
+  - title: 'bi bi-collection'
+    searchTerms:
+      - library
+      - group
+  - title: 'bi bi-columns-gap'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-columns'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-command'
+    searchTerms:
+      - key
+      - mac
+  - title: 'bi bi-compass-fill'
+    searchTerms:
+      - direction
+      - map
+      - location
+  - title: 'bi bi-compass'
+    searchTerms:
+      - direction
+      - map
+      - location
+  - title: 'bi bi-cone-striped'
+    searchTerms:
+      - construction
+      - warning
+      - safety
+  - title: 'bi bi-cone'
+    searchTerms:
+      - construction
+      - warning
+      - safety
+  - title: 'bi bi-controller'
+    searchTerms:
+      - game
+      - gaming
+      - video-game
+  - title: 'bi bi-cpu-fill'
+    searchTerms:
+      - processor
+      - chip
+      - computer
+  - title: 'bi bi-cpu'
+    searchTerms:
+      - processor
+      - chip
+      - computer
+  - title: 'bi bi-credit-card-2-back-fill'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-credit-card-2-back'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-credit-card-2-front-fill'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-credit-card-2-front'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-credit-card-fill'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-credit-card'
+    searchTerms:
+      - debit
+      - card
+      - payment
+  - title: 'bi bi-crop'
+    searchTerms:
+      - crop
+  - title: 'bi bi-cup-fill'
+    searchTerms:
+      - mug
+  - title: 'bi bi-cup-hot-fill'
+    searchTerms:
+      - mug
+      - steam
+      - coffee
+      - tea
+  - title: 'bi bi-cup-hot'
+    searchTerms:
+      - mug
+      - steam
+      - coffee
+      - tea
+  - title: 'bi bi-cup-straw'
+    searchTerms:
+      - mug
+      - glass
+      - drink
+  - title: 'bi bi-cup'
+    searchTerms:
+      - mug
+  - title: 'bi bi-currency-bitcoin'
+    searchTerms:
+      - money
+      - finance
+      - crypto
+  - title: 'bi bi-currency-dollar'
+    searchTerms:
+      - money
+      - finance
+      - usd
+  - title: 'bi bi-currency-euro'
+    searchTerms:
+      - money
+      - finance
+  - title: 'bi bi-currency-exchange'
+    searchTerms:
+      - money
+      - finance
+  - title: 'bi bi-currency-pound'
+    searchTerms:
+      - money
+      - finance
+  - title: 'bi bi-currency-rupee'
+    searchTerms:
+      - money
+      - finance
+  - title: 'bi bi-currency-yen'
+    searchTerms:
+      - money
+      - finance
+  - title: 'bi bi-cursor-fill'
+    searchTerms:
+      - pointer
+  - title: 'bi bi-cursor-text'
+    searchTerms:
+      - text
+      - type
+      - cursor
+  - title: 'bi bi-cursor'
+    searchTerms:
+      - pointer
+  - title: 'bi bi-dash-circle-dotted'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-circle-fill'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-circle'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-lg'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-square-dotted'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-square-fill'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash-square'
+    searchTerms:
+      - minus
+  - title: 'bi bi-dash'
+    searchTerms:
+      - minus
+  - title: 'bi bi-database-add'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-check'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-dash'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-down'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-exclamation'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-add'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-check'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-dash'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-down'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-exclamation'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-gear'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-lock'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-slash'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-up'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill-x'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-fill'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-gear'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-lock'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-slash'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-up'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database-x'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-database'
+    searchTerms:
+      - server
+      - data
+  - title: 'bi bi-device-hdd-fill'
+    searchTerms:
+      - drive
+      - 'hard drive'
+  - title: 'bi bi-device-hdd'
+    searchTerms:
+      - drive
+      - 'hard drive'
+  - title: 'bi bi-device-ssd-fill'
+    searchTerms:
+      - 'solid state'
+      - drive
+  - title: 'bi bi-device-ssd'
+    searchTerms:
+      - 'solid state'
+      - drive
+  - title: 'bi bi-diagram-2-fill'
+    searchTerms:
+      - node
+      - diagram
+      - sitemap
+      - children
+      - 'org chart'
+  - title: 'bi bi-diagram-2'
+    searchTerms:
+      - node
+      - diagram
+      - sitemap
+      - children
+      - 'org chart'
+  - title: 'bi bi-diagram-3-fill'
+    searchTerms:
+      - node
+      - diagram
+      - sitemap
+      - children
+      - 'org chart'
+  - title: 'bi bi-diagram-3'
+    searchTerms:
+      - node
+      - diagram
+      - sitemap
+      - children
+      - 'org chart'
+  - title: 'bi bi-diamond-fill'
+    searchTerms:
+      - shape
+  - title: 'bi bi-diamond-half'
+    searchTerms:
+      - shape
+  - title: 'bi bi-diamond'
+    searchTerms:
+      - shape
+  - title: 'bi bi-dice-1-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-1'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-2-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-2'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-3-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-3'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-4-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-4'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-5-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-5'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-6-fill'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-dice-6'
+    searchTerms:
+      - dice
+      - die
+      - games
+      - gaming
+      - gambling
+  - title: 'bi bi-disc-fill'
+    searchTerms:
+      - cd
+      - 'compact disc'
+      - bluray
+      - dvd
+  - title: 'bi bi-disc'
+    searchTerms:
+      - cd
+      - 'compact disc'
+      - bluray
+      - dvd
+  - title: 'bi bi-discord'
+    searchTerms:
+      - social
+      - chat
+  - title: 'bi bi-display-fill'
+    searchTerms:
+      - monitor
+      - external
+  - title: 'bi bi-display'
+    searchTerms:
+      - monitor
+      - external
+  - title: 'bi bi-displayport-fill'
+    searchTerms:
+      - video
+      - input
+  - title: 'bi bi-displayport'
+    searchTerms:
+      - video
+      - input
+  - title: 'bi bi-distribute-horizontal'
+    searchTerms:
+      - space
+      - align
+  - title: 'bi bi-distribute-vertical'
+    searchTerms:
+      - space
+      - align
+  - title: 'bi bi-door-closed-fill'
+    searchTerms:
+      - door
+      - logout
+      - signout
+  - title: 'bi bi-door-closed'
+    searchTerms:
+      - door
+      - logout
+      - signout
+  - title: 'bi bi-door-open-fill'
+    searchTerms:
+      - door
+      - login
+      - signin
+  - title: 'bi bi-door-open'
+    searchTerms:
+      - door
+      - login
+      - signin
+  - title: 'bi bi-dot'
+    searchTerms:
+      - middot
+  - title: 'bi bi-download'
+    searchTerms:
+      - arrow
+      - network
+      - save
+  - title: 'bi bi-dpad-fill'
+    searchTerms:
+      - gaming
+      - controller
+      - direction
+  - title: 'bi bi-dpad'
+    searchTerms:
+      - gaming
+      - controller
+      - direction
+  - title: 'bi bi-dribbble'
+    searchTerms:
+      - social
+  - title: 'bi bi-dropbox'
+    searchTerms:
+      - dropbox
+  - title: 'bi bi-droplet-fill'
+    searchTerms:
+      - water-drop
+      - paint
+      - ink
+      - liquid
+  - title: 'bi bi-droplet-half'
+    searchTerms:
+      - water-drop
+      - paint
+      - ink
+      - liquid
+  - title: 'bi bi-droplet'
+    searchTerms:
+      - water-drop
+      - paint
+      - ink
+      - liquid
+  - title: 'bi bi-ear-fill'
+    searchTerms:
+      - hearing
+      - sound
+      - listen
+  - title: 'bi bi-ear'
+    searchTerms:
+      - hearing
+      - sound
+      - listen
+  - title: 'bi bi-earbuds'
+    searchTerms:
+      - headphones
+  - title: 'bi bi-easel-fill'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-easel'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-easel2-fill'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-easel2'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-easel3-fill'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-easel3'
+    searchTerms:
+      - paint
+      - draw
+      - art
+      - present
+  - title: 'bi bi-egg-fill'
+    searchTerms:
+      - food
+  - title: 'bi bi-egg-fried'
+    searchTerms:
+      - food
+  - title: 'bi bi-egg'
+    searchTerms:
+      - food
+  - title: 'bi bi-eject-fill'
+    searchTerms:
+      - disc
+      - cd
+      - dvd
+  - title: 'bi bi-eject'
+    searchTerms:
+      - disc
+      - cd
+      - dvd
+  - title: 'bi bi-emoji-angry-fill'
+    searchTerms:
+      - emoticon
+      - anger
+      - upset
+  - title: 'bi bi-emoji-angry'
+    searchTerms:
+      - emoticon
+      - anger
+      - upset
+  - title: 'bi bi-emoji-dizzy-fill'
+    searchTerms:
+      - emoticon
+  - title: 'bi bi-emoji-dizzy'
+    searchTerms:
+      - emoticon
+  - title: 'bi bi-emoji-expressionless-fill'
+    searchTerms:
+      - emoticon
+      - neutral
+      - unphased
+  - title: 'bi bi-emoji-expressionless'
+    searchTerms:
+      - emoticon
+      - neutral
+      - unphased
+  - title: 'bi bi-emoji-frown-fill'
+    searchTerms:
+      - emoticon
+      - sad
+  - title: 'bi bi-emoji-frown'
+    searchTerms:
+      - emoticon
+      - sad
+  - title: 'bi bi-emoji-heart-eyes-fill'
+    searchTerms:
+      - emoticon
+      - heart
+      - love
+  - title: 'bi bi-emoji-heart-eyes'
+    searchTerms:
+      - emoticon
+      - heart
+      - love
+  - title: 'bi bi-emoji-kiss-fill'
+    searchTerms:
+      - emoticon
+      - heart
+      - love
+  - title: 'bi bi-emoji-kiss'
+    searchTerms:
+      - emoticon
+      - heart
+      - love
+  - title: 'bi bi-emoji-laughing-fill'
+    searchTerms:
+      - emoticon
+      - happy
+  - title: 'bi bi-emoji-laughing'
+    searchTerms:
+      - emoticon
+      - happy
+  - title: 'bi bi-emoji-neutral-fill'
+    searchTerms:
+      - emoticon
+      - expressionless
+  - title: 'bi bi-emoji-neutral'
+    searchTerms:
+      - emoticon
+      - expressionless
+  - title: 'bi bi-emoji-smile-fill'
+    searchTerms:
+      - emoticon
+      - happy
+  - title: 'bi bi-emoji-smile-upside-down-fill'
+    searchTerms:
+      - emoticon
+      - sarcasm
+  - title: 'bi bi-emoji-smile-upside-down'
+    searchTerms:
+      - emoticon
+      - sarcasm
+  - title: 'bi bi-emoji-smile'
+    searchTerms:
+      - emoticon
+      - happy
+  - title: 'bi bi-emoji-sunglasses-fill'
+    searchTerms:
+      - emoticon
+      - cool
+  - title: 'bi bi-emoji-sunglasses'
+    searchTerms:
+      - emoticon
+      - cool
+  - title: 'bi bi-emoji-wink-fill'
+    searchTerms:
+      - emoticon
+  - title: 'bi bi-emoji-wink'
+    searchTerms:
+      - emoticon
+  - title: 'bi bi-envelope-at-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-at'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-check-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-check'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-dash-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-dash'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-exclamation-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-exclamation'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-heart-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-heart'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-open-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-open-heart-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-open-heart'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-open'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-paper-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-paper-heart-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-paper-heart'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-envelope-paper'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-plus-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-plus'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-slash-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-slash'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-x-fill'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope-x'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-envelope'
+    searchTerms:
+      - email
+      - message
+      - mail
+      - letter
+  - title: 'bi bi-eraser-fill'
+    searchTerms:
+      - erase
+      - remove
+  - title: 'bi bi-eraser'
+    searchTerms:
+      - erase
+      - remove
+  - title: 'bi bi-escape'
+    searchTerms:
+      - esc
+      - quit
+      - exit
+  - title: 'bi bi-ethernet'
+    searchTerms:
+      - internet
+      - connection
+      - port
+      - plug
+  - title: 'bi bi-ev-front-fill'
+    searchTerms:
+      - car
+      - automobile
+      - automotive
+      - auto
+      - sedan
+      - drive
+      - driving
+  - title: 'bi bi-ev-front'
+    searchTerms:
+      - car
+      - automobile
+      - automotive
+      - auto
+      - sedan
+      - drive
+      - driving
+  - title: 'bi bi-ev-station-fill'
+    searchTerms:
+      - charging
+      - 'electric vehicle'
+  - title: 'bi bi-ev-station'
+    searchTerms:
+      - charging
+      - 'electric vehicle'
+  - title: 'bi bi-exclamation-circle-fill'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-circle'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-diamond-fill'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-diamond'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-lg'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-octagon-fill'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-octagon'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-square-fill'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-square'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-triangle-fill'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation-triangle'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclamation'
+    searchTerms:
+      - alert
+      - warning
+  - title: 'bi bi-exclude'
+    searchTerms:
+      - graphics
+      - vector
+      - merge
+      - layers
+  - title: 'bi bi-explicit-fill'
+    searchTerms:
+      - r18
+  - title: 'bi bi-explicit'
+    searchTerms:
+      - r18
+  - title: 'bi bi-eye-fill'
+    searchTerms:
+      - eyeball
+      - look
+      - see
+  - title: 'bi bi-eye-slash-fill'
+    searchTerms:
+      - eyeball
+      - look
+      - see
+  - title: 'bi bi-eye-slash'
+    searchTerms:
+      - eyeball
+      - look
+      - see
+  - title: 'bi bi-eye'
+    searchTerms:
+      - eyeball
+      - look
+      - see
+  - title: 'bi bi-eyedropper'
+    searchTerms:
+      - color
+      - picker
+  - title: 'bi bi-eyeglasses'
+    searchTerms:
+      - eyeball
+      - look
+      - see
+      - glasses
+      - reading
+  - title: 'bi bi-facebook'
+    searchTerms:
+      - social
+  - title: 'bi bi-fan'
+    searchTerms:
+      - fan
+      - vent
+      - airflow
+  - title: 'bi bi-fast-forward-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-fast-forward-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-fast-forward-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-fast-forward-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-fast-forward-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-fast-forward'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-file-arrow-down-fill'
+    searchTerms:
+      - doc
+      - document
+      - download
+  - title: 'bi bi-file-arrow-down'
+    searchTerms:
+      - doc
+      - document
+      - download
+  - title: 'bi bi-file-arrow-up-fill'
+    searchTerms:
+      - doc
+      - document
+      - upload
+  - title: 'bi bi-file-arrow-up'
+    searchTerms:
+      - doc
+      - document
+      - upload
+  - title: 'bi bi-file-bar-graph-fill'
+    searchTerms:
+      - doc
+      - document
+      - data
+      - chart
+  - title: 'bi bi-file-bar-graph'
+    searchTerms:
+      - doc
+      - document
+      - data
+      - chart
+  - title: 'bi bi-file-binary-fill'
+    searchTerms:
+      - doc
+      - document
+      - binary
+      - source
+  - title: 'bi bi-file-binary'
+    searchTerms:
+      - doc
+      - document
+      - binary
+      - source
+  - title: 'bi bi-file-break-fill'
+    searchTerms:
+      - doc
+      - document
+      - page-break
+  - title: 'bi bi-file-break'
+    searchTerms:
+      - doc
+      - document
+      - page-break
+  - title: 'bi bi-file-check-fill'
+    searchTerms:
+      - doc
+      - document
+      - check
+      - verified
+  - title: 'bi bi-file-check'
+    searchTerms:
+      - doc
+      - document
+      - check
+      - verified
+  - title: 'bi bi-file-code-fill'
+    searchTerms:
+      - doc
+      - document
+      - code
+      - development
+  - title: 'bi bi-file-code'
+    searchTerms:
+      - doc
+      - document
+      - code
+      - development
+  - title: 'bi bi-file-diff-fill'
+    searchTerms:
+      - doc
+      - document
+      - version
+      - development
+  - title: 'bi bi-file-diff'
+    searchTerms:
+      - doc
+      - document
+      - version
+      - development
+  - title: 'bi bi-file-earmark-arrow-down-fill'
+    searchTerms:
+      - doc
+      - document
+      - download
+  - title: 'bi bi-file-earmark-arrow-down'
+    searchTerms:
+      - doc
+      - document
+      - download
+  - title: 'bi bi-file-earmark-arrow-up-fill'
+    searchTerms:
+      - doc
+      - document
+      - upload
+  - title: 'bi bi-file-earmark-arrow-up'
+    searchTerms:
+      - doc
+      - document
+      - upload
+  - title: 'bi bi-file-earmark-bar-graph-fill'
+    searchTerms:
+      - doc
+      - document
+      - data
+      - chart
+  - title: 'bi bi-file-earmark-bar-graph'
+    searchTerms:
+      - doc
+      - document
+      - data
+      - chart
+  - title: 'bi bi-file-earmark-binary-fill'
+    searchTerms:
+      - doc
+      - document
+      - binary
+      - source
+  - title: 'bi bi-file-earmark-binary'
+    searchTerms:
+      - doc
+      - document
+      - binary
+      - source
+  - title: 'bi bi-file-earmark-break-fill'
+    searchTerms:
+      - doc
+      - document
+      - page-break
+  - title: 'bi bi-file-earmark-break'
+    searchTerms:
+      - doc
+      - document
+      - page-break
+  - title: 'bi bi-file-earmark-check-fill'
+    searchTerms:
+      - doc
+      - document
+      - check
+      - verified
+  - title: 'bi bi-file-earmark-check'
+    searchTerms:
+      - doc
+      - document
+      - check
+      - verified
+  - title: 'bi bi-file-earmark-code-fill'
+    searchTerms:
+      - doc
+      - document
+      - code
+      - development
+  - title: 'bi bi-file-earmark-code'
+    searchTerms:
+      - doc
+      - document
+      - code
+      - development
+  - title: 'bi bi-file-earmark-diff-fill'
+    searchTerms:
+      - doc
+      - document
+      - version
+      - development
+  - title: 'bi bi-file-earmark-diff'
+    searchTerms:
+      - doc
+      - document
+      - version
+      - development
+  - title: 'bi bi-file-earmark-easel-fill'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-earmark-easel'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-earmark-excel-fill'
+    searchTerms:
+      - doc
+      - document
+      - spreadsheet
+      - excel
+      - table
+  - title: 'bi bi-file-earmark-excel'
+    searchTerms:
+      - doc
+      - document
+      - spreadsheet
+      - excel
+      - table
+  - title: 'bi bi-file-earmark-fill'
+    searchTerms:
+      - doc
+      - document
+      - page
+  - title: 'bi bi-file-earmark-font-fill'
+    searchTerms:
+      - ttf
+      - otf
+  - title: 'bi bi-file-earmark-font'
+    searchTerms:
+      - ttf
+      - otf
+  - title: 'bi bi-file-earmark-image-fill'
+    searchTerms:
+      - photo
+      - picture
+  - title: 'bi bi-file-earmark-image'
+    searchTerms:
+      - photo
+      - picture
+  - title: 'bi bi-file-earmark-lock-fill'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-earmark-lock'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-earmark-lock2-fill'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-earmark-lock2'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-earmark-medical-fill'
+    searchTerms:
+      - doc
+      - document
+      - medical
+      - hospital
+      - health
+  - title: 'bi bi-file-earmark-medical'
+    searchTerms:
+      - doc
+      - document
+      - medical
+      - hospital
+      - health
+  - title: 'bi bi-file-earmark-minus-fill'
+    searchTerms:
+      - doc
+      - document
+      - delete
+      - remove
+  - title: 'bi bi-file-earmark-minus'
+    searchTerms:
+      - doc
+      - document
+      - delete
+      - remove
+  - title: 'bi bi-file-earmark-music-fill'
+    searchTerms:
+      - doc
+      - document
+      - music
+      - audio
+      - playlist
+      - songs
+  - title: 'bi bi-file-earmark-music'
+    searchTerms:
+      - doc
+      - document
+      - music
+      - audio
+      - playlist
+      - songs
+  - title: 'bi bi-file-earmark-pdf-fill'
+    searchTerms:
+      - doc
+      - document
+      - adobe
+      - acrobat
+  - title: 'bi bi-file-earmark-pdf'
+    searchTerms:
+      - doc
+      - document
+      - adobe
+      - acrobat
+  - title: 'bi bi-file-earmark-person-fill'
+    searchTerms:
+      - doc
+      - document
+      - personal
+      - cv
+      - resume
+      - about
+  - title: 'bi bi-file-earmark-person'
+    searchTerms:
+      - doc
+      - document
+      - personal
+      - cv
+      - resume
+      - about
+  - title: 'bi bi-file-earmark-play-fill'
+    searchTerms:
+      - video
+      - present
+  - title: 'bi bi-file-earmark-play'
+    searchTerms:
+      - video
+      - present
+  - title: 'bi bi-file-earmark-plus-fill'
+    searchTerms:
+      - doc
+      - document
+      - add
+      - new
+  - title: 'bi bi-file-earmark-plus'
+    searchTerms:
+      - doc
+      - document
+      - add
+      - new
+  - title: 'bi bi-file-earmark-post-fill'
+    searchTerms:
+      - doc
+      - document
+      - post
+  - title: 'bi bi-file-earmark-post'
+    searchTerms:
+      - doc
+      - document
+      - post
+  - title: 'bi bi-file-earmark-ppt-fill'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-earmark-ppt'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-earmark-richtext-fill'
+    searchTerms:
+      - text
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-richtext'
+    searchTerms:
+      - text
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-ruled-fill'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-ruled'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-slides-fill'
+    searchTerms:
+      - presentation
+      - keynote
+      - powerpoint
+  - title: 'bi bi-file-earmark-slides'
+    searchTerms:
+      - presentation
+      - keynote
+      - powerpoint
+  - title: 'bi bi-file-earmark-spreadsheet-fill'
+    searchTerms:
+      - doc
+      - document
+      - excel
+      - table
+  - title: 'bi bi-file-earmark-spreadsheet'
+    searchTerms:
+      - doc
+      - document
+      - excel
+      - table
+  - title: 'bi bi-file-earmark-text-fill'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-text'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-word-fill'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-word'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-earmark-x-fill'
+    searchTerms:
+      - document
+      - remove
+      - delete
+  - title: 'bi bi-file-earmark-x'
+    searchTerms:
+      - document
+      - remove
+      - delete
+  - title: 'bi bi-file-earmark-zip-fill'
+    searchTerms:
+      - doc
+      - document
+      - zip
+      - archive
+      - compress
+  - title: 'bi bi-file-earmark-zip'
+    searchTerms:
+      - doc
+      - document
+      - zip
+      - archive
+      - compress
+  - title: 'bi bi-file-earmark'
+    searchTerms:
+      - doc
+      - document
+      - page
+  - title: 'bi bi-file-easel-fill'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-easel'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-excel-fill'
+    searchTerms:
+      - doc
+      - document
+      - spreadsheet
+      - excel
+      - table
+  - title: 'bi bi-file-excel'
+    searchTerms:
+      - doc
+      - document
+      - spreadsheet
+      - excel
+      - table
+  - title: 'bi bi-file-fill'
+    searchTerms:
+      - doc
+      - document
+      - page
+  - title: 'bi bi-file-font-fill'
+    searchTerms:
+      - ttf
+      - otf
+  - title: 'bi bi-file-font'
+    searchTerms:
+      - ttf
+      - otf
+  - title: 'bi bi-file-image-fill'
+    searchTerms:
+      - photo
+      - picture
+  - title: 'bi bi-file-image'
+    searchTerms:
+      - photo
+      - picture
+  - title: 'bi bi-file-lock-fill'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-lock'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-lock2-fill'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-lock2'
+    searchTerms:
+      - lock
+      - private
+      - secure
+  - title: 'bi bi-file-medical-fill'
+    searchTerms:
+      - doc
+      - document
+      - medical
+      - hospital
+      - health
+  - title: 'bi bi-file-medical'
+    searchTerms:
+      - doc
+      - document
+      - medical
+      - hospital
+      - health
+  - title: 'bi bi-file-minus-fill'
+    searchTerms:
+      - doc
+      - document
+      - delete
+      - remove
+  - title: 'bi bi-file-minus'
+    searchTerms:
+      - doc
+      - document
+      - delete
+      - remove
+  - title: 'bi bi-file-music-fill'
+    searchTerms:
+      - doc
+      - document
+      - music
+      - audio
+      - playlist
+      - songs
+  - title: 'bi bi-file-music'
+    searchTerms:
+      - doc
+      - document
+      - music
+      - audio
+      - playlist
+      - songs
+  - title: 'bi bi-file-pdf-fill'
+    searchTerms:
+      - doc
+      - document
+      - adobe
+      - acrobat
+  - title: 'bi bi-file-pdf'
+    searchTerms:
+      - doc
+      - document
+      - adobe
+      - acrobat
+  - title: 'bi bi-file-person-fill'
+    searchTerms:
+      - doc
+      - document
+      - personal
+      - cv
+      - resume
+      - about
+  - title: 'bi bi-file-person'
+    searchTerms:
+      - doc
+      - document
+      - personal
+      - cv
+      - resume
+      - about
+  - title: 'bi bi-file-play-fill'
+    searchTerms:
+      - video
+      - present
+  - title: 'bi bi-file-play'
+    searchTerms:
+      - video
+      - present
+  - title: 'bi bi-file-plus-fill'
+    searchTerms:
+      - doc
+      - document
+      - add
+      - new
+  - title: 'bi bi-file-plus'
+    searchTerms:
+      - doc
+      - document
+      - add
+      - new
+  - title: 'bi bi-file-post-fill'
+    searchTerms:
+      - doc
+      - document
+      - post
+  - title: 'bi bi-file-post'
+    searchTerms:
+      - doc
+      - document
+      - post
+  - title: 'bi bi-file-ppt-fill'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-ppt'
+    searchTerms:
+      - slides
+      - presentation
+      - powerpoint
+      - keynote
+  - title: 'bi bi-file-richtext-fill'
+    searchTerms:
+      - doc
+      - document
+      - richtext
+  - title: 'bi bi-file-richtext'
+    searchTerms:
+      - doc
+      - document
+      - richtext
+  - title: 'bi bi-file-ruled-fill'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-ruled'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-slides-fill'
+    searchTerms:
+      - presentation
+      - keynote
+      - powerpoint
+  - title: 'bi bi-file-slides'
+    searchTerms:
+      - presentation
+      - keynote
+      - powerpoint
+  - title: 'bi bi-file-spreadsheet-fill'
+    searchTerms:
+      - doc
+      - document
+      - excel
+      - table
+  - title: 'bi bi-file-spreadsheet'
+    searchTerms:
+      - doc
+      - document
+      - excel
+      - table
+  - title: 'bi bi-file-text-fill'
+    searchTerms:
+      - doc
+      - document
+      - letter
+  - title: 'bi bi-file-text'
+    searchTerms:
+      - doc
+      - document
+      - letter
+  - title: 'bi bi-file-word-fill'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-word'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-file-x-fill'
+    searchTerms:
+      - document
+      - remove
+      - delete
+  - title: 'bi bi-file-x'
+    searchTerms:
+      - document
+      - remove
+      - delete
+  - title: 'bi bi-file-zip-fill'
+    searchTerms:
+      - doc
+      - document
+      - zip
+      - archive
+      - compress
+  - title: 'bi bi-file-zip'
+    searchTerms:
+      - doc
+      - document
+      - zip
+      - archive
+      - compress
+  - title: 'bi bi-file'
+    searchTerms:
+      - doc
+      - document
+      - page
+  - title: 'bi bi-files-alt'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-files'
+    searchTerms:
+      - doc
+      - document
+  - title: 'bi bi-filetype-aac'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-ai'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-bmp'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-cs'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+  - title: 'bi bi-filetype-css'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - stylesheet
+  - title: 'bi bi-filetype-csv'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-doc'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-docx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-exe'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-gif'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-heic'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-html'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - html
+  - title: 'bi bi-filetype-java'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - java
+  - title: 'bi bi-filetype-jpg'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-js'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - javascript
+  - title: 'bi bi-filetype-json'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - javascript
+  - title: 'bi bi-filetype-jsx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - javascript
+      - react
+  - title: 'bi bi-filetype-key'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - keynote
+  - title: 'bi bi-filetype-m4p'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-md'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - markdown
+  - title: 'bi bi-filetype-mdx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-mov'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-mp3'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-mp4'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-otf'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - font
+      - type
+  - title: 'bi bi-filetype-pdf'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-php'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+  - title: 'bi bi-filetype-png'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-ppt'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - powerpoint
+  - title: 'bi bi-filetype-pptx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - powerpoint
+  - title: 'bi bi-filetype-psd'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-py'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - python
+  - title: 'bi bi-filetype-raw'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-rb'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - ruby
+  - title: 'bi bi-filetype-sass'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - css
+      - stylesheet
+  - title: 'bi bi-filetype-scss'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - css
+      - stylesheet
+  - title: 'bi bi-filetype-sh'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - shell
+  - title: 'bi bi-filetype-sql'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - mysql
+  - title: 'bi bi-filetype-svg'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+  - title: 'bi bi-filetype-tiff'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-tsx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - typescript
+  - title: 'bi bi-filetype-ttf'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - font
+      - type
+  - title: 'bi bi-filetype-txt'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-wav'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+  - title: 'bi bi-filetype-woff'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - font
+      - type
+  - title: 'bi bi-filetype-xls'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - spreadsheet
+  - title: 'bi bi-filetype-xlsx'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - spreadsheet
+  - title: 'bi bi-filetype-xml'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+  - title: 'bi bi-filetype-yml'
+    searchTerms:
+      - file
+      - 'file type'
+      - extension
+      - code
+      - yaml
+  - title: 'bi bi-film'
+    searchTerms:
+      - video
+      - movie
+  - title: 'bi bi-filter-circle-fill'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter-circle'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter-left'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter-right'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter-square-fill'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter-square'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-filter'
+    searchTerms:
+      - sort
+  - title: 'bi bi-fingerprint'
+    searchTerms:
+      - 'touch ID'
+      - secure
+      - biometric
+  - title: 'bi bi-fire'
+    searchTerms:
+      - burning
+      - smoke
+  - title: 'bi bi-flag-fill'
+    searchTerms:
+      - report
+  - title: 'bi bi-flag'
+    searchTerms:
+      - report
+  - title: 'bi bi-flower1'
+    searchTerms:
+      - plant
+      - bloom
+      - flower
+  - title: 'bi bi-flower2'
+    searchTerms:
+      - plant
+      - bloom
+      - flower
+  - title: 'bi bi-flower3'
+    searchTerms:
+      - plant
+      - bloom
+      - flower
+  - title: 'bi bi-folder-check'
+    searchTerms:
+      - directory
+      - check
+      - verified
+  - title: 'bi bi-folder-fill'
+    searchTerms:
+      - directory
+  - title: 'bi bi-folder-minus'
+    searchTerms:
+      - directory
+      - delete
+      - remove
+  - title: 'bi bi-folder-plus'
+    searchTerms:
+      - directory
+      - delete
+      - add
+      - new
+  - title: 'bi bi-folder-symlink-fill'
+    searchTerms:
+      - directory
+      - symbolic-link
+  - title: 'bi bi-folder-symlink'
+    searchTerms:
+      - directory
+      - symbolic-link
+  - title: 'bi bi-folder-x'
+    searchTerms:
+      - directory
+      - remove
+      - delete
+  - title: 'bi bi-folder'
+    searchTerms:
+      - directory
+  - title: 'bi bi-folder2-open'
+    searchTerms:
+      - directory
+  - title: 'bi bi-folder2'
+    searchTerms:
+      - directory
+  - title: 'bi bi-fonts'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-forward-fill'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-forward'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-front'
+    searchTerms:
+      - forward
+      - layer
+  - title: 'bi bi-fuel-pump-diesel-fill'
+    searchTerms:
+      - gas
+      - petrol
+      - fuel
+      - 'gas station'
+  - title: 'bi bi-fuel-pump-diesel'
+    searchTerms:
+      - gas
+      - petrol
+      - fuel
+      - 'gas station'
+  - title: 'bi bi-fuel-pump-fill'
+    searchTerms:
+      - gas
+      - petrol
+      - fuel
+      - 'gas station'
+  - title: 'bi bi-fuel-pump'
+    searchTerms:
+      - gas
+      - petrol
+      - fuel
+      - 'gas station'
+  - title: 'bi bi-fullscreen-exit'
+    searchTerms:
+      - window
+      - minimize
+  - title: 'bi bi-fullscreen'
+    searchTerms:
+      - window
+      - maximize
+  - title: 'bi bi-funnel-fill'
+    searchTerms:
+      - sort
+      - filter
+  - title: 'bi bi-funnel'
+    searchTerms:
+      - sort
+      - filter
+  - title: 'bi bi-gear-fill'
+    searchTerms:
+      - tool
+      - settings
+      - preferences
+  - title: 'bi bi-gear-wide-connected'
+    searchTerms:
+      - tool
+      - settings
+      - preferences
+  - title: 'bi bi-gear-wide'
+    searchTerms:
+      - tool
+      - settings
+      - preferences
+  - title: 'bi bi-gear'
+    searchTerms:
+      - tool
+      - settings
+      - preferences
+  - title: 'bi bi-gem'
+    searchTerms:
+      - shape
+      - diamond
+  - title: 'bi bi-gender-ambiguous'
+    searchTerms:
+      - gender
+      - identity
+  - title: 'bi bi-gender-female'
+    searchTerms:
+      - gender
+      - identity
+  - title: 'bi bi-gender-male'
+    searchTerms:
+      - gender
+      - identity
+  - title: 'bi bi-gender-trans'
+    searchTerms:
+      - gender
+      - identity
+  - title: 'bi bi-geo-alt-fill'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-geo-alt'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-geo-fill'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-geo'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-gift-fill'
+    searchTerms:
+      - present
+      - gift
+  - title: 'bi bi-gift'
+    searchTerms:
+      - present
+      - gift
+  - title: 'bi bi-git'
+    searchTerms:
+      - 'version control'
+      - vcs
+      - github
+      - version
+  - title: 'bi bi-github'
+    searchTerms:
+      - social
+      - microsoft
+  - title: 'bi bi-globe-americas'
+    searchTerms:
+      - geography
+      - earth
+      - world
+      - map
+  - title: 'bi bi-globe-asia-australia'
+    searchTerms:
+      - geography
+      - earth
+      - world
+      - map
+  - title: 'bi bi-globe-central-south-asia'
+    searchTerms:
+      - geography
+      - earth
+      - world
+      - map
+  - title: 'bi bi-globe-europe-africa'
+    searchTerms:
+      - geography
+      - earth
+      - world
+      - map
+  - title: 'bi bi-globe'
+    searchTerms:
+      - world
+      - translate
+      - global
+      - international
+  - title: 'bi bi-globe2'
+    searchTerms:
+      - world
+      - translate
+      - global
+      - international
+  - title: 'bi bi-google-play'
+    searchTerms:
+      - 'app store'
+      - apps
+      - store
+      - android
+  - title: 'bi bi-google'
+    searchTerms:
+      - social
+      - search
+  - title: 'bi bi-gpu-card'
+    searchTerms:
+      - video
+      - output
+      - graphics
+  - title: 'bi bi-graph-down-arrow'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-graph-down'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-graph-up-arrow'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-graph-up'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-grid-1x2-fill'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-1x2'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x2-gap-fill'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x2-gap'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x2'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x3-gap-fill'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x3-gap'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-3x3'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid-fill'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grid'
+    searchTerms:
+      - grid
+      - layout
+  - title: 'bi bi-grip-horizontal'
+    searchTerms:
+      - drag
+      - grab
+  - title: 'bi bi-grip-vertical'
+    searchTerms:
+      - drag
+      - grab
+  - title: 'bi bi-h-circle-fill'
+    searchTerms:
+      - hospital
+      - helicopter
+  - title: 'bi bi-h-circle'
+    searchTerms:
+      - hospital
+      - helicopter
+  - title: 'bi bi-h-square-fill'
+    searchTerms:
+      - hospital
+      - helicopter
+  - title: 'bi bi-h-square'
+    searchTerms:
+      - hospital
+      - helicopter
+  - title: 'bi bi-hammer'
+    searchTerms:
+      - tool
+  - title: 'bi bi-hand-index-fill'
+    searchTerms:
+      - hand
+      - pointer
+      - cursor
+  - title: 'bi bi-hand-index-thumb-fill'
+    searchTerms:
+      - hand
+      - pointer
+      - cursor
+  - title: 'bi bi-hand-index-thumb'
+    searchTerms:
+      - hand
+      - pointer
+      - cursor
+  - title: 'bi bi-hand-index'
+    searchTerms:
+      - hand
+      - pointer
+      - cursor
+  - title: 'bi bi-hand-thumbs-down-fill'
+    searchTerms:
+      - hand
+      - pointer
+      - thumbs-down
+      - '-1'
+  - title: 'bi bi-hand-thumbs-down'
+    searchTerms:
+      - hand
+      - pointer
+      - thumbs-down
+      - '-1'
+  - title: 'bi bi-hand-thumbs-up-fill'
+    searchTerms:
+      - hand
+      - pointer
+      - thumbs-up
+      - '+1'
+  - title: 'bi bi-hand-thumbs-up'
+    searchTerms:
+      - hand
+      - pointer
+      - thumbs-up
+      - '+1'
+  - title: 'bi bi-handbag-fill'
+    searchTerms:
+      - purse
+      - tote
+  - title: 'bi bi-handbag'
+    searchTerms:
+      - purse
+      - tote
+  - title: 'bi bi-hash'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-hdd-fill'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-network-fill'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-network'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-rack-fill'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-rack'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-stack-fill'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd-stack'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdd'
+    searchTerms:
+      - 'hard drive'
+      - 'hard disk'
+      - ssd
+      - drive
+      - server
+  - title: 'bi bi-hdmi-fill'
+    searchTerms:
+      - video
+      - input
+  - title: 'bi bi-hdmi'
+    searchTerms:
+      - video
+      - input
+  - title: 'bi bi-headphones'
+    searchTerms:
+      - headphones
+  - title: 'bi bi-headset-vr'
+    searchTerms:
+      - 'virual reality'
+      - oculus
+      - hololens
+  - title: 'bi bi-headset'
+    searchTerms:
+      - headphones
+      - microphone
+  - title: 'bi bi-heart-arrow'
+    searchTerms:
+      - romance
+      - cupid
+      - valentine
+  - title: 'bi bi-heart-fill'
+    searchTerms:
+      - love
+      - favorite
+  - title: 'bi bi-heart-half'
+    searchTerms:
+      - love
+      - favorite
+  - title: 'bi bi-heart-pulse-fill'
+    searchTerms:
+      - heartbeat
+  - title: 'bi bi-heart-pulse'
+    searchTerms:
+      - heartbeat
+  - title: 'bi bi-heart'
+    searchTerms:
+      - love
+      - favorite
+  - title: 'bi bi-heartbreak-fill'
+    searchTerms:
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-heartbreak'
+    searchTerms:
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-hearts'
+    searchTerms:
+      - romance
+      - valentine
+  - title: 'bi bi-heptagon-fill'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-heptagon-half'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-heptagon'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-hexagon-fill'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-hexagon-half'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-hexagon'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-hospital-fill'
+    searchTerms:
+      - health
+      - 'emergency room'
+  - title: 'bi bi-hospital'
+    searchTerms:
+      - health
+      - 'emergency room'
+  - title: 'bi bi-hourglass-bottom'
+    searchTerms:
+      - time
+      - history
+      - wait
+      - sand
+      - clock
+  - title: 'bi bi-hourglass-split'
+    searchTerms:
+      - time
+      - history
+      - wait
+      - sand
+      - clock
+  - title: 'bi bi-hourglass-top'
+    searchTerms:
+      - time
+      - history
+      - wait
+      - sand
+      - clock
+  - title: 'bi bi-hourglass'
+    searchTerms:
+      - time
+      - history
+      - wait
+      - sand
+      - clock
+  - title: 'bi bi-house-add-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-add'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-check-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-check'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-dash-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-dash'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-door-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-door'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-down-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-down'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-exclamation-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-exclamation'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-gear-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-gear'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-heart-fill'
+    searchTerms:
+      - home
+      - love
+      - romance
+  - title: 'bi bi-house-heart'
+    searchTerms:
+      - home
+      - love
+      - romance
+  - title: 'bi bi-house-lock-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-lock'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-slash-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-slash'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-up-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-up'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-x-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-house-x'
+    searchTerms:
+      - home
+  - title: 'bi bi-house'
+    searchTerms:
+      - home
+  - title: 'bi bi-houses-fill'
+    searchTerms:
+      - home
+  - title: 'bi bi-houses'
+    searchTerms:
+      - home
+  - title: 'bi bi-hr'
+    searchTerms:
+      - divider
+      - horizonal-rule
+  - title: 'bi bi-hurricane'
+    searchTerms:
+      - storm
+  - title: 'bi bi-hypnotize'
+    searchTerms:
+      - hypnosis
+      - sleepy
+  - title: 'bi bi-image-alt'
+    searchTerms:
+      - picture
+      - photo
+  - title: 'bi bi-image-fill'
+    searchTerms:
+      - picture
+      - photo
+  - title: 'bi bi-image'
+    searchTerms:
+      - picture
+      - photo
+  - title: 'bi bi-images'
+    searchTerms:
+      - picture
+      - photo
+  - title: 'bi bi-inbox-fill'
+    searchTerms:
+      - mail
+      - email
+      - 'letter tray'
+  - title: 'bi bi-inbox'
+    searchTerms:
+      - mail
+      - email
+      - 'letter tray'
+  - title: 'bi bi-inboxes-fill'
+    searchTerms:
+      - mail
+      - email
+      - 'letter tray'
+  - title: 'bi bi-inboxes'
+    searchTerms:
+      - mail
+      - email
+      - 'letter tray'
+  - title: 'bi bi-incognito'
+    searchTerms:
+      - private
+      - investigator
+      - secret
+  - title: 'bi bi-indent'
+    searchTerms:
+      - tab
+      - indent
+  - title: 'bi bi-infinity'
+    searchTerms:
+      - math
+      - infinite
+  - title: 'bi bi-info-circle-fill'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-info-circle'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-info-lg'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-info-square-fill'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-info-square'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-info'
+    searchTerms:
+      - information
+      - help
+  - title: 'bi bi-input-cursor-text'
+    searchTerms:
+      - textarea
+      - form
+      - input
+  - title: 'bi bi-input-cursor'
+    searchTerms:
+      - textarea
+      - form
+      - input
+  - title: 'bi bi-instagram'
+    searchTerms:
+      - social
+      - chat
+  - title: 'bi bi-intersect'
+    searchTerms:
+      - graphics
+      - vector
+      - merge
+      - layers
+  - title: 'bi bi-journal-album'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-arrow-down'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-arrow-up'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-bookmark-fill'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-bookmark'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-check'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-code'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-medical'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-minus'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-plus'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-richtext'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-text'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journal-x'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+      - remove
+      - delete
+  - title: 'bi bi-journal'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-journals'
+    searchTerms:
+      - file
+      - folder
+      - journal
+      - notebook
+  - title: 'bi bi-joystick'
+    searchTerms:
+      - gaming
+      - game
+      - 'video games'
+  - title: 'bi bi-justify-left'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-justify-right'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-justify'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-kanban-fill'
+    searchTerms:
+      - board
+      - project-management
+  - title: 'bi bi-kanban'
+    searchTerms:
+      - board
+      - project-management
+  - title: 'bi bi-key-fill'
+    searchTerms:
+      - lock
+      - secure
+  - title: 'bi bi-key'
+    searchTerms:
+      - lock
+      - secure
+  - title: 'bi bi-keyboard-fill'
+    searchTerms:
+      - keyboard
+      - keys
+      - typing
+  - title: 'bi bi-keyboard'
+    searchTerms:
+      - keyboard
+      - keys
+      - typing
+  - title: 'bi bi-ladder'
+    searchTerms:
+      - climb
+      - ladder
+  - title: 'bi bi-lamp-fill'
+    searchTerms:
+      - light
+      - lamp
+  - title: 'bi bi-lamp'
+    searchTerms:
+      - light
+      - lamp
+  - title: 'bi bi-laptop-fill'
+    searchTerms:
+      - computer
+  - title: 'bi bi-laptop'
+    searchTerms:
+      - computer
+  - title: 'bi bi-layer-backward'
+    searchTerms:
+      - arrange
+      - layers
+      - back
+  - title: 'bi bi-layer-forward'
+    searchTerms:
+      - arrange
+      - layers
+      - front
+  - title: 'bi bi-layers-fill'
+    searchTerms:
+      - perspective
+      - stacked
+  - title: 'bi bi-layers-half'
+    searchTerms:
+      - perspective
+      - stacked
+  - title: 'bi bi-layers'
+    searchTerms:
+      - perspective
+      - stacked
+  - title: 'bi bi-layout-sidebar-inset-reverse'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-sidebar-inset'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-sidebar-reverse'
+    searchTerms:
+      - grid
+      - layout
+      - sidebar
+  - title: 'bi bi-layout-sidebar'
+    searchTerms:
+      - grid
+      - layout
+      - sidebar
+  - title: 'bi bi-layout-split'
+    searchTerms:
+      - grid
+      - layout
+      - sidebar
+  - title: 'bi bi-layout-text-sidebar-reverse'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-text-sidebar'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-text-window-reverse'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-text-window'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-three-columns'
+    searchTerms:
+      - layout
+      - columns
+  - title: 'bi bi-layout-wtf'
+    searchTerms:
+      - layout
+      - broken
+  - title: 'bi bi-life-preserver'
+    searchTerms:
+      - lifesaver
+      - water
+  - title: 'bi bi-lightbulb-fill'
+    searchTerms:
+      - lights
+      - lamp
+  - title: 'bi bi-lightbulb-off-fill'
+    searchTerms:
+      - lights
+      - lamp
+  - title: 'bi bi-lightbulb-off'
+    searchTerms:
+      - lights
+      - lamp
+  - title: 'bi bi-lightbulb'
+    searchTerms:
+      - lights
+      - lamp
+  - title: 'bi bi-lightning-charge-fill'
+    searchTerms:
+      - weather
+      - storm
+      - thunder
+      - bolt
+  - title: 'bi bi-lightning-charge'
+    searchTerms:
+      - weather
+      - storm
+      - thunder
+      - bolt
+  - title: 'bi bi-lightning-fill'
+    searchTerms:
+      - storm
+      - thunder
+      - bolt
+  - title: 'bi bi-lightning'
+    searchTerms:
+      - storm
+      - thunder
+      - bolt
+  - title: 'bi bi-line'
+    searchTerms:
+      - social
+  - title: 'bi bi-link-45deg'
+    searchTerms:
+      - anchor
+      - hyperlink
+      - href
+  - title: 'bi bi-link'
+    searchTerms:
+      - anchor
+      - hyperlink
+      - href
+  - title: 'bi bi-linkedin'
+    searchTerms:
+      - social
+      - microsoft
+  - title: 'bi bi-list-check'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+      - checklist
+      - done
+  - title: 'bi bi-list-columns-reverse'
+    searchTerms:
+      - text
+      - type
+      - alignment
+  - title: 'bi bi-list-columns'
+    searchTerms:
+      - text
+      - type
+      - alignment
+  - title: 'bi bi-list-nested'
+    searchTerms:
+      - text
+      - type
+      - alignment
+      - children
+  - title: 'bi bi-list-ol'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+      - ordered-list
+      - numbered-list
+      - numbered
+  - title: 'bi bi-list-stars'
+    searchTerms:
+      - text
+      - type
+      - starred
+  - title: 'bi bi-list-task'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+      - todos
+      - task
+  - title: 'bi bi-list-ul'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+      - unordered-list
+  - title: 'bi bi-list'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+      - menu
+      - hamburger
+  - title: 'bi bi-lock-fill'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-lock'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-lungs-fill'
+    searchTerms:
+      - medicine
+      - health
+      - breathing
+  - title: 'bi bi-lungs'
+    searchTerms:
+      - medicine
+      - health
+      - breathing
+  - title: 'bi bi-magic'
+    searchTerms:
+      - 'magic stick'
+  - title: 'bi bi-magnet-fill'
+    searchTerms:
+      - magnetic
+  - title: 'bi bi-magnet'
+    searchTerms:
+      - magnetic
+  - title: 'bi bi-mailbox'
+    searchTerms:
+      - post
+      - postal
+      - postbox
+      - letterbox
+  - title: 'bi bi-mailbox2'
+    searchTerms:
+      - post
+      - postal
+      - postbox
+      - letterbox
+  - title: 'bi bi-map-fill'
+    searchTerms:
+      - geography
+      - directions
+      - location
+  - title: 'bi bi-map'
+    searchTerms:
+      - geography
+      - directions
+      - location
+  - title: 'bi bi-markdown-fill'
+    searchTerms:
+      - markdown
+      - md
+      - content
+      - writing
+  - title: 'bi bi-markdown'
+    searchTerms:
+      - markdown
+      - md
+      - content
+      - writing
+  - title: 'bi bi-mask'
+    searchTerms:
+      - mask
+  - title: 'bi bi-mastodon'
+    searchTerms:
+      - social
+  - title: 'bi bi-medium'
+    searchTerms:
+      - social
+  - title: 'bi bi-megaphone-fill'
+    searchTerms:
+      - loudspeaker
+      - announcement
+  - title: 'bi bi-megaphone'
+    searchTerms:
+      - loudspeaker
+      - announcement
+  - title: 'bi bi-memory'
+    searchTerms:
+      - ram
+  - title: 'bi bi-menu-app-fill'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-app'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-button-fill'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-button-wide-fill'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-button-wide'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-button'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-down'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-menu-up'
+    searchTerms:
+      - dropdown
+      - menu
+      - context
+      - app
+      - ui
+  - title: 'bi bi-messenger'
+    searchTerms:
+      - social
+      - facebook
+      - chat
+  - title: 'bi bi-meta'
+    searchTerms:
+      - facebook
+      - fb
+  - title: 'bi bi-mic-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+      - input
+      - microphone
+      - podcast
+  - title: 'bi bi-mic-mute-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+      - input
+      - microphone
+  - title: 'bi bi-mic-mute'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+      - input
+      - microphone
+  - title: 'bi bi-mic'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+      - input
+      - microphone
+      - podcast
+  - title: 'bi bi-microsoft-teams'
+    searchTerms:
+      - social
+      - messaging
+  - title: 'bi bi-microsoft'
+    searchTerms:
+      - msft
+      - windows
+  - title: 'bi bi-minecart-loaded'
+    searchTerms:
+      - mining
+      - cart
+  - title: 'bi bi-minecart'
+    searchTerms:
+      - mining
+      - cart
+  - title: 'bi bi-modem-fill'
+    searchTerms:
+      - internet
+      - cable
+  - title: 'bi bi-modem'
+    searchTerms:
+      - internet
+      - cable
+  - title: 'bi bi-moisture'
+    searchTerms:
+      - water
+      - droplets
+  - title: 'bi bi-moon-fill'
+    searchTerms:
+      - night
+      - sky
+  - title: 'bi bi-moon-stars-fill'
+    searchTerms:
+      - night
+      - sky
+  - title: 'bi bi-moon-stars'
+    searchTerms:
+      - night
+      - sky
+  - title: 'bi bi-moon'
+    searchTerms:
+      - lunar
+      - weather
+      - night
+  - title: 'bi bi-mortarboard-fill'
+    searchTerms:
+      - graduation
+      - cap
+  - title: 'bi bi-mortarboard'
+    searchTerms:
+      - graduation
+      - cap
+  - title: 'bi bi-motherboard-fill'
+    searchTerms:
+      - mobo
+      - computer
+      - hardware
+  - title: 'bi bi-motherboard'
+    searchTerms:
+      - mobo
+      - computer
+      - hardware
+  - title: 'bi bi-mouse-fill'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-mouse'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-mouse2-fill'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-mouse2'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-mouse3-fill'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-mouse3'
+    searchTerms:
+      - mice
+      - input
+  - title: 'bi bi-music-note-beamed'
+    searchTerms:
+      - music
+      - notes
+      - audio
+      - sound
+  - title: 'bi bi-music-note-list'
+    searchTerms:
+      - music
+      - notes
+      - audio
+      - sound
+      - playlist
+      - library
+  - title: 'bi bi-music-note'
+    searchTerms:
+      - music
+      - notes
+      - audio
+      - sound
+  - title: 'bi bi-music-player-fill'
+    searchTerms:
+      - ipod
+      - mp3
+  - title: 'bi bi-music-player'
+    searchTerms:
+      - ipod
+      - mp3
+  - title: 'bi bi-newspaper'
+    searchTerms:
+      - news
+      - paper
+  - title: 'bi bi-nintendo-switch'
+    searchTerms:
+      - gaming
+  - title: 'bi bi-node-minus-fill'
+    searchTerms:
+      - add
+      - new
+      - node
+      - diagram
+  - title: 'bi bi-node-minus'
+    searchTerms:
+      - add
+      - new
+      - node
+      - diagram
+  - title: 'bi bi-node-plus-fill'
+    searchTerms:
+      - add
+      - new
+      - node
+      - diagram
+  - title: 'bi bi-node-plus'
+    searchTerms:
+      - add
+      - new
+      - node
+      - diagram
+  - title: 'bi bi-nut-fill'
+    searchTerms:
+      - nut
+      - bolt
+      - hexagon
+      - tools
+  - title: 'bi bi-nut'
+    searchTerms:
+      - nut
+      - bolt
+      - hexagon
+      - tools
+  - title: 'bi bi-nvidia'
+    searchTerms:
+      - gpu
+  - title: 'bi bi-octagon-fill'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-octagon-half'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-octagon'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-optical-audio-fill'
+    searchTerms:
+      - port
+      - plug
+      - sound
+  - title: 'bi bi-optical-audio'
+    searchTerms:
+      - port
+      - plug
+      - sound
+  - title: 'bi bi-option'
+    searchTerms:
+      - key
+      - mac
+  - title: 'bi bi-outlet'
+    searchTerms:
+      - plug
+      - power
+  - title: 'bi bi-p-circle-fill'
+    searchTerms:
+      - parking
+  - title: 'bi bi-p-circle'
+    searchTerms:
+      - parking
+  - title: 'bi bi-p-square-fill'
+    searchTerms:
+      - parking
+  - title: 'bi bi-p-square'
+    searchTerms:
+      - parking
+  - title: 'bi bi-paint-bucket'
+    searchTerms:
+      - color
+      - paint
+      - fill
+      - palette
+  - title: 'bi bi-palette-fill'
+    searchTerms:
+      - color
+      - paint
+      - fill
+      - palette
+  - title: 'bi bi-palette'
+    searchTerms:
+      - color
+      - paint
+      - fill
+      - palette
+  - title: 'bi bi-palette2'
+    searchTerms:
+      - color
+      - paint
+      - fill
+      - palette
+  - title: 'bi bi-paperclip'
+    searchTerms:
+      - attachment
+  - title: 'bi bi-paragraph'
+    searchTerms:
+      - paragraph
+      - text
+      - body
+      - content
+  - title: 'bi bi-pass-fill'
+    searchTerms:
+      - pass
+  - title: 'bi bi-pass'
+    searchTerms:
+      - pass
+  - title: 'bi bi-patch-check-fill'
+    searchTerms:
+      - verified
+      - checkmark
+      - certified
+  - title: 'bi bi-patch-check'
+    searchTerms:
+      - verified
+      - checkmark
+      - certified
+  - title: 'bi bi-patch-exclamation-fill'
+    searchTerms:
+      - excited
+      - certified
+  - title: 'bi bi-patch-exclamation'
+    searchTerms:
+      - excited
+      - certified
+  - title: 'bi bi-patch-minus-fill'
+    searchTerms:
+      - subtract
+  - title: 'bi bi-patch-minus'
+    searchTerms:
+      - subtract
+  - title: 'bi bi-patch-plus-fill'
+    searchTerms:
+      - add
+  - title: 'bi bi-patch-plus'
+    searchTerms:
+      - add
+  - title: 'bi bi-patch-question-fill'
+    searchTerms:
+      - help
+  - title: 'bi bi-patch-question'
+    searchTerms:
+      - help
+  - title: 'bi bi-pause-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-pause-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-pause-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-pause-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-pause-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-pause'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-paypal'
+    searchTerms:
+      - social
+  - title: 'bi bi-pc-display-horizontal'
+    searchTerms:
+      - computer
+      - workstation
+      - desktop
+  - title: 'bi bi-pc-display'
+    searchTerms:
+      - computer
+      - workstation
+      - desktop
+  - title: 'bi bi-pc-horizontal'
+    searchTerms:
+      - computer
+      - workstation
+      - desktop
+  - title: 'bi bi-pc'
+    searchTerms:
+      - computer
+      - workstation
+      - desktop
+  - title: 'bi bi-pci-card'
+    searchTerms:
+      - card
+      - expansion
+  - title: 'bi bi-peace-fill'
+    searchTerms:
+      - peace
+      - love
+  - title: 'bi bi-peace'
+    searchTerms:
+      - peace
+      - love
+  - title: 'bi bi-pen-fill'
+    searchTerms:
+      - edit
+      - write
+      - ballpoint
+  - title: 'bi bi-pen'
+    searchTerms:
+      - edit
+      - write
+      - ballpoint
+  - title: 'bi bi-pencil-fill'
+    searchTerms:
+      - edit
+      - write
+  - title: 'bi bi-pencil-square'
+    searchTerms:
+      - edit
+      - write
+  - title: 'bi bi-pencil'
+    searchTerms:
+      - edit
+      - write
+  - title: 'bi bi-pentagon-fill'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-pentagon-half'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-pentagon'
+    searchTerms:
+      - shape
+      - polygon
+  - title: 'bi bi-people-fill'
+    searchTerms:
+      - member
+      - humans
+      - organization
+      - avatar
+      - users
+      - profile
+  - title: 'bi bi-people'
+    searchTerms:
+      - member
+      - humans
+      - organization
+      - avatar
+      - users
+      - profile
+  - title: 'bi bi-percent'
+    searchTerms:
+      - percentage
+      - math
+      - fraction
+  - title: 'bi bi-person-add'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-badge-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - badge
+      - id
+      - card
+      - account
+  - title: 'bi bi-person-badge'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - badge
+      - id
+      - card
+      - account
+      - profile
+  - title: 'bi bi-person-bounding-box'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - crop
+      - account
+      - profile
+  - title: 'bi bi-person-check-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - verified
+      - account
+  - title: 'bi bi-person-check'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - verified
+      - account
+      - profile
+  - title: 'bi bi-person-circle'
+    searchTerms:
+      - member
+      - humans
+      - organization
+      - avatar
+      - user
+      - account
+      - profile
+  - title: 'bi bi-person-dash-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - remove
+      - delete
+      - account
+  - title: 'bi bi-person-dash'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - remove
+      - delete
+      - account
+  - title: 'bi bi-person-down'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-exclamation'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-add'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-check'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-dash'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-down'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-exclamation'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-gear'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-lock'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-slash'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-up'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill-x'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - profile
+  - title: 'bi bi-person-gear'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-heart'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-person-hearts'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-person-lines-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - contact
+      - list
+      - account
+      - profile
+  - title: 'bi bi-person-lock'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-plus-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - new
+      - add
+      - account
+  - title: 'bi bi-person-plus'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - new
+      - add
+      - account
+  - title: 'bi bi-person-rolodex'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - contact
+  - title: 'bi bi-person-slash'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-square'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - profile
+  - title: 'bi bi-person-up'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-vcard-fill'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-vcard'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+  - title: 'bi bi-person-video'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - wfh
+  - title: 'bi bi-person-video2'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - wfh
+  - title: 'bi bi-person-video3'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - wfh
+  - title: 'bi bi-person-workspace'
+    searchTerms:
+      - human
+      - individual
+      - avatar
+      - user
+      - wfh
+  - title: 'bi bi-person-x-fill'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - remove
+      - delete
+      - account
+  - title: 'bi bi-person-x'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - remove
+      - delete
+      - account
+  - title: 'bi bi-person'
+    searchTerms:
+      - member
+      - human
+      - individual
+      - avatar
+      - user
+      - account
+      - profile
+  - title: 'bi bi-phone-fill'
+    searchTerms:
+      - mobile
+      - telephone
+  - title: 'bi bi-phone-flip'
+    searchTerms:
+      - mobile
+      - telephone
+  - title: 'bi bi-phone-landscape-fill'
+    searchTerms:
+      - mobile
+      - telephone
+  - title: 'bi bi-phone-landscape'
+    searchTerms:
+      - mobile
+      - telephone
+  - title: 'bi bi-phone-vibrate-fill'
+    searchTerms:
+      - mobile
+      - telephone
+      - haptic
+  - title: 'bi bi-phone-vibrate'
+    searchTerms:
+      - mobile
+      - telephone
+      - haptic
+  - title: 'bi bi-phone'
+    searchTerms:
+      - mobile
+      - telephone
+  - title: 'bi bi-pie-chart-fill'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-pie-chart'
+    searchTerms:
+      - chart
+      - graph
+      - analytics
+  - title: 'bi bi-piggy-bank-fill'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - savings
+  - title: 'bi bi-piggy-bank'
+    searchTerms:
+      - money
+      - finance
+      - banking
+      - savings
+  - title: 'bi bi-pin-angle-fill'
+    searchTerms:
+      - pushpin
+      - thumbtack
+  - title: 'bi bi-pin-angle'
+    searchTerms:
+      - pushpin
+      - thumbtack
+  - title: 'bi bi-pin-fill'
+    searchTerms:
+      - pushpin
+      - thumbtack
+  - title: 'bi bi-pin-map-fill'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-pin-map'
+    searchTerms:
+      - geography
+      - map
+      - pin
+      - location
+  - title: 'bi bi-pin'
+    searchTerms:
+      - pushpin
+      - thumbtack
+  - title: 'bi bi-pinterest'
+    searchTerms:
+      - social
+  - title: 'bi bi-pip-fill'
+    searchTerms:
+      - picture
+      - tv
+      - television
+      - display
+      - nested
+  - title: 'bi bi-pip'
+    searchTerms:
+      - picture
+      - tv
+      - television
+      - display
+      - nested
+  - title: 'bi bi-play-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-play-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-play-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-play-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-play-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-play'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-playstation'
+    searchTerms:
+      - sony
+      - gaming
+  - title: 'bi bi-plug-fill'
+    searchTerms:
+      - power
+      - outlet
+  - title: 'bi bi-plug'
+    searchTerms:
+      - power
+      - outlet
+  - title: 'bi bi-plugin'
+    searchTerms:
+      - addon
+      - software
+  - title: 'bi bi-plus-circle-dotted'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-circle-fill'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-circle'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-lg'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-slash-minus'
+    searchTerms:
+      - difference
+      - add
+      - subtract
+  - title: 'bi bi-plus-square-dotted'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-square-fill'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus-square'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-plus'
+    searchTerms:
+      - add
+      - new
+  - title: 'bi bi-postage-fill'
+    searchTerms:
+      - mail
+      - stamp
+      - shipping
+  - title: 'bi bi-postage-heart-fill'
+    searchTerms:
+      - mail
+      - stamp
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-postage-heart'
+    searchTerms:
+      - mail
+      - stamp
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-postage'
+    searchTerms:
+      - stamp
+      - shipping
+  - title: 'bi bi-postcard-fill'
+    searchTerms:
+      - mail
+      - letter
+  - title: 'bi bi-postcard-heart-fill'
+    searchTerms:
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-postcard-heart'
+    searchTerms:
+      - mail
+      - letter
+      - love
+      - valentine
+      - romance
+  - title: 'bi bi-postcard'
+    searchTerms:
+      - mail
+      - letter
+  - title: 'bi bi-power'
+    searchTerms:
+      - 'off'
+      - 'on'
+  - title: 'bi bi-prescription'
+    searchTerms:
+      - rx
+      - pills
+      - capsules
+      - medicine
+  - title: 'bi bi-prescription2'
+    searchTerms:
+      - rx
+      - pills
+      - capsules
+      - medicine
+  - title: 'bi bi-printer-fill'
+    searchTerms:
+      - print
+  - title: 'bi bi-printer'
+    searchTerms:
+      - print
+  - title: 'bi bi-projector-fill'
+    searchTerms:
+      - projection
+      - present
+      - screen
+  - title: 'bi bi-projector'
+    searchTerms:
+      - projection
+      - present
+      - screen
+  - title: 'bi bi-puzzle-fill'
+    searchTerms:
+      - puzzle
+      - piece
+  - title: 'bi bi-puzzle'
+    searchTerms:
+      - puzzle
+      - piece
+  - title: 'bi bi-qr-code-scan'
+    searchTerms:
+      - scan
+  - title: 'bi bi-qr-code'
+    searchTerms:
+      - scan
+  - title: 'bi bi-question-circle-fill'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-circle'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-diamond-fill'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-diamond'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-lg'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-octagon-fill'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-octagon'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-square-fill'
+    searchTerms:
+      - help
+  - title: 'bi bi-question-square'
+    searchTerms:
+      - help
+  - title: 'bi bi-question'
+    searchTerms:
+      - help
+  - title: 'bi bi-quora'
+    searchTerms:
+      - social
+  - title: 'bi bi-quote'
+    searchTerms:
+      - blockquote
+      - quotes
+      - quotation
+  - title: 'bi bi-r-circle-fill'
+    searchTerms:
+      - registered
+      - trademark
+  - title: 'bi bi-r-circle'
+    searchTerms:
+      - registered
+      - trademark
+  - title: 'bi bi-r-square-fill'
+    searchTerms:
+      - registered
+      - trademark
+  - title: 'bi bi-r-square'
+    searchTerms:
+      - registered
+      - trademark
+  - title: 'bi bi-radioactive'
+    searchTerms:
+      - radiation
+      - nuclear
+      - danger
+  - title: 'bi bi-rainbow'
+    searchTerms:
+      - colors
+      - arches
+  - title: 'bi bi-receipt-cutoff'
+    searchTerms:
+      - receipt
+      - invoice
+      - sale
+      - purchase
+      - bill
+  - title: 'bi bi-receipt'
+    searchTerms:
+      - receipt
+      - invoice
+      - sale
+      - purchase
+      - bill
+  - title: 'bi bi-reception-0'
+    searchTerms:
+      - reception
+      - cellphone
+      - mobile
+      - carrier
+      - network
+      - signal
+  - title: 'bi bi-reception-1'
+    searchTerms:
+      - reception
+      - cellphone
+      - mobile
+      - carrier
+      - network
+      - signal
+  - title: 'bi bi-reception-2'
+    searchTerms:
+      - reception
+      - cellphone
+      - mobile
+      - carrier
+      - network
+      - signal
+  - title: 'bi bi-reception-3'
+    searchTerms:
+      - reception
+      - cellphone
+      - mobile
+      - carrier
+      - network
+      - signal
+  - title: 'bi bi-reception-4'
+    searchTerms:
+      - reception
+      - cellphone
+      - mobile
+      - carrier
+      - network
+      - signal
+  - title: 'bi bi-record-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record2-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-record2'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-recycle'
+    searchTerms:
+      - recyling
+      - trash
+  - title: 'bi bi-reddit'
+    searchTerms:
+      - social
+  - title: 'bi bi-regex'
+    searchTerms:
+      - text
+      - type
+      - code
+      - developer
+      - development
+      - software
+      - 'regular expression'
+  - title: 'bi bi-repeat-1'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-repeat'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-reply-all-fill'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-reply-all'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-reply-fill'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-reply'
+    searchTerms:
+      - mail
+      - email
+  - title: 'bi bi-rewind-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-rewind-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-rewind-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-rewind-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-rewind-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-rewind'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-robot'
+    searchTerms:
+      - bot
+  - title: 'bi bi-rocket-fill'
+    searchTerms:
+      - ship
+      - rocketship
+      - spaceship
+  - title: 'bi bi-rocket-takeoff-fill'
+    searchTerms:
+      - ship
+      - rocketship
+      - spaceship
+      - launch
+  - title: 'bi bi-rocket-takeoff'
+    searchTerms:
+      - ship
+      - rocketship
+      - spaceship
+      - launch
+  - title: 'bi bi-rocket'
+    searchTerms:
+      - ship
+      - rocketship
+      - spaceship
+  - title: 'bi bi-router-fill'
+    searchTerms:
+      - wifi
+      - internet
+      - wireless
+  - title: 'bi bi-router'
+    searchTerms:
+      - wifi
+      - internet
+      - wireless
+  - title: 'bi bi-rss-fill'
+    searchTerms:
+      - atom
+      - feed
+      - xml
+  - title: 'bi bi-rss'
+    searchTerms:
+      - atom
+      - feed
+      - xml
+  - title: 'bi bi-rulers'
+    searchTerms:
+      - measure
+      - guide
+  - title: 'bi bi-safe-fill'
+    searchTerms:
+      - vault
+      - bank
+      - finance
+  - title: 'bi bi-safe'
+    searchTerms:
+      - vault
+      - bank
+      - finance
+  - title: 'bi bi-safe2-fill'
+    searchTerms:
+      - vault
+      - bank
+      - finance
+  - title: 'bi bi-safe2'
+    searchTerms:
+      - vault
+      - bank
+      - finance
+  - title: 'bi bi-save-fill'
+    searchTerms:
+      - save
+      - floppy
+  - title: 'bi bi-save'
+    searchTerms:
+      - save
+      - floppy
+  - title: 'bi bi-save2-fill'
+    searchTerms:
+      - save
+      - floppy
+  - title: 'bi bi-save2'
+    searchTerms:
+      - save
+      - floppy
+  - title: 'bi bi-scissors'
+    searchTerms:
+      - cut
+      - shears
+  - title: 'bi bi-scooter'
+    searchTerms:
+      - riding
+  - title: 'bi bi-screwdriver'
+    searchTerms:
+      - tool
+  - title: 'bi bi-sd-card-fill'
+    searchTerms:
+      - storage
+      - microsd
+      - chip
+      - memory
+  - title: 'bi bi-sd-card'
+    searchTerms:
+      - storage
+      - microsd
+      - chip
+      - memory
+  - title: 'bi bi-search-heart-fill'
+    searchTerms:
+      - magnifying-glass
+      - look
+      - love
+      - romance
+      - valentine
+  - title: 'bi bi-search-heart'
+    searchTerms:
+      - magnifying-glass
+      - look
+      - love
+      - romance
+      - valentine
+  - title: 'bi bi-search'
+    searchTerms:
+      - magnifying-glass
+      - look
+  - title: 'bi bi-segmented-nav'
+    searchTerms:
+      - nav
+      - tabs
+      - tabbed
+      - app
+      - ui
+  - title: 'bi bi-send-check-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-check'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-dash-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-dash'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-exclamation-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-exclamation'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-plus-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-plus'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-slash-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-slash'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-x-fill'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send-x'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-send'
+    searchTerms:
+      - message
+      - sending
+      - sent
+  - title: 'bi bi-server'
+    searchTerms:
+      - server
+      - network
+  - title: 'bi bi-share-fill'
+    searchTerms:
+      - share
+      - link
+  - title: 'bi bi-share'
+    searchTerms:
+      - share
+      - link
+  - title: 'bi bi-shield-check'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-exclamation'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-fill-check'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-fill-exclamation'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-fill-minus'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-fill-plus'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-fill-x'
+    searchTerms:
+      - privacy
+      - security
+      - remove
+      - delete
+  - title: 'bi bi-shield-fill'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-lock-fill'
+    searchTerms:
+      - privacy
+      - security
+      - lock
+  - title: 'bi bi-shield-lock'
+    searchTerms:
+      - privacy
+      - security
+      - lock
+  - title: 'bi bi-shield-minus'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-plus'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-shaded'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shield-slash-fill'
+    searchTerms:
+      - shield
+      - badge
+  - title: 'bi bi-shield-slash'
+    searchTerms:
+      - shield
+      - badge
+  - title: 'bi bi-shield-x'
+    searchTerms:
+      - privacy
+      - security
+      - remove
+      - delete
+  - title: 'bi bi-shield'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-shift-fill'
+    searchTerms:
+      - key
+  - title: 'bi bi-shift'
+    searchTerms:
+      - key
+  - title: 'bi bi-shop-window'
+    searchTerms:
+      - shop
+      - store
+      - market
+      - marketplace
+      - shopping
+      - retail
+  - title: 'bi bi-shop'
+    searchTerms:
+      - shop
+      - store
+      - market
+      - marketplace
+      - shopping
+      - retail
+  - title: 'bi bi-shuffle'
+    searchTerms:
+      - shuffle
+      - random
+  - title: 'bi bi-sign-dead-end-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-dead-end'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-do-not-enter-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-do-not-enter'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-side-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-side'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-t-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-t'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-y-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection-y'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-intersection'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-merge-left-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-merge-left'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-merge-right-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-merge-right'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-left-turn-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-left-turn'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-parking-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-parking'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-right-turn-fill'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-no-right-turn'
+    searchTerms:
+      - road
+      - driving
+      - directions
+  - title: 'bi bi-sign-railroad-fill'
+    searchTerms:
+      - road
+      - driving
+      - train
+      - tracks
+  - title: 'bi bi-sign-railroad'
+    searchTerms:
+      - road
+      - driving
+      - train
+      - tracks
+  - title: 'bi bi-sign-stop-fill'
+    searchTerms:
+      - 'stop sign'
+      - intersection
+      - road
+      - driving
+  - title: 'bi bi-sign-stop-lights-fill'
+    searchTerms:
+      - 'stop sign'
+      - intersection
+      - road
+      - driving
+  - title: 'bi bi-sign-stop-lights'
+    searchTerms:
+      - 'stop sign'
+      - intersection
+      - road
+      - driving
+  - title: 'bi bi-sign-stop'
+    searchTerms:
+      - 'stop sign'
+      - intersection
+      - road
+      - driving
+  - title: 'bi bi-sign-turn-left-fill'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-left'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-right-fill'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-right'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-slight-left-fill'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-slight-left'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-slight-right-fill'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-turn-slight-right'
+    searchTerms:
+      - road
+      - driving
+      - navigate
+      - navigation
+      - route
+  - title: 'bi bi-sign-yield-fill'
+    searchTerms:
+      - road
+      - driving
+      - intersection
+  - title: 'bi bi-sign-yield'
+    searchTerms:
+      - road
+      - driving
+      - intersection
+  - title: 'bi bi-signal'
+    searchTerms:
+      - social
+  - title: 'bi bi-signpost-2-fill'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-signpost-2'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-signpost-fill'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-signpost-split-fill'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-signpost-split'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-signpost'
+    searchTerms:
+      - milestone
+      - sign
+      - 'road sign'
+      - 'street sign'
+      - directions
+  - title: 'bi bi-sim-fill'
+    searchTerms:
+      - mobile
+      - carrier
+  - title: 'bi bi-sim'
+    searchTerms:
+      - mobile
+      - carrier
+  - title: 'bi bi-sina-weibo'
+    searchTerms:
+      - social
+  - title: 'bi bi-skip-backward-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-backward-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-backward-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-backward-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-backward-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-backward'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-end'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-forward'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skip-start'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-skype'
+    searchTerms:
+      - social
+      - microsoft
+  - title: 'bi bi-slack'
+    searchTerms:
+      - social
+  - title: 'bi bi-slash-circle-fill'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-slash-circle'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-slash-lg'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-slash-square-fill'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-slash-square'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-slash'
+    searchTerms:
+      - shape
+      - stop
+      - ban
+      - 'no'
+  - title: 'bi bi-sliders'
+    searchTerms:
+      - equalizer
+      - settings
+      - preferences
+      - dials
+  - title: 'bi bi-sliders2-vertical'
+    searchTerms:
+      - equalizer
+      - settings
+      - preferences
+      - dials
+  - title: 'bi bi-sliders2'
+    searchTerms:
+      - equalizer
+      - settings
+      - preferences
+      - dials
+  - title: 'bi bi-smartwatch'
+    searchTerms:
+      - watch
+      - wearables
+  - title: 'bi bi-snapchat'
+    searchTerms:
+      - social
+  - title: 'bi bi-snow'
+    searchTerms:
+      - blizzard
+      - flurries
+  - title: 'bi bi-snow2'
+    searchTerms:
+      - blizzard
+      - flurries
+  - title: 'bi bi-snow3'
+    searchTerms:
+      - blizzard
+      - flurries
+  - title: 'bi bi-sort-alpha-down-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-alpha-down'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-alpha-up-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-alpha-up'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-down-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-down'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-numeric-down-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-numeric-down'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-numeric-up-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-numeric-up'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-up-alt'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-sort-up'
+    searchTerms:
+      - sort
+      - filter
+      - organize
+  - title: 'bi bi-soundwave'
+    searchTerms:
+      - audio
+      - sound
+      - wave
+  - title: 'bi bi-speaker-fill'
+    searchTerms:
+      - audio
+      - sound
+  - title: 'bi bi-speaker'
+    searchTerms:
+      - audio
+      - sound
+  - title: 'bi bi-speedometer'
+    searchTerms:
+      - speed
+      - tachometer
+      - dashboard
+  - title: 'bi bi-speedometer2'
+    searchTerms:
+      - speed
+      - tachometer
+      - dashboard
+  - title: 'bi bi-spellcheck'
+    searchTerms:
+      - spelling
+      - grammar
+  - title: 'bi bi-spotify'
+    searchTerms:
+      - social
+  - title: 'bi bi-square-fill'
+    searchTerms:
+      - shape
+      - rectangle
+  - title: 'bi bi-square-half'
+    searchTerms:
+      - shape
+      - rectangle
+  - title: 'bi bi-square'
+    searchTerms:
+      - shape
+      - rectangle
+  - title: 'bi bi-stack-overflow'
+    searchTerms:
+      - social
+  - title: 'bi bi-stack'
+    searchTerms:
+      - layers
+  - title: 'bi bi-star-fill'
+    searchTerms:
+      - shape
+      - like
+      - favorite
+  - title: 'bi bi-star-half'
+    searchTerms:
+      - shape
+      - like
+      - favorite
+  - title: 'bi bi-star'
+    searchTerms:
+      - shape
+      - like
+      - favorite
+  - title: 'bi bi-stars'
+    searchTerms:
+      - clear
+      - skies
+      - night
+  - title: 'bi bi-steam'
+    searchTerms:
+      - gaming
+  - title: 'bi bi-stickies-fill'
+    searchTerms:
+      - postit
+      - note
+      - sticky
+  - title: 'bi bi-stickies'
+    searchTerms:
+      - postit
+      - note
+      - sticky
+  - title: 'bi bi-sticky-fill'
+    searchTerms:
+      - postit
+      - note
+      - sticky
+  - title: 'bi bi-sticky'
+    searchTerms:
+      - postit
+      - note
+      - sticky
+  - title: 'bi bi-stop-btn-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stop-btn'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stop-circle-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stop-circle'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stop-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stop'
+    searchTerms:
+      - audio
+      - video
+      - av
+  - title: 'bi bi-stoplights-fill'
+    searchTerms:
+      - traffic
+      - lights
+      - intersection
+  - title: 'bi bi-stoplights'
+    searchTerms:
+      - traffic
+      - lights
+      - intersection
+  - title: 'bi bi-stopwatch-fill'
+    searchTerms:
+      - time
+      - timer
+      - clock
+  - title: 'bi bi-stopwatch'
+    searchTerms:
+      - time
+      - timer
+      - clock
+  - title: 'bi bi-strava'
+    searchTerms:
+      - social
+  - title: 'bi bi-stripe'
+    searchTerms:
+      - payments
+      - commerce
+  - title: 'bi bi-subscript'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-subtract'
+    searchTerms:
+      - graphics
+      - vector
+      - merge
+      - layers
+  - title: 'bi bi-suit-club-fill'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-club'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-diamond-fill'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-diamond'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-heart-fill'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-heart'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-spade-fill'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-suit-spade'
+    searchTerms:
+      - card
+      - cards
+      - suit
+      - deck
+      - gambling
+  - title: 'bi bi-sun-fill'
+    searchTerms:
+      - solar
+      - weather
+  - title: 'bi bi-sun'
+    searchTerms:
+      - solar
+      - weather
+  - title: 'bi bi-sunglasses'
+    searchTerms:
+      - shades
+      - cool
+      - aviators
+  - title: 'bi bi-sunrise-fill'
+    searchTerms:
+      - dawn
+  - title: 'bi bi-sunrise'
+    searchTerms:
+      - dawn
+  - title: 'bi bi-sunset-fill'
+    searchTerms:
+      - dusk
+  - title: 'bi bi-sunset'
+    searchTerms:
+      - dusk
+  - title: 'bi bi-superscript'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-symmetry-horizontal'
+    searchTerms:
+      - align
+      - orientation
+      - mirror
+  - title: 'bi bi-symmetry-vertical'
+    searchTerms:
+      - align
+      - orientation
+      - mirror
+  - title: 'bi bi-table'
+    searchTerms:
+      - spreadsheet
+  - title: 'bi bi-tablet-fill'
+    searchTerms:
+      - mobile
+  - title: 'bi bi-tablet-landscape-fill'
+    searchTerms:
+      - mobile
+  - title: 'bi bi-tablet-landscape'
+    searchTerms:
+      - mobile
+  - title: 'bi bi-tablet'
+    searchTerms:
+      - mobile
+  - title: 'bi bi-tag-fill'
+    searchTerms:
+      - price
+      - category
+      - taxonomy
+      - label
+  - title: 'bi bi-tag'
+    searchTerms:
+      - price
+      - category
+      - taxonomy
+      - label
+  - title: 'bi bi-tags-fill'
+    searchTerms:
+      - price
+      - category
+      - taxonomy
+      - label
+  - title: 'bi bi-tags'
+    searchTerms:
+      - price
+      - category
+      - taxonomy
+      - label
+  - title: 'bi bi-taxi-front-fill'
+    searchTerms:
+      - cab
+      - uber
+      - lyft
+  - title: 'bi bi-taxi-front'
+    searchTerms:
+      - cab
+      - uber
+      - lyft
+  - title: 'bi bi-telegram'
+    searchTerms:
+      - social
+      - chat
+  - title: 'bi bi-telephone-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-forward-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-forward'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-inbound-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-inbound'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-minus-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-minus'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-outbound-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-outbound'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-plus-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-plus'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-x-fill'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone-x'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-telephone'
+    searchTerms:
+      - telephone
+      - phone
+      - call
+  - title: 'bi bi-tencent-qq'
+    searchTerms:
+      - social
+  - title: 'bi bi-terminal-dash'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-terminal-fill'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-terminal-plus'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-terminal-split'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-terminal-x'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-terminal'
+    searchTerms:
+      - command-line
+      - cli
+      - command-prompt
+  - title: 'bi bi-text-center'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-text-indent-left'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-text-indent-right'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-text-left'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-text-paragraph'
+    searchTerms:
+      - text
+      - type
+      - paragraph
+      - copy
+  - title: 'bi bi-text-right'
+    searchTerms:
+      - text
+      - type
+      - justify
+      - alignment
+  - title: 'bi bi-text-wrap'
+    searchTerms:
+      - text
+      - type
+      - 'word wrap'
+  - title: 'bi bi-textarea-resize'
+    searchTerms:
+      - text
+      - form
+  - title: 'bi bi-textarea-t'
+    searchTerms:
+      - text
+      - insert
+      - bounding-box
+  - title: 'bi bi-textarea'
+    searchTerms:
+      - text
+      - insert
+      - bounding-box
+  - title: 'bi bi-thermometer-half'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-thermometer-high'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-thermometer-low'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-thermometer-snow'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-thermometer-sun'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-thermometer'
+    searchTerms:
+      - temperature
+      - weather
+  - title: 'bi bi-three-dots-vertical'
+    searchTerms:
+      - kebab
+      - more
+      - ellipsis
+      - overflow
+      - menu
+  - title: 'bi bi-three-dots'
+    searchTerms:
+      - meatballs
+      - more
+      - ellipsis
+      - overflow
+      - menu
+  - title: 'bi bi-thunderbolt-fill'
+    searchTerms:
+      - plug
+      - port
+  - title: 'bi bi-thunderbolt'
+    searchTerms:
+      - plug
+      - port
+  - title: 'bi bi-ticket-detailed-fill'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-ticket-detailed'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-ticket-fill'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-ticket-perforated-fill'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-ticket-perforated'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-ticket'
+    searchTerms:
+      - tickets
+      - admission
+  - title: 'bi bi-tiktok'
+    searchTerms:
+      - social
+  - title: 'bi bi-toggle-off'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-toggle-on'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-toggle2-off'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-toggle2-on'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-toggles'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-toggles2'
+    searchTerms:
+      - toggle
+      - switch
+      - checkbox
+  - title: 'bi bi-tools'
+    searchTerms:
+      - tool
+      - wrench
+      - screwdriver
+  - title: 'bi bi-tornado'
+    searchTerms:
+      - wind
+  - title: 'bi bi-train-freight-front-fill'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-train-freight-front'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-train-front-fill'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-train-front'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-train-lightrail-front-fill'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-train-lightrail-front'
+    searchTerms:
+      - transit
+      - public
+      - rail
+  - title: 'bi bi-translate'
+    searchTerms:
+      - translation
+      - languages
+      - language
+  - title: 'bi bi-trash-fill'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-trash'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-trash2-fill'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-trash2'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-trash3-fill'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-trash3'
+    searchTerms:
+      - trash-can
+      - garbage
+      - delete
+      - remove
+  - title: 'bi bi-tree-fill'
+    searchTerms:
+      - tree
+      - forrest
+  - title: 'bi bi-tree'
+    searchTerms:
+      - tree
+      - forrest
+  - title: 'bi bi-trello'
+    searchTerms:
+      - kanban
+      - board
+  - title: 'bi bi-triangle-fill'
+    searchTerms:
+      - shape
+  - title: 'bi bi-triangle-half'
+    searchTerms:
+      - shape
+  - title: 'bi bi-triangle'
+    searchTerms:
+      - shape
+  - title: 'bi bi-trophy-fill'
+    searchTerms:
+      - prize
+      - winning
+  - title: 'bi bi-trophy'
+    searchTerms:
+      - prize
+      - winning
+  - title: 'bi bi-tropical-storm'
+    searchTerms:
+      - hurricane
+  - title: 'bi bi-truck-flatbed'
+    searchTerms:
+      - trucking
+      - shipping
+      - shipment
+      - transport
+      - deliver
+      - delivery
+  - title: 'bi bi-truck-front-fill'
+    searchTerms:
+      - vehicle
+      - shipping
+      - transit
+      - haul
+      - freight
+  - title: 'bi bi-truck-front'
+    searchTerms:
+      - vehicle
+      - shipping
+      - transit
+      - haul
+      - freight
+  - title: 'bi bi-truck'
+    searchTerms:
+      - trucking
+      - shipping
+      - shipment
+      - transport
+      - deliver
+      - delivery
+  - title: 'bi bi-tsunami'
+    searchTerms:
+      - wave
+  - title: 'bi bi-tv-fill'
+    searchTerms:
+      - television
+      - monitor
+      - display
+  - title: 'bi bi-tv'
+    searchTerms:
+      - television
+      - monitor
+      - display
+  - title: 'bi bi-twitch'
+    searchTerms:
+      - social
+  - title: 'bi bi-twitter'
+    searchTerms:
+      - social
+      - chat
+  - title: 'bi bi-type-bold'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-type-h1'
+    searchTerms:
+      - text
+      - type
+      - heading
+  - title: 'bi bi-type-h2'
+    searchTerms:
+      - text
+      - type
+      - heading
+  - title: 'bi bi-type-h3'
+    searchTerms:
+      - text
+      - type
+      - heading
+  - title: 'bi bi-type-italic'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-type-strikethrough'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-type-underline'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-type'
+    searchTerms:
+      - text
+      - type
+  - title: 'bi bi-ubuntu'
+    searchTerms:
+      - linux
+      - distro
+  - title: 'bi bi-ui-checks-grid'
+    searchTerms:
+      - checkbox
+      - form
+  - title: 'bi bi-ui-checks'
+    searchTerms:
+      - checkbox
+      - form
+  - title: 'bi bi-ui-radios-grid'
+    searchTerms:
+      - radio
+      - form
+  - title: 'bi bi-ui-radios'
+    searchTerms:
+      - radio
+      - form
+  - title: 'bi bi-umbrella-fill'
+    searchTerms:
+      - rain
+  - title: 'bi bi-umbrella'
+    searchTerms:
+      - rain
+  - title: 'bi bi-unindent'
+    searchTerms:
+      - tab
+      - indent
+  - title: 'bi bi-union'
+    searchTerms:
+      - graphics
+      - vector
+      - merge
+      - layers
+  - title: 'bi bi-unity'
+    searchTerms:
+      - gaming
+  - title: 'bi bi-universal-access-circle'
+    searchTerms:
+      - accessibility
+      - a11y
+  - title: 'bi bi-universal-access'
+    searchTerms:
+      - accessibility
+      - a11y
+  - title: 'bi bi-unlock-fill'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-unlock'
+    searchTerms:
+      - privacy
+      - security
+  - title: 'bi bi-upc-scan'
+    searchTerms:
+      - purchase
+      - barcode
+  - title: 'bi bi-upc'
+    searchTerms:
+      - purchase
+      - barcode
+  - title: 'bi bi-upload'
+    searchTerms:
+      - arrow
+      - network
+  - title: 'bi bi-usb-c-fill'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-c'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-drive-fill'
+    searchTerms:
+      - thumb-drive
+  - title: 'bi bi-usb-drive'
+    searchTerms:
+      - thumb-drive
+  - title: 'bi bi-usb-fill'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-micro-fill'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-micro'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-mini-fill'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-mini'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-plug-fill'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-plug'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb-symbol'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-usb'
+    searchTerms:
+      - port
+      - plug
+  - title: 'bi bi-valentine'
+    searchTerms:
+      - love
+      - romance
+      - valentine
+  - title: 'bi bi-valentine2'
+    searchTerms:
+      - love
+      - romance
+      - valentine
+  - title: 'bi bi-vector-pen'
+    searchTerms:
+      - graphics
+      - vector
+      - pen
+  - title: 'bi bi-view-list'
+    searchTerms:
+      - view
+      - rearrange
+  - title: 'bi bi-view-stacked'
+    searchTerms:
+      - view
+      - rearrange
+  - title: 'bi bi-vimeo'
+    searchTerms:
+      - social
+  - title: 'bi bi-vinyl-fill'
+    searchTerms:
+      - audio
+      - music
+      - record
+  - title: 'bi bi-vinyl'
+    searchTerms:
+      - audio
+      - music
+      - record
+  - title: 'bi bi-virus'
+    searchTerms:
+      - covid
+      - viral
+  - title: 'bi bi-virus2'
+    searchTerms:
+      - covid
+      - viral
+  - title: 'bi bi-voicemail'
+    searchTerms:
+      - voicemail
+      - message
+      - telephone
+  - title: 'bi bi-volume-down-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-down'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-mute-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-mute'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-off-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-off'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-up-fill'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-volume-up'
+    searchTerms:
+      - audio
+      - video
+      - av
+      - sound
+  - title: 'bi bi-vr'
+    searchTerms:
+      - divider
+      - vertical-rule
+  - title: 'bi bi-wallet-fill'
+    searchTerms:
+      - cards
+      - money
+      - funds
+      - cash
+      - payment
+  - title: 'bi bi-wallet'
+    searchTerms:
+      - cards
+      - money
+      - funds
+      - cash
+      - payment
+  - title: 'bi bi-wallet2'
+    searchTerms:
+      - cards
+      - money
+      - funds
+      - cash
+      - payment
+  - title: 'bi bi-watch'
+    searchTerms:
+      - wearables
+      - clock
+  - title: 'bi bi-water'
+    searchTerms:
+      - waves
+      - levels
+  - title: 'bi bi-webcam-fill'
+    searchTerms:
+      - camera
+      - video
+  - title: 'bi bi-webcam'
+    searchTerms:
+      - camera
+      - video
+  - title: 'bi bi-wechat'
+    searchTerms:
+      - social
+      - messaging
+  - title: 'bi bi-whatsapp'
+    searchTerms:
+      - social
+      - facebook
+      - chat
+  - title: 'bi bi-wifi-1'
+    searchTerms:
+      - internet
+      - network
+      - wireless
+  - title: 'bi bi-wifi-2'
+    searchTerms:
+      - internet
+      - network
+      - wireless
+  - title: 'bi bi-wifi-off'
+    searchTerms:
+      - internet
+      - network
+      - wireless
+  - title: 'bi bi-wifi'
+    searchTerms:
+      - internet
+      - network
+      - wireless
+  - title: 'bi bi-wikipedia'
+    searchTerms:
+      - encyclopedia
+  - title: 'bi bi-wind'
+    searchTerms:
+      - windy
+      - breeze
+  - title: 'bi bi-window-dash'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window-desktop'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window-dock'
+    searchTerms:
+      - application
+      - desktop
+      - os
+  - title: 'bi bi-window-fullscreen'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window-plus'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window-sidebar'
+    searchTerms:
+      - application
+      - desktop
+  - title: 'bi bi-window-split'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window-stack'
+    searchTerms:
+      - application
+      - desktop
+      - app
+      - windows
+  - title: 'bi bi-window-x'
+    searchTerms:
+      - application
+      - desktop
+      - app
+  - title: 'bi bi-window'
+    searchTerms:
+      - app
+      - application
+  - title: 'bi bi-windows'
+    searchTerms:
+      - microsoft
+      - msft
+      - windows
+  - title: 'bi bi-wordpress'
+    searchTerms:
+      - social
+  - title: 'bi bi-wrench-adjustable-circle-fill'
+    searchTerms:
+      - tool
+  - title: 'bi bi-wrench-adjustable-circle'
+    searchTerms:
+      - tool
+  - title: 'bi bi-wrench-adjustable'
+    searchTerms:
+      - tool
+  - title: 'bi bi-wrench'
+    searchTerms:
+      - tool
+  - title: 'bi bi-x-circle-fill'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-circle'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-diamond-fill'
+    searchTerms:
+      - x
+      - delete
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-diamond'
+    searchTerms:
+      - x
+      - delete
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-lg'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-octagon-fill'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-octagon'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-square-fill'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x-square'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-x'
+    searchTerms:
+      - x
+      - delete
+      - remove
+      - reset
+      - clear
+      - cancel
+      - close
+      - exit
+  - title: 'bi bi-xbox'
+    searchTerms:
+      - microsoft
+      - gaming
+  - title: 'bi bi-yelp'
+    searchTerms:
+      - social
+      - reviews
+  - title: 'bi bi-yin-yang'
+    searchTerms:
+      - peace
+  - title: 'bi bi-youtube'
+    searchTerms:
+      - social
+      - video
+      - google
+  - title: 'bi bi-zoom-in'
+    searchTerms:
+      - magnify
+      - scale
+  - title: 'bi bi-zoom-out'
+    searchTerms:
+      - minify
+      - scale

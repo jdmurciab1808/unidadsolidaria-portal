@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Template to display ain social media icon with a link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the item.
+ * - display_options: An array of the display options
+ *   - icon_source: The icon source ( none, image or font ).
+ *   - show_label: Whether to show the label or not.
+ *   - target_blank: Whether to add target_blank to the links.
+ * - platforms: A nested list of link items. Each link item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - image: The social media link image path.
+ *   - font_classes: The icon font classes.
+ *   - label: The link title.
+ *   - url: The link URL, instance of \Drupal\Core\Url
+ */
+#}
+<div {{attributes.addClass('social-media-platforms__container')}}>
+
+{% for key, item in platforms %}
+
+  {% set item_attributes = item.attributes.addClass([ 'social-media-platforms__link', 'social-media-platforms__link--' ~ key ]) %}
+  {% set item_attributes = item_attributes.setAttribute('href', item.url) %}
+  {% set item_attributes = item_attributes.setAttribute('title', item.label) %}
+
+  {% if display_options.target_blank %}
+    {% set item_attributes = item_attributes.setAttribute('target', '_blank') %}
+  {% endif %}
+
+  <a {{ item_attributes }}>
+
+    {% if display_options.icon_source == 'image' %}
+      <img class="social-media-platforms__icon" src="{{item.image}}" alt="{{item.label}}" >
+    {% endif %}
+
+    {% if display_options.icon_source == 'font' %}
+      <i class="{{item.font_classes}}"></i>
+    {% endif %}
+
+
+    {% if display_options.show_label %}
+      <span class="social-media-platforms__label">{{ item.label }}</span>
+    {% endif %}
+
+  </a>
+{% endfor %}
+</div>

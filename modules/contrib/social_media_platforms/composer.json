@@ -1,0 +1,38 @@
+{
+    "name": "drupal/social_media_platforms",
+    "type": "drupal-module",
+    "description": "Provides a configurable block to display links to various social media profiles, with customizable options for icons, labels, and domain-specific configurations.",
+    "homepage": "https://www.drupal.org/project/social_media_platforms",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Guiu Rocafort Ferrer",
+            "homepage": "https://www.drupal.org/u/guiu.rocafort.ferrer",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "drupal/core": "^10.2 || ^11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9 || ^10",
+        "drupal/coder": "^8.3.13"
+    },
+    "extra": {
+        "drupal": {
+            "package": "Integrations",
+            "ecosystem": "Domain"
+        }
+    },
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/social_media_platforms",
+        "source": "https://git.drupalcode.org/project/social_media_platforms"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

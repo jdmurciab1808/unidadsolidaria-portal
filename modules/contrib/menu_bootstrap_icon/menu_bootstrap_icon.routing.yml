@@ -1,0 +1,7 @@
+menu_bootstrap_icon.settings:
+  path: '/admin/config/content/menu_bootstrap_icon'
+  defaults:
+    _form: '\Drupal\menu_bootstrap_icon\Form\SettingsForm'
+    _title: 'Menu bootstrap icon settings'
+  requirements:
+    _permission: 'administer site configuration'

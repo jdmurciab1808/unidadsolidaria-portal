@@ -1,0 +1,4 @@
+execute arbitrary js_editor scripts:
+  description: 'Allow user to inject arbitrary Javascript into a Drupal site.'
+  title: 'Execute arbitrary Javascript editor scripts'
+  restrict access: true

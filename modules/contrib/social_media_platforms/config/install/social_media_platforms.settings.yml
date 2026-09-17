@@ -1,0 +1,49 @@
+langcode: en
+
+display_options:
+  icon_source: image
+  show_label: true
+  target_blank: true
+platforms:
+
+  facebook:
+    label: 'Facebook'
+    url: null
+    font_classes: ''
+    weight: 0
+
+  youtube:
+    label: 'Youtube'
+    url: null
+    font_classes: ''
+    weight: 1
+
+  linkedin:
+    label: 'Linkedin'
+    url: null
+    font_classes: ''
+    weight: 2
+
+  x:
+    label: 'X'
+    url: null
+    font_classes: ''
+    weight: 3
+
+  instagram:
+    label: 'Instagram'
+    url: null
+    font_classes: ''
+    weight: 4
+
+  pinterest:
+    label: 'Pinterest'
+    url: null
+    font_classes: ''
+    weight: 5
+
+  tiktok:
+    label: 'TikTok'
+    url: null
+    font_classes: ''
+    weight: 6

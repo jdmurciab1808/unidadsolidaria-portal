@@ -1,0 +1,10 @@
+js_editor.theme.*:
+  type: config_object
+  label: 'Custom Javascript'
+  mapping:
+    js_enabled:
+      type: boolean
+      label: 'Enable or disable custom Javascript:'
+    js:
+      type: text
+      label: ''

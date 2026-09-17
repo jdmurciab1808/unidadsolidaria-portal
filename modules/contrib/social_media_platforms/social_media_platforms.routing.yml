@@ -1,0 +1,7 @@
+social_media_platforms.settings:
+  path: '/admin/config/services/social-media-platforms'
+  defaults:
+    _title: 'Social Media Platforms'
+    _form: 'Drupal\social_media_platforms\Form\SettingsForm'
+  requirements:
+    _permission: 'administer social media platforms'

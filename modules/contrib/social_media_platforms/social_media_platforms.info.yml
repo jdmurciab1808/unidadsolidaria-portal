@@ -1,0 +1,13 @@
+name: 'Social Media Platforms'
+type: module
+description: 'Allows to add social media links to the pages via a block.'
+package: Custom
+core_version_requirement: ^10.2 || ^11
+configure: social_media_platforms.settings
+dependencies:
+  - 'drupal:block'
+
+# Information added by Drupal.org packaging script on 2025-03-18
+version: '1.1.0'
+project: 'social_media_platforms'
+datestamp: 1742294526

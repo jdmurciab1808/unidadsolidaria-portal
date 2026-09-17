@@ -1,0 +1,3 @@
+services:
+  menu_bootstrap_icon.icon_search:
+    class: \Drupal\menu_bootstrap_icon\BootstrapIconSearch

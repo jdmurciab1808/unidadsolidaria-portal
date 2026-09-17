@@ -1,0 +1,5 @@
+name: 'Twitter Embed Block'
+type: module
+description: 'Bloque simple para timeline de Twitter'
+core_version_requirement: ^10
+package: Custom

@@ -1,0 +1,37 @@
+#js-editor-field .CodeMirror,
+#js-editor-field textarea,
+#js-editor-preview-path,
+#js-editor-preview {
+  border: 1px solid #ccc;
+}
+
+#js-editor-field .CodeMirror,
+#js-editor-field textarea {
+  height: 200px;
+}
+
+#js-editor-field .form-textarea-wrapper label {
+  display: inline;
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 12px;
+}
+
+#js-editor-preview {
+  width: 100%;
+  height: 400px;
+}
+
+#js-editor-field label + input[type=checkbox] {
+  margin-left: 36px;
+}
+
+#js-editor-preview-path-wrapper label {
+  display: inline;
+  font-weight: normal;
+  margin-right: 6px;
+}
+
+#js-editor-preview-path-wrapper {
+  margin-bottom: 6px;
+}

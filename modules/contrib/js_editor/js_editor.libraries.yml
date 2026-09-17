@@ -1,0 +1,8 @@
+js_editor:
+  version: 1.x
+  css:
+    theme:
+      css/js_editor.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

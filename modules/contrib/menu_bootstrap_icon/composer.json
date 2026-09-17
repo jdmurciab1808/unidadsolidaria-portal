@@ -1,0 +1,24 @@
+{
+  "name": "drupal/menu_bootstrap_icon",
+  "description": "This module provides menu icon bootstrap 5",
+  "type": "drupal-module",
+  "minimum-stability": "stable",
+  "homepage": "https://www.drupal.org/project/menu_bootstrap_icon",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/menu_bootstrap_icon",
+    "source": "https://git.drupalcode.org/project/menu_bootstrap_icon"
+  },
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "NGUYEN Bao",
+      "email": "n.bao@yahoo.com",
+      "homepage": "https://www.drupal.org/u/lazzyvn",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "^9.3 || ^10",
+    "erusev/parsedown": "^1.7.4"
+  }
+}

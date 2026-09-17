@@ -1,0 +1,25 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+
+global-scripts:
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Vidaloka&display=swap': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Yrsa:300,400&display=swap': { type: external, minified: true }
+      'https://fonts.googleapis.com/css?family=Raleway&display=swap': { type: external, minified: true }
+      '//fonts.googleapis.com/css?family=Roboto:400,500&display=swap': { type: external, minified: true  }
+  js:
+    js/funciones.js: { weight: -900, minified: true }
+    dependencies:
+      - core/jquery
+

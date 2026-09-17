@@ -1,0 +1,6 @@
+social_media_platforms.settings:
+  title: Social Media Platforms
+  description: 'Configure the social media platform urls'
+  parent: system.admin_config_services
+  route_name: social_media_platforms.settings
+  weight: 10

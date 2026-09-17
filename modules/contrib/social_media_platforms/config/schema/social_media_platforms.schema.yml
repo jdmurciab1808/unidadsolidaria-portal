@@ -1,0 +1,56 @@
+# Schema for the configuration files of the Social Media Platforms module.
+social_media_platforms.settings:
+  type: config_object
+  label: 'Social Media Platforms settings'
+  mapping:
+
+    display_options:
+      type: mapping
+      label: 'Display options'
+      mapping:
+
+        icon_source:
+          type: string
+          label: 'Icon source'
+          constraints:
+            AllowedValues:
+              - 'none'
+              - 'image'
+              - 'font'
+
+        show_label:
+          type: boolean
+          label: 'Show label'
+
+        target_blank:
+          type: boolean
+          label: 'Open link in new tab'
+
+    platforms:
+      type: sequence
+      label: 'Available platforms'
+      orderby: key
+      sequence:
+        type: mapping
+        mapping:
+
+          label:
+            type: label
+            label: 'Platform label'
+
+          url:
+            type: uri
+            label: 'Platform url'
+
+          font_classes:
+            type: string
+            label: 'Font class'
+            constraints:
+              Regex:
+                pattern: '/[^a-zA-Z0-9\-\_ ]/'
+                match: false
+                message: 'Class attribute values can only contain alphanumerical values, spaces, underscores(_) or hyphens(-).'
+
+          weight:
+            type: weight
+            label: 'Weight'

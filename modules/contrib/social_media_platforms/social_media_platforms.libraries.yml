@@ -1,0 +1,5 @@
+social_media_platforms.theme:
+  version: VERSION
+  css:
+    theme:
+      css/social_media_platforms.theme.css: {}
