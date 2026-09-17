@@ -30,7 +30,7 @@
         "drupal/high_contrast": "1.0.x@beta",
         "drupal/jcarousel": "6.x@alpha",
         "drupal/jquery_ui": "^1.8",
-        "drupal/js_editor": "1.x",
+        "drupal/js_editor": "^1.1",
         "drupal/menu_bootstrap_icon": "1.0",
         "drupal/metatag": "^2.2",
         "drupal/slick": "^3.0",

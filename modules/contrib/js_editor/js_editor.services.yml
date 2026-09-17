@@ -1,0 +1,5 @@
+
+services:
+  Drupal\js_editor\Hook\JsEditorHooks:
+    class: Drupal\js_editor\Hook\JsEditorHooks
+    autowire: true
