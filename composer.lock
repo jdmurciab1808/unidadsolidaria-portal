@@ -2534,17 +2534,17 @@
         },
         {
             "name": "drupal/tb_megamenu",
-            "version": "3.0.0-alpha4",
+            "version": "3.0.0-alpha5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tb_megamenu.git",
-                "reference": "3.0.0-alpha4"
+                "reference": "3.0.0-alpha5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tb_megamenu-3.0.0-alpha4.zip",
-                "reference": "3.0.0-alpha4",
-                "shasum": "3a944fbcaaf5f1b28e0206ccfeb54a1bd24ee72f"
+                "url": "https://ftp.drupal.org/files/projects/tb_megamenu-3.0.0-alpha5.zip",
+                "reference": "3.0.0-alpha5",
+                "shasum": "53558e0125661584012f22b8b551462f8557720d"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10 || ^11"
@@ -2552,8 +2552,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0-alpha4",
-                    "datestamp": "1713052614",
+                    "version": "3.0.0-alpha5",
+                    "datestamp": "1756397697",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
@@ -2594,10 +2594,6 @@
                     "name": "Henry Odiete (henry.odiete)",
                     "homepage": "https://www.drupal.org/u/henry.odiete",
                     "role": "Co-Maintainer"
-                },
-                {
-                    "name": "quondam",
-                    "homepage": "https://www.drupal.org/user/327869"
                 },
                 {
                     "name": "themodularlab",
