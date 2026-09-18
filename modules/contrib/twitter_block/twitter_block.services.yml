@@ -1,0 +1,5 @@
+
+services:
+  Drupal\twitter_block\Hook\TwitterBlockHooks:
+    class: Drupal\twitter_block\Hook\TwitterBlockHooks
+    autowire: true
