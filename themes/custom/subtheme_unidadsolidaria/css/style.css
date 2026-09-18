@@ -172,7 +172,7 @@ developed by Andrey rodriguez
 }
 #views_slideshow_cycle_main_slideshow-block_1,
 #views_slideshow_cycle_teaser_section_slideshow-block_1 {
-  min-height: 300px; /* puedes ajustar este valor según tus imágenes 
+  min-height: 300px; /* puedes ajustar este valor segï¿½n tus imï¿½genes 
 }
 
 .img-slide-responsive img {
@@ -364,57 +364,20 @@ margin-bottom: 15px;
 
 /* slideshow styles */
 
-
-/* Asegura que la imagen se ajuste al 100% del contenedor */
-.img_slide_responsive {
+/* La clase real que Drupal genera es "img-slide-responsive" (con guion),
+   no "img_slide_responsive" (con guion bajo) como estaba aquÃ­ antes -
+   por eso esta regla nunca aplicaba y la imagen del banner (de hasta
+   6946px de ancho original) se desbordaba en pantallas angostas.
+   Se apunta tambiÃ©n directo al <img>, sin depender de que la clase
+   .img-responsive de Bootstrap cargue correctamente (no se encontrÃ³
+   esa regla realmente disponible en este tema). */
+.img-slide-responsive,
+.img-slide-responsive img {
+    max-width: 100%;
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ajusta la imagen para que cubra el área sin deformarse */
+    display: block;
 }
-
-/* Media Queries para diferentes tamaños de pantalla */
-
-/* Pantallas muy pequeñas (móviles en modo retrato) */
-@media (max-width: 480px) {
-    .img_slide_responsive {
-        width: 100%;  /* Asegura que la imagen ocupe todo el ancho */
-        height: auto;
-    }
-}
-
-/* Pantallas pequeñas (móviles en modo paisaje) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .img_slide_responsive {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Pantallas medianas (tabletas) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .img_slide_responsive {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Pantallas grandes (escritorios y laptops) */
-@media (min-width: 1025px) and (max-width: 1440px) {
-    .img_slide_responsive {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Pantallas muy grandes (pantallas de gran tamaño o monitores 4K) */
-@media (min-width: 1441px) {
-    .img_slide_responsive {
-        width: 100%;
-        height: auto;
-    }
-}
-
-
 
 /* end styles slideshow */
 
@@ -3838,7 +3801,7 @@ p:visited {
 
 
 
-/* estilos acreditación acordeón */
+/* estilos acreditaciï¿½n acordeï¿½n */
 
 
 
@@ -4145,30 +4108,30 @@ p:visited {
 
 
 
-/* Estilos para la región de búsqueda */
+/* Estilos para la regiï¿½n de bï¿½squeda */
 .region-search {
     width: auto !important;
     margin: 0 auto 0 !important;
     padding: 0 !important;
 }
 
-/* Estilos para la región de banner */
+/* Estilos para la regiï¿½n de banner */
 .region-banner {
     width: 100%;
-    /* La región de banner ocupa el 85% del ancho */
+    /* La regiï¿½n de banner ocupa el 85% del ancho */
     margin: 0 auto;
     /* Centra el banner */
 }
 
-/* Opcional: Ajustes responsivos para dispositivos móviles */
+/* Opcional: Ajustes responsivos para dispositivos mï¿½viles */
 @media (max-width: 768px) {
 
     .region-search,
     .region-banner {
         width: 100%;
-        /* Las regiones ocupan el 100% en pantallas pequeñas */
+        /* Las regiones ocupan el 100% en pantallas pequeï¿½as */
         margin-bottom: 10px;
-        /* Espacio entre las regiones en pantallas pequeñas */
+        /* Espacio entre las regiones en pantallas pequeï¿½as */
     }
 }
 
@@ -4196,23 +4159,23 @@ p:visited {
     margin-bottom: 8%;
 }
 
-/* Contenedor principal de las imágenes en fila horizontal */
+/* Contenedor principal de las imï¿½genes en fila horizontal */
 .views-view-grid.horizontal {
-    display: flex; /* Usamos flexbox para que las imágenes estén en una fila */
-    flex-wrap: wrap; /* Asegura que las imágenes no se desborden en pantallas pequeñas */
-    justify-content: space-between; /* Espacio entre las imágenes */
-    gap: 20px; /* Distancia entre las imágenes */
+    display: flex; /* Usamos flexbox para que las imï¿½genes estï¿½n en una fila */
+    flex-wrap: wrap; /* Asegura que las imï¿½genes no se desborden en pantallas pequeï¿½as */
+    justify-content: space-between; /* Espacio entre las imï¿½genes */
+    gap: 20px; /* Distancia entre las imï¿½genes */
 }
 
 /* Estilo para cada columna de imagen */
 .tabla-publicidad-col {
-    flex: 1 1 23%; /* Las imágenes ocupan un 23% del espacio, dejando margen para el gap */
+    flex: 1 1 23%; /* Las imï¿½genes ocupan un 23% del espacio, dejando margen para el gap */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Estilo para las imágenes */
+/* Estilo para las imï¿½genes */
 .img-destacados-custom img {
     width: 100%;
     height: auto;
@@ -4223,7 +4186,7 @@ p:visited {
     padding: 5px;
 }
 
-/* Responsividad para pantallas pequeñas */
+/* Responsividad para pantallas pequeï¿½as */
 @media (max-width: 768px) {
     .views-view-grid.horizontal {
         flex-direction: column; /* Cambia a columna en pantallas medianas */
@@ -4231,8 +4194,8 @@ p:visited {
     }
 
     .tabla-publicidad-col {
-        flex: 1 1 100%; /* Las imágenes ocuparán el 100% del ancho en pantallas pequeñas */
-        margin-bottom: 15px; /* Espacio adicional entre imágenes */
+        flex: 1 1 100%; /* Las imï¿½genes ocuparï¿½n el 100% del ancho en pantallas pequeï¿½as */
+        margin-bottom: 15px; /* Espacio adicional entre imï¿½genes */
     }
 }
 
@@ -4240,7 +4203,7 @@ p:visited {
 
 
 
-/* Ajustes básicos */
+/* Ajustes bï¿½sicos */
 .footer-wrapper {
     background-color: #f8f9fa;
     padding: 40px 0;
@@ -4296,7 +4259,7 @@ p:visited {
     height: auto;
 }
 
-/* Asegurar que los elementos estén bien alineados en pantallas pequeñas */
+/* Asegurar que los elementos estï¿½n bien alineados en pantallas pequeï¿½as */
 @media (max-width: 768px) {
     .social-icons {
         flex-direction: column;
@@ -4304,7 +4267,7 @@ p:visited {
     }
 }
 
-/* Ajuste en tamaños de pantallas grandes */
+/* Ajuste en tamaï¿½os de pantallas grandes */
 @media (min-width: 768px) {
     .card-contacto {
         margin-right: 15px;
@@ -4394,7 +4357,7 @@ p:visited {
 }
 
 .content-blue img {
-    max-height: 60px; /* Ajustar tamaño de los logos */
+    max-height: 60px; /* Ajustar tamaï¿½o de los logos */
 }
 
 .text-white a {
@@ -4624,5 +4587,128 @@ p:visited {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Slideshow del banner: flechas de navegaciÃ³n superpuestas y paginador */
+.skin-default {
+    position: relative;
+}
+
+.views_slideshow_controls_text_previous,
+.views_slideshow_controls_text_next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.views_slideshow_controls_text_previous:hover,
+.views_slideshow_controls_text_next:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.views_slideshow_controls_text_previous {
+    left: 15px;
+}
+
+.views_slideshow_controls_text_next {
+    right: 15px;
+}
+
+.views_slideshow_controls_text_previous a,
+.views_slideshow_controls_text_next a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+
+.views_slideshow_controls_text_previous a::before,
+.views_slideshow_controls_text_next a::before {
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+}
+
+.views_slideshow_controls_text_previous a::before {
+    content: "\25C0";
+    /* Optical centering: a triangle's visual weight sits left of its box. */
+    margin-right: -2px;
+}
+
+.views_slideshow_controls_text_next a::before {
+    content: "\25B6";
+    margin-left: 2px;
+}
+
+@media (max-width: 480px) {
+    .views_slideshow_controls_text_previous,
+    .views_slideshow_controls_text_next {
+        width: 32px;
+        height: 32px;
+    }
+
+    .views_slideshow_controls_text_previous {
+        left: 8px;
+    }
+
+    .views_slideshow_controls_text_next {
+        right: 8px;
+    }
+
+    .views_slideshow_controls_text_previous a::before,
+    .views_slideshow_controls_text_next a::before {
+        font-size: 14px;
+    }
+}
+
+.views_slideshow_controls_text_pause {
+    display: none;
+}
+
+/* Overlay the whole controls wrapper on top of the image, but let clicks
+   pass through everywhere except the actual buttons/dots (pointer-events). */
+.views-slideshow-controls-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.views-slideshow-controls-bottom .views_slideshow_controls_text_previous,
+.views-slideshow-controls-bottom .views_slideshow_controls_text_next,
+.views-slideshow-controls-bottom .views-slideshow-pager-bullets {
+    pointer-events: auto;
+}
+
+.views-slideshow-controls-bottom .views-slideshow-pager-bullets {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .views-slideshow-controls-bottom .views-slideshow-pager-bullets {
+        bottom: 6px;
     }
 }
