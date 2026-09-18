@@ -5,13 +5,14 @@
  * Provides configurable blocks for a Twitter feed.
  */
 
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\twitter_block\Hook\TwitterBlockHooks;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
  */
+#[LegacyHook]
 function twitter_block_help($route_name, RouteMatchInterface $route_match) {
-  if ($route_name == 'help.page.twitter_block') {
-    return '<p>' . t('This module provides configurable blocks for a Twitter feed.') . '</p>';
-  }
+  return \Drupal::service(TwitterBlockHooks::class)->help($route_name, $route_match);
 }
