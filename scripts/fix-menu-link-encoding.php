@@ -25,15 +25,49 @@
  *
  * For links whose alias no longer resolves to anything (dead links,
  * unrelated to encoding — the content was renamed/removed), this script
- * leaves them as a single percent-encoded `internal:/<path>` URI: safe
- * (no crash), but still a 404 until someone decides the correct
- * destination. Those need a manual content decision, not an automated
- * guess.
+ * walks up the menu tree to the nearest ancestor link that resolves to a
+ * real page, and points there instead — so clicking lands on the closest
+ * related section instead of a 404. If no ancestor has a page of its own,
+ * it falls back to the front page. This is a placeholder, not a real
+ * fix: the correct destination still needs a manual content decision:
+ * once that's known, just re-edit the link from Structure > Menus.
  *
  * Run with: vendor/bin/drush scr scripts/fix-menu-link-encoding.php
  *
  * Safe to run more than once: already-fixed URIs are left untouched.
  */
+
+/**
+ * Walks up a menu link's parent chain and returns the nearest ancestor
+ * URL that resolves to a real page (not empty, not just "/"), or NULL if
+ * none is found before running out of parents.
+ */
+function _find_nearest_working_ancestor_url($link, $storage) {
+  $current = $link;
+  while (TRUE) {
+    $parent_id = $current->getParentId();
+    if (!$parent_id || strpos($parent_id, 'menu_link_content:') !== 0) {
+      return NULL;
+    }
+    $parent_uuid = str_replace('menu_link_content:', '', $parent_id);
+    $matches = $storage->loadByProperties(['uuid' => $parent_uuid]);
+    $parent = reset($matches);
+    if (!$parent) {
+      return NULL;
+    }
+    $url = '';
+    try {
+      $url = $parent->getUrlObject()->toString();
+    }
+    catch (\Exception $e) {
+      // Parent itself is broken; keep walking up.
+    }
+    if ($url !== '' && $url !== '/') {
+      return $url;
+    }
+    $current = $parent;
+  }
+}
 
 $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
 $alias_manager = \Drupal::service('path_alias.manager');
@@ -81,11 +115,10 @@ foreach ($ids as $id) {
     continue;
   }
 
-  // No matching alias (dead link, separate content problem). Just make
-  // sure it's at least safely single-encoded so it 404s cleanly instead
-  // of crashing or double-encoding.
-  $segments = explode('/', $decoded_path);
-  $new_uri = 'internal:/' . implode('/', array_map('rawurlencode', $segments));
+  // No matching alias (dead link, separate content problem). Fall back
+  // to the nearest ancestor page that actually works, or the front page.
+  $fallback_url = _find_nearest_working_ancestor_url($link, $storage);
+  $new_uri = $fallback_url ? 'internal:' . $fallback_url : 'internal:/';
   if ($new_uri !== $uri) {
     $link->set('link', [
       'uri' => $new_uri,
@@ -94,12 +127,12 @@ foreach ($ids as $id) {
     ]);
     $link->save();
     $encoded_only++;
-    echo "Encoded only (dead link, needs manual fix) [$id]: $uri => $new_uri\n";
+    echo "Fallback (dead link, needs manual review) [$id]: $uri => $new_uri\n";
   }
 }
 
 echo "Routed to entity: $routed\n";
-echo "Encoded only (still dead, needs manual review): $encoded_only\n";
+echo "Fallback to nearest ancestor/front (still needs manual review): $encoded_only\n";
 
 // Verify none are left crashing.
 $broken = [];
