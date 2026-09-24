@@ -4712,3 +4712,471 @@ p:visited {
         bottom: 6px;
     }
 }
+
+/* =====================================================================
+   RESPONSIVE MOVIL Y TABLET - menu, imagenes, video y margenes
+   (bloque agregado al final para que gane sobre las reglas anteriores)
+   Paleta: azul #3366cc, azul oscuro #004884, amarillo #ffcc00, claro #e6effd
+   ===================================================================== */
+
+/* ---- 1. MENU PRINCIPAL (megamenu) en modo movil: hasta 1199px ---------
+   El megamenu cambia a modo movil por debajo de 1200px (ajuste del bloque).
+   Usamos SU boton (.tbm-button), que no depende del JS de Bootstrap. */
+@media (max-width: 1199px) {
+
+    .tbm.tbm--mobile .tbm-button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+        padding: 8px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #004884;
+        color: #fff;
+        font-family: 'Montserrat', 'montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .tbm.tbm--mobile .tbm-button::after {
+        content: "Men\00fa";
+    }
+
+    .tbm.tbm--mobile .tbm-button-container {
+        width: 1.7rem;
+        height: 1.25rem;
+        margin: 0;
+    }
+
+    .tbm.tbm--mobile .tbm-button-container span {
+        height: 0.22rem;
+    }
+
+    .tbm.tbm--mobile .tbm-button[aria-expanded='true'] {
+        background: #3366cc;
+    }
+
+    .tbm.tbm--mobile .tbm-collapse {
+        left: 0;
+        right: 0;
+        max-height: 75vh;
+        overflow-y: auto;
+        border-top: 3px solid #ffcc00;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(0, 40, 90, 0.22);
+    }
+
+    .tbm.tbm--mobile .tbm-nav,
+    .tbm.tbm--mobile .tbm-collapse .tbm-nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .tbm.tbm--mobile .tbm-item {
+        border-bottom: 1px solid #d2dfef;
+    }
+
+    .tbm.tbm--mobile .tbm-link {
+        display: block;
+        padding: 14px 16px;
+        color: #004884;
+        font-family: 'Montserrat', 'montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3;
+        text-decoration: none;
+    }
+
+    .tbm.tbm--mobile .tbm-link:hover,
+    .tbm.tbm--mobile .tbm-link:focus {
+        background: #e6effd;
+        color: #004884;
+    }
+
+    .tbm.tbm--mobile .tbm-link-container {
+        align-items: stretch;
+    }
+
+    .tbm.tbm--mobile .tbm-submenu-toggle {
+        display: block;
+        width: 56px;
+        min-height: 48px;
+        border: 0;
+        border-left: 1px solid #d2dfef;
+        background: #f3f6fc;
+        color: #004884;
+    }
+
+    .tbm.tbm--mobile .tbm-item.open > .tbm-link-container > .tbm-submenu-toggle {
+        background: #e6effd;
+    }
+
+    .tbm.tbm--mobile .tbm-submenu {
+        padding: 0 !important;
+        background: #f7f9fe;
+        box-shadow: none;
+        border: 0;
+    }
+
+    .tbm.tbm--mobile .tbm-submenu .tbm-link {
+        padding: 12px 16px 12px 30px;
+        color: #3366cc;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .tbm.tbm--mobile .tbm-submenu .tbm-submenu .tbm-link {
+        padding-left: 46px;
+    }
+
+    .tbm.tbm--mobile .tbm-submenu .tbm-item {
+        border-bottom-color: #e3eaf7;
+    }
+
+    .tbm.tbm--mobile .tbm-column-inner {
+        padding: 0;
+    }
+}
+
+/* ---- 2. Debajo de 768px Bootstrap oculta el area del menu tras SU boton.
+   Dejamos el area siempre abierta y ocultamos el boton de Bootstrap: asi el
+   unico control es el del megamenu y no hay que tocar dos hamburguesas. */
+@media (max-width: 767px) {
+
+    .navbar-header .navbar-toggle {
+        display: none !important;
+    }
+
+    #navbar-collapse.navbar-collapse.collapse {
+        display: block !important;
+        height: auto !important;
+        visibility: visible;
+        padding-left: 0;
+        padding-right: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    /* ---- 3. IMAGENES, VIDEO Y DESBORDES ---- */
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .field--name-field-imagen {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .noticias-content img,
+    .region-content img {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .embed-container {
+        width: 100% !important;
+        max-width: 100%;
+        height: auto !important;
+    }
+
+    .embed-container iframe,
+    iframe {
+        max-width: 100%;
+    }
+
+    .embed-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    .container {
+        width: 94% !important;
+    }
+}
+
+/* ---- 4. NOTICIAS en movil: sin margenes fijos de escritorio ---- */
+@media (max-width: 767px) {
+
+    .noticia-principal {
+        margin-left: 0 !important;
+    }
+
+    .content-noticia-principal {
+        padding-left: 0 !important;
+    }
+
+    .view-noticias,
+    .view-noticia-principal {
+        position: static !important;
+        left: auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .img-noticias img,
+    .img-noticia-principal img {
+        width: 100% !important;
+        height: auto !important;
+        padding-left: 0 !important;
+    }
+
+    .img-noticias,
+    .img-noticia-principal {
+        margin-bottom: 10px;
+    }
+}
+
+/* ---- 5. FILAS DE BOOTSTRAP ANIDADAS en movil ----
+   Hay .row dentro de .row sin columnas en medio: cada una resta 15px de margen
+   y el contenido se corre 30px a la izquierda. Se anulan los margenes negativos
+   y se reduce el relleno lateral de las columnas. */
+@media (max-width: 767px) {
+
+    .main-container .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .main-container .row > [class*="col-"] {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+/* ---- 6. NOTICIAS en movil: imagenes a todo el ancho y texto alineado ---- */
+@media (max-width: 767px) {
+
+    .noticia-principal .img-noticia-principal img,
+    .news .img-noticias img {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .content-noticia-principal {
+        padding: 15px 0 !important;
+    }
+
+    .news .content-noticia-custom {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* ---- 7. DESTACADOS y PIE DE PAGINA en movil ---- */
+@media (max-width: 767px) {
+
+    /* Destacados: 2 logos por fila (antes 4 diminutos) y sin el hueco de 155px */
+    .views-view-grid:has(.img-destacados-custom) .views-row {
+        flex-wrap: wrap;
+        margin-top: 0 !important;
+    }
+
+    .views-view-grid:has(.img-destacados-custom) .views-col {
+        float: none;
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 50%;
+        padding: 0 8px;
+    }
+
+    .img-destacados-custom {
+        margin: 0 0 16px !important;
+        text-align: center;
+    }
+
+    .img-destacados-custom img {
+        margin: 0 auto;
+        padding: 0 !important;
+    }
+
+    /* Tarjeta de contacto del pie: casi todo el ancho */
+    .tarjeta.cont-footer {
+        width: 92% !important;
+        margin: 30px auto !important;
+        padding: 16px !important;
+    }
+
+    .title-unidad {
+        font-size: 1.15rem;
+        line-height: 1.3;
+    }
+}
+
+
+/* ---- 8. BANNER (slideshow) ADAPTABLE SIN RECARGAR ----
+   El plugin Cycle mide el banner UNA vez al cargar y lo deja fijo con un
+   estilo en linea (ej. width:658px; height:145px). Si despues cambia el ancho
+   (girar el telefono, redimensionar la ventana) el banner quedaba con el
+   tamano viejo. Se fuerzan ancho 100% y una proporcion fija (los banners miden
+   3334x736 / 6946x1534, o sea ~4.53:1) para que siempre se ajuste. */
+#views_slideshow_cycle_teaser_section_slideshow-block_1 {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4.53 / 1;
+}
+
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide .views-row,
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide .views-field,
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide .field-content,
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#views_slideshow_cycle_teaser_section_slideshow-block_1 .views_slideshow_cycle_slide img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+/* El widget de Facebook fija su ancho (450px) al cargar; se limita al de su
+   contenedor para que no desborde al girar/redimensionar. */
+.fb-page,
+.fb-page span,
+.fb-page iframe {
+    max-width: 100% !important;
+}
+
+
+/* ---- 9. BARRAS DE EXTREMO A EXTREMO (encabezado, Noticias, Destacados) ----
+   Solo se estira el COLOR de fondo hasta los bordes de la pantalla: una sombra
+   solida sin desenfoque que se extiende 100vmax a cada lado, recortada para que
+   no crezca hacia arriba ni abajo. El contenido (logos, titulos) no se mueve y
+   el ancho de la pagina no cambia (las sombras no generan scroll horizontal). */
+.header-mini-custom {
+    box-shadow: 0 0 0 100vmax #36c;
+    clip-path: inset(0 -100vmax);
+}
+
+.title-noticias {
+    box-shadow: 0 0 0 100vmax #ffcc00;
+    clip-path: inset(0 -100vmax);
+}
+
+.title-destacados {
+    box-shadow: 0 0 0 100vmax #ed3237;
+    clip-path: inset(0 -100vmax);
+}
+
+.title-redes {
+    box-shadow: 0 0 0 100vmax #36c;
+    clip-path: inset(0 -100vmax);
+}
+
+
+/* ---- 10. REDES SOCIALES en tableta y celular (menos de 1024px) ----
+   En pantalla grande caben 3 columnas (Twitter, YouTube, Facebook). Debajo de
+   1024px el tema las ocultaba (y en menos de 425px las mostraba sin acomodar).
+   Ahora se muestran con su titulo azul, apiladas y centradas. */
+@media (max-width: 1023px) {
+
+    .title-redes {
+        display: block;
+    }
+
+    /* Cada columna a todo el ancho, una debajo de otra */
+    .col-sm-4:has(> .region-twitter),
+    .col-sm-4:has(> .region-youtube),
+    .col-sm-4:has(> .region-facebook) {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .region-twitter,
+    .region-youtube,
+    .region-facebook {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 24px;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .region-twitter section,
+    .region-youtube section,
+    .region-facebook section {
+        width: 100%;
+        max-width: 560px;
+    }
+
+    /* YouTube fluido 16:9 (el bloque es flex: el contenido debe ocupar el ancho) */
+    .region-youtube section > .field {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .region-youtube .embed-container {
+        width: 100% !important;
+        max-width: 560px;
+        height: auto !important;
+        margin: 0 auto;
+    }
+
+    .region-youtube .embed-container iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    /* Facebook: que ocupe el ancho disponible (hasta 500px) */
+    .region-facebook .fb-page,
+    .region-facebook .fb-page span,
+    .region-facebook .fb-page iframe {
+        max-width: 100% !important;
+    }
+
+    .region-facebook .fb-page {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* Redes sociales en 3 columnas (1024px o mas): el video (iframe de 401x401 fijos)
+   se adapta al ancho de su columna para no montarse sobre Facebook. Conserva
+   su forma cuadrada original y su tamano maximo en pantallas grandes. */
+@media (min-width: 1024px) {
+
+    .region-youtube section > .field,
+    .region-youtube .embed-container {
+        width: 100% !important;
+        max-width: 401px;
+    }
+
+    .region-youtube .embed-container {
+        height: auto !important;
+    }
+
+    .region-youtube .embed-container iframe {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+    }
+}
