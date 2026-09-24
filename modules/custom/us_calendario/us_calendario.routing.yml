@@ -1,5 +1,5 @@
 us_calendario.pagina:
-  path: '/calendario'
+  path: '/servicios-a-la-ciudadania/Mecanismos-de-participacion/calendario'
   defaults:
     _controller: '\Drupal\us_calendario\Controller\CalendarioController::pagina'
     _title: 'Calendario de eventos'
@@ -7,9 +7,25 @@ us_calendario.pagina:
     _permission: 'access content'
 
 us_calendario.eventos:
-  path: '/calendario/eventos.json'
+  path: '/servicios-a-la-ciudadania/calendario/eventos.json'
   defaults:
     _controller: '\Drupal\us_calendario\Controller\CalendarioController::eventos'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+# Ruta anterior: redirige de forma permanente a la nueva.
+us_calendario.antigua:
+  path: '/calendario'
+  defaults:
+    _controller: '\Drupal\us_calendario\Controller\CalendarioController::redirigir'
+  requirements:
+    _permission: 'access content'
+
+us_calendario.antigua_eventos:
+  path: '/calendario/eventos.json'
+  defaults:
+    _controller: '\Drupal\us_calendario\Controller\CalendarioController::redirigirEventos'
   methods: [GET]
   requirements:
     _permission: 'access content'

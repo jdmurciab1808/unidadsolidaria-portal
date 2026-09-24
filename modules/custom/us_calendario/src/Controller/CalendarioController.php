@@ -10,6 +10,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -18,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 class CalendarioController extends ControllerBase {
 
   /**
-   * Página /calendario.
+   * Página pública del calendario (/servicios-a-la-ciudadania/calendario).
    */
   public function pagina(): array {
     $puede_crear = $this->currentUser()->hasPermission('create evento content');
@@ -33,7 +34,7 @@ class CalendarioController extends ControllerBase {
           'usCalendario' => [
             'urlEventos' => Url::fromRoute('us_calendario.eventos')->toString(),
             'puedeCrear' => $puede_crear,
-            'urlCrear' => $puede_crear ? Url::fromRoute('node.add', ['node_type' => 'evento'], ['query' => ['destination' => '/calendario']])->toString() : '',
+            'urlCrear' => $puede_crear ? Url::fromRoute('node.add', ['node_type' => 'evento'], ['query' => ['destination' => Url::fromRoute('us_calendario.pagina')->toString()]])->toString() : '',
           ],
         ],
       ],
@@ -111,13 +112,28 @@ class CalendarioController extends ControllerBase {
         'descripcion' => $texto,
         'enlace' => $enlace,
         'url' => $nodo->toUrl()->toString(),
-        'urlEditar' => $nodo->access('update') ? $nodo->toUrl('edit-form', ['query' => ['destination' => '/calendario']])->toString() : '',
+        'urlEditar' => $nodo->access('update') ? $nodo->toUrl('edit-form', ['query' => ['destination' => Url::fromRoute('us_calendario.pagina')->toString()]])->toString() : '',
       ];
     }
 
     $respuesta = new CacheableJsonResponse(['eventos' => $eventos]);
     $respuesta->addCacheableDependency($cache);
     return $respuesta;
+  }
+
+  /**
+   * La ruta antigua /calendario redirige (301) a la nueva.
+   */
+  public function redirigir(): RedirectResponse {
+    return new RedirectResponse(Url::fromRoute('us_calendario.pagina')->toString(), 301);
+  }
+
+  /**
+   * La ruta antigua del JSON redirige (301) conservando los parámetros.
+   */
+  public function redirigirEventos(Request $request): RedirectResponse {
+    $destino = Url::fromRoute('us_calendario.eventos', [], ['query' => $request->query->all()])->toString();
+    return new RedirectResponse($destino, 301);
   }
 
   /**
