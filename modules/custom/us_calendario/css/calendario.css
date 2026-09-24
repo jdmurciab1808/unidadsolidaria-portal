@@ -1,0 +1,527 @@
+/* Calendario de eventos — paleta del portal Unidad Solidaria.
+   Azul #3366cc · azul oscuro #004884 · marino #161c8c · amarillo #ffcc00 · claro #e6effd */
+
+.us-cal {
+  --us-azul: #3366cc;
+  --us-azul-oscuro: #004884;
+  --us-marino: #161c8c;
+  --us-amarillo: #ffcc00;
+  --us-claro: #e6effd;
+  --us-borde: #d2dfef;
+  --us-texto: #4b4b4b;
+  font-family: 'Montserrat', 'montserrat', sans-serif;
+  color: var(--us-texto);
+  max-width: 1100px;
+  margin: 20px auto 40px;
+  background: #fff;
+  border: 1px solid var(--us-borde);
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 72, 132, 0.10);
+  overflow: hidden;
+}
+
+.us-cal *,
+.us-cal *::before,
+.us-cal *::after {
+  box-sizing: border-box;
+}
+
+.us-cal button {
+  font-family: inherit;
+}
+
+/* ---------- Barra superior ---------- */
+.us-cal__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 16px 20px;
+  background: var(--us-azul-oscuro);
+  color: #fff;
+}
+
+.us-cal__nav {
+  display: flex;
+  gap: 8px;
+}
+
+.us-cal__titulo {
+  flex: 1;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.us-cal__btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--us-azul);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--us-azul-oscuro);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.us-cal__btn:hover,
+.us-cal__btn:focus {
+  background: var(--us-claro);
+  color: var(--us-azul-oscuro);
+  text-decoration: none;
+}
+
+.us-cal__barra .us-cal__btn {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #fff;
+}
+
+.us-cal__barra .us-cal__btn:hover,
+.us-cal__barra .us-cal__btn:focus {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.us-cal__btn--icono {
+  width: 38px;
+  padding: 4px 0;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.us-cal__barra .us-cal__btn--crear {
+  border-color: var(--us-amarillo);
+  background: var(--us-amarillo);
+  color: #000;
+}
+
+.us-cal__barra .us-cal__btn--crear:hover,
+.us-cal__barra .us-cal__btn--crear:focus {
+  background: #ffdb4d;
+  color: #000;
+}
+
+.us-cal__aviso {
+  margin: 0;
+  padding: 12px 20px;
+  background: #fff4cc;
+  color: #6b5200;
+  font-size: 14px;
+}
+
+/* ---------- Cuadrícula ---------- */
+.us-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  transition: opacity 0.2s ease;
+}
+
+.us-cal__grid.is-cargando {
+  opacity: 0.55;
+}
+
+.us-cal__dia-nombre {
+  padding: 10px 4px;
+  background: var(--us-claro);
+  color: var(--us-azul-oscuro);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--us-borde);
+}
+
+.us-cal__celda {
+  position: relative;
+  min-height: 112px;
+  padding: 6px;
+  border-right: 1px solid var(--us-borde);
+  border-bottom: 1px solid var(--us-borde);
+}
+
+.us-cal__celda:nth-child(7n) {
+  border-right: 0;
+}
+
+.us-cal__celda.is-otro-mes {
+  background: #f6f8f9;
+}
+
+.us-cal__celda.is-otro-mes .us-cal__num {
+  color: #a5a5a5;
+}
+
+.us-cal__num {
+  display: inline-block;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 4px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 26px;
+  text-align: center;
+}
+
+.us-cal__celda.is-hoy .us-cal__num {
+  background: var(--us-amarillo);
+  color: #000;
+  font-weight: 700;
+}
+
+.us-cal__celda.is-hoy {
+  box-shadow: inset 0 0 0 2px var(--us-amarillo);
+}
+
+.us-cal__chips {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.us-cal__chip {
+  display: block;
+  width: 100%;
+  padding: 3px 6px;
+  overflow: hidden;
+  border: 0;
+  border-left: 3px solid var(--us-amarillo);
+  border-radius: 4px;
+  background: var(--us-azul);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.us-cal__chip:hover,
+.us-cal__chip:focus {
+  background: var(--us-azul-oscuro);
+}
+
+.us-cal__chip-hora {
+  font-weight: 700;
+}
+
+.us-cal__mas {
+  padding: 2px 6px;
+  border: 0;
+  background: transparent;
+  color: var(--us-azul);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.us-cal__mas:hover,
+.us-cal__mas:focus {
+  color: var(--us-azul-oscuro);
+  text-decoration: underline;
+}
+
+/* El indicador de punto solo se usa en pantallas pequeñas. */
+.us-cal__punto {
+  display: none;
+}
+
+/* ---------- Lista del mes ---------- */
+.us-cal__lista {
+  padding: 22px 20px 26px;
+  border-top: 4px solid var(--us-amarillo);
+}
+
+.us-cal__lista-titulo {
+  margin: 0 0 14px;
+  color: var(--us-azul-oscuro);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.us-cal__vacio {
+  margin: 0;
+  color: #6d6d6d;
+}
+
+.us-cal__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.us-cal__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--us-borde);
+}
+
+.us-cal__item:last-child {
+  border-bottom: 0;
+}
+
+.us-cal__item-fecha {
+  display: flex;
+  flex: 0 0 56px;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  border-radius: 8px;
+  background: var(--us-azul);
+  color: #fff;
+  line-height: 1.1;
+}
+
+.us-cal__item-dia {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.us-cal__item-mes {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.us-cal__item-cuerpo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.us-cal__item-titulo {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--us-azul-oscuro);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.us-cal__item-titulo:hover,
+.us-cal__item-titulo:focus {
+  color: var(--us-azul);
+  text-decoration: underline;
+}
+
+.us-cal__item-meta {
+  color: #6d6d6d;
+  font-size: 13px;
+}
+
+/* ---------- Ventana de detalle ---------- */
+body.us-cal-abierto {
+  overflow: hidden;
+}
+
+.us-cal__fondo {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 20, 60, 0.62);
+  font-family: 'Montserrat', 'montserrat', sans-serif;
+}
+
+.us-cal__dialogo {
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 10px;
+  background: #fff;
+  color: #4b4b4b;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+
+.us-cal__dialogo-cab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 4px solid #ffcc00;
+  background: #004884;
+  color: #fff;
+}
+
+.us-cal__dialogo-titulo {
+  margin: 0;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.us-cal__cerrar {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.us-cal__cerrar:hover,
+.us-cal__cerrar:focus {
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.us-cal__dialogo-cuerpo {
+  padding: 18px 20px 22px;
+}
+
+.us-cal__dato {
+  margin: 0 0 8px;
+  padding-left: 26px;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  color: #004884;
+}
+
+.us-cal__dato::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 15px;
+}
+
+.us-cal__dato--cuando::before {
+  content: '\1F4C5';
+}
+
+.us-cal__dato--lugar::before {
+  content: '\1F4CD';
+}
+
+.us-cal__descripcion {
+  margin: 14px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.us-cal__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.us-cal__dialogo .us-cal__btn--principal {
+  border-color: var(--us-azul);
+  background: var(--us-azul);
+  color: #fff;
+}
+
+.us-cal__dialogo .us-cal__btn--principal:hover,
+.us-cal__dialogo .us-cal__btn--principal:focus {
+  background: var(--us-azul-oscuro);
+  color: #fff;
+}
+
+.us-cal__dialogo .us-cal__btn--admin {
+  border-color: #ffcc00;
+  background: #ffcc00;
+  color: #000;
+}
+
+.us-cal__dialogo .us-cal__btn--admin:hover,
+.us-cal__dialogo .us-cal__btn--admin:focus {
+  background: #ffdb4d;
+  color: #000;
+}
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 720px) {
+  .us-cal {
+    margin: 12px 0 28px;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .us-cal__barra {
+    padding: 12px 14px;
+  }
+
+  .us-cal__titulo {
+    order: 3;
+    flex-basis: 100%;
+    font-size: 20px;
+  }
+
+  .us-cal__barra .us-cal__btn--crear {
+    margin-left: auto;
+  }
+
+  .us-cal__dia-nombre {
+    padding: 8px 0;
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+
+  .us-cal__celda {
+    min-height: 54px;
+    padding: 4px 2px;
+    text-align: center;
+  }
+
+  .us-cal__chips {
+    display: none;
+  }
+
+  .us-cal__punto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin: 2px auto 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--us-azul);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .us-cal__punto:hover,
+  .us-cal__punto:focus {
+    background: var(--us-azul-oscuro);
+  }
+
+  .us-cal__lista {
+    padding: 18px 14px 22px;
+  }
+}

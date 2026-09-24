@@ -1,0 +1,11 @@
+calendario:
+  version: 1.0
+  css:
+    theme:
+      css/calendario.css: {}
+  js:
+    js/calendario.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once

@@ -1,0 +1,10 @@
+name: 'Calendario de eventos'
+type: module
+description: 'Calendario público de eventos del portal. Los administradores crean y editan eventos; los visitantes solo los consultan.'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:node
+  - drupal:datetime
+  - drupal:link
+  - drupal:text

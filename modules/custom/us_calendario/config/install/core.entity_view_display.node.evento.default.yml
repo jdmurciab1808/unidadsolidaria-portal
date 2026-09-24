@@ -1,0 +1,67 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.evento.body
+    - field.field.node.evento.field_evento_enlace
+    - field.field.node.evento.field_evento_fin
+    - field.field.node.evento.field_evento_inicio
+    - field.field.node.evento.field_evento_lugar
+    - node.type.evento
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.evento.default
+targetEntityType: node
+bundle: evento
+mode: default
+content:
+  field_evento_inicio:
+    type: datetime_default
+    label: inline
+    weight: 0
+    region: content
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+  field_evento_fin:
+    type: datetime_default
+    label: inline
+    weight: 1
+    region: content
+    settings:
+      timezone_override: ''
+      format_type: long
+    third_party_settings: {  }
+  field_evento_lugar:
+    type: string
+    label: inline
+    weight: 2
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  body:
+    type: text_default
+    label: hidden
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_evento_enlace:
+    type: link
+    label: inline
+    weight: 4
+    region: content
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: nofollow
+      target: _blank
+    third_party_settings: {  }
+hidden:
+  links: true

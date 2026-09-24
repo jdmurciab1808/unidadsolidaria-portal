@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Calendario público de eventos del portal.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function us_calendario_theme(): array {
+  return [
+    'us_calendario' => [
+      'variables' => [
+        'puede_crear' => FALSE,
+        'url_crear' => '',
+      ],
+      'template' => 'us-calendario',
+    ],
+  ];
+}

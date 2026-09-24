@@ -1,0 +1,15 @@
+us_calendario.pagina:
+  path: '/calendario'
+  defaults:
+    _controller: '\Drupal\us_calendario\Controller\CalendarioController::pagina'
+    _title: 'Calendario de eventos'
+  requirements:
+    _permission: 'access content'
+
+us_calendario.eventos:
+  path: '/calendario/eventos.json'
+  defaults:
+    _controller: '\Drupal\us_calendario\Controller\CalendarioController::eventos'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
