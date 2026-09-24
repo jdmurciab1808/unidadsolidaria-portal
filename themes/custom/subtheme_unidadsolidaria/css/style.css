@@ -5215,3 +5215,21 @@ p:visited {
         opacity: 0;
     }
 }
+
+/* ==========================================================================
+   12. Sin recuadro de foco al hacer clic (se conserva al navegar con teclado)
+   ========================================================================== */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+[role="button"]:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible),
+.views-slideshow-controls-bottom a:focus:not(:focus-visible),
+.views_slideshow_pager_field_item:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
