@@ -1,0 +1,8 @@
+name: 'Noticias: principal y lista'
+type: module
+description: 'La noticia principal no se repite en la lista de noticias. Al publicar una nueva principal, la anterior pasa a la lista como secundaria.'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:node
+  - drupal:views

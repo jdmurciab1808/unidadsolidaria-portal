@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Instalación de Noticias: principal y lista.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * La lista de noticias pasa a incluir también las noticias principales
+ * (la vigente se excluye en us_noticias_views_query_alter()).
+ */
+function us_noticias_install() {
+  $config = \Drupal::configFactory()->getEditable('views.view.noticias');
+  $tipos = $config->get('display.default.display_options.filters.type.value');
+  if (is_array($tipos)) {
+    $tipos['noticia_principal'] = 'noticia_principal';
+    $config->set('display.default.display_options.filters.type.value', $tipos)->save();
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function us_noticias_uninstall() {
+  $config = \Drupal::configFactory()->getEditable('views.view.noticias');
+  $tipos = $config->get('display.default.display_options.filters.type.value');
+  if (is_array($tipos) && isset($tipos['noticia_principal'])) {
+    unset($tipos['noticia_principal']);
+    $config->set('display.default.display_options.filters.type.value', $tipos)->save();
+  }
+}

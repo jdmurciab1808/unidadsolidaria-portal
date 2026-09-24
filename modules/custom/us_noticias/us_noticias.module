@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * La noticia principal vigente no se repite en la lista de noticias.
+ */
+
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * En la vista "noticias" (bloque de 4 noticias) se excluye la noticia
+ * principal vigente: la más reciente publicada de tipo "noticia_principal",
+ * la misma que muestra la vista "noticia_principal". También se excluye
+ * cualquier contenido con su mismo título, para no duplicarla cuando alguien
+ * creó además un artículo gemelo. Al publicar una nueva principal, la anterior
+ * deja de ser la vigente y entra a la lista como secundaria.
+ */
+function us_noticias_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() !== 'noticias') {
+    return;
+  }
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $ids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('type', 'noticia_principal')
+    ->condition('status', 1)
+    ->sort('created', 'DESC')
+    ->sort('nid', 'DESC')
+    ->range(0, 1)
+    ->execute();
+  if (!$ids) {
+    return;
+  }
+
+  $principal = $storage->load(reset($ids));
+  $query->addWhere('us_noticias', 'node_field_data.nid', $principal->id(), '<>');
+  $query->addWhere('us_noticias', 'node_field_data.title', $principal->label(), '<>');
+}

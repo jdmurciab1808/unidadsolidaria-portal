@@ -5180,3 +5180,38 @@ p:visited {
         aspect-ratio: 1 / 1;
     }
 }
+
+
+/* ---- 11. BANNER "EDUCACION SOLIDARIA" en celular ----
+   La imagen original es una tira de 1583x150 (10:1): en un celular queda de
+   ~37px de alto y el texto es ilegible. En pantallas menores a 768px se muestra
+   una version vertical (titulo arriba, foto abajo) hecha con las mismas piezas
+   (images/banner-educacion-solidaria-movil.jpg). La <img> original sigue en el
+   HTML, invisible pero clicable, para conservar el enlace y el texto alternativo. */
+@media (max-width: 767px) {
+
+    .img-banner-educacion-solidaria {
+        margin-bottom: 16px;
+    }
+
+    .img-banner-educacion-solidaria a {
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        aspect-ratio: 780 / 444;
+        background: url("../images/banner-educacion-solidaria-movil.jpg") center / cover no-repeat;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .img-banner-educacion-solidaria a img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
