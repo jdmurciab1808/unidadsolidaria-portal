@@ -1,0 +1,5 @@
+services:
+  us_contraste.config_subscriber:
+    class: Drupal\us_contraste\EventSubscriber\ConfigSubscriber
+    tags:
+      - { name: event_subscriber }

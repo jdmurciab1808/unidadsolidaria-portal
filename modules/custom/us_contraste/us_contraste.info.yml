@@ -1,0 +1,7 @@
+name: 'Alto contraste: CSS persistente'
+type: module
+description: 'Mantiene el CSS de High Contrast fuera de la carpeta que Drupal limpia con la caché y agrega la inversión de color de las imágenes (accesibilidad).'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - high_contrast:high_contrast

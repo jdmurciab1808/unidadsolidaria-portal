@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * @file
+ * Mantiene el CSS de alto contraste fuera de public://css.
+ *
+ * High Contrast guarda su hoja de estilos en public://css/high_contrast.css,
+ * carpeta que Drupal vacía en cada limpieza de caché (y en cron, si el archivo
+ * es viejo). Por eso el modo dejaba de funcionar hasta volver a guardar la
+ * configuración. Aquí el archivo vive en public://high_contrast/, se recrea
+ * solo cuando falta y además incluye la inversión de color de las imágenes.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\Core\StreamWrapper\PublicStream;
+
+/**
+ * Ubicación del CSS que sí sobrevive a la limpieza de caché.
+ */
+const US_CONTRASTE_CSS = 'public://high_contrast/high_contrast.css';
+
+/**
+ * Reglas adicionales de accesibilidad para el modo de alto contraste.
+ */
+function _us_contraste_css_extra(): string {
+  return '
+img {
+  filter: invert(1) !important;
+}
+
+/* Las capas de controles del banner (flechas y puntos) se extienden sobre la
+   imagen; con el fondo negro del modo de alto contraste la tapaban. */
+.views-slideshow-controls-bottom,
+.views-slideshow-pager-fields,
+.widget_pager {
+  background-color: transparent !important;
+}
+
+/* Las barras de color de extremo a extremo se dibujan con box-shadow, que el
+   modo de alto contraste no anula: se quitan para que no queden franjas. */
+.header-mini-custom,
+.title-noticias,
+.title-destacados,
+.title-redes {
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+';
+}
+
+/**
+ * Genera el CSS (colores del módulo + reglas adicionales) y devuelve la ruta.
+ *
+ * Además deja una copia en la ruta original del módulo para que su
+ * filemtime() no falle cuando se reconstruyen las librerías.
+ */
+function us_contraste_generar_css(): string {
+  $config = \Drupal::config('high_contrast.settings');
+  $css = _high_contrast_build_css(
+    $config->get('colors_background') ?: '#000000',
+    $config->get('colors_text') ?: '#ffffff',
+    $config->get('colors_hyperlinks') ?: '#ffff00'
+  ) . _us_contraste_css_extra();
+
+  $archivos = \Drupal::service('file_system');
+  foreach ([US_CONTRASTE_CSS, HIGH_CONTRAST_CSS_LOCATION] as $destino) {
+    $carpeta = dirname($destino);
+    $archivos->prepareDirectory($carpeta, FileSystemInterface::CREATE_DIRECTORY);
+    $archivos->saveData($css, $destino, FileSystemInterface::EXISTS_REPLACE);
+  }
+  return US_CONTRASTE_CSS;
+}
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * Apunta la librería del módulo al archivo estable y lo recrea si falta.
+ */
+function us_contraste_library_info_alter(array &$libraries, $extension) {
+  if ($extension !== 'high_contrast' || !isset($libraries['high_contrast'])) {
+    return;
+  }
+  if (!file_exists(US_CONTRASTE_CSS)) {
+    us_contraste_generar_css();
+  }
+  $libraries['high_contrast']['version'] = @filemtime(US_CONTRASTE_CSS) ?: 1;
+  // Ruta relativa al sitio (no public://): así el CSS se pide al mismo sitio
+  // aunque file_public_base_url apunte a otro dominio (p. ej. en local).
+  $ruta = '/' . PublicStream::basePath() . '/high_contrast/high_contrast.css';
+  $libraries['high_contrast']['css'] = [
+    'base' => [
+      $ruta => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Si el archivo desapareció sin limpiar la caché (por ejemplo, por el cron de
+ * Drupal), se recrea antes de que la página lo pida.
+ */
+function us_contraste_page_attachments(array &$attachments) {
+  if (!file_exists(US_CONTRASTE_CSS)) {
+    us_contraste_generar_css();
+    \Drupal::service('library.discovery')->clearCachedDefinitions();
+  }
+}
+
+/**
+ * Implements hook_rebuild().
+ *
+ * Se ejecuta al final de cada limpieza de caché, cuando Drupal ya borró
+ * public://css: se recrean ambos archivos antes de la primera visita.
+ */
+function us_contraste_rebuild() {
+  us_contraste_generar_css();
+}
+
+/**
+ * Excluye el interruptor de contraste de la protección de Honeypot.
+ *
+ * Honeypot protege todos los formularios y rechaza los envíos hechos muy
+ * pronto tras cargar la página (y castiga los reintentos con esperas cada vez
+ * mayores). El interruptor de contraste es un formulario de Drupal más, así
+ * que un clic rápido en el ícono de contraste era rechazado.
+ */
+function us_contraste_excluir_de_honeypot(): void {
+  $config = \Drupal::configFactory()->getEditable('honeypot.settings');
+  if ($config->isNew()) {
+    return;
+  }
+  $excluidos = $config->get('unprotected_forms') ?: [];
+  if (!in_array('high_contrast_switch', $excluidos, TRUE)) {
+    $excluidos[] = 'high_contrast_switch';
+    $config->set('unprotected_forms', $excluidos)->save();
+  }
+}
+
+/**
+ * Excluye el interruptor de contraste de Honeypot.
+ */
+function us_contraste_update_10001() {
+  us_contraste_excluir_de_honeypot();
+}
+
+/**
+ * Implements hook_install().
+ */
+function us_contraste_install() {
+  us_contraste_excluir_de_honeypot();
+  us_contraste_generar_css();
+  \Drupal::service('library.discovery')->clearCachedDefinitions();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function us_contraste_uninstall() {
+  \Drupal::service('file_system')->deleteRecursive('public://high_contrast');
+}
