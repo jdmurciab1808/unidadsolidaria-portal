@@ -63,46 +63,7 @@ if (currentLocation.includes('/es/')) {
         $('a[title="English"]').show();
       });
 
-      // Aumentar tamaño de fuente
-      $("#font-up-text").click(function () {
-        let bodyFontSize = $('body').css("font-size");
-        let anchorFontSize = $('.dialog-off-canvas-main-canvas a').css("font-size");
-        let newsAnchorFontSize = $('.dialog-off-canvas-main-canvas .news a').css("font-size");
-        let spanFontSize = $('.dialog-off-canvas-main-canvas .tb-megamenu .nav').css("font-size");
-
-        $('body').css({
-          fontSize: parseFloat(bodyFontSize.replace("px", "")) * 1.05
-        });
-        $('.dialog-off-canvas-main-canvas a').css({
-          fontSize: parseFloat(anchorFontSize.replace("px", "")) * 1.05
-        });
-        $('.dialog-off-canvas-main-canvas .news a').css({
-          fontSize: parseFloat(newsAnchorFontSize.replace("px", "")) * 1.05
-        });
-        $('.dialog-off-canvas-main-canvas .tb-megamenu .nav').css({
-          fontSize: parseFloat(spanFontSize.replace("px", "")) * 1.05
-        });
-      });
-
-      // Disminuir tamaño de fuente
-      $("#font-down-text").click(function () {
-        const selectors = [
-          'body',
-          '.dialog-off-canvas-main-canvas a',
-          '.dialog-off-canvas-main-canvas .news a',
-          '.dialog-off-canvas-main-canvas .tb-megamenu .nav',
-          '.dialog-off-canvas-main-canvas p',
-          '.dialog-off-canvas-main-canvas .info-contacto .title-unidad',
-          '.dialog-off-canvas-main-canvas h3'
-        ];
-
-        selectors.forEach(selector => {
-          let fontSize = $(selector).css("font-size");
-          $(selector).css({
-            fontSize: parseFloat(fontSize.replace("px", "")) * 0.9
-          });
-        });
-      });
+      // Aumentar / reducir la letra: ver js/font-size.js
 
       // Menú desplegable
       $('.expanded > .dropdown-menu > .expanded').hover(

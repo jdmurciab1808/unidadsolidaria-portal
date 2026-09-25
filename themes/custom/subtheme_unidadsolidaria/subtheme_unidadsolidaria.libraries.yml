@@ -6,8 +6,10 @@ global-styling:
 global-scripts:
   js:
     js/custom.js: {}
+    js/font-size.js: {}
   dependencies:
     - core/jquery
+    - core/once
     - core/drupal
     - core/drupalSettings
 
