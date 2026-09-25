@@ -5233,3 +5233,90 @@ a,
 button {
     -webkit-tap-highlight-color: transparent;
 }
+
+/* ==========================================================================
+   13. Menú principal en escritorio (>= 1200px)
+   Fondo blanco, ítems repartidos en todo el ancho con el separador en el
+   centro de cada espacio, y marca del ítem activo / bajo el cursor.
+   El color del texto de los ítems no se modifica; solo la barra inferior (azul #3366cc).
+   ========================================================================== */
+@media (min-width: 1200px) {
+    nav.tbm:not(.tbm--mobile) {
+        background: #fff;
+    }
+
+    .region-navigation-collapsible {
+        padding: 4px 0;
+        border-top: 1px solid #d2dfef;
+        border-bottom: 1px solid #d2dfef;
+    }
+
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 {
+        justify-content: stretch;
+    }
+
+    /* Cada ítem crece por igual: el texto queda centrado en su celda y el
+       separador, en el borde de la celda, cae justo a mitad de camino entre
+       dos textos. */
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item {
+        position: relative;
+        flex: 1 1 auto;
+        background: transparent;
+        border: 0;
+        text-align: center;
+    }
+
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        height: 22px;
+        border-right: 1px solid #c3d3ea;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item > .tbm-link-container > .tbm-link {
+        display: block;
+        padding: 14px 16px;
+        background: transparent;
+        font-family: 'Montserrat', 'montserrat', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.3;
+        text-decoration: none;
+        box-shadow: inset 0 -4px 0 0 transparent;
+        transition: box-shadow 0.2s ease;
+    }
+
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item:hover > .tbm-link-container > .tbm-link,
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item.open > .tbm-link-container > .tbm-link,
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item > .tbm-link-container > .tbm-link:focus {
+        background: transparent;
+        box-shadow: inset 0 -4px 0 0 #a9c1ee;
+    }
+
+    /* El desplegable debe quedar por encima de los controles del banner
+       (flechas y puntos, z-index 10), que si no se le montan encima. */
+    nav.tbm:not(.tbm--mobile) .tbm-submenu {
+        z-index: 1000;
+    }
+
+    /* Ítem donde está parado el visitante */
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item.active > .tbm-link-container > .tbm-link,
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item.active-trail > .tbm-link-container > .tbm-link {
+        background: transparent;
+        font-weight: 700;
+        box-shadow: inset 0 -4px 0 0 #3366cc;
+    }
+}
+
+/* Escritorio angosto (1200-1399px): menos relleno y letra un poco menor para
+   que ningún ítem se parta en dos líneas. */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    nav.tbm:not(.tbm--mobile) .tbm-nav.level-0 > .tbm-item > .tbm-link-container > .tbm-link {
+        padding: 14px 8px;
+        font-size: 13.5px;
+    }
+}
