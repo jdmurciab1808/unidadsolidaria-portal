@@ -426,7 +426,7 @@ class Bootstrap {
       }
 
       // Only cache if a maximum age has been detected.
-      $maxAge = isset($ttl) ? $ttl : $response->getMaxAge();
+      $maxAge = $ttl ?? $response->getMaxAge();
       if ($response->getStatusCode() == 200 && $maxAge > 0) {
         // Due to key_value_expire setting the "expire" field to "INT(11)", it
         // is technically limited to a 32bit max value (Y2K38 bug).
@@ -628,6 +628,63 @@ class Bootstrap {
       'icon_position' => 'before',
       'icon_only' => FALSE,
     ];
+  }
+
+  /**
+   * Retrieves a service from Drupal's service container.
+   *
+   * This theme predates widespread dependency injection and many of its helper
+   * objects are instantiated directly rather than by the service container.
+   * Centralizing legacy service access here keeps that compatibility boundary
+   * isolated while allowing container-managed code to use dependency injection.
+   *
+   * @param string $id
+   *   The service identifier.
+   *
+   * @return mixed
+   *   The requested service.
+   */
+  public static function service($id) {
+    return \Drupal::service($id);
+  }
+
+  /**
+   * Determines whether a service is available.
+   *
+   * @param string $id
+   *   The service identifier.
+   *
+   * @return bool
+   *   TRUE if the service exists.
+   */
+  public static function hasService($id) {
+    return \Drupal::hasService($id);
+  }
+
+  /**
+   * Retrieves a permanent key/value store.
+   *
+   * @param string $collection
+   *   The key/value collection name.
+   *
+   * @return \Drupal\Core\KeyValueStore\KeyValueStoreInterface
+   *   The key/value store.
+   */
+  public static function keyValue($collection) {
+    return \Drupal::keyValue($collection);
+  }
+
+  /**
+   * Retrieves an expirable key/value store.
+   *
+   * @param string $collection
+   *   The key/value collection name.
+   *
+   * @return \Drupal\Core\KeyValueStore\KeyValueStoreExpirableInterface
+   *   The expirable key/value store.
+   */
+  public static function keyValueExpirable($collection) {
+    return \Drupal::keyValueExpirable($collection);
   }
 
   /**
@@ -1486,7 +1543,7 @@ class Bootstrap {
       $registered = realpath($info['path'] . '/' . $info['template'] . '.html.twig');
       if ($registered === $realpath) {
         $basename = basename($path);
-        $example = "\n\n\$build = [\n  '#theme' => '$hook',\n  /* Other properties */\n];\n\Drupal::service('renderer')->renderPlain(\$build);\n\n";
+        $example = "\n\n\$build = [\n  '#theme' => '$hook',\n  /* Other properties */\n];\n\Drupal::service('renderer')->renderInIsolation(\$build);\n\n";
         throw new \InvalidArgumentException(sprintf('The template provided is not a standalone Twig template: "%s". This template is already registered in Drupal\'s Theme System as "%s". If this template is intended to be truly standalone, you can change the file extension from ".html.twig" to just ".twig". Otherwise, if this is a properly registered template in the Theme System, you should render it using Drupal\'s existing Render API and not this method: %s', $basename, $hook, $example));
       }
     }
@@ -1584,7 +1641,7 @@ class Bootstrap {
    *   The typecast string value.
    */
   public static function toString(&$value) {
-    return (string) (Element::isRenderArray($value) ? Element::create($value)->renderPlain() : $value);
+    return (string) (Element::isRenderArray($value) ? Element::create($value)->renderInIsolation() : $value);
   }
 
   /**

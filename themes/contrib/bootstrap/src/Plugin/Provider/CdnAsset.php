@@ -8,7 +8,6 @@ use Drupal\bootstrap\Utility\Unicode;
 use Drupal\Component\Render\HtmlEscapedText;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\NestedArray;
-use Drupal\Component\Utility\ToStringTrait;
 use Drupal\Core\DependencyInjection\DependencySerializationTrait;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 
@@ -17,9 +16,15 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
  */
 class CdnAsset {
 
+  /**
+   *
+   */
+  public function __toString(): string {
+    return (string) $this->render();
+  }
+
   use StringTranslationTrait;
   use DependencySerializationTrait;
-  use ToStringTrait;
 
   /**
    * Invalid asset regular expression.
