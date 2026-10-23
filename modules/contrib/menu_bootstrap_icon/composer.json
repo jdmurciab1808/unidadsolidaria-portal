@@ -2,7 +2,8 @@
   "name": "drupal/menu_bootstrap_icon",
   "description": "This module provides menu icon bootstrap 5",
   "type": "drupal-module",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "keywords": ["Drupal", "icon", "bootstrap", "ckeditor"],
   "homepage": "https://www.drupal.org/project/menu_bootstrap_icon",
   "support": {
     "issues": "https://www.drupal.org/project/issues/menu_bootstrap_icon",
@@ -18,7 +19,7 @@
     }
   ],
   "require": {
-    "drupal/core": "^9.3 || ^10",
+    "drupal/core": "^9.3 || ^10 || ^11 || ^12",
     "erusev/parsedown": "^1.7.4"
   }
 }

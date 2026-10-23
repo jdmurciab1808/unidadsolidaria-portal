@@ -1,0 +1,38 @@
+field.formatter.settings.bootstrap_icon_link:
+  type: mapping
+  label: 'Link format settings'
+  mapping:
+    icon:
+      type: string
+      label: 'Link icon'
+    position:
+      type: string
+      label: 'Position icon'
+    target:
+      type: string
+      label: 'Open link in new window'
+
+field.formatter.settings.file_bootstrap_icon:
+  type: mapping
+  label: 'Bootstrap icon file'
+  mapping:
+    icon:
+      type: string
+      label: 'Link icon'
+    position:
+      type: string
+      label: 'Position icon'
+    target:
+      type: string
+      label: 'Open link in new window'
+    viewer:
+      type: string
+      label: 'Viewer for open files'
+
+field.widget.settings.bootstrap_icon_link:
+  type: mapping
+  label: 'Link with icon settings'
+  mapping:
+    icon:
+      type: string
+      label: 'Link icon'

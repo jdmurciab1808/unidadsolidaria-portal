@@ -23,11 +23,16 @@ class BootstrapIconSearch {
       $yaml = $matches[1];
       $fileData = Yaml::decode($yaml);
       $fileName = pathinfo($file, PATHINFO_FILENAME);
+      $removeFill = str_replace('-fill', '', $fileName);
+      $search = array_merge($fileData['tags'] ?? [], explode('-', $removeFill));
       $data[] = [
         'title' => "bi bi-" . $fileName,
-        'searchTerms' => $fileData['tags'],
+        'searchTerms' => array_values(array_unique($search)),
       ];
     }
+    $file_path = dirname(__FILE__) . '/../js/iconSearch.json';
+    $json_data = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    file_put_contents($file_path, $json_data);
 
     return $data;
   }

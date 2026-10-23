@@ -1,0 +1,7 @@
+menu_bootstrap_icon.settings:
+  type: config_object
+  label: 'Configuration of menu bootstrap icon'
+  mapping:
+    use_cdn:
+      type: boolean
+      label: use cdn

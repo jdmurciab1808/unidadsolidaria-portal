@@ -62,7 +62,7 @@
      * The event must be bound prior to slick being called.
      */
     function beforeSlick() {
-      if (o.randomize && !t.hasClass('slick-initiliazed')) {
+      if (o.randomize && !t.hasClass('slick-initialized')) {
         randomize();
       }
 
@@ -197,12 +197,16 @@
      * Randomize slide orders, for ads/products rotation within cached blocks.
      */
     function randomize() {
-      t.children().sort(function () {
+      // Convert jQuery object to array for proper sorting in jQuery 4.
+      var children = t.children().get();
+      children.sort(function () {
         return 0.5 - Math.random();
-      })
-        .each(function () {
-          t.append(this);
-        });
+      });
+
+      // Append each child in the new random order.
+      $.each(children, function () {
+        t.append(this);
+      });
     }
 
     /**

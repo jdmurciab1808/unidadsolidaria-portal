@@ -4,9 +4,8 @@ namespace Drupal\menu_bootstrap_icon\Form;
 
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Form\ConfigFormBase;
-use Drupal\menu_bootstrap_icon\BootstrapIconSearch;
-use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\menu_bootstrap_icon\BootstrapIconSearch;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -17,11 +16,10 @@ class SettingsForm extends ConfigFormBase {
   /**
    * Contructor.
    *
-   * @param \Drupal\menu_bootstrap_icon\BootstrapIconSearch $icon_search
+   * @param \Drupal\menu_bootstrap_icon\BootstrapIconSearch $iconSearch
    *   Icon search service.
    */
-  public function __construct(BootstrapIconSearch $icon_search) {
-    $this->icon_search = $icon_search;
+  public function __construct(protected BootstrapIconSearch $iconSearch) {
   }
 
   /**
@@ -54,17 +52,22 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('menu_bootstrap_icon.settings');
+    $searchList = $config->get('search_list');
     // Global settings.
     $form['search_list'] = [
       '#type' => 'textarea',
       '#title' => $this->t('Icon define'),
-      '#description' => $this->t('Yaml format. Provides term for search. You can update by download <a hre="https://github.com/twbs/icons/tree/main/docs/content/icons">folder icon</a> and generate'),
-      '#default_value' => is_array($config->get('search_list')) ? Yaml::encode($config->get('search_list')) : $config->get('search_list'),
+      '#description' => $this->t('Yaml format. Provides search terms. You can update it manually by replacing the download <a href="@icons" class="icon-link icon-link-hover"><i class="bi bi-link"></i> folder icon</a> in /menu_bootstrap_icon/icons and click the generate button', ['@icons' => 'https://github.com/twbs/icons/tree/main/docs/content/icons']),
+      '#default_value' => is_array($searchList) ? Yaml::encode($searchList) : $searchList,
       '#prefix' => '<div id="' . $this->getFormId() . '-list">',
       '#suffix' => '</div>',
+      '#attributes' => [
+        'class' => ['yaml-editor'],
+      ],
     ];
+    $form['#attached']['library'][] = 'menu_bootstrap_icon/yaml_editor';
     $form['generate'] = [
       '#type' => 'button',
       '#value' => $this->t('Generate'),
@@ -93,7 +96,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function ajaxCollectSearchCallback(&$form, &$form_state) {
-    $data = $this->icon_search->loadIcons();
+    $data = $this->iconSearch->loadIcons();
     $list = Yaml::encode($data);
     $form['search_list']['#value'] = $list;
     return $form['search_list'];
@@ -106,10 +109,14 @@ class SettingsForm extends ConfigFormBase {
     $config = $this->config('menu_bootstrap_icon.settings');
     // Save the global settings.
     $values = $form_state->getValues();
-    $config->set('search_list', $values['search_list'])
-      ->set('use_cdn', $values['use_cdn'])
-      ->save();
+    $config->set('use_cdn', $values['use_cdn'])->save();
     $this->messenger()->addStatus($this->t('Configuration saved.'));
+    if (!empty(trim($values['search_list']))) {
+      $parsedYaml = Yaml::decode($values['search_list']);
+      $file_path = dirname(__FILE__) . '/../../js/iconSearch.json';
+      $json_data = json_encode($parsedYaml, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+      file_put_contents($file_path, $json_data);
+    }
   }
 
 }

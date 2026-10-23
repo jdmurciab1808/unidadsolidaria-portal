@@ -7,1066 +7,1049 @@
  * @see https://github.com/pixel-s-lab/bootstrapicon-iconpicker/blob/main/LICENSE
  */
 
-
-(function (e) {
+(function (factory) {
   if (typeof define === "function" && define.amd) {
-    define(["jquery"], e);
+    // AMD. Register as an anonymous module.
+    define(["jquery"], factory);
   } else {
-    e(jQuery);
+    // Browser globals
+    factory(jQuery);
   }
-})(function (j) {
-  j.ui = j.ui || {};
-  var e = j.ui.version = "1.12.1";
+})(function ($) {
+  $.ui = $.ui || {};
+  let version = $.ui.version = "1.12.1";
+
   (function () {
-    var r, y = Math.max, x = Math.abs, s = /left|center|right/, i = /top|center|bottom/, f = /[\+\-]\d+(\.[\d]+)?%?/,
-      l = /^\w+/, c = /%$/, a = j.fn.pos;
+    let cachedScrollbarWidth,
+      max = Math.max,
+      abs = Math.abs,
+      rhorizontal = /left|center|right/,
+      rvertical = /top|center|bottom/,
+      roffset = /[\+\-]\d+(\.[\d]+)?%?/,
+      rposition = /^\w+/,
+      rpercent = /%$/,
+      _position = $.fn.pos;
 
-    function q(e, a, t) {
-      return [parseFloat(e[0]) * (c.test(e[0]) ? a / 100 : 1), parseFloat(e[1]) * (c.test(e[1]) ? t / 100 : 1)];
+    function getOffsets(offsets, width, height) {
+      return [
+        parseFloat(offsets[0]) * (rpercent.test(offsets[0]) ? width / 100 : 1),
+        parseFloat(offsets[1]) * (rpercent.test(offsets[1]) ? height / 100 : 1)
+      ];
     }
 
-    function C(e, a) {
-      return parseInt(j.css(e, a), 10) || 0;
+    function parseCss(element, property) {
+      return parseInt($.css(element, property), 10) || 0;
     }
 
-    function t(e) {
-      var a = e[0];
-      if (a.nodeType === 9) {
+    function getDimensions(elem) {
+      const raw = elem[0];
+      if (raw.nodeType === 9) {
         return {
-          width: e.width(),
-          height: e.height(),
+          width: elem.width(),
+          height: elem.height(),
           offset: {
             top: 0,
             left: 0
           }
         };
       }
-      if (j.isWindow(a)) {
+      if (raw != null && raw === raw.window) {
         return {
-          width: e.width(),
-          height: e.height(),
+          width: elem.width(),
+          height: elem.height(),
           offset: {
-            top: e.scrollTop(),
-            left: e.scrollLeft()
+            top: elem.scrollTop(),
+            left: elem.scrollLeft()
           }
         };
       }
-      if (a.preventDefault) {
+      if (raw.preventDefault) {
         return {
           width: 0,
           height: 0,
           offset: {
-            top: a.pageY,
-            left: a.pageX
+            top: raw.pageY,
+            left: raw.pageX
           }
         };
       }
       return {
-        width: e.outerWidth(),
-        height: e.outerHeight(),
-        offset: e.offset()
+        width: elem.outerWidth(),
+        height: elem.outerHeight(),
+        offset: elem.offset()
       };
     }
 
-    j.pos = {
-      scrollbarWidth: function () {
-        if (r !== undefined) {
-          return r;
-        }
-        var e, a,
-          t = j("<div " + "style='display:block;position:absolute;width:50px;height:50px;overflow:hidden;'>" + "<div style='height:100px;width:auto;'></div></div>"),
-          s = t.children()[0];
-        j("body").append(t);
-        e = s.offsetWidth;
-        t.css("overflow", "scroll");
-        a = s.offsetWidth;
-        if (e === a) {
-          a = t[0].clientWidth;
-        }
-        t.remove();
-        return r = e - a;
-      },
-      getScrollInfo: function (e) {
-        var a = e.isWindow || e.isDocument ? "" : e.element.css("overflow-x"),
-          t = e.isWindow || e.isDocument ? "" : e.element.css("overflow-y"),
-          s = a === "scroll" || a === "auto" && e.width < e.element[0].scrollWidth,
-          r = t === "scroll" || t === "auto" && e.height < e.element[0].scrollHeight;
+    $.pos = {
+      scrollbarWidth: (() => {
+        let cachedScrollbarWidth;
+        return function () {
+          if (cachedScrollbarWidth !== undefined) {
+            return cachedScrollbarWidth;
+          }
+          const div = document.createElement("div");
+          div.style.cssText = "display:block;position:absolute;width:50px;height:50px;overflow:hidden;";
+          const innerDiv = document.createElement("div");
+          innerDiv.style.cssText = "height:100px;width:auto;";
+          div.appendChild(innerDiv);
+          document.body.appendChild(div);
+          const w1 = innerDiv.offsetWidth;
+          div.style.overflow = "scroll";
+          const w2 = innerDiv.offsetWidth || div.clientWidth;
+          document.body.removeChild(div);
+          cachedScrollbarWidth = w1 - w2;
+          return cachedScrollbarWidth;
+        };
+      })(),
+      getScrollInfo: function (within) {
+        const overflowX = within.isWindow || within.isDocument ? "" : getComputedStyle(within.element).overflowX;
+        const overflowY = within.isWindow || within.isDocument ? "" : getComputedStyle(within.element).overflowY;
+
+        const hasOverflowX = overflowX === "scroll" || (overflowX === "auto" && within.width < within.element.scrollWidth);
+        const hasOverflowY = overflowY === "scroll" || (overflowY === "auto" && within.height < within.element.scrollHeight);
+
         return {
-          width: r ? j.pos.scrollbarWidth() : 0,
-          height: s ? j.pos.scrollbarWidth() : 0
+          width: hasOverflowY ? pos.scrollbarWidth() : 0,
+          height: hasOverflowX ? pos.scrollbarWidth() : 0,
         };
       },
-      getWithinInfo: function (e) {
-        var a = j(e || window), t = j.isWindow(a[0]), s = !!a[0] && a[0].nodeType === 9, r = !t && !s;
+      getWithinInfo:  function (element = window) {
+        const isWindow = element === window;
+        const isDocument = element.nodeType === 9; // DOCUMENT_NODE
+
+        const withinElement = isWindow ? window : isDocument ? document.documentElement : element;
+
         return {
-          element: a,
-          isWindow: t,
-          isDocument: s,
-          offset: r ? j(e).offset() : {
-            left: 0,
-            top: 0
-          },
-          scrollLeft: a.scrollLeft(),
-          scrollTop: a.scrollTop(),
-          width: a.outerWidth(),
-          height: a.outerHeight()
+          element: withinElement,
+          isWindow,
+          isDocument,
+          offset: isWindow || isDocument ? { left: 0, top: 0 } : withinElement.getBoundingClientRect(),
+          scrollLeft: withinElement.scrollLeft || 0,
+          scrollTop: withinElement.scrollTop || 0,
+          width: isWindow ? window.innerWidth : withinElement.clientWidth,
+          height: isWindow ? window.innerHeight : withinElement.clientHeight,
         };
-      }
+      },
     };
-    j.fn.pos = function (h) {
-      if (!h || !h.of) {
-        return a.apply(this, arguments);
+    $.fn.pos = function (options) {
+      if (!options || !options.of) {
+        return _position.apply(this, arguments);
       }
-      h = j.extend({}, h);
-      var m, p, d, u, T, e, g = j(h.of), b = j.pos.getWithinInfo(h.within), k = j.pos.getScrollInfo(b),
-        w = (h.collision || "flip").split(" "), v = {};
-      e = t(g);
-      if (g[0].preventDefault) {
-        h.at = "left top";
-      }
-      p = e.width;
-      d = e.height;
-      u = e.offset;
-      T = j.extend({}, u);
-      j.each(["my", "at"], function () {
-        var e = (h[this] || "").split(" "), a, t;
-        if (e.length === 1) {
-          e = s.test(e[0]) ? e.concat(["center"]) : i.test(e[0]) ? ["center"].concat(e) : ["center", "center"];
+
+      // Clone options to prevent modification
+      const settings = { ...options };
+
+      const target = $(settings.of);
+      const within = $.pos.getWithinInfo(settings.within);
+      const scrollInfo = $.pos.getScrollInfo(within);
+      const collision = (settings.collision || "flip").split(" ");
+      const offsets = {};
+
+      const dimensions = getDimensions(target);
+      const targetWidth = dimensions.width;
+      const targetHeight = dimensions.height;
+      const targetOffset = dimensions.offset;
+
+      // Adjust base position based on "at" alignment
+      let basePosition = { ...targetOffset };
+
+      const normalizePositions = (positionArray, axis) => {
+        if (positionArray.length === 1) {
+          return axis === "horizontal"
+            ? rhorizontal.test(positionArray[0])
+              ? [positionArray[0], "center"]
+              : ["center", "center"]
+            : ["center", positionArray[0]];
         }
-        e[0] = s.test(e[0]) ? e[0] : "center";
-        e[1] = i.test(e[1]) ? e[1] : "center";
-        a = f.exec(e[0]);
-        t = f.exec(e[1]);
-        v[this] = [a ? a[0] : 0, t ? t[0] : 0];
-        h[this] = [l.exec(e[0])[0], l.exec(e[1])[0]];
+        return positionArray;
+      };
+
+      ["my", "at"].forEach((key) => {
+        const position = normalizePositions((settings[key] || "").split(" "), key === "my" ? "horizontal" : "vertical");
+        const [horizontalOffset, verticalOffset] = [roffset.exec(position[0]), roffset.exec(position[1])];
+        offsets[key] = [
+          horizontalOffset ? parseFloat(horizontalOffset[0]) : 0,
+          verticalOffset ? parseFloat(verticalOffset[0]) : 0,
+        ];
+        settings[key] = [
+          rposition.exec(position[0])[0] || "center",
+          rposition.exec(position[1])[0] || "center",
+        ];
       });
-      if (w.length === 1) {
-        w[1] = w[0];
-      }
-      if (h.at[0] === "right") {
-        T.left += p;
-      } else if (h.at[0] === "center") {
-        T.left += p / 2;
-      }
-      if (h.at[1] === "bottom") {
-        T.top += d;
-      } else if (h.at[1] === "center") {
-        T.top += d / 2;
-      }
-      m = q(v.at, p, d);
-      T.left += m[0];
-      T.top += m[1];
+
+      // Adjust position based on "at" alignment
+      if (settings.at[0] === "right") basePosition.left += targetWidth;
+      else if (settings.at[0] === "center") basePosition.left += targetWidth / 2;
+
+      if (settings.at[1] === "bottom") basePosition.top += targetHeight;
+      else if (settings.at[1] === "center") basePosition.top += targetHeight / 2;
+
+      const atOffset = getOffsets(offsets.at, targetWidth, targetHeight);
+      basePosition.left += atOffset[0];
+      basePosition.top += atOffset[1];
+
+      // Apply the calculated position to each element
       return this.each(function () {
-        var t, e, f = j(this), l = f.outerWidth(), c = f.outerHeight(), a = C(this, "marginLeft"),
-          s = C(this, "marginTop"), r = l + a + C(this, "marginRight") + k.width,
-          i = c + s + C(this, "marginBottom") + k.height, o = j.extend({}, T),
-          n = q(v.my, f.outerWidth(), f.outerHeight());
-        if (h.my[0] === "right") {
-          o.left -= l;
-        } else if (h.my[0] === "center") {
-          o.left -= l / 2;
-        }
-        if (h.my[1] === "bottom") {
-          o.top -= c;
-        } else if (h.my[1] === "center") {
-          o.top -= c / 2;
-        }
-        o.left += n[0];
-        o.top += n[1];
-        t = {
-          marginLeft: a,
-          marginTop: s
+        const elem = $(this);
+        const elemWidth = elem.outerWidth();
+        const elemHeight = elem.outerHeight();
+        const marginLeft = parseCss(this, "marginLeft");
+        const marginTop = parseCss(this, "marginTop");
+
+        const collisionWidth = elemWidth + marginLeft + parseCss(this, "marginRight") + scrollInfo.width;
+        const collisionHeight = elemHeight + marginTop + parseCss(this, "marginBottom") + scrollInfo.height;
+
+        const myOffset = getOffsets(offsets.my, elemWidth, elemHeight);
+
+        // Adjust position based on "my" alignment
+        const position = {
+          ...basePosition,
+          left: basePosition.left + myOffset[0] - (settings.my[0] === "right" ? elemWidth : settings.my[0] === "center" ? elemWidth / 2 : 0),
+          top: basePosition.top + myOffset[1] - (settings.my[1] === "bottom" ? elemHeight : settings.my[1] === "center" ? elemHeight / 2 : 0),
         };
-        j.each(["left", "top"], function (e, a) {
-          if (j.ui.pos[w[e]]) {
-            j.ui.pos[w[e]][a](o, {
-              targetWidth: p,
-              targetHeight: d,
-              elemWidth: l,
-              elemHeight: c,
-              collisionPosition: t,
-              collisionWidth: r,
-              collisionHeight: i,
-              offset: [m[0] + n[0], m[1] + n[1]],
-              my: h.my,
-              at: h.at,
-              within: b,
-              elem: f
+
+        // Handle collision logic
+        const collisionPosition = { marginLeft, marginTop };
+        ["left", "top"].forEach((dir, i) => {
+          if ($.ui.pos[collision[i]]) {
+            $.ui.pos[collision[i]][dir](position, {
+              targetWidth,
+              targetHeight,
+              elemWidth,
+              elemHeight,
+              collisionPosition,
+              collisionWidth,
+              collisionHeight,
+              offset: [atOffset[0] + myOffset[0], atOffset[1] + myOffset[1]],
+              my: settings.my,
+              at: settings.at,
+              within,
+              elem,
             });
           }
         });
-        if (h.using) {
-          e = function (e) {
-            var a = u.left - o.left, t = a + p - l, s = u.top - o.top, r = s + d - c, i = {
-              target: {
-                element: g,
-                left: u.left,
-                top: u.top,
-                width: p,
-                height: d
-              },
-              element: {
-                element: f,
-                left: o.left,
-                top: o.top,
-                width: l,
-                height: c
-              },
-              horizontal: t < 0 ? "left" : a > 0 ? "right" : "center",
-              vertical: r < 0 ? "top" : s > 0 ? "bottom" : "middle"
-            };
-            if (p < l && x(a + t) < p) {
-              i.horizontal = "center";
-            }
-            if (d < c && x(s + r) < d) {
-              i.vertical = "middle";
-            }
-            if (y(x(a), x(t)) > y(x(s), x(r))) {
-              i.important = "horizontal";
-            } else {
-              i.important = "vertical";
-            }
-            h.using.call(this, e, i);
-          };
+
+        // If a custom "using" function is provided, call it
+        if (settings.using) {
+          settings.using.call(this, position, {
+            target: {
+              element: target,
+              left: targetOffset.left,
+              top: targetOffset.top,
+              width: targetWidth,
+              height: targetHeight,
+            },
+            element: {
+              element: elem,
+              left: position.left,
+              top: position.top,
+              width: elemWidth,
+              height: elemHeight,
+            },
+          });
         }
-        f.offset(j.extend(o, {
-          using: e
-        }));
+
+        elem.offset(position);
       });
     };
-    j.ui.pos = {
-      _trigger: function (e, a, t, s) {
-        if (a.elem) {
-          a.elem.trigger({
-            type: t,
-            position: e,
-            positionData: a,
-            triggered: s
+    $.ui.pos = {
+      _trigger(position, data, name, triggered) {
+        if (data.elem) {
+          data.elem.trigger({
+            type: name,
+            position,
+            positionData: data,
+            triggered,
           });
         }
       },
+
+      _handleOverflow(position, data, dir, axis) {
+        const { within, collisionPosition, collisionWidth, collisionHeight } = data;
+        const withinOffset = axis === "x" ? within.scrollLeft : within.scrollTop;
+        const outerSize = axis === "x" ? within.width : within.height;
+        const collisionPos = axis === "x" ? position.left : position.top;
+        const elemSize = axis === "x" ? collisionWidth : collisionHeight;
+
+        const overStart = withinOffset - (collisionPos - collisionPosition[`margin${dir}`]);
+        const overEnd = collisionPos + elemSize - outerSize - withinOffset;
+
+        let newOverEnd;
+        if (elemSize > outerSize) {
+          if (overStart > 0 && overEnd <= 0) {
+            newOverEnd = collisionPos + overStart + elemSize - outerSize - withinOffset;
+            return collisionPos + overStart - newOverEnd;
+          }
+          if (overEnd > 0 && overStart <= 0) return withinOffset;
+          return overStart > overEnd
+            ? withinOffset + outerSize - elemSize
+            : withinOffset;
+        }
+
+        if (overStart > 0) return collisionPos + overStart;
+        if (overEnd > 0) return collisionPos - overEnd;
+        return Math.max(collisionPos - (collisionPos - collisionPosition[`margin${dir}`]), collisionPos);
+      },
+
       fit: {
-        left: function (e, a) {
-          j.ui.pos._trigger(e, a, "posCollide", "fitLeft");
-          var t = a.within, s = t.isWindow ? t.scrollLeft : t.offset.left, r = t.width,
-            i = e.left - a.collisionPosition.marginLeft, f = s - i, l = i + a.collisionWidth - r - s, c;
-          if (a.collisionWidth > r) {
-            if (f > 0 && l <= 0) {
-              c = e.left + f + a.collisionWidth - r - s;
-              e.left += f - c;
-            } else if (l > 0 && f <= 0) {
-              e.left = s;
-            } else {
-              if (f > l) {
-                e.left = s + r - a.collisionWidth;
-              } else {
-                e.left = s;
-              }
-            }
-          } else if (f > 0) {
-            e.left += f;
-          } else if (l > 0) {
-            e.left -= l;
-          } else {
-            e.left = y(e.left - i, e.left);
-          }
-          j.ui.pos._trigger(e, a, "posCollided", "fitLeft");
+        left(position, data) {
+          $.ui.pos._trigger(position, data, "posCollide", "fitLeft");
+          position.left = $.ui.pos._handleOverflow(position, data, "Left", "x");
+          $.ui.pos._trigger(position, data, "posCollided", "fitLeft");
         },
-        top: function (e, a) {
-          j.ui.pos._trigger(e, a, "posCollide", "fitTop");
-          var t = a.within, s = t.isWindow ? t.scrollTop : t.offset.top, r = a.within.height,
-            i = e.top - a.collisionPosition.marginTop, f = s - i, l = i + a.collisionHeight - r - s, c;
-          if (a.collisionHeight > r) {
-            if (f > 0 && l <= 0) {
-              c = e.top + f + a.collisionHeight - r - s;
-              e.top += f - c;
-            } else if (l > 0 && f <= 0) {
-              e.top = s;
-            } else {
-              if (f > l) {
-                e.top = s + r - a.collisionHeight;
-              } else {
-                e.top = s;
-              }
-            }
-          } else if (f > 0) {
-            e.top += f;
-          } else if (l > 0) {
-            e.top -= l;
-          } else {
-            e.top = y(e.top - i, e.top);
-          }
-          j.ui.pos._trigger(e, a, "posCollided", "fitTop");
-        }
+        top(position, data) {
+          $.ui.pos._trigger(position, data, "posCollide", "fitTop");
+          position.top = $.ui.pos._handleOverflow(position, data, "Top", "y");
+          $.ui.pos._trigger(position, data, "posCollided", "fitTop");
+        },
       },
+
       flip: {
-        left: function (e, a) {
-          j.ui.pos._trigger(e, a, "posCollide", "flipLeft");
-          var t = a.within, s = t.offset.left + t.scrollLeft, r = t.width,
-            i = t.isWindow ? t.scrollLeft : t.offset.left, f = e.left - a.collisionPosition.marginLeft, l = f - i,
-            c = f + a.collisionWidth - r - i,
-            o = a.my[0] === "left" ? -a.elemWidth : a.my[0] === "right" ? a.elemWidth : 0,
-            n = a.at[0] === "left" ? a.targetWidth : a.at[0] === "right" ? -a.targetWidth : 0, h = -2 * a.offset[0], m,
-            p;
-          if (l < 0) {
-            m = e.left + o + n + h + a.collisionWidth - r - s;
-            if (m < 0 || m < x(l)) {
-              e.left += o + n + h;
-            }
-          } else if (c > 0) {
-            p = e.left - a.collisionPosition.marginLeft + o + n + h - i;
-            if (p > 0 || x(p) < c) {
-              e.left += o + n + h;
-            }
+        left(position, data) {
+          $.ui.pos._trigger(position, data, "posCollide", "flipLeft");
+          const { within, my, at, offset, targetWidth, elemWidth } = data;
+          const withinOffset = within.offset.left + within.scrollLeft;
+          const outerWidth = within.width;
+          const collisionPosLeft = position.left - data.collisionPosition.marginLeft;
+          const overLeft = collisionPosLeft - withinOffset;
+          const overRight = collisionPosLeft + data.collisionWidth - outerWidth - withinOffset;
+
+          const myOffset = my[0] === "left" ? -elemWidth : my[0] === "right" ? elemWidth : 0;
+          const atOffset = at[0] === "left" ? targetWidth : at[0] === "right" ? -targetWidth : 0;
+          const totalOffset = myOffset + atOffset + offset[0] * -2;
+
+          if (overLeft < 0 && (overRight <= 0 || Math.abs(overLeft) < overRight)) {
+            position.left += totalOffset;
+          } else if (overRight > 0 && (overLeft >= 0 || Math.abs(overRight) < overLeft)) {
+            position.left += totalOffset;
           }
-          j.ui.pos._trigger(e, a, "posCollided", "flipLeft");
+          $.ui.pos._trigger(position, data, "posCollided", "flipLeft");
         },
-        top: function (e, a) {
-          j.ui.pos._trigger(e, a, "posCollide", "flipTop");
-          var t = a.within, s = t.offset.top + t.scrollTop, r = t.height, i = t.isWindow ? t.scrollTop : t.offset.top,
-            f = e.top - a.collisionPosition.marginTop, l = f - i, c = f + a.collisionHeight - r - i,
-            o = a.my[1] === "top", n = o ? -a.elemHeight : a.my[1] === "bottom" ? a.elemHeight : 0,
-            h = a.at[1] === "top" ? a.targetHeight : a.at[1] === "bottom" ? -a.targetHeight : 0, m = -2 * a.offset[1],
-            p, d;
-          if (l < 0) {
-            d = e.top + n + h + m + a.collisionHeight - r - s;
-            if (d < 0 || d < x(l)) {
-              e.top += n + h + m;
-            }
-          } else if (c > 0) {
-            p = e.top - a.collisionPosition.marginTop + n + h + m - i;
-            if (p > 0 || x(p) < c) {
-              e.top += n + h + m;
-            }
+        top(position, data) {
+          $.ui.pos._trigger(position, data, "posCollide", "flipTop");
+          const { within, my, at, offset, targetHeight, elemHeight } = data;
+          const withinOffset = within.offset.top + within.scrollTop;
+          const outerHeight = within.height;
+          const collisionPosTop = position.top - data.collisionPosition.marginTop;
+          const overTop = collisionPosTop - withinOffset;
+          const overBottom = collisionPosTop + data.collisionHeight - outerHeight - withinOffset;
+
+          const myOffset = my[1] === "top" ? -elemHeight : my[1] === "bottom" ? elemHeight : 0;
+          const atOffset = at[1] === "top" ? targetHeight : at[1] === "bottom" ? -targetHeight : 0;
+          const totalOffset = myOffset + atOffset + offset[1] * -2;
+
+          if (overTop < 0 && (overBottom <= 0 || Math.abs(overTop) < overBottom)) {
+            position.top += totalOffset;
+          } else if (overBottom > 0 && (overTop >= 0 || Math.abs(overBottom) < overTop)) {
+            position.top += totalOffset;
           }
-          j.ui.pos._trigger(e, a, "posCollided", "flipTop");
-        }
+          $.ui.pos._trigger(position, data, "posCollided", "flipTop");
+        },
       },
+
       flipfit: {
-        left: function () {
-          j.ui.pos.flip.left.apply(this, arguments);
-          j.ui.pos.fit.left.apply(this, arguments);
+        left(...args) {
+          $.ui.pos.flip.left(...args);
+          $.ui.pos.fit.left(...args);
         },
-        top: function () {
-          j.ui.pos.flip.top.apply(this, arguments);
-          j.ui.pos.fit.top.apply(this, arguments);
-        }
-      }
+        top(...args) {
+          $.ui.pos.flip.top(...args);
+          $.ui.pos.fit.top(...args);
+        },
+      },
     };
     (function () {
-      var e, a, t, s, r, i = document.getElementsByTagName("body")[0], f = document.createElement("div");
-      e = document.createElement(i ? "div" : "body");
-      t = {
+      const body = document.body;
+      const fakeBody = document.createElement("div");
+      const testDiv = document.createElement("div");
+
+      // Apply styles to the fake body for testing
+      Object.assign(fakeBody.style, {
         visibility: "hidden",
-        width: 0,
-        height: 0,
-        border: 0,
-        margin: 0,
-        background: "none"
-      };
-      if (i) {
-        j.extend(t, {
-          position: "absolute",
-          left: "-1000px",
-          top: "-1000px"
-        });
-      }
-      for (r in t) {
-        e.style[r] = t[r];
-      }
-      e.appendChild(f);
-      a = i || document.documentElement;
-      a.insertBefore(e, a.firstChild);
-      f.style.cssText = "position: absolute; left: 10.7432222px;";
-      s = j(f).offset().left;
-      j.support.offsetFractions = s > 10 && s < 11;
-      e.innerHTML = "";
-      a.removeChild(e);
+        width: "0",
+        height: "0",
+        border: "none",
+        margin: "0",
+        background: "none",
+        position: "absolute",
+        left: "-1000px",
+        top: "-1000px",
+      });
+
+      // Add test div for measuring offset
+      testDiv.style.cssText = "position: absolute; left: 10.7432222px;";
+      fakeBody.appendChild(testDiv);
+
+      // Insert the fake body into the DOM
+      (body || document.documentElement).appendChild(fakeBody);
+
+      // Determine if the browser supports fractional offsets
+      const offsetLeft = testDiv.getBoundingClientRect().left;
+      $.support.offsetFractions = offsetLeft > 10 && offsetLeft < 11;
+
+      // Clean up by removing the fake body
+      fakeBody.remove();
     })();
   })();
-  var a = j.ui.position;
+  var position = $.ui.position;
 });
 
-(function (e) {
+(function (factory) {
   "use strict";
-  if (typeof define === "function" && define.amd) {
-    define(["jquery"], e);
+  if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
   } else if (window.jQuery && !window.jQuery.fn.iconpicker) {
-    e(window.jQuery);
+    factory(window.jQuery);
   }
-})(function (c) {
+})(function ($) {
   "use strict";
-  var f = {
-    isEmpty: function (e) {
-      return e === false || e === "" || e === null || e === undefined;
+  const _helpers = {
+    isEmpty: (val) => val === false || val === '' || val == null,
+    isEmptyObject: (val) => _helpers.isEmpty(val) || (val.length === 0 && typeof val !== "undefined"),
+    isElement: (selector) => document.querySelector(selector) !== null,
+    isString: (val) => typeof val === "string" || val instanceof String,
+    isArray: Array.isArray,
+    inArray: (val, arr) => arr.includes(val),
+    throwError: (text) => {
+      throw new Error(`Font Awesome Icon Picker Exception: ${text}`);
     },
-    isEmptyObject: function (e) {
-      return this.isEmpty(e) === true || e.length === 0;
-    },
-    isElement: function (e) {
-      return c(e).length > 0;
-    },
-    isString: function (e) {
-      return typeof e === "string" || e instanceof String;
-    },
-    isArray: function (e) {
-      return c.isArray(e);
-    },
-    inArray: function (e, a) {
-      return c.inArray(e, a) !== -1;
-    },
-    throwError: function (e) {
-      throw "Font Awesome Icon Picker Exception: " + e;
-    }
   };
-  var t = function (e, a) {
-    this._id = t._idCounter++;
-    this.element = c(e).addClass("iconpicker-element");
-    this._trigger("iconpickerCreate", {
+
+  const Iconpicker = function (element, options) {
+    this._id = Iconpicker._idCounter++;
+    this.element = $(element).addClass('iconpicker-element');
+    this._trigger('iconpickerCreate', {
       iconpickerValue: this.iconpickerValue
     });
-    this.options = c.extend({}, t.defaultOptions, this.element.data(), a);
-    this.options.templates = c.extend({}, t.defaultOptions.templates, this.options.templates);
+    this.options = $.extend({}, Iconpicker.defaultOptions, this.element.data(), options);
+    this.options.templates = $.extend({}, Iconpicker.defaultOptions.templates, this.options.templates);
     this.options.originalPlacement = this.options.placement;
-    this.container = f.isElement(this.options.container) ? c(this.options.container) : false;
+    // Iconpicker container element
+    this.container = (_helpers.isElement(this.options.container) ? $(this.options.container) : false);
     if (this.container === false) {
-      if (this.element.is(".dropdown-toggle")) {
-        this.container = c("~ .dropdown-menu:first", this.element);
+      if (this.element.is('.dropdown-toggle')) {
+        this.container = $('~ .dropdown-menu:first', this.element);
       } else {
-        this.container = this.element.is("input,textarea,button,.btn") ? this.element.parent() : this.element;
+        this.container = (this.element.is('input,textarea,button,.btn') ? this.element.parent() : this.element);
       }
     }
-    this.container.addClass("iconpicker-container");
+    this.container.addClass('iconpicker-container');
+
     if (this.isDropdownMenu()) {
-      this.options.placement = "inline";
+      this.options.placement = 'inline';
     }
-    this.input = this.element.is("input,textarea") ? this.element.addClass("iconpicker-input") : false;
+
+    // Is the element an input? Should we search inside for any input?
+    this.input = (this.element.is('input,textarea') ? this.element.addClass('iconpicker-input') : false);
     if (this.input === false) {
-      this.input = this.container.find(this.options.input);
-      if (!this.input.is("input,textarea")) {
+      this.input = (this.container.find(this.options.input));
+      if (!this.input.is('input,textarea')) {
         this.input = false;
       }
     }
+
+    // Plugin as component ?
     this.component = this.isDropdownMenu() ? this.container.parent().find(this.options.component) : this.container.find(this.options.component);
     if (this.component.length === 0) {
       this.component = false;
     } else {
-      this.component.find("i").addClass("iconpicker-component");
+      this.component.find('i').addClass('iconpicker-component');
     }
+
+    // Create popover and iconpicker HTML
     this._createPopover();
     this._createIconpicker();
+
     if (this.getAcceptButton().length === 0) {
+      // disable this because we don't have accept buttons
       this.options.mustAccept = false;
     }
+
+    // Avoid CSS issues with input-group-addon(s)
     if (this.isInputGroup()) {
       this.container.parent().append(this.popover);
     } else {
       this.container.append(this.popover);
     }
+
+    // Bind events
     this._bindElementEvents();
     this._bindWindowEvents();
+
+    // Refresh everything
     this.update(this.options.selected);
+
     if (this.isInline()) {
       this.show();
     }
-    this._trigger("iconpickerCreated", {
+
+    this._trigger('iconpickerCreated', {
       iconpickerValue: this.iconpickerValue
     });
   };
-  t._idCounter = 0;
-  t.defaultOptions = {
-    title: false,
-    selected: false,
-    defaultValue: false,
-    placement: "bottom",
-    collision: "none",
-    animation: true,
+
+  // Instance identifier counter
+  Iconpicker._idCounter = 0;
+  Iconpicker.defaultOptions = {
+    title: false, // Popover title (optional) only if specified in the template
+    selected: false, // use this value as the current item and ignore the original
+    defaultValue: false, // use this value as the current item if input or element value is empty
+    placement: 'bottom', // (has some issues with auto and CSS). auto, top, bottom, left, right
+    collision: 'none', // If true, the popover will be repositioned to another position when collapses with the window borders
+    animation: true, // fade in/out on show/hide ?
+    //hide iconpicker automatically when a value is picked. it is ignored if mustAccept is not false and the accept button is visible
     hideOnSelect: false,
     showFooter: false,
-    searchInFooter: false,
-    mustAccept: false,
-    selectedCustomClass: "bg-primary",
-    icons: [],
-    fullClassFormatter: function (e) {
-      return e;
+    searchInFooter: false, // If true, the search will be added to the footer instead of the title
+    mustAccept: false, // only applicable when there's an iconpicker-btn-accept button in the popover footer
+    selectedCustomClass: 'bg-primary', // Appends this class when to the selected item
+    icons: [], // list of icon classes (declared at the bottom of this script for maintainability)
+    fullClassFormatter: function (val) {
+      return val;
     },
-    input: "input,.iconpicker-input",
-    inputSearch: false,
-    container: false,
-    component: ".input-group-addon,.iconpicker-component",
+    input: 'input,.iconpicker-input', // children input selector
+    inputSearch: false, // use the input as a search box too?
+    container: false, //  Appends the popover to a specific element. If not set, the selected element or element parent is used
+    component: '.input-group-addon,.iconpicker-component', // children component jQuery selector or object, relative to the container element
+    // Plugin templates:
     templates: {
-      popover: '<div class="iconpicker-popover popover" role="tooltip"><div class="arrow"></div>' + '<div class="popover-title"></div><div class="popover-content"></div></div>',
+      popover: '<div class="iconpicker-popover popover" role="tooltip"><div class="arrow"></div>' +
+        '<div class="popover-title"></div><div class="popover-content"></div></div>',
       footer: '<div class="popover-footer"></div>',
-      buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' + ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
+      buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">Cancel</button>' +
+        ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">Accept</button>',
       search: '<input type="search" class="form-control iconpicker-search" placeholder="Type to filter" />',
       iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
-      iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>'
+      iconpickerItem: '<a role="button" href="javascript:;" class="iconpicker-item"><i></i></a>',
     }
   };
-  t.batch = function (e, a) {
-    var t = Array.prototype.slice.call(arguments, 2);
-    return c(e).each(function () {
-      var e = c(this).data("iconpicker");
-      if (!!e) {
-        e[a].apply(e, t);
+  Iconpicker.batch = function (selector, method) {
+    const args = Array.prototype.slice.call(arguments, 2);
+    return $(selector).each(function () {
+      const $inst = $(this).data('iconpicker');
+      if (!!$inst) {
+        $inst[method].apply($inst, args);
       }
     });
   };
-  t.prototype = {
-    constructor: t,
+  Iconpicker.prototype = {
+    constructor: Iconpicker,
     options: {},
-    _id: 0,
-    _trigger: function (e, a) {
-      a = a || {};
-      this.element.trigger(c.extend({
-        type: e,
-        iconpickerInstance: this
-      }, a));
+    _id: 0, // instance identifier for bind/unbind events
+    _trigger(name, opts = {}) {
+      // Triggers a custom event on the element with the provided name and options
+      this.element.trigger({
+        type: name,
+        iconpickerInstance: this,
+        ...opts,
+      });
     },
-    _createPopover: function () {
-      this.popover = c(this.options.templates.popover);
-      var e = this.popover.find(".popover-title");
-      if (!!this.options.title) {
-        e.append(c('<div class="popover-title-text">' + this.options.title + "</div>"));
+    _createPopover() {
+      const { templates, title, showFooter, animation, searchInFooter } = this.options;
+      this.popover = $(templates.popover);
+      // title (header)
+      const _title = this.popover.find('.popover-title');
+      if (title) {
+        _title.append(`<div class="popover-title-text">${title}</div>`);
       }
-      if (this.hasSeparatedSearchInput() && !this.options.searchInFooter) {
-        e.append(this.options.templates.search);
-      } else if (!this.options.title) {
-        e.remove();
-      }
-      if (this.options.showFooter && !f.isEmpty(this.options.templates.footer)) {
-        var a = c(this.options.templates.footer);
-        if (this.hasSeparatedSearchInput() && this.options.searchInFooter) {
-          a.append(c(this.options.templates.search));
+      if (this.hasSeparatedSearchInput()) {
+        const searchTemplate = templates.search;
+        if (!searchInFooter) {
+          _title.append(searchTemplate);
+        } else if (!title) {
+          _title.remove();
         }
-        if (!f.isEmpty(this.options.templates.buttons)) {
-          a.append(c(this.options.templates.buttons));
-        }
-        this.popover.append(a);
+      } else if (!title) {
+        _title.remove();
       }
-      if (this.options.animation === true) {
-        this.popover.addClass("fade show");
+      // footer
+      if (showFooter && !_helpers.isEmpty(templates.footer)) {
+        const _footer = $(templates.footer);
+        if (this.hasSeparatedSearchInput() && searchInFooter) {
+          _footer.append(templates.search);
+        }
+        if (!_helpers.isEmpty(templates.buttons)) {
+          _footer.append(templates.buttons);
+        }
+        this.popover.append(_footer);
+      }
+      if (animation) {
+        this.popover.addClass('fade show');
       }
       return this.popover;
     },
-    _createIconpicker: function () {
-      var t = this;
-      this.iconpicker = c(this.options.templates.iconpicker);
-      var e = function (e) {
-        var a = c(this);
-        if (a.is("i")) {
-          a = a.parent();
-        }
-        t._trigger("iconpickerSelect", {
-          iconpickerItem: a,
-          iconpickerValue: t.iconpickerValue
+    _createIconpicker() {
+      const { templates, icons, fullClassFormatter, hideOnSelect, mustAccept } = this.options;
+      this.iconpicker = $(templates.iconpicker);
+
+      // Item click handler
+      const itemClickFn = (event) => {
+        const $item = $(event.currentTarget);
+        const iconpickerValue = $item.data('iconpickerValue');
+
+        this._trigger('iconpickerSelect', {
+          iconpickerItem: $item,
+          iconpickerValue: this.iconpickerValue,
         });
-        if (t.options.mustAccept === false) {
-          t.update(a.data("iconpickerValue"));
-          t._trigger("iconpickerSelected", {
-            iconpickerItem: this,
-            iconpickerValue: t.iconpickerValue
+
+        this.update(iconpickerValue, mustAccept);
+        if (!mustAccept) {
+          this._trigger('iconpickerSelected', {
+            iconpickerItem: $item,
+            iconpickerValue: this.iconpickerValue,
           });
-        } else {
-          t.update(a.data("iconpickerValue"), true);
         }
-        if (t.options.hideOnSelect && t.options.mustAccept === false) {
-          t.hide();
+
+        if (hideOnSelect && !mustAccept) {
+          this.hide();
         }
       };
-      var a = c(this.options.templates.iconpickerItem);
-      var s = [];
-      for (var r in this.options.icons) {
-        if (typeof this.options.icons[r].title === "string") {
-          var i = a.clone();
-          i.find("i").addClass(this.options.fullClassFormatter(this.options.icons[r].title));
-          i.data("iconpickerValue", this.options.icons[r].title).on("click.iconpicker", e);
-          i.attr("title", "." + this.options.icons[r].title);
-          if (this.options.icons[r].searchTerms.length > 0) {
-            var f = "";
-            for (var l = 0; l < this.options.icons[r].searchTerms.length; l++) {
-              f = f + this.options.icons[r].searchTerms[l] + " ";
-            }
-            i.attr("data-search-terms", f);
+
+      // Generate items
+      const $itemTemplate = $(templates.iconpickerItem);
+      const $items = icons
+        .filter((icon) => typeof icon.title === 'string')
+        .map((icon) => {
+          const $item = $itemTemplate.clone();
+          const { title, searchTerms } = icon;
+
+          $item.find('i').addClass(fullClassFormatter(title));
+          $item.data('iconpickerValue', title).on('click.iconpicker', itemClickFn);
+          $item.attr('title', `.${title}`);
+
+          if (Array.isArray(searchTerms) && searchTerms.length > 0) {
+            $item.attr('data-search-terms', searchTerms.join(' '));
           }
-          s.push(i);
-        }
-      }
-      this.iconpicker.find(".iconpicker-items").append(s);
-      this.popover.find(".popover-content").append(this.iconpicker);
+
+          return $item;
+        });
+
+      // Append items to the iconpicker
+      this.iconpicker.find('.iconpicker-items').append($items);
+      this.popover.find('.popover-content').append(this.iconpicker);
+
       return this.iconpicker;
     },
-    _isEventInsideIconpicker: function (e) {
-      var a = c(e.target);
-      if ((!a.hasClass("iconpicker-element") || a.hasClass("iconpicker-element") && !a.is(this.element)) && a.parents(".iconpicker-popover").length === 0) {
+    _isEventInsideIconpicker(e) {
+      const $target = $(e.target);
+
+      return (
+        $target.is(this.element) ||
+        $target.hasClass('iconpicker-element') ||
+        $target.closest('.iconpicker-popover').length > 0
+      );
+    },
+    _bindElementEvents() {
+      const handleKeyup = (event) => {
+        const value = $(event.currentTarget).val().toLowerCase();
+        this.filter(value);
+      };
+
+      const handleAccept = () => {
+        const selectedItem = this.iconpicker.find('.iconpicker-selected').get(0);
+
+        this.update(this.iconpickerValue);
+        this._trigger('iconpickerSelected', {
+          iconpickerItem: selectedItem,
+          iconpickerValue: this.iconpickerValue,
+        });
+
+        if (!this.isInline()) {
+          this.hide();
+        }
+      };
+
+      const handleCancel = () => {
+        if (!this.isInline()) {
+          this.hide();
+        }
+      };
+
+      const handleFocus = (event) => {
+        this.show();
+        event.stopPropagation();
+      };
+
+      const handleInputKeyup = (event) => {
+        const ignoredKeys = [
+          38, 40, 37, 39, 16, 17, 18, 9, 8, 91, 93, 20, 46, 186, 190, 46, 78, 188, 44, 86,
+        ];
+
+        if (!_helpers.inArray(event.keyCode, ignoredKeys)) {
+          this.update();
+        } else {
+          this._updateFormGroupStatus(this.getValid(event.currentTarget.value) !== false);
+        }
+
+        if (this.options.inputSearch) {
+          this.filter($(event.currentTarget).val().toLowerCase());
+        }
+      };
+
+      // Attach events
+      this.getSearchInput().on('keyup.iconpicker', handleKeyup);
+      this.getAcceptButton().on('click.iconpicker', handleAccept);
+      this.getCancelButton().on('click.iconpicker', handleCancel);
+      this.element.on('focus.iconpicker', handleFocus);
+
+      if (this.hasComponent()) {
+        this.component.on('click.iconpicker', () => this.toggle());
+      }
+
+      if (this.hasInput()) {
+        this.input.on('keyup.iconpicker', handleInputKeyup);
+      }
+    },
+    _bindWindowEvents() {
+      const namespace = `.iconpicker.inst${this._id}`;
+
+      // Reposition popover on window resize or orientation change
+      $(window).on(`resize${namespace} orientationchange${namespace}`, () => {
+        if (this.popover.hasClass('in')) {
+          this.updatePlacement();
+        }
+      });
+
+      // Hide popover on mouseup outside the iconpicker
+      if (!this.isInline()) {
+        $(document).on(`mouseup${namespace}`, (e) => {
+          if (!this._isEventInsideIconpicker(e)) {
+            this.hide();
+          }
+        });
+      }
+    },
+    _unbindElementEvents() {
+      const elements = [this.popover, this.element, this.input, this.component, this.container];
+
+      elements.forEach((el) => {
+        if (el && el.off) {
+          el.off('.iconpicker');
+        }
+      });
+    },
+    _unbindWindowEvents() {
+      const namespace = `.iconpicker.inst${this._id}`;
+      [window, document].forEach((target) => $(target).off(namespace));
+    },
+    updatePlacement(placement = this.options.placement, collision = this.options.collision) {
+      this.options.placement = placement;
+      collision = collision === true ? "flip" : collision;
+      let _pos = {
+        // at: Defines which position (or side) on container element to align the
+        // popover element against: "horizontal vertical" alignment.
+        at: "right bottom",
+        // my: Defines which position (or side) on the popover being positioned to align
+        // with the container element: "horizontal vertical" alignment
+        my: "right top",
+        // of: Which element to position against.
+        of: this.hasInput() && !this.isInputGroup() ? this.input : this.container,
+        // collision: When the positioned element overflows the window (or within element)
+        // in some direction, move it to an alternative position.
+        collision,
+        // within: Element to position within, affecting collision detection.
+        within: window,
+      };
+      const placementClasses = [
+        'inline', 'topLeftCorner', 'topLeft', 'top', 'topRight', 'topRightCorner',
+        'rightTop', 'right', 'rightBottom', 'bottomRightCorner', 'bottomRight',
+        'bottom', 'bottomLeft', 'bottomLeftCorner', 'leftBottom', 'left', 'leftTop',
+      ];
+
+      const placementMappings = {
+        topLeftCorner: { my: 'right bottom', at: 'left top' },
+        topLeft: { my: 'left bottom', at: 'left top' },
+        top: { my: 'center bottom', at: 'center top' },
+        topRight: { my: 'right bottom', at: 'right top' },
+        topRightCorner: { my: 'left bottom', at: 'right top' },
+        rightTop: { my: 'left bottom', at: 'right center' },
+        right: { my: 'left center', at: 'right center' },
+        rightBottom: { my: 'left top', at: 'right center' },
+        bottomRightCorner: { my: 'left top', at: 'right bottom' },
+        bottomRight: { my: 'right top', at: 'right bottom' },
+        bottom: { my: 'center top', at: 'center bottom' },
+        bottomLeft: { my: 'left top', at: 'left bottom' },
+        bottomLeftCorner: { my: 'right top', at: 'left bottom' },
+        leftBottom: { my: 'right top', at: 'left center' },
+        left: { my: 'right center', at: 'left center' },
+        leftTop: { my: 'right bottom', at: 'left center' },
+      };
+
+      // Remove previous placement classes
+      this.popover.removeClass(placementClasses.join(' '));
+
+      if (typeof placement === 'object') {
+        // Custom position
+        return this.popover.pos({ ..._pos, ...placement });
+      }
+
+      if (placement === 'inline') {
+        _pos = false;
+      } else if (placementMappings[placement]) {
+        Object.assign(_pos, placementMappings[placement]);
+      } else {
         return false;
       }
-      return true;
-    },
-    _bindElementEvents: function () {
-      var a = this;
-      this.getSearchInput().on("keyup.iconpicker", function () {
-        a.filter(c(this).val().toLowerCase());
-      });
-      this.getAcceptButton().on("click.iconpicker", function () {
-        var e = a.iconpicker.find(".iconpicker-selected").get(0);
-        a.update(a.iconpickerValue);
-        a._trigger("iconpickerSelected", {
-          iconpickerItem: e,
-          iconpickerValue: a.iconpickerValue
-        });
-        if (!a.isInline()) {
-          a.hide();
-        }
-      });
-      this.getCancelButton().on("click.iconpicker", function () {
-        if (!a.isInline()) {
-          a.hide();
-        }
-      });
-      this.element.on("focus.iconpicker", function (e) {
-        a.show();
-        e.stopPropagation();
-      });
-      if (this.hasComponent()) {
-        this.component.on("click.iconpicker", function () {
-          a.toggle();
-        });
-      }
-      if (this.hasInput()) {
-        this.input.on("keyup.iconpicker", function (e) {
-          if (!f.inArray(e.keyCode, [38, 40, 37, 39, 16, 17, 18, 9, 8, 91, 93, 20, 46, 186, 190, 46, 78, 188, 44, 86])) {
-            a.update();
-          } else {
-            a._updateFormGroupStatus(a.getValid(this.value) !== false);
-          }
-          if (a.options.inputSearch === true) {
-            a.filter(c(this).val().toLowerCase());
-          }
-        });
-      }
-    },
-    _bindWindowEvents: function () {
-      var e = c(window.document);
-      var a = this;
-      var t = ".iconpicker.inst" + this._id;
-      c(window).on("resize.iconpicker" + t + " orientationchange.iconpicker" + t, function (e) {
-        if (a.popover.hasClass("in")) {
-          a.updatePlacement();
-        }
-      });
-      if (!a.isInline()) {
-        e.on("mouseup" + t, function (e) {
-          if (!a._isEventInsideIconpicker(e) && !a.isInline()) {
-            a.hide();
-          }
-        });
-      }
-    },
-    _unbindElementEvents: function () {
-      this.popover.off(".iconpicker");
-      this.element.off(".iconpicker");
-      if (this.hasInput()) {
-        this.input.off(".iconpicker");
-      }
-      if (this.hasComponent()) {
-        this.component.off(".iconpicker");
-      }
-      if (this.hasContainer()) {
-        this.container.off(".iconpicker");
-      }
-    },
-    _unbindWindowEvents: function () {
-      c(window).off(".iconpicker.inst" + this._id);
-      c(window.document).off(".iconpicker.inst" + this._id);
-    },
-    updatePlacement: function (e, a) {
-      e = e || this.options.placement;
-      this.options.placement = e;
-      a = a || this.options.collision;
-      a = a === true ? "flip" : a;
-      var t = {
-        at: "right bottom",
-        my: "right top",
-        of: this.hasInput() && !this.isInputGroup() ? this.input : this.container,
-        collision: a === true ? "flip" : a,
-        within: window
-      };
-      this.popover.removeClass("inline topLeftCorner topLeft top topRight topRightCorner " + "rightTop right rightBottom bottomRight bottomRightCorner " + "bottom bottomLeft bottomLeftCorner leftBottom left leftTop");
-      if (typeof e === "object") {
-        return this.popover.pos(c.extend({}, t, e));
-      }
-      switch (e) {
-        case "inline": {
-          t = false;
-        }
-          break;
 
-        case "topLeftCorner": {
-          t.my = "right bottom";
-          t.at = "left top";
-        }
-          break;
+      // Update popover styles and position
+      this.popover.css({ display: placement === "inline" ? "" : "block" });
 
-        case "topLeft": {
-          t.my = "left bottom";
-          t.at = "left top";
-        }
-          break;
-
-        case "top": {
-          t.my = "center bottom";
-          t.at = "center top";
-        }
-          break;
-
-        case "topRight": {
-          t.my = "right bottom";
-          t.at = "right top";
-        }
-          break;
-
-        case "topRightCorner": {
-          t.my = "left bottom";
-          t.at = "right top";
-        }
-          break;
-
-        case "rightTop": {
-          t.my = "left bottom";
-          t.at = "right center";
-        }
-          break;
-
-        case "right": {
-          t.my = "left center";
-          t.at = "right center";
-        }
-          break;
-
-        case "rightBottom": {
-          t.my = "left top";
-          t.at = "right center";
-        }
-          break;
-
-        case "bottomRightCorner": {
-          t.my = "left top";
-          t.at = "right bottom";
-        }
-          break;
-
-        case "bottomRight": {
-          t.my = "right top";
-          t.at = "right bottom";
-        }
-          break;
-
-        case "bottom": {
-          t.my = "center top";
-          t.at = "center bottom";
-        }
-          break;
-
-        case "bottomLeft": {
-          t.my = "left top";
-          t.at = "left bottom";
-        }
-          break;
-
-        case "bottomLeftCorner": {
-          t.my = "right top";
-          t.at = "left bottom";
-        }
-          break;
-
-        case "leftBottom": {
-          t.my = "right top";
-          t.at = "left center";
-        }
-          break;
-
-        case "left": {
-          t.my = "right center";
-          t.at = "left center";
-        }
-          break;
-
-        case "leftTop": {
-          t.my = "right bottom";
-          t.at = "left center";
-        }
-          break;
-
-        default: {
-          return false;
-        }
-          break;
-      }
-      this.popover.css({
-        display: this.options.placement === "inline" ? "" : "block"
-      });
-      if (t !== false) {
-        this.popover.pos(t).css("maxWidth", c(window).width() - this.container.offset().left - 5);
+      if (_pos) {
+        this.popover
+          .pos(_pos)
+          .css("maxWidth", $(window).width() - this.container.offset().left - 5);
       } else {
         this.popover.css({
           top: "auto",
           right: "auto",
           bottom: "auto",
           left: "auto",
-          maxWidth: "none"
+          maxWidth: "none",
         });
       }
+
       this.popover.addClass(this.options.placement);
       return true;
     },
-    _updateComponents: function () {
-      this.iconpicker.find(".iconpicker-item.iconpicker-selected").removeClass("iconpicker-selected " + this.options.selectedCustomClass);
-      if (this.iconpickerValue) {
-        this.iconpicker.find("." + this.options.fullClassFormatter(this.iconpickerValue).replace(/ /g, ".")).parent().addClass("iconpicker-selected " + this.options.selectedCustomClass);
+    _updateComponents() {
+      const { iconpickerValue, options } = this;
+
+      // Remove previous selection
+      this.iconpicker
+        .find('.iconpicker-item.iconpicker-selected')
+        .removeClass(`iconpicker-selected ${options.selectedCustomClass}`);
+
+      // Add selection to the current value
+      if (iconpickerValue) {
+        this.iconpicker
+          .find(`.${options.fullClassFormatter(iconpickerValue).replace(/ /g, '.')}`)
+          .parent()
+          .addClass(`iconpicker-selected ${options.selectedCustomClass}`);
       }
+
+      // Update component item
       if (this.hasComponent()) {
-        var e = this.component.find("i");
-        if (e.length > 0) {
-          e.attr("class", this.options.fullClassFormatter(this.iconpickerValue));
+        const $icon = this.component.find('i');
+        const formattedClass = options.fullClassFormatter(iconpickerValue);
+
+        if ($icon.length > 0) {
+          $icon.attr('class', formattedClass);
         } else {
           this.component.html(this.getHtml());
         }
       }
     },
-    _updateFormGroupStatus: function (e) {
-      if (this.hasInput()) {
-        if (e !== false) {
-          this.input.parents(".form-group:first").removeClass("has-error");
-        } else {
-          this.input.parents(".form-group:first").addClass("has-error");
-        }
-        return true;
-      }
-      return false;
+    _updateFormGroupStatus(isValid) {
+      if (!this.hasInput()) return false;
+      const formGroup = this.input.parents('.form-group:first');
+      // Remove form-group error class if any
+      formGroup.toggleClass('has-error', isValid === false);
+      return true;
     },
-    getValid: function (e) {
-      if (!f.isString(e)) {
-        e = "";
+    getValid(val) {
+      if (!_helpers.isString(val)) val = '';
+
+      // Trim the value
+      if(val !== '') {
+        val = val.trim();
       }
-      var a = e === "";
-      e = c.trim(e);
-      var t = false;
-      for (var s = 0; s < this.options.icons.length; s++) {
-        if (this.options.icons[s].title === e) {
-          t = true;
-          break;
-        }
-      }
-      if (t || a) {
-        return e;
-      }
-      return false;
+
+      // Check if the value is empty or matches any icon title
+      const isValid = val === '' || this.options.icons.some(icon => icon.title === val);
+
+      return isValid ? val : false;
     },
-    setValue: function (e) {
-      var a = this.getValid(e);
-      if (a !== false) {
-        this.iconpickerValue = a;
-        this._trigger("iconpickerSetValue", {
-          iconpickerValue: a
-        });
+    /**
+     * Sets the internal item value and updates everything, excepting the input or element.
+     * For doing so, call setSourceValue() or update() instead
+     */
+    setValue(val) {
+      // sanitize first
+      const validValue = this.getValid(val);
+      if (validValue !== false) {
+        this.iconpickerValue = validValue;
+        this._trigger('iconpickerSetValue', { iconpickerValue: validValue });
         return this.iconpickerValue;
-      } else {
-        this._trigger("iconpickerInvalid", {
-          iconpickerValue: e
-        });
-        return false;
       }
+
+      this._trigger('iconpickerInvalid', { iconpickerValue: val });
+      return false;
     },
-    getHtml: function () {
-      return '<i class="' + this.options.fullClassFormatter(this.iconpickerValue) + '"></i>';
+    getHtml() {
+      const iconClass = this.options.fullClassFormatter(this.iconpickerValue);
+      return `<i class="${iconClass}"></i>`;
     },
-    setSourceValue: function (e) {
-      e = this.setValue(e);
-      if (e !== false && e !== "") {
+    /**
+     * Calls setValue and if it's a valid item value, sets the input or element value
+     */
+    setSourceValue(val) {
+      const validValue = this.setValue(val);
+      if (validValue) {
         if (this.hasInput()) {
           this.input.val(this.iconpickerValue);
         } else {
-          this.element.data("iconpickerValue", this.iconpickerValue);
+          this.element.data('iconpickerValue', this.iconpickerValue);
         }
-        this._trigger("iconpickerSetSourceValue", {
-          iconpickerValue: e
-        });
+        this._trigger('iconpickerSetSourceValue', { iconpickerValue: validValue });
       }
-      return e;
+      return validValue;
     },
-    getSourceValue: function (e) {
-      e = e || this.options.defaultValue;
-      var a = e;
-      if (this.hasInput()) {
-        a = this.input.val();
-      } else {
-        a = this.element.data("iconpickerValue");
-      }
-      if (a === undefined || a === "" || a === null || a === false) {
-        a = e;
-      }
-      return a;
+    /**
+     * Returns the input or element item value, without formatting, or defaultValue
+     * if it's empty string, undefined, false or null
+     * @param {type} defaultValue
+     * @returns string|mixed
+     */
+    getSourceValue(defaultValue = this.options.defaultValue) {
+      let val = this.hasInput() ? this.input.val() : this.element.data('iconpickerValue');
+      // Return defaultValue if val is undefined, null, false, or an empty string
+      return val || defaultValue;
     },
     hasInput: function () {
-      return this.input !== false;
+      return (this.input !== false);
     },
     isInputSearch: function () {
-      return this.hasInput() && this.options.inputSearch === true;
+      return (this.hasInput() && (this.options.inputSearch === true));
     },
     isInputGroup: function () {
-      return this.container.is(".input-group");
+      return this.container.is('.input-group');
     },
     isDropdownMenu: function () {
-      return this.container.is(".dropdown-menu");
+      return this.container.is('.dropdown-menu');
     },
     hasSeparatedSearchInput: function () {
-      return this.options.templates.search !== false && !this.isInputSearch();
+      return (this.options.templates.search !== false) && (!this.isInputSearch());
     },
     hasComponent: function () {
-      return this.component !== false;
+      return (this.component !== false);
     },
     hasContainer: function () {
-      return this.container !== false;
+      return (this.container !== false);
     },
     getAcceptButton: function () {
-      return this.popover.find(".iconpicker-btn-accept");
+      return this.popover.find('.iconpicker-btn-accept');
     },
     getCancelButton: function () {
-      return this.popover.find(".iconpicker-btn-cancel");
+      return this.popover.find('.iconpicker-btn-cancel');
     },
     getSearchInput: function () {
-      return this.popover.find(".iconpicker-search");
+      return this.popover.find('.iconpicker-search');
     },
-    filter: function (r) {
-      if (f.isEmpty(r)) {
-        this.iconpicker.find(".iconpicker-item").show();
-        return c(false);
-      } else {
-        var i = [];
-        this.iconpicker.find(".iconpicker-item").each(function () {
-          var e = c(this);
-          var a = e.attr("title").toLowerCase();
-          var t = e.attr("data-search-terms") ? e.attr("data-search-terms").toLowerCase() : "";
-          a = a + " " + t;
-          var s = false;
-          try {
-            s = new RegExp("(^|\\W)" + r, "g");
-          } catch (e) {
-            s = false;
-          }
-          if (s !== false && a.match(s)) {
-            i.push(e);
-            e.show();
-          } else {
-            e.hide();
-          }
-        });
-        return i;
+    filter(filterText) {
+      if (_helpers.isEmpty(filterText)) {
+        this.iconpicker.find('.iconpicker-item').show();
+        return $();
       }
+      const found = [];
+      const regex = (() => {
+        try {
+          return new RegExp(`(^|\\W)${filterText.toLowerCase()}`, 'g');
+        } catch {
+          return null;
+        }
+      })();
+
+      this.iconpicker.find('.iconpicker-item').each(function () {
+        const $item = $(this);
+        const title = $item.attr('title')?.toLowerCase() || '';
+        const searchTerms = $item.attr('data-search-terms')?.toLowerCase() || '';
+        const combinedText = `${title} ${searchTerms}`;
+
+        if (regex && regex.test(combinedText)) {
+          found.push($item);
+          $item.show();
+        } else {
+          $item.hide();
+        }
+      });
+      return found;
     },
-    show: function () {
-      if (this.popover.hasClass("in")) {
+    show() {
+      if (this.popover.hasClass('in')) {
         return false;
       }
-      c.iconpicker.batch(c(".iconpicker-popover.in:not(.inline)").not(this.popover), "hide");
-      this._trigger("iconpickerShow", {
-        iconpickerValue: this.iconpickerValue
-      });
+      // Hide other non-inline pickers
+      $.iconpicker.batch(
+        $('.iconpicker-popover.in:not(.inline)').not(this.popover),
+        'hide'
+      );
+      this._trigger('iconpickerShow', { iconpickerValue: this.iconpickerValue });
       this.updatePlacement();
-      this.popover.addClass("in");
-      setTimeout(c.proxy(function () {
-        this.popover.css("display", this.isInline() ? "" : "block");
-        this._trigger("iconpickerShown", {
-          iconpickerValue: this.iconpickerValue
-        });
-      }, this), this.options.animation ? 300 : 1);
+      this.popover.addClass('in');
+      const animationDuration = this.options.animation ? 300 : 1;
+      setTimeout(() => {
+        this.popover.css('display', this.isInline() ? '' : 'block');
+        this._trigger('iconpickerShown', { iconpickerValue: this.iconpickerValue });
+      }, animationDuration);
     },
-    hide: function () {
-      if (!this.popover.hasClass("in")) {
+    hide() {
+      if (!this.popover.hasClass('in')) {
         return false;
       }
-      this._trigger("iconpickerHide", {
-        iconpickerValue: this.iconpickerValue
-      });
-      this.popover.removeClass("in");
-      setTimeout(c.proxy(function () {
-        this.popover.css("display", "none");
-        this.getSearchInput().val("");
-        this.filter("");
-        this._trigger("iconpickerHidden", {
-          iconpickerValue: this.iconpickerValue
-        });
-      }, this), this.options.animation ? 300 : 1);
+      this._trigger('iconpickerHide', { iconpickerValue: this.iconpickerValue });
+      this.popover.removeClass('in');
+      const animationDuration = this.options.animation ? 300 : 1;
+      setTimeout(() => {
+        this.popover.css('display', 'none');
+        this.getSearchInput().val(''); // Clear search input
+        this.filter(''); // Clear filter
+        this._trigger('iconpickerHidden', { iconpickerValue: this.iconpickerValue });
+      }, animationDuration);
     },
-    toggle: function () {
-      if (this.popover.is(":visible")) {
-        this.hide();
-      } else {
-        this.show(true);
-      }
+    toggle() {
+      this.popover.is(':visible') ? this.hide() : this.show(true);
     },
-    update: function (e, a) {
-      e = e ? e : this.getSourceValue(this.iconpickerValue);
-      this._trigger("iconpickerUpdate", {
-        iconpickerValue: this.iconpickerValue
-      });
-      if (a === true) {
-        e = this.setValue(e);
-      } else {
-        e = this.setSourceValue(e);
-        this._updateFormGroupStatus(e !== false);
+    update(val, updateOnlyInternal = false) {
+      val = val || this.getSourceValue(this.iconpickerValue);
+      // Reads the input or element value again and tries to update the plugin
+      // fallback to the current selected item value
+      this._trigger('iconpickerUpdate', { iconpickerValue: this.iconpickerValue });
+      val = updateOnlyInternal ? this.setValue(val) : this.setSourceValue(val);
+      if (!updateOnlyInternal) {
+        this._updateFormGroupStatus(val !== false);
       }
-      if (e !== false) {
+
+      if (val !== false) {
         this._updateComponents();
       }
-      this._trigger("iconpickerUpdated", {
-        iconpickerValue: this.iconpickerValue
-      });
-      return e;
+
+      // Trigger updated event
+      this._trigger('iconpickerUpdated', { iconpickerValue: this.iconpickerValue });
+      return val;
     },
-    destroy: function () {
-      this._trigger("iconpickerDestroy", {
-        iconpickerValue: this.iconpickerValue
-      });
-      this.element.removeData("iconpicker").removeData("iconpickerValue").removeClass("iconpicker-element");
+    destroy() {
+      this._trigger('iconpickerDestroy', { iconpickerValue: this.iconpickerValue });
+      this.element.removeData('iconpicker').removeData('iconpickerValue').removeClass('iconpicker-element');
+      // Unbinds events and resets everything to the initial state, including component mode
       this._unbindElementEvents();
       this._unbindWindowEvents();
-      c(this.popover).remove();
-      this._trigger("iconpickerDestroyed", {
-        iconpickerValue: this.iconpickerValue
-      });
+      this.popover?.remove();
+      this._trigger('iconpickerDestroyed', { iconpickerValue: this.iconpickerValue });
     },
-    disable: function () {
-      if (this.hasInput()) {
-        this.input.prop("disabled", true);
-        return true;
-      }
-      return false;
+    disable() {
+      if (!this.hasInput()) return false;
+
+      this.input.prop('disabled', true);
+      return true;
     },
-    enable: function () {
-      if (this.hasInput()) {
-        this.input.prop("disabled", false);
-        return true;
-      }
-      return false;
+    enable() {
+      if (!this.hasInput()) return false;
+
+      this.input.prop('disabled', false);
+      return true;
     },
-    isDisabled: function () {
-      if (this.hasInput()) {
-        return this.input.prop("disabled") === true;
-      }
-      return false;
+    isDisabled() {
+      return this.hasInput() && this.input.prop('disabled') === true;
     },
-    isInline: function () {
-      return this.options.placement === "inline" || this.popover.hasClass("inline");
+    isInline() {
+      return this.options.placement === 'inline' || this.popover.hasClass('inline');
     }
   };
-  c.iconpicker = t;
-  c.fn.iconpicker = function (a) {
+  $.iconpicker = Iconpicker;
+  $.fn.iconpicker = function (options) {
     return this.each(function () {
-      var e = c(this);
-      if (!e.data("iconpicker")) {
-        e.data("iconpicker", new t(this, typeof a === "object" ? a : {}));
+      if (!$.data(this, "iconpicker")) {
+        $.data(this, "iconpicker", new Iconpicker(this, $.isPlainObject(options) ? options : {}));
       }
     });
   };

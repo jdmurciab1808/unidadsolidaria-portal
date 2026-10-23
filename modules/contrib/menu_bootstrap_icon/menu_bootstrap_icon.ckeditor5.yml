@@ -1,0 +1,15 @@
+menu_bootstrap_icon_plugins:
+  ckeditor5:
+    plugins:
+      - bootstrapIcons.BootstrapIcons
+  drupal:
+    label: Bootstrap Icon
+    library: menu_bootstrap_icon/bootstrapIcons.plugin
+    admin_library: menu_bootstrap_icon/bootstrapIcons.plugin.admin
+    toolbar_items:
+      bootstrapIcons:
+        label: Bootstrap icons
+    elements:
+      - <i>
+      - <i class="bi">
+    class: Drupal\menu_bootstrap_icon\Plugin\CKEditor5Plugin\BootstrapIcons

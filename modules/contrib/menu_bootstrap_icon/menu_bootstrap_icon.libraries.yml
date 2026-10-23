@@ -1,25 +1,23 @@
 cdn:
   remote: getbootstrap.com
-  version: 5.3.0
+  version: 5.3.8
   license:
     name: MIT
     url: https://github.com/twbs/bootstrap/blob/main/LICENSE
   js:
-    //cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js: { type: external, minified: true, crossorigin: anonymous, integrity: "sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"}
+    //cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js: { type: external, minified: true, crossorigin: anonymous, integrity: "sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI", weight: -1}
   dependencies:
     - menu_bootstrap_icon/icons
 
 icons:
   remote: https://github.com/twbs/icons/
-  version: 1.10.5
+  version: 1.13.1
   license:
     name: MIT
     url: https://github.com/twbs/icons/blob/main/LICENSE
   css:
-    layout:
-      css/drupal.css: {}
     theme:
-      //cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css:
+      //cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css:
         type: external
         minified: true
         attributes:
@@ -36,3 +34,45 @@ iconspicker:
   css:
     layout:
       css/bootstrapicons-iconpicker.min.css: { }
+
+# cSpell:ignore svgIcon
+bootstrapIcons.plugin:
+  js:
+    js/build/bootstrapIcons.js: { preprocess: false, minified: true }
+  dependencies:
+    - core/ckeditor5
+  css:
+    layout:
+      css/bootstrapicon.ckeditor5.css: { }
+
+# Loaded in the text format configuration form to provide styling for the icon
+# used in toolbar config.
+bootstrapIcons.plugin.admin:
+  css:
+    theme:
+      css/bootstrapicons.plugin.admin.css: {}
+
+yaml_editor:
+  version: "v1.43.3"
+  remote: https://github.com/ajaxorg/ace
+  license:
+    name: BSD
+    url: https://github.com/ajaxorg/ace/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/ace.min.js: {type: external, minified: true, crossorigin: anonymous}
+    //cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/mode-yaml.min.js: {type: external, minified: true, crossorigin: anonymous}
+    //cdnjs.cloudflare.com/ajax/libs/ace/1.43.3/worker-yaml.min.js: {type: external, minified: true, crossorigin: anonymous}
+    js/yaml_editor.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal
+
+viewer-modal:
+  js:
+    js/open-file-modal.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal.dialog.ajax

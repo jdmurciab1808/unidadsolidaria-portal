@@ -1,0 +1,14 @@
+.ck-bootstrapicon-form .ck.ck-list {
+  display: grid !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  grid-template-columns: repeat(7, 1fr);
+  width: 225px !important;
+  max-height: 200px;
+  gap: 0.6em;
+}
+
+.ck-bootstrapicon-form .ck.ck-list .ck.ck-list__item,
+.ck-bootstrapicon-form .ck.ck-list .ck-list__item .ck-button {
+  min-width: 24px !important;
+}

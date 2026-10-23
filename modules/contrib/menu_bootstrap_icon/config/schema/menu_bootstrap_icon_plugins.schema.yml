@@ -1,0 +1,7 @@
+ckeditor5.plugin.menu_bootstrap_icon_plugins:
+  type: mapping
+  label: List
+  mapping:
+    cdn_bootstrap:
+      type: boolean
+      label: 'Use cdn bootstrap'

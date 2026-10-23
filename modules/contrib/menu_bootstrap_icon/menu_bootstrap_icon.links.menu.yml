@@ -1,0 +1,5 @@
+menu_bootstrap_icon.menu_settings:
+  title: 'Bootstrap icons update'
+  parent: system.admin_config_ui
+  description: 'Update icons.'
+  route_name: menu_bootstrap_icon.settings

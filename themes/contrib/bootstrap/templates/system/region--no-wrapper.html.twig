@@ -17,10 +17,14 @@
  */
 #}
 {#
-  Render first: the blocks may all render empty.
+  Render first: the blocks may all render empty. Capture the output with
+  set/endset rather than the render filter, which before Drupal 11.2.5 casts
+  the Markup object core provides as content to a plain string that then
+  gets escaped.
   @see https://www.drupal.org/project/drupal/issues/3178202
+  @see https://www.drupal.org/project/bootstrap/issues/3628721
 #}
-{% set rendered = content|render %}
+{% set rendered %}{{ content }}{% endset %}
 {% if rendered|trim is not empty %}
   {{ rendered }}
 {% endif %}
