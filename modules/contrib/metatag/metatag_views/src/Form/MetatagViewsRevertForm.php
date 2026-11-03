@@ -2,6 +2,7 @@
 
 namespace Drupal\metatag_views\Form;
 
+use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\ConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -17,9 +18,9 @@ class MetatagViewsRevertForm extends ConfirmFormBase {
   /**
    * Entity manager for views entities.
    *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   * @var \Drupal\Core\Entity\EntityStorageInterface
    */
-  protected EntityTypeManagerInterface $viewsManager;
+  protected EntityStorageInterface $viewsManager;
 
   /**
    * The view entity to revert meta tags on.

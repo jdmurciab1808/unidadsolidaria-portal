@@ -4,6 +4,7 @@ namespace Drupal\metatag;
 
 use Drupal\Component\Render\PlainTextOutput;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -628,12 +629,15 @@ class MetatagManager implements MetatagManagerInterface {
       return [];
     }
 
-    // Use the entity's language code, if one is defined.
+    // Use the entity's language code, if one is defined. Views should probably
+    // get the current language instead of the configuration object language.
     $langcode = NULL;
     // Prepare any tokens that might exist.
     $token_replacements = [];
     if ($entity) {
-      $langcode = $entity->language()->getId();
+      if (!$entity instanceof ConfigEntityInterface) {
+        $langcode = $entity->language()->getId();
+      }
       // @todo This needs a better way of discovering the context.
       if ($entity instanceof ViewEntityInterface) {
         // Views tokens require the ViewExecutable, not the config entity.
@@ -712,9 +716,10 @@ class MetatagManager implements MetatagManagerInterface {
     }
 
     $entity_identifier = '_none';
-    // Use the entity's language code, if one is defined.
+    // Use the entity's language code, if one is defined. Config objects should
+    // get the current language instead of the configuration object language.
     $langcode = NULL;
-    if ($entity) {
+    if ($entity && !$entity instanceof ConfigEntityInterface) {
       $langcode = $entity->language()->getId();
       $entity_identifier = $entity->getEntityTypeId() . ':' . ($entity->uuid() ?? $entity->id()) . ':' . $langcode;
     }
