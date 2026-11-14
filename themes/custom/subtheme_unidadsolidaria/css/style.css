@@ -4860,10 +4860,13 @@ p:visited {
     }
 
     /* ---- 3. IMAGENES, VIDEO Y DESBORDES ---- */
+    /* clip (no hidden): hidden en html y body convierte al body en un
+       contenedor de scroll propio y el scroll tactil se traba en celulares */
     html,
     body {
         max-width: 100%;
         overflow-x: hidden;
+        overflow-x: clip;
     }
 
     img {
