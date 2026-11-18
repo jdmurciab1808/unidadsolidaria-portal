@@ -17,19 +17,32 @@ function us_glosario_install($is_syncing): void {
 }
 
 /**
- * El enlace "Glosario" del menú apuntaba a /glossary (página vacía).
+ * Repunta a /glosario el enlace "Glosario" del menú.
+ *
+ * El enlace original apuntaba a una página vacía que no es la misma en todos
+ * los sitios: /glossary en local, /servicios-a-la-ciudadania/glossary en
+ * producción. Se corrige cualquier enlace interno que termine en /glossary.
  */
-function _us_glosario_repuntar_menu(): void {
+function us_glosario_update_10001(): string {
+  return t('Enlaces del menú repuntados a /glosario: @n.', ['@n' => _us_glosario_repuntar_menu()]);
+}
+
+/**
+ * Cambia a /glosario los enlaces del menú que terminan en /glossary.
+ */
+function _us_glosario_repuntar_menu(): int {
   $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
-  $ids = $storage->getQuery()
-    ->accessCheck(FALSE)
-    ->condition('link.uri', ['internal:/glossary', 'internal:/glossary/'], 'IN')
-    ->execute();
+  $consulta = $storage->getQuery()->accessCheck(FALSE);
+  $o = $consulta->orConditionGroup()
+    ->condition('link.uri', '/glossary', 'ENDS_WITH')
+    ->condition('link.uri', '/glossary/', 'ENDS_WITH');
+  $ids = $consulta->condition($o)->condition('link.uri', 'internal:/', 'STARTS_WITH')->execute();
   foreach ($storage->loadMultiple($ids) as $enlace) {
     $enlace->set('link', ['uri' => 'internal:/glosario'] + $enlace->get('link')->first()->getValue());
     $enlace->set('enabled', TRUE);
     $enlace->save();
   }
+  return count($ids);
 }
 
 /**

@@ -6,9 +6,17 @@ us_glosario.pagina:
   requirements:
     _permission: 'access content'
 
-# El enlace original del menú apuntaba a /glossary: redirige de forma permanente.
+# El enlace original del menú apuntaba a /glossary (local) o a
+# /servicios-a-la-ciudadania/glossary (producción): redirigen de forma permanente.
 us_glosario.antigua:
   path: '/glossary'
+  defaults:
+    _controller: '\Drupal\us_glosario\Controller\GlosarioController::redirigir'
+  requirements:
+    _permission: 'access content'
+
+us_glosario.antigua_servicios:
+  path: '/servicios-a-la-ciudadania/glossary'
   defaults:
     _controller: '\Drupal\us_glosario\Controller\GlosarioController::redirigir'
   requirements:
