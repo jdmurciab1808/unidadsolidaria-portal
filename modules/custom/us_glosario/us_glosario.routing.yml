@@ -1,0 +1,15 @@
+us_glosario.pagina:
+  path: '/glosario'
+  defaults:
+    _controller: '\Drupal\us_glosario\Controller\GlosarioController::pagina'
+    _title: 'Glosario'
+  requirements:
+    _permission: 'access content'
+
+# El enlace original del menú apuntaba a /glossary: redirige de forma permanente.
+us_glosario.antigua:
+  path: '/glossary'
+  defaults:
+    _controller: '\Drupal\us_glosario\Controller\GlosarioController::redirigir'
+  requirements:
+    _permission: 'access content'

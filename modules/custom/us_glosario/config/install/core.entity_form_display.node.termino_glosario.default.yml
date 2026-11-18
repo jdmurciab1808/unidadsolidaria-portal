@@ -1,0 +1,44 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.termino_glosario.body
+    - node.type.termino_glosario
+  module:
+    - text
+id: node.termino_glosario.default
+targetEntityType: node
+bundle: termino_glosario
+mode: default
+content:
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 6
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  uid: true

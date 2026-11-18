@@ -1,0 +1,23 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.termino_glosario.body
+    - node.type.termino_glosario
+  module:
+    - text
+    - user
+id: node.termino_glosario.default
+targetEntityType: node
+bundle: termino_glosario
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  links: true

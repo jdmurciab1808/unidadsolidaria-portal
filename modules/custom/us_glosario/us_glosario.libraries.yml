@@ -1,0 +1,10 @@
+glosario:
+  version: 1.0
+  css:
+    theme:
+      css/glosario.css: {}
+  js:
+    js/glosario.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Glosario: índice por letra, buscador y términos agrupados.
+ *
+ * El listado completo se dibuja aquí (funciona sin JavaScript);
+ * js/glosario.js solo agrega el filtro del buscador.
+ */
+#}
+<section class="us-glo" data-us-glo aria-label="{{ 'Glosario'|t }}">
+  <h1 class="us-glo__titulo">{{ 'Glosario'|t }}</h1>
+
+  <div class="us-glo__barra">
+    <p class="us-glo__intro">{{ 'Consulte el significado de los términos más usados en el sector de la economía solidaria.'|t }}</p>
+    {% if url_crear %}
+      <a class="us-glo__btn us-glo__btn--crear" href="{{ url_crear }}">+ {{ 'Agregar término'|t }}</a>
+    {% endif %}
+  </div>
+
+  {% if total %}
+    <div class="us-glo__buscador" hidden data-us-glo-buscador>
+      <label class="us-glo__label" for="us-glo-buscar">{{ 'Buscar en el glosario'|t }}</label>
+      <input class="us-glo__input" type="search" id="us-glo-buscar" placeholder="{{ 'Escriba una palabra, p. ej. cooperativa'|t }}" autocomplete="off" data-us-glo-input>
+      <p class="us-glo__estado" aria-live="polite" data-us-glo-estado></p>
+    </div>
+
+    <nav class="us-glo__letras" id="us-glo-inicio" aria-label="{{ 'Índice alfabético'|t }}">
+      <ul>
+        {% for item in letras %}
+          <li>
+            {% if item.activa %}
+              <a href="#letra-{{ item.letra == '#' ? 'otros' : item.letra }}" data-us-glo-letra="{{ item.letra }}">{{ item.letra }}</a>
+            {% else %}
+              <span aria-disabled="true">{{ item.letra }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {% for letra, terminos in grupos %}
+      <section class="us-glo__grupo" id="letra-{{ letra == '#' ? 'otros' : letra }}" data-us-glo-grupo="{{ letra }}">
+        <h2 class="us-glo__letra">{{ letra == '#' ? '0–9'|t : letra }}</h2>
+        <dl class="us-glo__lista">
+          {% for termino in terminos %}
+            <div class="us-glo__termino{{ not termino.publicado ? ' us-glo__termino--borrador' }}" id="{{ termino.id }}" data-us-glo-termino>
+              <dt>
+                {{ termino.titulo }}
+                {% if not termino.publicado %}
+                  <span class="us-glo__marca">{{ 'Sin publicar'|t }}</span>
+                {% endif %}
+                {% if termino.url_editar %}
+                  <a class="us-glo__editar" href="{{ termino.url_editar }}">{{ 'Editar'|t }}<span class="visually-hidden"> {{ termino.titulo }}</span></a>
+                {% endif %}
+              </dt>
+              <dd>{{ termino.definicion }}</dd>
+            </div>
+          {% endfor %}
+        </dl>
+        <a class="us-glo__arriba" href="#us-glo-inicio">{{ 'Volver al índice'|t }}</a>
+      </section>
+    {% endfor %}
+
+    <p class="us-glo__vacio" hidden data-us-glo-vacio>{{ 'No se encontraron términos con esa búsqueda.'|t }}</p>
+  {% else %}
+    <p class="us-glo__vacio">{{ 'Aún no hay términos publicados en el glosario.'|t }}</p>
+  {% endif %}
+</section>

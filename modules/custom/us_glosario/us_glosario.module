@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Glosario público del portal.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function us_glosario_theme(): array {
+  return [
+    'us_glosario' => [
+      'variables' => [
+        'letras' => [],
+        'grupos' => [],
+        'total' => 0,
+        'url_crear' => '',
+      ],
+      'template' => 'us-glosario',
+    ],
+  ];
+}

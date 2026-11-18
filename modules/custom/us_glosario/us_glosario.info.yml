@@ -1,0 +1,9 @@
+name: 'Glosario'
+type: module
+description: 'Glosario público del portal (/glosario). Los administradores crean y editan términos; los visitantes los consultan por letra o con el buscador.'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:node
+  - drupal:text
+  - drupal:menu_link_content

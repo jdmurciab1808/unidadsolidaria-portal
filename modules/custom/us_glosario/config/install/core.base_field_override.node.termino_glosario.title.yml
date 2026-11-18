@@ -1,0 +1,17 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.termino_glosario
+id: node.termino_glosario.title
+field_name: title
+entity_type: node
+bundle: termino_glosario
+label: Término
+description: 'Palabra o expresión tal como debe aparecer en el glosario (ej. Cooperativa).'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

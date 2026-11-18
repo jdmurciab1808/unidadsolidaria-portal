@@ -1,0 +1,10 @@
+langcode: es
+status: true
+dependencies: {  }
+name: 'Término del glosario'
+type: termino_glosario
+description: 'Términos que se muestran en el glosario del portal (/glosario). El título es el término y la descripción, su definición.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

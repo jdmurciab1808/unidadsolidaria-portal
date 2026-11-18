@@ -1,0 +1,239 @@
+/* Glosario — paleta del portal Unidad Solidaria.
+   Azul #3366cc · azul oscuro #004884 · marino #161c8c · amarillo #ffcc00 · claro #e6effd */
+
+.us-glo {
+  --us-azul: #3366cc;
+  --us-azul-oscuro: #004884;
+  --us-amarillo: #ffcc00;
+  --us-claro: #e6effd;
+  --us-borde: #d2dfef;
+  --us-texto: #4b4b4b;
+  font-family: 'Montserrat', 'montserrat', sans-serif;
+  color: var(--us-texto);
+  max-width: 1100px;
+  margin: 20px auto 40px;
+}
+
+.us-glo *,
+.us-glo *::before,
+.us-glo *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Encabezado ---------- */
+.us-glo__titulo {
+  margin: 0 0 10px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--us-azul-oscuro);
+}
+
+.us-glo__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.us-glo__intro {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.us-glo a.us-glo__btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--us-azul);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.us-glo a.us-glo__btn:hover,
+.us-glo a.us-glo__btn:focus {
+  background: var(--us-azul-oscuro);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ---------- Buscador ---------- */
+.us-glo__buscador {
+  margin-bottom: 16px;
+}
+
+.us-glo__label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--us-azul-oscuro);
+}
+
+.us-glo__input {
+  width: 100%;
+  max-width: 520px;
+  padding: 10px 14px;
+  border: 1px solid var(--us-borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.us-glo__input:focus {
+  outline: 2px solid var(--us-azul);
+  outline-offset: 1px;
+  border-color: var(--us-azul);
+}
+
+.us-glo__estado {
+  min-height: 1.4em;
+  margin: 6px 0 0;
+  font-size: 14px;
+}
+
+/* ---------- Índice A–Z ---------- */
+.us-glo__letras {
+  margin-bottom: 24px;
+  padding: 12px;
+  background: var(--us-claro);
+  border-radius: 10px;
+}
+
+.us-glo__letras ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.us-glo__letras a,
+.us-glo__letras span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.us-glo .us-glo__letras a {
+  background: var(--us-azul-oscuro);
+  color: #fff;
+  text-decoration: none;
+}
+
+.us-glo .us-glo__letras a:hover,
+.us-glo .us-glo__letras a:focus {
+  background: var(--us-amarillo);
+  color: var(--us-azul-oscuro);
+}
+
+.us-glo__letras span {
+  color: #9aa7b8;
+}
+
+/* ---------- Términos ---------- */
+.us-glo__grupo {
+  margin-bottom: 28px;
+  scroll-margin-top: 20px;
+}
+
+.us-glo__letra {
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--us-amarillo);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--us-azul-oscuro);
+}
+
+.us-glo__lista {
+  margin: 0;
+}
+
+.us-glo__termino {
+  padding: 14px 16px;
+  border: 1px solid var(--us-borde);
+  border-left: 4px solid var(--us-azul);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.us-glo__termino + .us-glo__termino {
+  margin-top: 10px;
+}
+
+.us-glo__termino dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--us-azul-oscuro);
+}
+
+.us-glo__termino dd {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.us-glo__termino dd p:last-child {
+  margin-bottom: 0;
+}
+
+.us-glo__termino--borrador {
+  border-left-color: #9aa7b8;
+  background: #f7f7f7;
+}
+
+.us-glo__marca {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #fff3c4;
+  color: #6b5200;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.us-glo__editar {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.us-glo__arriba {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.us-glo__vacio {
+  padding: 20px;
+  border-radius: 8px;
+  background: var(--us-claro);
+  text-align: center;
+}
+
+.us-glo [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .us-glo__letras a,
+  .us-glo__letras span {
+    min-width: 32px;
+    height: 32px;
+  }
+
+  .us-glo__termino dt {
+    font-size: 17px;
+  }
+}

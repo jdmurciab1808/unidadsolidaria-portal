@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Instalación del glosario: enlace del menú y términos iniciales.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function us_glosario_install($is_syncing): void {
+  if ($is_syncing) {
+    return;
+  }
+  _us_glosario_repuntar_menu();
+  _us_glosario_crear_terminos();
+}
+
+/**
+ * El enlace "Glosario" del menú apuntaba a /glossary (página vacía).
+ */
+function _us_glosario_repuntar_menu(): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+  $ids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('link.uri', ['internal:/glossary', 'internal:/glossary/'], 'IN')
+    ->execute();
+  foreach ($storage->loadMultiple($ids) as $enlace) {
+    $enlace->set('link', ['uri' => 'internal:/glosario'] + $enlace->get('link')->first()->getValue());
+    $enlace->set('enabled', TRUE);
+    $enlace->save();
+  }
+}
+
+/**
+ * Términos iniciales del sector solidario. Se crean sin publicar para que el
+ * equipo los revise y publique desde /admin/content.
+ */
+function _us_glosario_crear_terminos(): void {
+  $terminos = [
+    'Economía solidaria' => 'Sistema socioeconómico, cultural y ambiental conformado por el conjunto de fuerzas sociales organizadas en formas asociativas identificadas por prácticas autogestionarias solidarias, democráticas y humanistas, sin ánimo de lucro, para el desarrollo integral del ser humano como sujeto, actor y fin de la economía. <em>Fuente: Ley 454 de 1998, artículo 2.</em>',
+    'Principios de la economía solidaria' => 'Pautas que orientan a las organizaciones solidarias, entre ellas: el ser humano, su trabajo y la ayuda mutua por encima de los medios de producción; la administración democrática, participativa y autogestionaria; la adhesión voluntaria, responsable y abierta; la participación económica de los asociados con justicia y equidad; la formación e información permanente; la autonomía; el servicio a la comunidad; la integración con otras organizaciones del sector y la promoción de la cultura ecológica. <em>Fuente: Ley 454 de 1998, artículo 4.</em>',
+    'Organización solidaria' => 'Entidad sin ánimo de lucro que actúa con base en los principios de la solidaridad, la cooperación y la ayuda mutua. Comprende las organizaciones de economía solidaria (como cooperativas, fondos de empleados y asociaciones mutuales) y las organizaciones solidarias de desarrollo (como fundaciones, corporaciones, asociaciones y grupos de voluntariado).',
+    'Organizaciones solidarias de desarrollo' => 'Fundaciones, corporaciones, asociaciones y grupos de voluntariado sin ánimo de lucro que, con recursos y trabajo propios, desarrollan actividades en beneficio de terceros o de la comunidad en general.',
+    'Cooperativa' => 'Empresa asociativa sin ánimo de lucro en la cual los trabajadores o los usuarios, según el caso, son simultáneamente los aportantes y los gestores de la empresa, creada con el objeto de producir o distribuir conjunta y eficientemente bienes o servicios para satisfacer las necesidades de sus asociados y de la comunidad en general. <em>Fuente: Ley 79 de 1988, artículo 4.</em>',
+    'Precooperativa' => 'Grupo de personas que, bajo la orientación y con el apoyo de una entidad promotora, se organiza para realizar actividades propias de las cooperativas, pero que por carecer de capacidad económica, educativa, administrativa o técnica no puede constituirse todavía como cooperativa. <em>Fuente: Ley 79 de 1988.</em>',
+    'Cooperativa de trabajo asociado' => 'Cooperativa que asocia a personas naturales que son al mismo tiempo gestoras, aportantes y trabajadoras de la empresa, y que organizan su trabajo de forma autogestionaria para producir bienes, ejecutar obras o prestar servicios.',
+    'Fondo de empleados' => 'Empresa asociativa sin ánimo de lucro constituida por trabajadores dependientes y subordinados, que se asocian para fomentar el ahorro y prestarse servicios como el crédito, en beneficio de sus asociados. <em>Fuente: Decreto Ley 1481 de 1989.</em>',
+    'Asociación mutual' => 'Persona jurídica de derecho privado sin ánimo de lucro, constituida libre y democráticamente por personas naturales inspiradas en la solidaridad, con el objeto de brindarse ayuda recíproca frente a riesgos eventuales y satisfacer sus necesidades mediante la prestación de servicios de seguridad social. <em>Fuente: Decreto Ley 1480 de 1989.</em>',
+    'Organismos de integración' => 'Organizaciones de segundo y tercer grado que agrupan a entidades solidarias para representarlas, defender sus intereses, prestarles servicios y fortalecer al sector.',
+    'Voluntariado' => 'Conjunto de acciones de interés general que desarrollan personas naturales o jurídicas que, por libre elección, ofrecen su tiempo, trabajo y talento para la construcción del bien común, de forma individual o colectiva, sin ánimo de lucro. <em>Fuente: Ley 720 de 2001.</em>',
+    'Acto cooperativo' => 'Acto realizado entre las cooperativas y sus asociados, o entre cooperativas, en desarrollo de su objeto social. <em>Fuente: Ley 79 de 1988, artículo 7.</em>',
+    'Aportes sociales' => 'Contribuciones que hacen los asociados al patrimonio de su organización, en dinero, en especie o en trabajo, según lo definan los estatutos. Son individuales y se devuelven al asociado cuando se retira, en las condiciones que fijen los estatutos.',
+    'Asamblea general' => 'Máximo órgano de administración de una organización solidaria, conformado por los asociados hábiles o sus delegados. Sus decisiones son obligatorias para todos los asociados, siempre que se adopten conforme a la ley y los estatutos. <em>Fuente: Ley 79 de 1988, artículo 27.</em>',
+    'Excedentes' => 'Resultado positivo del ejercicio económico de una organización solidaria. Como no tiene ánimo de lucro, los excedentes no se reparten como utilidades: se destinan, según la ley y los estatutos, a reservas, a los fondos de educación y de solidaridad y a otros fines en beneficio de los asociados.',
+    'Autogestión' => 'Capacidad de los asociados para dirigir, administrar y controlar de manera democrática su propia organización, sin depender de terceros.',
+    'Educación solidaria' => 'Proceso permanente de formación en los principios, valores y prácticas de la economía solidaria, dirigido a asociados, directivos, empleados y comunidad, que las organizaciones solidarias deben promover.',
+    'Curso básico de economía solidaria' => 'Formación introductoria en los principios, valores y funcionamiento de las organizaciones solidarias, que se exige a quienes desean constituir una organización de economía solidaria.',
+    'Acreditación' => 'Autorización que otorga la Unidad Solidaria a una entidad para impartir cursos de educación en economía solidaria, después de verificar que cumple los requisitos establecidos.',
+    'Superintendencia de la Economía Solidaria' => 'Entidad que ejerce la inspección, vigilancia y control de las cooperativas y demás organizaciones de economía solidaria que no están sometidas a la supervisión especializada del Estado. También se conoce como Supersolidaria. <em>Fuente: Ley 454 de 1998, artículo 34.</em>',
+    'Unidad Solidaria' => 'Unidad Administrativa Especial de Organizaciones Solidarias, entidad del Gobierno nacional adscrita al Ministerio del Trabajo, encargada de diseñar, coordinar y ejecutar programas para promover, fomentar y fortalecer las organizaciones solidarias en Colombia. <em>Fuente: Decreto 4122 de 2011.</em>',
+  ];
+
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  foreach ($terminos as $titulo => $definicion) {
+    $existe = $storage->getQuery()
+      ->accessCheck(FALSE)
+      ->condition('type', 'termino_glosario')
+      ->condition('title', $titulo)
+      ->count()
+      ->execute();
+    if ($existe) {
+      continue;
+    }
+    $storage->create([
+      'type' => 'termino_glosario',
+      'langcode' => 'es',
+      'title' => $titulo,
+      'body' => ['value' => '<p>' . $definicion . '</p>', 'format' => 'basic_html'],
+      'status' => 0,
+      'uid' => 1,
+    ])->save();
+  }
+}

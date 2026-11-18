@@ -1,0 +1,22 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.termino_glosario
+  module:
+    - text
+id: node.termino_glosario.body
+field_name: body
+entity_type: node
+bundle: termino_glosario
+label: Definición
+description: 'Explicación del término en lenguaje claro. Si viene de una norma, indique cuál (ej. Ley 454 de 1998).'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary
