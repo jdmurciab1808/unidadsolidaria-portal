@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Quiénes somos: imagen y descripción, y la lista de enlaces del cuerpo como
+ * tarjetas con ícono.
+ *
+ * Todo se edita en el nodo (pestaña Editar): "Imagen", "Descripción" y, en el
+ * cuerpo, la lista de enlaces (cada viñeta con su enlace es una tarjeta; esa
+ * misma lista es el menú lateral de Perfil del Director y Equipo Directivo).
+ * Si el cuerpo tiene algo más que la lista, se muestra debajo.
+ */
+#}
+<article{{ attributes.addClass('us-ent', 'us-ent--ancho') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <h1 class="us-ent__titulo">{{ us_titulo }}</h1>
+
+  <div class="us-quienes">
+    {% if content.field_imagen|render|trim %}
+      <div class="us-quienes__imagen">{{ content.field_imagen }}</div>
+    {% endif %}
+    {% if us_descripcion %}
+      <div class="us-quienes__texto">
+        {% for parrafo in us_descripcion %}
+          <p>{{ parrafo }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if us_menu['#items'] %}
+    <h2 class="us-ent__subtitulo">{{ 'Conozca la entidad'|t }}</h2>
+    {{ us_menu }}
+  {% endif %}
+
+  {% if us_cuerpo_extra %}
+    <div class="us-quienes__extra">{{ us_cuerpo_extra }}</div>
+  {% endif %}
+</article>

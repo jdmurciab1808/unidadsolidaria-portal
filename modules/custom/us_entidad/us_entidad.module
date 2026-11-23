@@ -1,0 +1,493 @@
+<?php
+
+/**
+ * @file
+ * Diseño de Quiénes somos, Misión y Visión, y Dependencias.
+ *
+ * Todo sale del contenido que se edita en Drupal, no del código:
+ * - Los enlaces con íconos (tarjetas en Quiénes somos y menú lateral en Misión
+ *   y Dependencias) son la lista de enlaces del cuerpo de "Quiénes somos". Al
+ *   editar esa página y cambiar la lista, cambia en las tres.
+ * - Misión y Dependencias muestran sus campos con mejoras de presentación (ver
+ *   _us_entidad_mejorar_html()).
+ *
+ * El Perfil del Director y la Subdirección no pasan por aquí: los maneja el
+ * CSS del tema (sección "PERFIL DE DIRECTIVOS" de style.css).
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Render\Markup;
+use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+
+/**
+ * Nodo de "Quiénes somos" (/la-entidad/quienes-somos).
+ */
+const US_ENTIDAD_NID_QUIENES = 25;
+
+/**
+ * Subpáginas de Quiénes somos con el diseño de sección: Misión, Visión,
+ * Deberes y Funciones (26) y Dependencias (60).
+ */
+const US_ENTIDAD_NIDS_SECCION = [26, 60];
+
+/**
+ * Implements hook_theme().
+ */
+function us_entidad_theme(): array {
+  return [
+    'us_entidad_menu' => [
+      'variables' => [
+        'titulo' => '',
+        'items' => [],
+        'variante' => 'lista',
+      ],
+      'template' => 'us-entidad-menu',
+    ],
+    'node__us_quienes_somos' => [
+      'base hook' => 'node',
+      'template' => 'node--us-quienes-somos',
+    ],
+    'node__us_seccion' => [
+      'base hook' => 'node',
+      'template' => 'node--us-seccion',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node.
+ */
+function us_entidad_theme_suggestions_node_alter(array &$suggestions, array $variables): void {
+  $node = $variables['elements']['#node'] ?? NULL;
+  if (!$node instanceof NodeInterface || ($variables['elements']['#view_mode'] ?? '') !== 'full') {
+    return;
+  }
+  if ((int) $node->id() === US_ENTIDAD_NID_QUIENES) {
+    $suggestions[] = 'node__us_quienes_somos';
+  }
+  elseif (_us_entidad_es_seccion($node)) {
+    $suggestions[] = 'node__us_seccion';
+  }
+}
+
+/**
+ * Si el nodo es una de las subpáginas con diseño de sección.
+ */
+function _us_entidad_es_seccion(NodeInterface $node): bool {
+  return in_array((int) $node->id(), US_ENTIDAD_NIDS_SECCION, TRUE);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.
+ */
+function us_entidad_preprocess_node(array &$variables): void {
+  $node = $variables['node'];
+  if ($variables['view_mode'] !== 'full') {
+    return;
+  }
+  if (_us_entidad_es_seccion($node)) {
+    _us_entidad_preprocess_seccion($variables, $node);
+    return;
+  }
+  if ((int) $node->id() !== US_ENTIDAD_NID_QUIENES) {
+    return;
+  }
+
+  $variables['#attached']['library'][] = 'us_entidad/entidad';
+  $variables['us_titulo'] = $node->hasField('field_titulo') && !$node->get('field_titulo')->isEmpty()
+    ? $node->get('field_titulo')->value
+    : $node->label();
+  // En la propia página de Quiénes somos el enlace a sí misma sobra.
+  $variables['us_menu'] = us_entidad_menu('tarjetas', FALSE);
+  $variables['us_descripcion'] = _us_entidad_lineas($node, 'field_descripcion');
+  // La lista de enlaces se muestra como tarjetas; lo demás que tenga el
+  // cuerpo (párrafos, documentos...) se muestra tal cual.
+  $variables['us_cuerpo_extra'] = _us_entidad_cuerpo_sin($node, 'ul');
+}
+
+/**
+ * Enlaces de Quiénes somos con íconos.
+ *
+ * Salen de la lista de enlaces del cuerpo del nodo "Quiénes somos".
+ *
+ * @param string $variante
+ *   'lista' (barra lateral) o 'tarjetas' (cuadrícula).
+ * @param bool $con_raiz
+ *   Si se incluye "Quiénes somos" como primer elemento.
+ */
+function us_entidad_menu(string $variante, bool $con_raiz = TRUE): array {
+  $build = [
+    '#theme' => 'us_entidad_menu',
+    '#titulo' => t('Quiénes somos'),
+    '#variante' => $variante,
+    '#items' => [],
+  ];
+  $cache = (new CacheableMetadata())->addCacheContexts(['url.path']);
+
+  $quienes = Node::load(US_ENTIDAD_NID_QUIENES);
+  if (!$quienes || !$quienes->access('view')) {
+    $cache->applyTo($build);
+    return $build;
+  }
+  $cache->addCacheableDependency($quienes);
+
+  $enlaces = [];
+  if ($con_raiz) {
+    $enlaces[] = [$quienes->label(), $quienes->toUrl()->toString()];
+  }
+  if (!$quienes->get('body')->isEmpty()) {
+    $body = $quienes->get('body');
+    $dom = Html::load((string) check_markup($body->value, $body->format));
+    foreach ($dom->getElementsByTagName('li') as $li) {
+      $a = $li->getElementsByTagName('a')->item(0);
+      $titulo = $a ? trim(preg_replace('/\s+/u', ' ', $a->textContent)) : '';
+      if ($titulo !== '' && $a->getAttribute('href') !== '') {
+        $enlaces[] = [$titulo, $a->getAttribute('href')];
+      }
+    }
+  }
+
+  $actual = rawurldecode(\Drupal::request()->getPathInfo());
+  $actual_alias = rawurldecode(\Drupal::service('path_alias.manager')->getAliasByPath(\Drupal::service('path.current')->getPath()));
+  $ruta_raiz = rawurldecode($quienes->toUrl()->toString());
+  foreach ($enlaces as [$titulo, $href]) {
+    $externo = (bool) preg_match('#^[a-z][a-z0-9+.-]*://#i', $href) && !str_contains($href, \Drupal::request()->getHost());
+    $ruta = rawurldecode(parse_url($href, PHP_URL_PATH) ?? '');
+    // En una subpágina (p. ej. Dependencias/Control interno) se resalta la
+    // sección que la contiene; la raíz "Quiénes somos" solo si es la misma.
+    $prefijo = !_us_entidad_misma_ruta($ruta, [$ruta_raiz]);
+    $build['#items'][] = [
+      'titulo' => $titulo,
+      'url' => $href,
+      'icono' => _us_entidad_icono($titulo),
+      'activo' => !$externo && $ruta !== '' && _us_entidad_misma_ruta($ruta, [$actual, $actual_alias], $prefijo),
+      // Los documentos (organigrama en JPG, PDF...) se abren aparte.
+      'externo' => $externo || (bool) preg_match('/\.(jpe?g|png|pdf)$/i', $ruta),
+    ];
+  }
+
+  $cache->applyTo($build);
+  return $build;
+}
+
+/**
+ * Compara rutas sin importar tildes ni mayúsculas (los alias del sitio
+ * mezclan "quienes-somos" y "quiénes-somos").
+ */
+function _us_entidad_misma_ruta(string $ruta, array $actuales, bool $prefijo = FALSE): bool {
+  $normalizar = fn($r) => rtrim(mb_strtolower(\Drupal::transliteration()->transliterate($r, 'es')), '/');
+  $ruta = $normalizar($ruta);
+  foreach ($actuales as $actual) {
+    $actual = $normalizar($actual);
+    if ($ruta === $actual || ($prefijo && $ruta !== '' && str_starts_with($actual, $ruta . '/'))) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Variables de una subpágina de Quiénes somos.
+ */
+function _us_entidad_preprocess_seccion(array &$variables, NodeInterface $node): void {
+  $variables['#attached']['library'][] = 'us_entidad/entidad';
+  $variables['us_titulo'] = $node->hasField('field_titulo') && !$node->get('field_titulo')->isEmpty()
+    ? $node->get('field_titulo')->value
+    : $node->label();
+  $variables['us_descripcion'] = _us_entidad_lineas($node, 'field_descripcion');
+  $variables['us_menu'] = us_entidad_menu('lista');
+  $variables['us_cuerpo'] = [];
+  if (!$node->get('body')->isEmpty()) {
+    $body = $node->get('body');
+    $html = _us_entidad_mejorar_html((string) check_markup($body->value, $body->format));
+    if ($html !== '') {
+      $variables['us_cuerpo'] = ['#markup' => Markup::create($html)];
+    }
+  }
+}
+
+/**
+ * Mejora la presentación del cuerpo sin cambiar lo que escribe el editor.
+ *
+ * Recibe HTML ya filtrado por el formato de texto y solo agrega clases y
+ * íconos: el contenido guardado en el nodo no se toca.
+ * - Quita párrafos vacíos (&nbsp;).
+ * - Párrafos que empiezan por "1.", "2)"... → número en un círculo.
+ * - Listas que solo tienen enlaces → tarjetas con ícono.
+ * - Enlaces a PDF, Excel, Word... → ícono del tipo de archivo.
+ * - Con dos o más subtítulos (h2/h3) → cada subtítulo y su texto en una
+ *   tarjeta; las cortas se ponen lado a lado.
+ */
+function _us_entidad_mejorar_html(string $html): string {
+  $dom = Html::load($html);
+  $xpath = new \DOMXPath($dom);
+  $raiz = $dom->getElementsByTagName('body')->item(0);
+
+  // Párrafos vacíos.
+  foreach (iterator_to_array($dom->getElementsByTagName('p')) as $p) {
+    if (trim(str_replace("\xC2\xA0", ' ', $p->textContent)) === '' && !$xpath->query('.//img|.//iframe', $p)->length) {
+      $p->parentNode->removeChild($p);
+    }
+  }
+
+  // Párrafos numerados.
+  foreach (iterator_to_array($dom->getElementsByTagName('p')) as $p) {
+    $texto = str_replace("\xC2\xA0", ' ', $p->textContent);
+    if (!preg_match('/^\s*(\d{1,3})\s*[.)]\s+/u', $texto, $m)) {
+      continue;
+    }
+    _us_entidad_quitar_prefijo($xpath, $p, mb_strlen($m[0]));
+    $numero = $dom->createElement('span', $m[1]);
+    $numero->setAttribute('class', 'us-num__n');
+    $numero->setAttribute('aria-hidden', 'true');
+    $contenido = $dom->createElement('span');
+    $contenido->setAttribute('class', 'us-num__texto');
+    while ($p->firstChild) {
+      $contenido->appendChild($p->firstChild);
+    }
+    // El número sigue disponible para lectores de pantalla.
+    $oculto = $dom->createElement('span', $m[1] . '. ');
+    $oculto->setAttribute('class', 'visually-hidden');
+    $contenido->insertBefore($oculto, $contenido->firstChild);
+    $p->appendChild($numero);
+    $p->appendChild($contenido);
+    _us_entidad_agregar_clase($p, 'us-num');
+  }
+
+  // Enlaces a documentos.
+  foreach ($dom->getElementsByTagName('a') as $a) {
+    $icono = _us_entidad_icono_documento($a->getAttribute('href'));
+    if ($icono) {
+      _us_entidad_agregar_clase($a, 'us-doc');
+      $a->insertBefore(_us_entidad_icono_dom($dom, $icono, 'us-doc__icono'), $a->firstChild);
+    }
+  }
+
+  // Listas que solo tienen enlaces.
+  foreach (iterator_to_array($dom->getElementsByTagName('ul')) as $ul) {
+    $items = $xpath->query('./li', $ul);
+    $solo_enlaces = $items->length > 0;
+    foreach ($items as $li) {
+      $a = $xpath->query('.//a', $li);
+      if ($a->length !== 1 || trim($a->item(0)->textContent) !== trim($li->textContent)) {
+        $solo_enlaces = FALSE;
+        break;
+      }
+    }
+    if (!$solo_enlaces) {
+      continue;
+    }
+    _us_entidad_agregar_clase($ul, 'us-enlaces');
+    foreach ($items as $li) {
+      $a = $xpath->query('.//a', $li)->item(0);
+      if (!str_contains($a->getAttribute('class'), 'us-doc')) {
+        $a->insertBefore(_us_entidad_icono_dom($dom, _us_entidad_icono(trim($a->textContent)), 'us-enlaces__icono'), $a->firstChild);
+      }
+      $a->appendChild(_us_entidad_icono_dom($dom, 'fa-chevron-right', 'us-enlaces__flecha'));
+    }
+  }
+
+  // Bloques por subtítulo.
+  $nivel = NULL;
+  foreach (['h2', 'h3'] as $h) {
+    if ($xpath->query('./' . $h, $raiz)->length >= 2) {
+      $nivel = $h;
+      break;
+    }
+  }
+  if ($nivel) {
+    $contenedor = $dom->createElement('div');
+    $contenedor->setAttribute('class', 'us-bloques');
+    $bloque = NULL;
+    $antes = [];
+    foreach (iterator_to_array($raiz->childNodes) as $nodo) {
+      if ($nodo instanceof \DOMElement && $nodo->tagName === $nivel) {
+        $bloque = $dom->createElement('section');
+        $bloque->setAttribute('class', 'us-bloque');
+        $contenedor->appendChild($bloque);
+      }
+      if ($bloque) {
+        $bloque->appendChild($nodo);
+      }
+      else {
+        $antes[] = $nodo;
+      }
+    }
+    // Las tarjetas con mucho texto ocupan todo el ancho; las cortas van de a
+    // dos, y si en una tanda de cortas sobra una, esa también va a lo ancho.
+    $cortas = [];
+    $cerrar_tanda = function () use (&$cortas) {
+      if (count($cortas) % 2) {
+        _us_entidad_agregar_clase(end($cortas), 'us-bloque--ancho');
+      }
+      $cortas = [];
+    };
+    foreach (iterator_to_array($contenedor->childNodes) as $seccion) {
+      if (mb_strlen(trim($seccion->textContent)) > 600 || $xpath->query('.//ul|.//ol|.//table|.//p[contains(@class,"us-num")]', $seccion)->length) {
+        _us_entidad_agregar_clase($seccion, 'us-bloque--ancho');
+        $cerrar_tanda();
+      }
+      else {
+        $cortas[] = $seccion;
+      }
+    }
+    $cerrar_tanda();
+    $raiz->appendChild($contenedor);
+  }
+
+  // Tablas: contenedor con scroll horizontal para que no rompan en celular.
+  foreach (iterator_to_array($dom->getElementsByTagName('table')) as $tabla) {
+    $envoltura = $dom->createElement('div');
+    $envoltura->setAttribute('class', 'us-tabla');
+    $tabla->parentNode->replaceChild($envoltura, $tabla);
+    $envoltura->appendChild($tabla);
+  }
+
+  return trim(Html::serialize($dom));
+}
+
+/**
+ * Quita los primeros $largo caracteres de texto de un elemento (el "1. "
+ * de un párrafo numerado), aunque estén repartidos en varias etiquetas.
+ */
+function _us_entidad_quitar_prefijo(\DOMXPath $xpath, \DOMElement $elemento, int $largo): void {
+  foreach (iterator_to_array($xpath->query('.//text()', $elemento)) as $texto) {
+    if ($largo <= 0) {
+      break;
+    }
+    $valor = $texto->nodeValue;
+    $quitar = min($largo, mb_strlen($valor));
+    $texto->nodeValue = mb_substr($valor, $quitar);
+    $largo -= $quitar;
+    // Si una etiqueta (p. ej. <strong>1.</strong>) quedó vacía, se elimina.
+    $padre = $texto->parentNode;
+    if ($texto->nodeValue === '') {
+      $padre->removeChild($texto);
+      while ($padre !== $elemento && $padre->childNodes->length === 0) {
+        $abuelo = $padre->parentNode;
+        $abuelo->removeChild($padre);
+        $padre = $abuelo;
+      }
+    }
+  }
+}
+
+/**
+ * Agrega una clase a un elemento DOM.
+ */
+function _us_entidad_agregar_clase(\DOMElement $elemento, string $clase): void {
+  $elemento->setAttribute('class', trim($elemento->getAttribute('class') . ' ' . $clase));
+}
+
+/**
+ * Ícono de Font Awesome como nodo DOM (decorativo).
+ */
+function _us_entidad_icono_dom(\DOMDocument $dom, string $icono, string $clase): \DOMElement {
+  $span = $dom->createElement('span');
+  $span->setAttribute('class', $clase);
+  $span->setAttribute('aria-hidden', 'true');
+  $i = $dom->createElement('i');
+  $i->setAttribute('class', 'fa-solid ' . $icono);
+  $span->appendChild($i);
+  return $span;
+}
+
+/**
+ * Ícono según la extensión de un enlace a documento, o '' si no lo es.
+ */
+function _us_entidad_icono_documento(string $href): string {
+  $extension = strtolower(pathinfo(parse_url($href, PHP_URL_PATH) ?? '', PATHINFO_EXTENSION));
+  return [
+    'pdf' => 'fa-file-pdf',
+    'xls' => 'fa-file-excel',
+    'xlsx' => 'fa-file-excel',
+    'csv' => 'fa-file-excel',
+    'doc' => 'fa-file-word',
+    'docx' => 'fa-file-word',
+    'ppt' => 'fa-file-powerpoint',
+    'pptx' => 'fa-file-powerpoint',
+    'zip' => 'fa-file-zipper',
+    'rar' => 'fa-file-zipper',
+  ][$extension] ?? '';
+}
+
+/**
+ * Ícono de Font Awesome según el texto del enlace.
+ */
+function _us_entidad_icono(string $titulo): string {
+  $texto = mb_strtolower(\Drupal::transliteration()->transliterate($titulo, 'es'));
+  // Gana la primera clave que aparezca: "directorio" y "asesor" van antes que
+  // "director", "juridica" antes que "asesor" (Oficina Asesora Jurídica) y
+  // "objetivo" antes que "mision" (por "Objetivos misionales").
+  $iconos = [
+    'quienes somos' => 'fa-circle-info',
+    'directorio' => 'fa-address-book',
+    'juridica' => 'fa-scale-balanced',
+    'asesor' => 'fa-handshake',
+    'control interno' => 'fa-magnifying-glass-chart',
+    'subdireccion' => 'fa-user-gear',
+    'planeacion' => 'fa-chart-line',
+    'investigacion' => 'fa-chart-line',
+    'desarrollo' => 'fa-seedling',
+    'conectividad' => 'fa-bullhorn',
+    'prensa' => 'fa-bullhorn',
+    'salarial' => 'fa-money-bill-wave',
+    'manual' => 'fa-book',
+    'capacitacion' => 'fa-graduation-cap',
+    'bienestar' => 'fa-heart',
+    'objetivo' => 'fa-flag-checkered',
+    'mision' => 'fa-bullseye',
+    'funciones' => 'fa-list-check',
+    'dependencias' => 'fa-building-user',
+    'equipo' => 'fa-users',
+    'humana' => 'fa-id-card',
+    'humano' => 'fa-id-card',
+    'talento' => 'fa-id-card',
+    'organigrama' => 'fa-sitemap',
+    'perfil' => 'fa-user-tie',
+    'director' => 'fa-user-tie',
+    'procesos' => 'fa-file-lines',
+    'empleo' => 'fa-briefcase',
+    'concurso' => 'fa-award',
+  ];
+  foreach ($iconos as $clave => $icono) {
+    if (str_contains($texto, $clave)) {
+      return $icono;
+    }
+  }
+  return 'fa-link';
+}
+
+/**
+ * Cuerpo del nodo (ya filtrado por su formato) sin las etiquetas indicadas.
+ *
+ * Devuelve un render array vacío si no queda contenido.
+ */
+function _us_entidad_cuerpo_sin(NodeInterface $node, string $etiqueta): array {
+  if ($node->get('body')->isEmpty()) {
+    return [];
+  }
+  $body = $node->get('body');
+  $dom = Html::load((string) check_markup($body->value, $body->format));
+  foreach (iterator_to_array($dom->getElementsByTagName($etiqueta)) as $elemento) {
+    $elemento->parentNode->removeChild($elemento);
+  }
+  $html = Html::serialize($dom);
+  if (trim(html_entity_decode(strip_tags($html, '<img><iframe><video><audio>'), ENT_QUOTES | ENT_HTML5, 'UTF-8'), " \t\n\r\0\x0B\xC2\xA0") === '') {
+    return [];
+  }
+  return ['#markup' => Markup::create($html)];
+}
+
+/**
+ * Líneas no vacías de un campo de texto plano.
+ */
+function _us_entidad_lineas(NodeInterface $node, string $campo): array {
+  if (!$node->hasField($campo) || $node->get($campo)->isEmpty()) {
+    return [];
+  }
+  $lineas = preg_split('/\R/u', (string) $node->get($campo)->value);
+  return array_values(array_filter(array_map('trim', $lineas), 'strlen'));
+}

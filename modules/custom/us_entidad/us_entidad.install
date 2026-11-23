@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Instalación: corrige los enlaces del menú de Quiénes somos.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function us_entidad_install($is_syncing): void {
+  if (!$is_syncing) {
+    _us_entidad_corregir_menu();
+  }
+}
+
+/**
+ * "Equipo Directivo" y "Perfil del Director" apuntaban a Quiénes somos.
+ */
+function _us_entidad_corregir_menu(): int {
+  $destinos = [
+    'Equipo Directivo' => 'route:view.equipo_directivo.page_1',
+    'Perfil del Director' => 'entity:node/52',
+  ];
+  $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+  $ids = $storage->getQuery()
+    ->accessCheck(FALSE)
+    ->condition('menu_name', 'main')
+    ->condition('title', array_keys($destinos), 'IN')
+    ->execute();
+
+  $cambiados = 0;
+  foreach ($storage->loadMultiple($ids) as $enlace) {
+    $destino = $destinos[$enlace->getTitle()] ?? NULL;
+    if (!$destino || $enlace->get('link')->uri === $destino) {
+      continue;
+    }
+    $enlace->set('link', ['uri' => $destino] + $enlace->get('link')->first()->getValue());
+    $enlace->save();
+    $cambiados++;
+  }
+  return $cambiados;
+}

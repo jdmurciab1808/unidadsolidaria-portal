@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Subpáginas de Quiénes somos (Misión, Funciones, Objetivos, Dependencias,
+ * Talento humano, Directorio...), con los enlaces de Quiénes somos a la
+ * derecha.
+ *
+ * Todo sale de los campos del nodo (pestaña Editar): Título, Imagen,
+ * Descripción (texto destacado), Cuerpo y Documentos. El cuerpo se muestra
+ * con mejoras de presentación (ver _us_entidad_mejorar_html()). Los demás
+ * campos (galería, video, audios...) se muestran al final tal cual.
+ */
+#}
+<article{{ attributes.addClass('us-ent', 'us-seccion') }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="us-ent__principal">
+    <h1 class="us-ent__titulo">{{ us_titulo }}</h1>
+
+    {% if content.field_imagen|render|trim %}
+      <div class="us-seccion__imagen">{{ content.field_imagen }}</div>
+    {% endif %}
+
+    {% if us_descripcion %}
+      <div class="us-seccion__lead">
+        {% for parrafo in us_descripcion %}
+          <p>{{ parrafo }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if us_cuerpo %}
+      <div class="us-cuerpo">{{ us_cuerpo }}</div>
+    {% endif %}
+
+    {% if content.field_documentos|render|trim %}
+      <section class="us-seccion__documentos">
+        <h2 class="us-ent__subtitulo">{{ 'Documentos'|t }}</h2>
+        {{ content.field_documentos }}
+      </section>
+    {% endif %}
+
+    {{ content|without('field_titulo', 'field_imagen', 'field_descripcion', 'body', 'field_documentos', 'field_real_time_seo', 'field_meta_tags', 'links') }}
+  </div>
+
+  <aside class="us-ent__lateral">
+    {{ us_menu }}
+  </aside>
+</article>

@@ -1,0 +1,9 @@
+name: 'La Entidad'
+type: module
+description: 'Diseño de Quiénes somos, Misión y Visión, y Dependencias, con el menú de Quiénes somos con íconos.'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:node
+  - drupal:views
+  - drupal:menu_link_content

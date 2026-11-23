@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Menú de Quiénes somos con íconos.
+ *
+ * - variante 'lista': barra lateral (Perfil del Director, Equipo Directivo).
+ * - variante 'tarjetas': cuadrícula (página de Quiénes somos).
+ */
+#}
+{% if items %}
+  <nav class="us-ent-menu us-ent-menu--{{ variante }}" aria-label="{{ titulo }}">
+    {% if variante == 'lista' %}
+      <h2 class="us-ent-menu__titulo">{{ titulo }}</h2>
+    {% endif %}
+    <ul class="us-ent-menu__lista">
+      {% for item in items %}
+        <li class="us-ent-menu__item{{ item.activo ? ' is-active' }}">
+          <a href="{{ item.url }}"{% if item.activo %} aria-current="page"{% endif %}{% if item.externo %} target="_blank" rel="noopener"{% endif %}>
+            <span class="us-ent-menu__icono" aria-hidden="true"><i class="fa-solid {{ item.icono }}"></i></span>
+            <span class="us-ent-menu__texto">{{ item.titulo }}</span>
+            <span class="us-ent-menu__flecha" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+            {% if item.externo %}<span class="visually-hidden">{{ '(se abre en una pestaña nueva)'|t }}</span>{% endif %}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
