@@ -1,0 +1,110 @@
+<?php
+
+/**
+ * @file
+ * Asigna estilos de imagen a los campos que mostraban el archivo original.
+ *
+ * Las imágenes se subían tal cual (fotos de 9 MB, banners PNG de 2-3 MB) y se
+ * mostraban sin estilo, así que el celular tenía que decodificar imágenes
+ * gigantes mientras se hacía scroll. Solo se cambian los campos que no tenían
+ * estilo; al desinstalar el módulo se dejan como estaban.
+ */
+
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\views\Entity\View;
+
+/**
+ * Campos de imagen sin estilo y el estilo que deben usar.
+ */
+function _us_imagenes_campos(): array {
+  return [
+    'displays' => [
+      ['node.vista_elemento.default', 'field_imagen', 'wide'],
+      ['node.vista_elemento.default', 'field_galeria_de_imagenes', 'wide'],
+      ['node.article.default', 'field_image', 'wide'],
+      ['node.article.default', 'field_galeria_de_imagenes', 'wide'],
+      ['node.article.default', 'field_slideshow_image', 'us_banner'],
+      ['node.noticia_principal.default', 'field_imagen', 'wide'],
+      ['node.carrusel_publicidad.default', 'field_imagen_publicidad', 'wide'],
+      ['node.slideshow.default', 'field_slideshow_image', 'us_banner'],
+    ],
+    'views' => [
+      ['slideshow', 'field_slideshow_image', 'us_banner'],
+      ['foros', 'field_imagen_foro', 'wide'],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_install().
+ */
+function us_imagenes_install($is_syncing): void {
+  if (!$is_syncing) {
+    \Drupal::state()->set('us_imagenes.cambiados', _us_imagenes_aplicar(FALSE));
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function us_imagenes_uninstall($is_syncing): void {
+  _us_imagenes_aplicar(TRUE, \Drupal::state()->get('us_imagenes.cambiados', []));
+  \Drupal::state()->delete('us_imagenes.cambiados');
+}
+
+/**
+ * Pone (o quita, al revertir) los estilos de imagen.
+ *
+ * @param bool $revertir
+ *   TRUE para devolver a "sin estilo" los campos que cambió la instalación.
+ * @param array $solo
+ *   Al revertir, la lista de cambios guardada en la instalación.
+ *
+ * @return array
+ *   Los cambios hechos, como claves "display:id:campo" o "view:id:display:campo".
+ */
+function _us_imagenes_aplicar(bool $revertir, array $solo = []): array {
+  $cambiados = [];
+  $campos = _us_imagenes_campos();
+
+  foreach ($campos['displays'] as [$id, $campo, $estilo]) {
+    $clave = "display:$id:$campo";
+    $display = EntityViewDisplay::load($id);
+    $componente = $display ? $display->getComponent($campo) : NULL;
+    if (!$componente || ($componente['type'] ?? '') !== 'image') {
+      continue;
+    }
+    $actual = $componente['settings']['image_style'] ?? '';
+    if ((!$revertir && $actual === '') || ($revertir && in_array($clave, $solo, TRUE))) {
+      $componente['settings']['image_style'] = $revertir ? '' : $estilo;
+      $display->setComponent($campo, $componente)->save();
+      $cambiados[] = $clave;
+    }
+  }
+
+  foreach ($campos['views'] as [$id, $campo, $estilo]) {
+    $view = View::load($id);
+    if (!$view) {
+      continue;
+    }
+    $guardar = FALSE;
+    $displays = $view->get('display');
+    foreach (array_keys($displays) as $display_id) {
+      $clave = "view:$id:$display_id:$campo";
+      if (($displays[$display_id]['display_options']['fields'][$campo]['type'] ?? '') !== 'image') {
+        continue;
+      }
+      $actual = $displays[$display_id]['display_options']['fields'][$campo]['settings']['image_style'] ?? '';
+      if ((!$revertir && $actual === '') || ($revertir && in_array($clave, $solo, TRUE))) {
+        $displays[$display_id]['display_options']['fields'][$campo]['settings']['image_style'] = $revertir ? '' : $estilo;
+        $cambiados[] = $clave;
+        $guardar = TRUE;
+      }
+    }
+    if ($guardar) {
+      $view->set('display', $displays)->save();
+    }
+  }
+
+  return $cambiados;
+}

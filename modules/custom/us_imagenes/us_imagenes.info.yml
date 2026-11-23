@@ -1,0 +1,8 @@
+name: 'Imágenes optimizadas'
+type: module
+description: 'Muestra las imágenes del sitio redimensionadas y en WebP en vez del archivo original (que puede pesar varios MB y trabar el scroll en celulares).'
+package: 'Unidad Solidaria'
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - drupal:image
+  - drupal:views

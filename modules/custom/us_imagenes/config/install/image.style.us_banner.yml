@@ -1,0 +1,23 @@
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - us_imagenes
+name: us_banner
+label: 'Banner (1920, sin recorte)'
+effects:
+  5a1d0f3e-6b0e-4a59-9a43-2f3c1b7e8d01:
+    uuid: 5a1d0f3e-6b0e-4a59-9a43-2f3c1b7e8d01
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false
+  9c4e2b7a-1f3d-4c8e-b6a5-7d0e9f2a4b12:
+    uuid: 9c4e2b7a-1f3d-4c8e-b6a5-7d0e9f2a4b12
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
