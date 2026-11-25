@@ -6119,6 +6119,308 @@ body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-
 
 
 
+/* ---- TRANSPARENCIA (nodo 23) ----
+   Título con línea azul, introducción en recuadro, encuesta como botón y las
+   pestañas (js/custom.js: .step muestra la sección .ocultar con el mismo
+   data-id) como menú lateral de tarjetas; la sección abierta es una tarjeta
+   con encabezado azul claro y sus enlaces como filas con flecha. En celular el
+   menú pasa a una fila de botones que se desliza de lado. */
+article[data-history-node-id="23"] .field--name-body > .title-transparencia {
+    position: relative;
+    margin: 8px 0 22px;
+    padding: 0 0 16px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+article[data-history-node-id="23"] .field--name-body > .title-transparencia::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 4px;
+    border-radius: 4px;
+    background: #3366cc;
+}
+
+/* Párrafos vacíos que separaban los bloques */
+article[data-history-node-id="23"] .field--name-body > p.parrafo,
+article[data-history-node-id="23"] .field--name-body > p:has(+ #link-transparencia),
+article[data-history-node-id="23"] .field--name-body > #link-transparencia + p {
+    display: none;
+}
+
+/* Introducción: los párrafos entre el título y la encuesta, en un recuadro */
+article[data-history-node-id="23"] .field--name-body > .parrafo ~ p:not(#link-transparencia):not(#link-transparencia ~ p) {
+    margin: 0;
+    padding: 6px 24px;
+    border-left: 4px solid #3366cc;
+    background: #f3f7fd;
+    color: #34445a;
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+article[data-history-node-id="23"] .field--name-body > .parrafo + p {
+    padding-top: 18px;
+    border-radius: 0 12px 0 0;
+}
+
+article[data-history-node-id="23"] .field--name-body > p:has(+ p + #link-transparencia) {
+    padding-bottom: 18px;
+    border-radius: 0 0 12px 0;
+}
+
+/* Encuesta */
+article[data-history-node-id="23"] .field--name-body > #link-transparencia {
+    margin: 22px 0 30px;
+}
+
+article[data-history-node-id="23"] .field--name-body > #link-transparencia > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border: 1px solid #3366cc;
+    border-radius: 999px;
+    background: #fff;
+    color: #3366cc;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+
+article[data-history-node-id="23"] .field--name-body > #link-transparencia > a::after {
+    content: "\2192";
+}
+
+article[data-history-node-id="23"] .field--name-body > #link-transparencia > a:hover,
+article[data-history-node-id="23"] .field--name-body > #link-transparencia > a:focus {
+    background: #3366cc;
+    color: #fff;
+}
+
+/* Menú lateral + sección */
+article[data-history-node-id="23"] .field--name-body > .col-sm-12 {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    float: none;
+    width: auto;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+article[data-history-node-id="23"] .field--name-body > .col-sm-12 > .col-sm-3,
+article[data-history-node-id="23"] .field--name-body > .col-sm-12 > .col-sm-9 {
+    float: none;
+    width: auto;
+    padding: 0;
+}
+
+article[data-history-node-id="23"] .field--name-body > .col-sm-12 > .col-sm-3 {
+    display: flex;
+    position: sticky;
+    top: 20px;
+    flex-direction: column;
+    gap: 6px;
+}
+
+article[data-history-node-id="23"] .col-sm-3 > .step {
+    margin: 0 !important;
+    border: 1px solid #e3eaf4;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s;
+}
+
+article[data-history-node-id="23"] .col-sm-3 > .step > .panel-body {
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: transparent;
+    color: #1f2b3a;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+article[data-history-node-id="23"] .col-sm-3 > .step:hover {
+    border-color: #3366cc;
+    background: #f7faff;
+}
+
+article[data-history-node-id="23"] .col-sm-3 > .step.active1,
+article[data-history-node-id="23"] .col-sm-3 > .step.active1 > .panel-body {
+    border-color: #3366cc;
+    background: #3366cc;
+    color: #fff;
+}
+
+article[data-history-node-id="23"] .col-sm-9 > .panel {
+    margin: 0;
+    border: 1px solid #d2dfef;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.06);
+    overflow: hidden;
+}
+
+/* !important: la regla vieja .panel-heading los trae con !important */
+article[data-history-node-id="23"] .col-sm-9 > .panel > .panel-heading {
+    padding: 18px 24px !important;
+    border: 0;
+    border-bottom: 1px solid #e3eaf4;
+    border-left: 4px solid #3366cc;
+    background: #f3f7fd !important;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+article[data-history-node-id="23"] .col-sm-9 > .panel > .panel-body {
+    padding: 18px 22px 20px;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body li {
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body li::before,
+article[data-history-node-id="23"] .col-sm-9 .panel-body li::marker {
+    content: none;
+}
+
+/* Cada enlace, una fila con flecha */
+article[data-history-node-id="23"] .col-sm-9 .panel-body li > a {
+    display: block;
+    position: relative;
+    padding: 11px 44px 11px 14px;
+    border: 1px solid #e3eaf4;
+    border-radius: 10px;
+    background: #fff;
+    color: #1f2b3a;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    text-decoration: none;
+    transition: border-color .2s, background-color .2s, color .2s;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body li > a::after {
+    content: "\203A";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    color: #3366cc;
+    font-size: 22px;
+    line-height: 1;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body li > a:hover,
+article[data-history-node-id="23"] .col-sm-9 .panel-body li > a:focus {
+    border-color: #3366cc;
+    background: #f7faff;
+    color: #004884;
+}
+
+/* Grupos con subenlaces (p. ej. "4.8 Informe de la oficina de Control Interno") */
+article[data-history-node-id="23"] .col-sm-9 .panel-body li:has(> ul) {
+    margin: 16px 0 10px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+article[data-history-node-id="23"] .col-sm-9 .panel-body li > ul {
+    margin: 8px 0 0;
+    padding: 0 0 0 14px;
+    border-left: 2px solid #e3eaf4;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+@media (max-width: 991px) {
+    article[data-history-node-id="23"] .field--name-body > .col-sm-12 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    /* Menú como fila de botones que se desliza */
+    article[data-history-node-id="23"] .field--name-body > .col-sm-12 > .col-sm-3 {
+        position: static;
+        flex-direction: row;
+        gap: 8px;
+        margin: 0 -16px;
+        padding: 2px 16px 8px;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    article[data-history-node-id="23"] .col-sm-3 > .step {
+        flex: none;
+        max-width: 240px;
+        border-radius: 999px;
+        scroll-snap-align: start;
+    }
+
+    article[data-history-node-id="23"] .col-sm-3 > .step > .panel-body {
+        padding: 9px 16px;
+        border-radius: 999px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 767px) {
+    article[data-history-node-id="23"] .field--name-body > .title-transparencia {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        font-size: 24px;
+    }
+
+    article[data-history-node-id="23"] .field--name-body > .parrafo ~ p:not(#link-transparencia):not(#link-transparencia ~ p) {
+        padding-right: 16px;
+        padding-left: 16px;
+        font-size: 16px;
+    }
+
+    article[data-history-node-id="23"] .col-sm-9 > .panel > .panel-heading {
+        padding: 14px 16px !important;
+        font-size: 18px;
+    }
+
+    article[data-history-node-id="23"] .col-sm-9 > .panel > .panel-body {
+        padding: 14px;
+    }
+}
+
+
 /* ---- VISTA ELEMENTO (diseño general del contenido) ----
    Aplica a las páginas de tipo "vista elemento" que no tienen diseño propio
    (no aplica a los perfiles de directivos ni a Quiénes somos y sus secciones):
