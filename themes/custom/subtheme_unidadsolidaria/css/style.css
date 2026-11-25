@@ -6118,6 +6118,7 @@ body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-
 }
 
 
+
 /* ---- VISTA ELEMENTO (diseño general del contenido) ----
    Aplica a las páginas de tipo "vista elemento" que no tienen diseño propio
    (no aplica a los perfiles de directivos ni a Quiénes somos y sus secciones):
@@ -6334,10 +6335,13 @@ body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > 
 }
 
 /* Listas de enlaces (ul cuyos elementos son solo un enlace, y los párrafos de
-   un solo enlace que el tema agrupa en ul.us-enlaces): filas clicables */
+   un solo enlace que el tema agrupa en ul.us-enlaces): filas clicables.
+   clear: si antes queda algo flotando a todo el ancho (p. ej. un div vacío con
+   clase col-md-12), la lista empieza debajo en vez de quedar sin ancho. */
 body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces,
 body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces):has(> li > a:only-child) {
     display: flex;
+    clear: both;
     flex-direction: column;
     gap: 10px;
     max-width: 920px;
