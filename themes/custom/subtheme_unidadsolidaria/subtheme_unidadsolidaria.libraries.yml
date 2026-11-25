@@ -7,6 +7,7 @@ global-scripts:
   js:
     js/custom.js: {}
     js/font-size.js: {}
+    js/equipo-directivo.js: {}
   dependencies:
     - core/jquery
     - core/once

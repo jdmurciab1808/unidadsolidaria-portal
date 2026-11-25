@@ -21,31 +21,115 @@ function subtheme_unidadsolidaria_preprocess_field(array &$variables) {
   if ($variables['field_name'] !== 'body') {
     return;
   }
-  // Párrafos de un solo enlace -> lista, solo en las páginas "vista elemento"
-  // que no tienen diseño propio de us_entidad (Quiénes somos y sus secciones).
+  // Párrafos de un solo enlace -> lista, en las páginas "vista elemento" que no
+  // tienen diseño propio de us_entidad (Quiénes somos y sus secciones) y en los
+  // demás tipos con el mismo diseño (noticias, foros, planes...).
   $nodo = $variables['element']['#object'] ?? NULL;
-  $enlaces = $nodo && $nodo->getEntityTypeId() === 'node' && $nodo->bundle() === 'vista_elemento'
+  $enlaces = $nodo && $nodo->getEntityTypeId() === 'node'
+    && in_array($nodo->bundle(), array_merge(['vista_elemento'], array_diff(_subtheme_unidadsolidaria_tipos_con_titulo(), ['organismos'])), TRUE)
     && !in_array((int) $nodo->id(), _subtheme_unidadsolidaria_nids_us_entidad(), TRUE);
   // Introducción al comienzo del cuerpo -> recuadro como el de la descripción,
   // solo si la página no tiene el campo Descripción lleno.
   $intro = $enlaces && $nodo->hasField('field_descripcion') && trim(strip_tags((string) $nodo->get('field_descripcion')->value)) === '';
   // Con documentos o audios debajo, el cuerpo puede ser solo la introducción.
   $adjuntos = $intro && array_filter(['field_documentos', 'field_audios'], fn($campo) => $nodo->hasField($campo) && !$nodo->get($campo)->isEmpty());
+  // Gremios (organismos), equipo directivo y las páginas de Transparencia
+  // (título .title-transparencia): sin los párrafos y títulos vacíos que
+  // dejaban huecos.
+  // La página principal de Transparencia (nodo 23) se deja igual: su CSS cuenta
+  // con esos párrafos.
+  $limpiar = $nodo && $nodo->getEntityTypeId() === 'node'
+    && (in_array($nodo->bundle(), ['organismos', 'equipo_directivo'], TRUE) || ($nodo->bundle() === 'page' && (int) $nodo->id() !== 23));
   foreach ($variables['items'] as &$item) {
     if (!isset($item['content']['#text'])) {
       continue;
     }
     $varios = substr_count($item['content']['#text'], '<a') >= 2;
-    if ($varios || $intro) {
-      $item['content']['#post_render'][] = function ($html) use ($enlaces, $varios, $intro, $adjuntos) {
+    $vacios = $limpiar && ($nodo->bundle() !== 'page' || str_contains($item['content']['#text'], 'title-transparencia'));
+    // Páginas de dependencias (cargo en Encabezado 6): las funciones se despliegan.
+    $funciones = $enlaces && str_contains($item['content']['#text'], '<h6') && stripos($item['content']['#text'], 'Funciones') !== FALSE;
+    if ($varios || $intro || $vacios || $funciones) {
+      $item['content']['#post_render'][] = function ($html) use ($enlaces, $varios, $intro, $adjuntos, $vacios, $funciones) {
         if ($varios) {
           $html = _subtheme_unidadsolidaria_anios($html);
           $html = $enlaces ? _subtheme_unidadsolidaria_enlaces($html) : $html;
+        }
+        if ($vacios) {
+          $html = _subtheme_unidadsolidaria_sin_vacios($html);
+        }
+        if ($funciones) {
+          $html = _subtheme_unidadsolidaria_funciones($html);
         }
         return $intro ? _subtheme_unidadsolidaria_intro($html, (bool) $adjuntos) : $html;
       };
     }
   }
+}
+
+/**
+ * Convierte el subtítulo "Funciones" y lo que le sigue en un desplegable.
+ *
+ * El subtítulo es un párrafo con solo negrita ("Funciones" o "Funciones:").
+ * El desplegable (details.us-funciones) llega hasta el siguiente subtítulo en
+ * negrita (p. ej. "Grupos y oficinas del Despacho") o hasta el final.
+ */
+function _subtheme_unidadsolidaria_funciones($html) {
+  $html = (string) $html;
+  $dom = Html::load($html);
+  $cuerpo = (new \DOMXPath($dom))->query('//body')->item(0);
+  $limpiar = fn($texto) => trim(preg_replace('/[\s\x{a0}]+/u', ' ', $texto));
+  $subtitulo = function ($nodo) use ($limpiar) {
+    if (!$nodo instanceof \DOMElement || $nodo->tagName !== 'p') {
+      return NULL;
+    }
+    $negrita = $nodo->getElementsByTagName('strong')->item(0) ?? $nodo->getElementsByTagName('b')->item(0);
+    $texto = $limpiar($nodo->textContent);
+    return $negrita && $texto !== '' && $limpiar($negrita->textContent) === $texto ? rtrim($texto, ': ') : NULL;
+  };
+  $titulo = NULL;
+  foreach ($cuerpo->childNodes as $nodo) {
+    if (mb_strtolower((string) $subtitulo($nodo)) === 'funciones') {
+      $titulo = $nodo;
+      break;
+    }
+  }
+  if (!$titulo) {
+    return $html;
+  }
+  $mover = [];
+  for ($nodo = $titulo->nextSibling; $nodo && $subtitulo($nodo) === NULL; $nodo = $nodo->nextSibling) {
+    $mover[] = $nodo;
+  }
+  if (!array_filter($mover, fn($n) => $n instanceof \DOMElement)) {
+    return $html;
+  }
+  $desplegable = $dom->createElement('details');
+  $desplegable->setAttribute('class', 'us-funciones');
+  $desplegable->appendChild($dom->createElement('summary', 'Funciones'));
+  $contenido = $dom->createElement('div');
+  $contenido->setAttribute('class', 'us-funciones__contenido');
+  foreach ($mover as $nodo) {
+    $contenido->appendChild($nodo);
+  }
+  $desplegable->appendChild($contenido);
+  $titulo->parentNode->replaceChild($desplegable, $titulo);
+  return Html::serialize($dom);
+}
+
+/**
+ * Quita los párrafos y títulos del primer nivel que no traen texto ni imágenes.
+ */
+function _subtheme_unidadsolidaria_sin_vacios($html) {
+  $html = (string) $html;
+  $dom = Html::load($html);
+  $cambio = FALSE;
+  foreach (iterator_to_array((new \DOMXPath($dom))->query('//body/*[self::p or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]')) as $bloque) {
+    if (_subtheme_unidadsolidaria_vacio($bloque)) {
+      $bloque->parentNode->removeChild($bloque);
+      $cambio = TRUE;
+    }
+  }
+  return $cambio ? Html::serialize($dom) : $html;
 }
 
 /**
@@ -95,6 +179,90 @@ function _subtheme_unidadsolidaria_intro($html, $adjuntos = FALSE) {
     $caja->appendChild($parrafo);
   }
   return Html::serialize($dom);
+}
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Título de la página: los tipos de contenido que no traen un campo de título
+ * propio (como field_titulo de vista elemento) no mostraban ninguno. Se agrega
+ * el título del nodo como h1.us-titulo al comienzo del contenido.
+ */
+function subtheme_unidadsolidaria_preprocess_node(array &$variables) {
+  $nodo = $variables['node'];
+  if ($variables['view_mode'] !== 'full' || !in_array($nodo->bundle(), _subtheme_unidadsolidaria_tipos_con_titulo(), TRUE)) {
+    return;
+  }
+  // Noticias y foros solo cuando su campo de título está vacío.
+  foreach (['field_titulo_noticia', 'field_titulo_foro'] as $campo) {
+    if ($nodo->hasField($campo) && !$nodo->get($campo)->isEmpty()) {
+      return;
+    }
+  }
+  $variables['content']['us_titulo'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'h1',
+    '#value' => Html::escape($nodo->label()),
+    '#attributes' => ['class' => ['us-titulo']],
+    '#weight' => -1000,
+  ];
+}
+
+/**
+ * Tipos de contenido a los que se les muestra el título del nodo.
+ */
+function _subtheme_unidadsolidaria_tipos_con_titulo() {
+  return [
+    'article',
+    'noticia_principal',
+    'foros',
+    'equipo_directivo',
+    'evento',
+    'transparencia_y_acceso_a_la_info',
+    'termino_glosario',
+    'webform',
+    'carrusel_publicidad',
+    'slideshow',
+    'organismos',
+  ];
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ *
+ * Equipo directivo: título de la página (antes salía con el primer directivo).
+ */
+function subtheme_unidadsolidaria_preprocess_views_view(array &$variables) {
+  if ($variables['view']->id() === 'equipo_directivo') {
+    $variables['header']['us_titulo'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'h1',
+      '#value' => t('Equipo Directivo'),
+      '#attributes' => ['class' => ['us-titulo']],
+      '#weight' => -100,
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted().
+ *
+ * Equipo directivo en el orden de la entidad: Dirección Nacional, Subdirección,
+ * Dirección Técnica de Desarrollo, Dirección Técnica de Investigación y
+ * Planeación, Oficina Asesora Jurídica y Oficina de Control Interno. Un
+ * directivo que no esté en la lista va al final.
+ */
+function subtheme_unidadsolidaria_preprocess_views_view_unformatted(array &$variables) {
+  if ($variables['view']->id() !== 'equipo_directivo') {
+    return;
+  }
+  $orden = array_flip([85, 83, 81, 82, 80, 84]);
+  $posicion = [];
+  foreach ($variables['view']->result as $indice => $fila) {
+    $nid = isset($fila->_entity) ? (int) $fila->_entity->id() : 0;
+    $posicion[$indice] = $orden[$nid] ?? 100 + $indice;
+  }
+  uksort($variables['rows'], fn($a, $b) => ($posicion[$a] ?? 999) <=> ($posicion[$b] ?? 999));
 }
 
 /**
