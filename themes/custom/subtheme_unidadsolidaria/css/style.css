@@ -5332,6 +5332,75 @@ button {
 
 
 
+
+/* ---- LISTAS DE AÑOS (informes, planes, certificados por año) ----
+   El tema convierte en ul.us-anios los párrafos o títulos del cuerpo que solo
+   traen años enlazados ("2013 - 2014 - 2015..."); aquí se ven como tarjetas. */
+.field--name-body ul.us-anios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+    margin: 24px 0 32px;
+    padding: 0;
+    list-style: none;
+}
+
+.field--name-body ul.us-anios > li {
+    margin: 0;
+}
+
+.field--name-body ul.us-anios > li > a,
+.field--name-body ul.us-anios > li > a:link,
+.field--name-body ul.us-anios > li > a:visited {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 18px 18px 18px 20px;
+    border: 1px solid #d2dfef;
+    border-left: 4px solid #3366cc;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.06);
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+}
+
+.field--name-body ul.us-anios > li > a::after {
+    content: "\203A";
+    color: #3366cc;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.field--name-body ul.us-anios > li > a:hover,
+.field--name-body ul.us-anios > li > a:focus {
+    border-color: #3366cc;
+    background: #f3f7fd;
+    box-shadow: 0 6px 16px rgba(0, 72, 132, 0.14);
+    transform: translateY(-2px);
+    color: #004884;
+}
+
+@media (max-width: 767px) {
+    .field--name-body ul.us-anios {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 10px;
+    }
+
+    .field--name-body ul.us-anios > li > a,
+    .field--name-body ul.us-anios > li > a:link,
+    .field--name-body ul.us-anios > li > a:visited {
+        padding: 14px 14px 14px 16px;
+        font-size: 19px;
+    }
+}
+
 /* ---- PERFIL DE DIRECTIVOS (Subdirección, Perfil del Director, dependencias...) ----
    Se activa solo en las páginas armadas así:
    - la foto en el campo "Imagen" o como primera imagen (suelta) del cuerpo, y

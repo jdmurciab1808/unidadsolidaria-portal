@@ -6,3 +6,79 @@
  *
  * Place your custom PHP code in this file.
  */
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * Listas de años: un párrafo o título del cuerpo que solo trae años
+ * enlazados ("2013 - 2014 - 2015...") se convierte en una lista
+ * (ul.us-anios) que el CSS muestra como tarjetas. Se hace después de los
+ * filtros del formato de texto para que no le quiten la clase.
+ */
+function subtheme_unidadsolidaria_preprocess_field(array &$variables) {
+  if ($variables['field_name'] !== 'body') {
+    return;
+  }
+  foreach ($variables['items'] as &$item) {
+    if (isset($item['content']['#text']) && substr_count($item['content']['#text'], '<a') >= 3) {
+      $item['content']['#post_render'][] = function ($html) {
+        return _subtheme_unidadsolidaria_anios($html);
+      };
+    }
+  }
+}
+
+/**
+ * Convierte en ul.us-anios los bloques del HTML formados solo por años enlazados.
+ */
+function _subtheme_unidadsolidaria_anios($html) {
+  $html = (string) $html;
+  if (substr_count($html, '<a') < 3) {
+    return $html;
+  }
+  $dom = Html::load($html);
+  $xpath = new \DOMXPath($dom);
+  $cambio = FALSE;
+  foreach ($xpath->query('//body/*[self::p or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]') as $bloque) {
+    $enlaces = [];
+    foreach ($bloque->childNodes as $nodo) {
+      if ($nodo instanceof \DOMText) {
+        // Entre enlace y enlace solo puede haber separadores.
+        if (preg_replace('/[\s\x{a0}\-–|·,]+/u', '', $nodo->textContent) !== '') {
+          continue 2;
+        }
+      }
+      elseif ($nodo instanceof \DOMElement && $nodo->tagName === 'a' && !$nodo->getElementsByTagName('img')->length) {
+        $anio = trim($nodo->textContent, " \t\n\r\0\x0B\u{a0}-–");
+        if (!preg_match('/^\d{4}$/', $anio)) {
+          continue 2;
+        }
+        $enlaces[] = [$nodo, $anio];
+      }
+      elseif (!($nodo instanceof \DOMComment)) {
+        continue 2;
+      }
+    }
+    if (count($enlaces) < 3) {
+      continue;
+    }
+    $lista = $dom->createElement('ul');
+    $lista->setAttribute('class', 'us-anios');
+    foreach ($enlaces as [$enlace, $anio]) {
+      $nuevo = $dom->createElement('a', $anio);
+      foreach (['href', 'target', 'rel', 'title'] as $atributo) {
+        if ($enlace->hasAttribute($atributo)) {
+          $nuevo->setAttribute($atributo, $enlace->getAttribute($atributo));
+        }
+      }
+      $li = $dom->createElement('li');
+      $li->appendChild($nuevo);
+      $lista->appendChild($li);
+    }
+    $bloque->parentNode->replaceChild($lista, $bloque);
+    $cambio = TRUE;
+  }
+  return $cambio ? Html::serialize($dom) : $html;
+}
