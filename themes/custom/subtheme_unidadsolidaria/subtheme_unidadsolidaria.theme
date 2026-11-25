@@ -21,13 +21,190 @@ function subtheme_unidadsolidaria_preprocess_field(array &$variables) {
   if ($variables['field_name'] !== 'body') {
     return;
   }
+  // Párrafos de un solo enlace -> lista, solo en las páginas "vista elemento"
+  // que no tienen diseño propio de us_entidad (Quiénes somos y sus secciones).
+  $nodo = $variables['element']['#object'] ?? NULL;
+  $enlaces = $nodo && $nodo->getEntityTypeId() === 'node' && $nodo->bundle() === 'vista_elemento'
+    && !in_array((int) $nodo->id(), _subtheme_unidadsolidaria_nids_us_entidad(), TRUE);
+  // Introducción al comienzo del cuerpo -> recuadro como el de la descripción,
+  // solo si la página no tiene el campo Descripción lleno.
+  $intro = $enlaces && $nodo->hasField('field_descripcion') && trim(strip_tags((string) $nodo->get('field_descripcion')->value)) === '';
+  // Con documentos o audios debajo, el cuerpo puede ser solo la introducción.
+  $adjuntos = $intro && array_filter(['field_documentos', 'field_audios'], fn($campo) => $nodo->hasField($campo) && !$nodo->get($campo)->isEmpty());
   foreach ($variables['items'] as &$item) {
-    if (isset($item['content']['#text']) && substr_count($item['content']['#text'], '<a') >= 3) {
-      $item['content']['#post_render'][] = function ($html) {
-        return _subtheme_unidadsolidaria_anios($html);
+    if (!isset($item['content']['#text'])) {
+      continue;
+    }
+    $varios = substr_count($item['content']['#text'], '<a') >= 2;
+    if ($varios || $intro) {
+      $item['content']['#post_render'][] = function ($html) use ($enlaces, $varios, $intro, $adjuntos) {
+        if ($varios) {
+          $html = _subtheme_unidadsolidaria_anios($html);
+          $html = $enlaces ? _subtheme_unidadsolidaria_enlaces($html) : $html;
+        }
+        return $intro ? _subtheme_unidadsolidaria_intro($html, (bool) $adjuntos) : $html;
       };
     }
   }
+}
+
+/**
+ * Envuelve en div.us-intro los párrafos de texto con que empieza el cuerpo.
+ *
+ * Toma hasta tres párrafos seguidos de texto corrido (sin imágenes, que no sean
+ * un solo enlace, un subtítulo en negrita ni un punto numerado). Un párrafo que termina en ":"
+ * presenta lo que sigue, así que se queda fuera. Si después no viene nada más
+ * (ni en el cuerpo ni documentos adjuntos), o la introducción es muy larga, no
+ * se toca.
+ */
+function _subtheme_unidadsolidaria_intro($html, $adjuntos = FALSE) {
+  $html = (string) $html;
+  $dom = Html::load($html);
+  $cuerpo = (new \DOMXPath($dom))->query('//body')->item(0);
+  $limpiar = fn($texto) => trim(preg_replace('/[\s\x{a0}]+/u', ' ', $texto));
+  $parrafos = [];
+  $resto = FALSE;
+  foreach (iterator_to_array($cuerpo->childNodes) as $nodo) {
+    if ($nodo instanceof \DOMComment || ($nodo instanceof \DOMText && $limpiar($nodo->textContent) === '')) {
+      continue;
+    }
+    if ($nodo instanceof \DOMElement && $nodo->tagName === 'p' && _subtheme_unidadsolidaria_vacio($nodo)) {
+      continue;
+    }
+    $texto = $nodo instanceof \DOMElement ? $limpiar($nodo->textContent) : '';
+    $prosa = $nodo instanceof \DOMElement && $nodo->tagName === 'p' && count($parrafos) < 3
+      && mb_strlen($texto) >= 60 && !preg_match('/:$/u', $texto) && !preg_match('/^\d+\s*[.)\-]/u', $texto)
+      && !$nodo->getElementsByTagName('img')->length && !$nodo->getElementsByTagName('iframe')->length
+      && !_subtheme_unidadsolidaria_parrafo_enlace($nodo)
+      && !($nodo->firstElementChild && in_array($nodo->firstElementChild->tagName, ['strong', 'b'], TRUE) && $limpiar($nodo->firstElementChild->textContent) === $texto);
+    if ($prosa && !$resto) {
+      $parrafos[] = $nodo;
+      continue;
+    }
+    $resto = TRUE;
+    break;
+  }
+  $largo = array_sum(array_map(fn($p) => mb_strlen($limpiar($p->textContent)), $parrafos));
+  if (!$parrafos || !($resto || $adjuntos) || $largo > 1200) {
+    return $html;
+  }
+  $caja = $dom->createElement('div');
+  $caja->setAttribute('class', 'us-intro');
+  $parrafos[0]->parentNode->insertBefore($caja, $parrafos[0]);
+  foreach ($parrafos as $parrafo) {
+    $caja->appendChild($parrafo);
+  }
+  return Html::serialize($dom);
+}
+
+/**
+ * Nodos con plantilla propia del módulo us_entidad.
+ */
+function _subtheme_unidadsolidaria_nids_us_entidad() {
+  $nids = defined('US_ENTIDAD_NID_QUIENES') ? [US_ENTIDAD_NID_QUIENES] : [];
+  return array_merge($nids, defined('US_ENTIDAD_NIDS_SECCION') ? US_ENTIDAD_NIDS_SECCION : []);
+}
+
+/**
+ * Agrupa en ul.us-enlaces los párrafos seguidos que solo traen un enlace.
+ *
+ * Así quedan las listas de enlaces escritas como párrafos sueltos (muchas
+ * pegadas desde Word) o como títulos seguidos de un solo enlace cada uno
+ * ("Vigencia 2025", "Vigencia 2024"...). Un párrafo con sangría (espacios antes del enlace) queda
+ * como subnivel. Hacen falta al menos dos párrafos seguidos; los párrafos
+ * vacíos entre ellos se quitan.
+ */
+function _subtheme_unidadsolidaria_enlaces($html) {
+  $html = (string) $html;
+  $dom = Html::load($html);
+  $xpath = new \DOMXPath($dom);
+  $cuerpo = $xpath->query('//body')->item(0);
+  $grupos = [];
+  $grupo = [];
+  $vacios = [];
+  foreach (iterator_to_array($cuerpo->childNodes) as $nodo) {
+    if ($nodo instanceof \DOMText && trim($nodo->textContent, " \t\n\r\0\x0B\u{a0}") === '') {
+      continue;
+    }
+    $enlace = $nodo instanceof \DOMElement && in_array($nodo->tagName, ['p', 'h2', 'h3', 'h4', 'h5', 'h6'], TRUE) ? _subtheme_unidadsolidaria_parrafo_enlace($nodo) : NULL;
+    if ($enlace) {
+      $grupo[] = [$nodo] + $enlace;
+      continue;
+    }
+    if ($grupo && $nodo instanceof \DOMElement && $nodo->tagName === 'p' && _subtheme_unidadsolidaria_vacio($nodo)) {
+      $vacios[] = $nodo;
+      continue;
+    }
+    $grupos[] = [$grupo, $vacios];
+    $grupo = [];
+    $vacios = [];
+  }
+  $grupos[] = [$grupo, $vacios];
+  $cambio = FALSE;
+  foreach ($grupos as [$grupo, $vacios]) {
+    if (count($grupo) < 2) {
+      continue;
+    }
+    $lista = $dom->createElement('ul');
+    $lista->setAttribute('class', 'us-enlaces');
+    foreach ($grupo as [$parrafo, $enlace, $sangria]) {
+      $nuevo = $dom->createElement('a');
+      $nuevo->appendChild($dom->createTextNode(trim(preg_replace('/[\s\x{a0}]+/u', ' ', $enlace->textContent))));
+      foreach (['href', 'target', 'rel', 'title'] as $atributo) {
+        if ($enlace->hasAttribute($atributo)) {
+          $nuevo->setAttribute($atributo, $enlace->getAttribute($atributo));
+        }
+      }
+      $li = $dom->createElement('li');
+      if ($sangria) {
+        $li->setAttribute('class', 'us-enlaces__sub');
+      }
+      $li->appendChild($nuevo);
+      $lista->appendChild($li);
+    }
+    $grupo[0][0]->parentNode->insertBefore($lista, $grupo[0][0]);
+    foreach ($grupo as [$parrafo]) {
+      $parrafo->parentNode->removeChild($parrafo);
+    }
+    foreach ($vacios as $vacio) {
+      if ($vacio->parentNode) {
+        $vacio->parentNode->removeChild($vacio);
+      }
+    }
+    $cambio = TRUE;
+  }
+  return $cambio ? Html::serialize($dom) : $html;
+}
+
+/**
+ * Devuelve [enlace, sangría] si el párrafo solo trae un enlace de texto.
+ */
+function _subtheme_unidadsolidaria_parrafo_enlace(\DOMElement $parrafo) {
+  $enlaces = $parrafo->getElementsByTagName('a');
+  if ($enlaces->length !== 1 || $parrafo->getElementsByTagName('img')->length) {
+    return NULL;
+  }
+  $enlace = $enlaces->item(0);
+  $limpiar = fn($texto) => preg_replace('/[\s\x{a0}]+/u', '', $texto);
+  if ($limpiar($enlace->textContent) === '' || !$enlace->getAttribute('href')
+    || $limpiar($parrafo->textContent) !== $limpiar($enlace->textContent)) {
+    return NULL;
+  }
+  // Sangría: dos o más espacios antes del enlace.
+  $antes = '';
+  for ($nodo = $parrafo->firstChild; $nodo && !$nodo->isSameNode($enlace) && !($nodo instanceof \DOMElement && $nodo->getElementsByTagName('a')->length); $nodo = $nodo->nextSibling) {
+    $antes .= $nodo->textContent;
+  }
+  return [1 => $enlace, 2 => mb_strlen(preg_replace('/[^\s\x{a0}]/u', '', $antes)) >= 2];
+}
+
+/**
+ * Párrafo sin texto ni imágenes (p. ej. <p>&nbsp;</p>).
+ */
+function _subtheme_unidadsolidaria_vacio(\DOMElement $parrafo) {
+  return preg_replace('/[\s\x{a0}]+/u', '', $parrafo->textContent) === ''
+    && !$parrafo->getElementsByTagName('img')->length
+    && !$parrafo->getElementsByTagName('iframe')->length;
 }
 
 /**

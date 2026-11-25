@@ -5333,6 +5333,1534 @@ button {
 
 
 
+
+
+
+
+
+
+
+
+/* ---- DESPLEGABLES (Planes, Programas y proyectos, Entes de control) ----
+   Vistas con acordeón de views_bootstrap: título y texto de la cabecera como
+   en las páginas vista elemento, cada sección como tarjeta blanca con botón
+   circular "+" (gira al abrir) y, dentro, los enlaces como filas con flecha. */
+.view > .view-header .titulo_panel h3 {
+    position: relative;
+    margin: 8px 0 22px;
+    padding: 0 0 16px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 30px !important;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.view > .view-header .titulo_panel h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 4px;
+    border-radius: 4px;
+    background: #3366cc;
+}
+
+.view > .view-header .titulo_panel br {
+    display: none;
+}
+
+.view > .view-header .titulo_panel p {
+    margin: 0 0 30px;
+    padding: 18px 24px;
+    border-left: 4px solid #3366cc;
+    border-radius: 0 12px 12px 0;
+    background: #f3f7fd;
+    color: #34445a;
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.view .panel-group[id^="views-bootstrap-"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 0 36px;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.view .panel-group[id^="views-bootstrap-"] > .card {
+    margin: 0;
+    border: 1px solid #d2dfef;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.06);
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.view .panel-group[id^="views-bootstrap-"] > .card:hover,
+.view .panel-group[id^="views-bootstrap-"] > .card:has(button[aria-expanded="true"]),
+.view .panel-group[id^="views-bootstrap-"] > .card:has(> .collapse.in) {
+    border-color: #3366cc;
+    box-shadow: 0 8px 22px rgba(0, 72, 132, 0.12);
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header {
+    display: block;
+    padding: 0;
+    background: #fff;
+    transition: background-color .2s;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header:hover,
+.view .panel-group[id^="views-bootstrap-"] .class-header:has(button[aria-expanded="true"]),
+.view .panel-group[id^="views-bootstrap-"] > .card:has(> .collapse.in) > .class-header {
+    background: #f3f7fd;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header h5 {
+    margin: 0;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header .btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 18px 22px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: left;
+    text-decoration: none;
+    white-space: normal;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header .btn-link:focus-visible {
+    outline: 3px solid #99b5e6;
+    outline-offset: -3px;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header .btn-link::after {
+    content: "+";
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    border-radius: 50%;
+    background: #eaf1fb;
+    color: #3366cc;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform .25s, background-color .25s, color .25s;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .class-header .btn-link[aria-expanded="true"]::after,
+.view .panel-group[id^="views-bootstrap-"] > .card:has(> .collapse.in) .class-header .btn-link::after {
+    transform: rotate(45deg);
+    background: #3366cc;
+    color: #fff;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .card-body {
+    padding: 18px 22px 20px;
+    border-top: 1px solid #e3eaf4;
+    color: #333d4a;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .card-body p,
+.view .panel-group[id^="views-bootstrap-"] .card-body h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .card-body p:empty,
+.view .panel-group[id^="views-bootstrap-"] .card-body .field-content:empty,
+.view .panel-group[id^="views-bootstrap-"] .card-body .views-field-field-documentos-planes:not(:has(a)) {
+    display: none;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .card-body .field-content > :last-child {
+    margin-bottom: 0;
+}
+
+.view .panel-group[id^="views-bootstrap-"] .card-body a {
+    color: #3366cc;
+    text-decoration: underline;
+    text-decoration-color: rgba(51, 102, 204, 0.35);
+    text-underline-offset: 3px;
+}
+
+/* Subtítulos dentro de una sección (p. ej. "Organismos cooperativos") */
+.view .panel-group[id^="views-bootstrap-"] .card-body .field-content > h3:not(:has(a)),
+.view .panel-group[id^="views-bootstrap-"] .card-body .field-content > p:has(> strong:only-child) {
+    margin: 4px 0 10px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Planes y Programas: cada enlace como fila */
+/* font-size 0: el espacio que a veces queda después del enlace no deja hueco */
+.view:not(.view-id-entes_de_control) .panel-group[id^="views-bootstrap-"] .card-body .field-content > :is(h3, p):has(> a:only-child):not(:has(img)) {
+    margin: 0 0 8px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.view:not(.view-id-entes_de_control) .panel-group[id^="views-bootstrap-"] .card-body .field-content > :is(h3, p):has(> a:only-child):not(:has(img)) > a {
+    display: block;
+    position: relative;
+    padding: 12px 46px 12px 16px;
+    border: 1px solid #e3eaf4;
+    border-radius: 10px;
+    background: #fff;
+    color: #1f2b3a;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: border-color .2s, background-color .2s, color .2s;
+}
+
+.view:not(.view-id-entes_de_control) .panel-group[id^="views-bootstrap-"] .card-body .field-content > :is(h3, p):has(> a:only-child):not(:has(img)) > a::after {
+    content: "\203A";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    color: #3366cc;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.view:not(.view-id-entes_de_control) .panel-group[id^="views-bootstrap-"] .card-body .field-content > :is(h3, p):has(> a:only-child):not(:has(img)) > a:hover,
+.view:not(.view-id-entes_de_control) .panel-group[id^="views-bootstrap-"] .card-body .field-content > :is(h3, p):has(> a:only-child):not(:has(img)) > a:focus {
+    border-color: #3366cc;
+    background: #f7faff;
+    color: #004884;
+}
+
+@media (max-width: 767px) {
+    .view > .view-header .titulo_panel h3 {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        font-size: 24px !important;
+    }
+
+    .view > .view-header .titulo_panel p {
+        margin-bottom: 24px;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .view .panel-group[id^="views-bootstrap-"] .class-header .btn-link {
+        padding: 15px 16px;
+        font-size: 16px;
+    }
+
+    .view .panel-group[id^="views-bootstrap-"] .card-body {
+        padding: 14px 14px 16px;
+    }
+}
+
+/* ---- PIE DE PÁGINA (bloque "Footer contacto") ----
+   Tarjeta blanca de dos columnas: datos de contacto, redes y políticas a la
+   izquierda; logo y "Mapa del sitio" a la derecha. En celular el logo va
+   arriba. La franja azul de GOV.CO queda centrada al ancho del contenido.
+   Se usa el id del bloque (y !important donde las reglas viejas lo traen)
+   para pasar por encima de los estilos anteriores del pie. */
+#block-subtheme-unidadsolidaria-footercontacto .all {
+    background: linear-gradient(180deg, #161c8c 0%, #0f1567 100%);
+    color: #333d4a;
+    font-family: inherit;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .space-white {
+    height: 56px;
+    margin: 0;
+    background: transparent;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .tarjeta.cont-footer {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 0;
+    width: min(1140px, calc(100% - 32px)) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-8,
+#block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 {
+    float: none;
+    width: auto;
+    max-width: none;
+    padding: 36px 40px !important;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border-left: 1px solid #e3eaf4;
+    background: #fff;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 img {
+    display: block;
+    width: 230px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .mapa-site {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 10px 22px;
+    border: 1px solid #3366cc;
+    border-radius: 999px;
+    background: #fff;
+    color: #3366cc;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .mapa-site:hover,
+#block-subtheme-unidadsolidaria-footercontacto .mapa-site:focus {
+    background: #3366cc;
+    color: #fff;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .title-unidad {
+    margin: 0 0 18px !important;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #e3eaf4;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .parrafo-contacto {
+    margin: 0 0 8px;
+    color: #4a5568;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .info-contacto a {
+    color: #3366cc;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .info-contacto a:hover {
+    text-decoration: underline;
+}
+
+/* Redes sociales como botones redondeados */
+#block-subtheme-unidadsolidaria-footercontacto .list-horizontal {
+    display: flex !important;
+    flex-flow: row wrap;
+    gap: 10px;
+    margin: 22px 0;
+    padding: 0;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .list-horizontal > .iconos-footer {
+    display: block;
+    flex: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0;
+    background: none;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .iconos-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px 5px 5px;
+    border: 1px solid #dbe5f3;
+    border-radius: 999px;
+    background: #fff;
+    color: #1f2b3a;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .iconos-footer a:hover,
+#block-subtheme-unidadsolidaria-footercontacto .iconos-footer a:focus {
+    border-color: #3366cc;
+    box-shadow: 0 4px 12px rgba(0, 72, 132, 0.14);
+    text-decoration: none;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .iconos-footer img {
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .iconos-footer span:not(.sr-only) {
+    font-size: 14px;
+}
+
+/* Políticas */
+#block-subtheme-unidadsolidaria-footercontacto .info-contacto > p:not(.parrafo-contacto) {
+    margin: 0 0 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .list-horizontal + p {
+    padding-top: 18px;
+    border-top: 1px solid #e3eaf4;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .info-contacto > p:not(.parrafo-contacto) a {
+    font-weight: 600;
+}
+
+/* Franja azul GOV.CO */
+#block-subtheme-unidadsolidaria-footercontacto .card-blue {
+    position: static;
+    margin-top: 56px;
+    padding: 0 !important;
+    background: #3366cc;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .content-blue {
+    flex-wrap: wrap;
+    gap: 16px;
+    width: min(1140px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 18px 0 !important;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .content-blue img {
+    max-height: 48px;
+    width: auto;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .content-blue p a {
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+#block-subtheme-unidadsolidaria-footercontacto .content-blue p a:hover {
+    background: rgba(255, 255, 255, 0.12);
+    text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #block-subtheme-unidadsolidaria-footercontacto .tarjeta.cont-footer {
+        grid-template-columns: minmax(0, 1fr) 240px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-8,
+    #block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 {
+        padding: 30px 28px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #block-subtheme-unidadsolidaria-footercontacto .space-white {
+        height: 36px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .tarjeta.cont-footer {
+        grid-template-columns: minmax(0, 1fr);
+        width: calc(100% - 24px) !important;
+        border-radius: 14px;
+    }
+
+    /* El logo va primero */
+    #block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 {
+        order: -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+        padding: 22px 20px !important;
+        border-left: 0;
+        border-bottom: 1px solid #e3eaf4;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-4 img {
+        width: 190px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .cont-footer > .col-lg-8 {
+        padding: 24px 20px !important;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .title-unidad {
+        font-size: 18px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .parrafo-contacto {
+        font-size: 14px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .card-blue {
+        margin-top: 36px;
+    }
+
+    #block-subtheme-unidadsolidaria-footercontacto .content-blue {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ---- MAPA DEL SITIO (nodo 196) ----
+   La lista anidada del cuerpo se ve como tarjetas en columnas: cada sección
+   del menú es una tarjeta, el segundo nivel son filas con flecha y el tercer
+   nivel una sublista con línea azul a la izquierda. */
+article[data-history-node-id="196"] .field--name-body > h2 {
+    position: relative;
+    margin: 8px 0 28px;
+    padding: 0 0 16px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+article[data-history-node-id="196"] .field--name-body > h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 4px;
+    border-radius: 4px;
+    background: #3366cc;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul {
+    columns: 3 300px;
+    column-gap: 20px;
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 20px 22px;
+    break-inside: avoid;
+    border: 1px solid #d2dfef;
+    border-top: 4px solid #3366cc;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.06);
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    list-style: none;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li > a {
+    color: #004884;
+    text-decoration: none;
+}
+
+/* Secciones sin subpáginas (Inicio, Transparencia): toda la tarjeta es el enlace */
+article[data-history-node-id="196"] .field--name-body > ul > li:not(:has(ul)) > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li:not(:has(ul)) > a::after,
+article[data-history-node-id="196"] .field--name-body > ul > li > ul > li > a::after {
+    content: "\203A";
+    color: #3366cc;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li > ul {
+    margin: 14px 0 0;
+    padding: 12px 0 0;
+    border-top: 1px solid #e3eaf4;
+    list-style: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li > ul > li {
+    margin: 0 0 2px;
+    list-style: none;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li > ul > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    color: #1f2b3a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+
+article[data-history-node-id="196"] .field--name-body > ul > li > ul > li > a:hover,
+article[data-history-node-id="196"] .field--name-body > ul > li > ul > li > a:focus {
+    background: #f3f7fd;
+    color: #004884;
+}
+
+article[data-history-node-id="196"] .field--name-body ul ul ul {
+    margin: 2px 0 10px 10px;
+    padding: 0 0 0 12px;
+    border-left: 2px solid #e3eaf4;
+    list-style: none;
+}
+
+article[data-history-node-id="196"] .field--name-body ul ul ul li {
+    list-style: none;
+}
+
+article[data-history-node-id="196"] .field--name-body ul ul ul a {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #3366cc;
+    font-size: 14px;
+    line-height: 1.45;
+    text-decoration: none;
+}
+
+article[data-history-node-id="196"] .field--name-body ul ul ul a:hover,
+article[data-history-node-id="196"] .field--name-body ul ul ul a:focus {
+    background: #f3f7fd;
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    article[data-history-node-id="196"] .field--name-body > h2 {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        font-size: 24px;
+    }
+
+    article[data-history-node-id="196"] .field--name-body > ul > li {
+        margin-bottom: 14px;
+        padding: 16px;
+    }
+}
+
+/* ---- RENDICIÓN DE CUENTAS (nodo 454) ----
+   El texto pegado de Word se ve como el banner y dos tarjetas (título, texto
+   y botón). :is(..., #us-rendicion) le da peso de id al selector para ganarle
+   al diseño general de vista elemento (el id no existe en la página). */
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body p:not(:has(*)) {
+    display: none;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > div:first-child p {
+    margin: 0;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > div:first-child img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 72, 132, 0.15);
+}
+
+/* Las tres partes de cada tarjeta comparten fondo y línea azul */
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong),
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) + p,
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) {
+    margin: 0;
+    border-left: 4px solid #3366cc;
+    background: #f3f7fd;
+    line-height: 1.75;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) {
+    margin-top: 24px;
+    padding: 22px 26px 6px;
+    border-radius: 0 14px 0 0;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35 !important;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) + p {
+    padding: 6px 26px 14px;
+    color: #34445a;
+    font-size: 16px;
+    line-height: 1.75 !important;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) span,
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) strong,
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) + p span {
+    color: inherit !important;
+    font-weight: inherit;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) {
+    padding: 6px 26px 24px;
+    border-radius: 0 0 14px 0;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #3366cc;
+    color: #fff;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none;
+    transition: background-color .2s;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) > a::after {
+    content: "\2192";
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) > a:hover,
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) > a:focus {
+    background: #004884;
+}
+
+body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) span {
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+}
+
+@media (max-width: 767px) {
+    body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > div:first-child img {
+        margin-bottom: 22px;
+        border-radius: 12px;
+    }
+
+    body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) {
+        padding: 18px 18px 4px;
+        font-size: 18px;
+    }
+
+    body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> span > strong) + p {
+        padding: 4px 18px 12px;
+        font-size: 15px;
+    }
+
+    body.page-node-type-vista-elemento article:is([data-history-node-id="454"], #us-rendicion) .field--name-body > p:has(> a) {
+        padding: 4px 18px 20px;
+    }
+}
+
+
+/* ---- VISTA ELEMENTO (diseño general del contenido) ----
+   Aplica a las páginas de tipo "vista elemento" que no tienen diseño propio
+   (no aplica a los perfiles de directivos ni a Quiénes somos y sus secciones):
+   título, descripción destacada, cuerpo (texto, listas, tablas, imágenes,
+   videos), documentos y audios adjuntos, y las secciones personalizadas
+   (preguntas frecuentes, Acreditación, Participa, Aspirantes).
+   Los estilos que el texto trae pegados desde Word (fuente, tamaño, fondo) se
+   ignoran para que todo se vea igual. */
+
+/* Título y descripción */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-titulo {
+    position: relative;
+    margin: 0 0 22px;
+    padding: 0 0 16px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 64px;
+    height: 4px;
+    border-radius: 4px;
+    background: #3366cc;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-descripcion,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body > .us-intro {
+    margin: 0 0 30px;
+    padding: 18px 24px;
+    border-left: 4px solid #3366cc;
+    border-radius: 0 12px 12px 0;
+    background: #f3f7fd;
+    color: #34445a;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+/* Introducción escrita al comienzo del cuerpo (páginas sin campo Descripción):
+   el tema la envuelve en .us-intro y se ve igual que la descripción. */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body > .us-intro p {
+    margin: 0 0 12px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body > .us-intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Cuerpo */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body {
+    padding-bottom: 8px;
+    color: #333d4a;
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-wrap: break-word;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body [style*="font-family"] {
+    font-family: inherit !important;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body [style*="font-size"] {
+    font-size: inherit !important;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body [style*="background"] {
+    background: transparent !important;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body [style*="min-height"] {
+    display: block !important;
+    min-height: 0 !important;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body p,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body span {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body p {
+    margin: 0 0 14px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h2 {
+    margin: 34px 0 14px;
+    padding-left: 14px;
+    border-left: 4px solid #3366cc;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h3 {
+    margin: 28px 0 10px;
+    color: #3366cc;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h4,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h5 {
+    margin: 22px 0 8px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body > :first-child {
+    margin-top: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body strong,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body b {
+    color: #1f2b3a;
+    font-weight: 700;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a:not(.us-anios a),
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a:not(.us-anios a):link,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a:not(.us-anios a):visited {
+    color: #3366cc;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(51, 102, 204, 0.35);
+    text-underline-offset: 3px;
+    padding-bottom: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a:not(.us-anios a):hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a:not(.us-anios a):focus {
+    color: #004884;
+    text-decoration-color: currentColor;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body a strong {
+    color: inherit;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body hr {
+    margin: 28px 0;
+    border: 0;
+    border-top: 1px solid #e3ebf6;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body iframe {
+    max-width: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 72, 132, 0.10);
+}
+
+/* Listas con viñetas azules */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) {
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li {
+    position: relative;
+    margin: 8px 0;
+    padding-left: 24px;
+    color: inherit;
+    font-family: inherit;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.68em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3366cc;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ol {
+    margin: 0 0 18px;
+    padding-left: 26px;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ol > li {
+    margin: 8px 0;
+    padding-left: 4px;
+    color: inherit;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ol > li::marker {
+    color: #3366cc;
+    font-weight: 700;
+}
+
+/* Listas de enlaces (ul cuyos elementos son solo un enlace, y los párrafos de
+   un solo enlace que el tema agrupa en ul.us-enlaces): filas clicables */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces):has(> li > a:only-child) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 920px;
+    margin: 8px 0 26px;
+    padding: 0;
+    list-style: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li:has(> a:only-child) {
+    margin: 0;
+    padding: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li::before,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li:has(> a:only-child)::before {
+    content: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li.us-enlaces__sub {
+    margin-left: 28px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a:link,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a:visited,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child:link,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child:visited {
+    position: relative;
+    display: block;
+    padding: 13px 46px 13px 18px;
+    border: 1px solid #d2dfef;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.05);
+    color: #1f2b3a;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li.us-enlaces__sub > a {
+    font-weight: 500;
+    background: #f8fbff;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a::after,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child::after {
+    content: "\203A";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-52%);
+    color: #3366cc;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a:hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li > a:focus,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child:hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul:not(.us-anios):not(.us-enlaces) > li > a:only-child:focus {
+    border-color: #3366cc;
+    box-shadow: 0 6px 16px rgba(0, 72, 132, 0.12);
+    color: #004884;
+    transform: translateY(-1px);
+}
+
+/* Tablas */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body table {
+    max-width: 100%;
+    margin: 10px 0 26px;
+}
+
+/* Tablas de datos (con encabezados) */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body table:has(th, thead) {
+    width: 100%;
+    border: 1px solid #d2dfef;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body th,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body thead td {
+    padding: 12px 14px;
+    background: #004884;
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body table:has(th, thead) td {
+    padding: 11px 14px;
+    border-top: 1px solid #e3ebf6;
+    vertical-align: top;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body table:has(th, thead) tbody tr:nth-child(even) td {
+    background: #f6f9fe;
+}
+
+/* Documentos y audios adjuntos: tarjetas con el tipo de archivo */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-documentos,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-audios {
+    margin: 30px 0 44px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-documentos::before,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-audios::before {
+    content: "Documentos";
+    display: block;
+    margin: 0 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid #3366cc;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-audios::before {
+    content: "Audios";
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-documentos > .field--item + .field--item,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-audios > .field--item + .field--item {
+    margin-top: 10px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 12px 16px 12px 12px;
+    border: 1px solid #d2dfef;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.05);
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file:hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file:focus-within {
+    border-color: #3366cc;
+    box-shadow: 0 8px 20px rgba(0, 72, 132, 0.12);
+    transform: translateY(-1px);
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span:first-child,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span:last-child {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: inherit;
+}
+
+/* Ícono: hoja con la esquina doblada y el tipo de archivo */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-icon {
+    display: flex;
+    flex: 0 0 42px;
+    align-items: flex-end;
+    justify-content: center;
+    height: 50px;
+    padding-bottom: 8px;
+    border-radius: 6px;
+    background: #5b6b7f;
+    clip-path: polygon(0 0, 68% 0, 100% 24%, 100% 100%, 0 100%);
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-icon .icon {
+    display: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-icon::before {
+    content: "DOC";
+    color: #fff;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--application-pdf > span.file-icon { background: #d93025; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--application-pdf > span.file-icon::before { content: "PDF"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-spreadsheet > span.file-icon { background: #1e8449; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-spreadsheet > span.file-icon::before { content: "XLS"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-document > span.file-icon { background: #2b5797; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-document > span.file-icon::before { content: "DOC"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-presentation > span.file-icon { background: #d24726; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--x-office-presentation > span.file-icon::before { content: "PPT"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--audio > span.file-icon { background: #7b4fc4; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--audio > span.file-icon::before { content: "MP3"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--image > span.file-icon { background: #12808c; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--image > span.file-icon::before { content: "IMG"; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--package-x-generic > span.file-icon { background: #6b5b3e; }
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file--package-x-generic > span.file-icon::before { content: "ZIP"; }
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a:link,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a:visited {
+    color: #1f2b3a;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    padding-bottom: 0;
+}
+
+/* Toda la tarjeta es clicable */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file:hover > span.file-link a {
+    color: #004884;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-size {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #eef3fb;
+    color: #4a5a70;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Botón de descarga */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file::after {
+    content: "\2193";
+    display: flex;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    border-radius: 50%;
+    background: #e6effd;
+    color: #3366cc;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background .15s ease, color .15s ease;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file:hover::after {
+    background: #3366cc;
+    color: #fff;
+}
+
+/* Preguntas frecuentes (acordeón) */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-section {
+    width: 100%;
+    max-width: 920px;
+    margin: 34px 0;
+    padding: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-item {
+    margin: 0 0 10px;
+    padding: 0;
+    border: 1px solid #d2dfef;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 72, 132, 0.05);
+    overflow: hidden;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-item > p {
+    margin: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-question {
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 0;
+    background: #fff;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    transition: background .15s ease;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-question:hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-question:focus-visible,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-item.active .faq-question {
+    background: #f3f7fd;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-question .icon {
+    display: flex;
+    flex: 0 0 32px;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    margin: 0;
+    border-radius: 50%;
+    background: #e6effd;
+    color: #3366cc;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-item.active .faq-question .icon {
+    background: #3366cc;
+    color: #fff;
+    transform: rotate(45deg);
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-answer {
+    padding: 0 20px;
+    transition: max-height .3s ease;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-item.active .faq-answer {
+    margin: 0;
+    padding: 14px 20px 6px;
+    border-top: 1px solid #e3ebf6;
+    border-radius: 0;
+    background: #fff;
+}
+
+/* Acreditación: imagen al lado del texto */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 36px;
+    margin: 10px 0 20px;
+    padding: 24px;
+    border-radius: 14px;
+    background: #f3f7fd;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container > [class*="col-"] {
+    float: none;
+    width: auto;
+    padding: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container .img-container {
+    flex: 0 0 230px;
+    margin: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container img {
+    width: 230px;
+    height: auto;
+    border-radius: 12px;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container .linea-texto {
+    display: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Títulos escritos como párrafo con clase (Acreditación, Participa) */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body .title-acreditacion {
+    margin: 0 0 14px;
+    color: #004884;
+    font-family: 'Montserrat', 'montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Aspirantes: "Trabaje con nosotros" como botón */
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 {
+    margin: 22px 0 18px;
+    padding: 0;
+    border: 0;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a:link,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a:visited {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: #3366cc;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a::after {
+    content: "\2197";
+}
+
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a:hover,
+body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .job-opportunities > h2 > a:focus {
+    background: #004884;
+    color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container .img-container {
+        flex-basis: 180px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container img {
+        width: 180px;
+    }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-titulo {
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        font-size: 24px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-field-descripcion,
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body > .us-intro {
+        margin-bottom: 24px;
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h2 {
+        font-size: 20px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body h3 {
+        font-size: 18px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body ul.us-enlaces > li.us-enlaces__sub {
+        margin-left: 14px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file {
+        gap: 12px;
+        padding: 10px 12px 10px 10px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-icon {
+        flex-basis: 36px;
+        height: 44px;
+        padding-bottom: 6px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a,
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a:link,
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-link a:visited {
+        font-size: 14.5px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file::after {
+        display: none;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .faq-question {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px;
+        text-align: left;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container .img-container {
+        flex-basis: auto;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .flex-container img {
+        width: 180px;
+    }
+
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .field--name-body .title-acreditacion {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.page-node-type-vista-elemento article.vista-elemento:not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h2:first-child + h6)):not(:has(> .content > .field--name-body > img:first-child + h2 + h6)):not(:has(> .content > .field--name-field-imagen ~ .field--name-body > h6:first-child)):not(:has(> .content > .field--name-body > img:first-child + h6)) .file > span.file-size {
+        display: none;
+    }
+}
+
 /* ---- LISTAS DE AÑOS (informes, planes, certificados por año) ----
    El tema convierte en ul.us-anios los párrafos o títulos del cuerpo que solo
    traen años enlazados ("2013 - 2014 - 2015..."); aquí se ven como tarjetas. */
